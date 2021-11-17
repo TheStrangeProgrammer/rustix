@@ -1,5 +1,5 @@
 
-<section class="d-flex">
+<section class="d-flex h100">
     @include('partials.left_sidebar.alt')
     @include('partials.left_sidebar.faq')
     @include('partials.left_sidebar.tos')
@@ -10,7 +10,7 @@
         <button>FAQ</button>
         <button>ALT</button>
         
-        <button><i class="fas fa-arrow-left mb15"></i></button>
+        <button class="mt-auto"><i class="fas fa-arrow-left mb15"></i></button>
     </div>
     @include('partials.left_sidebar.chat')
 </section>
