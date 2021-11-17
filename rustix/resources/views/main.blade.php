@@ -1,18 +1,24 @@
 <!DOCTYPE html>
+
 <html>
     <head>
         @include('head')
     </head>
+    <body>
 
-<body>
-@include('header')
-@include('partials.left_sidebar')
+        <head>
+            @include('partials.header')
+        </head>
 
-<main>
-    @yield('content')
-</main>
-@include('footer')
-@include('scripts')
+        @include('partials.left_sidebar')
 
-</body>
+        <main>
+            @yield('content')
+        </main>
+
+        @include('partials.footer')
+
+        @include('scripts')
+
+    </body>
 </html>

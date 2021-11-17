@@ -1,5 +1,4 @@
 
-<nav class="fullw flex between">
 
     <div class="right fullh flex center mr50 bold">
         <button class="flex pad10 thin">WITHDRAW</button>
@@ -30,4 +29,4 @@
                 <button class="fullw bggreen btnChoice"><p class="ml10 bold white">Admin Panel</p></button>
             </div>
         </span>
-</nav>
+
