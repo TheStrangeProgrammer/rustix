@@ -1,32 +1,32 @@
 
 
-    <div class="right fullh flex center mr50 bold">
-        <button class="flex pad10 thin">WITHDRAW</button>
-        <div class="flex pad10">BALANCE:<span class="green ml5">33.21USD</span></div>
-        <button id="depositBTN"class="flex pad10">DEPOSIT</button>
+    <div>
+        <a href="#">WITHDRAW></a>
+        <div >BALANCE:<span class="green ms5">33.21USD</span></div>
+        <a href="#" >DEPOSIT</a>
         <span>
-            <button apartine="userDropDown" class="toggler flex pad10">STEAM USERNAME <i class="fas fa-caret-down ml5"></i></button>
-            <div id="userDropDown" class="dropdown flexcol regular">
-                <button class="fullw btnChoice"><p class="ml10">Profile</p></button>
-                <button class="fullw btnChoice"><p class="ml10">Affiliate</p></button>
-                <button class="fullw btnChoice"><p class="ml10">Log Out</p></button>
-                <button class="fullw bggreen btnChoice"><p class="ml10 bold white">Admin Panel</p></button>
+            <a href="#">STEAM USERNAME</a>
+            <div>
+                <a href="#" >Profile</a>
+                <a href="#">Affiliate</a>
+                <a href="#">Log Out</a>
+                <a href="#">Admin Panel</a>
             </div>
         </span>
     </div>
-    <button apartine="mobileNav" id="burgerBTN" class="toggler fas fa-bars"></button>
+    <a href="#" ></a>
 
-    <div id="mobileNav" class="flexcol center dropdown">
-        <div class="flex">BALANCE:<span class="green ml5">33.21USD</span></div>
-        <button class="thin fullw btnChoice">WITHDRAW</button>
-        <button id="depositBTN" class="fullw white bold btnChoice">DEPOSIT</button>
-        <span class="fullw">
-            <button apartine="mobileNav #userDropDown" class="toggler fullw">STEAM USERNAME <i class="fas fa-caret-down ml5"></i></button>
-            <div id="userDropDown" class="dropdown flexcol regular">
-                <button class="fullw btnChoice"><p class="ml10">Profile</p></button>
-                <button class="fullw btnChoice"><p class="ml10">Affiliate</p></button>
-                <button class="fullw btnChoice"><p class="ml10">Log Out</p></button>
-                <button class="fullw bggreen btnChoice"><p class="ml10 bold white">Admin Panel</p></button>
+    <div>
+        <div>BALANCE:<span>33.21USD</span></div>
+        <a href="#">WITHDRAW</a>
+        <a href="#">DEPOSIT</a>
+        <span>
+            <a href="#">STEAM USERNAME <i></i></a>
+            <div>
+                <a href="#">Profile</a>
+                <a href="#">Affiliate</a>
+                <a href="#">Log Out</a>
+                <a href="#">Admin Panel</a>
             </div>
         </span>
 
