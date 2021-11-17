@@ -19,7 +19,6 @@
 <meta name="twitter:description" content="" />
 <meta name="twitter:title" content="" />
 <!--SHEETS-->
-<link rel="stylesheet" type="text/css" href="{{asset('assets/user/css/reset.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/user/css/style.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/user/css/loader.css')}}">
 <!-- BOOTSTRAP -->

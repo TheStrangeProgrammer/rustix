@@ -1,3 +1,3 @@
-<footer class="pt-5 my-5 text-muted border-top">
+<footer class="">
     Created by someone
 </footer>

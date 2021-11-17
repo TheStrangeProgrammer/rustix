@@ -1,16 +1,16 @@
 
-<section id="chat" class="flex between">
+<section class="d-flex">
     @include('partials.left_sidebar.alt')
     @include('partials.left_sidebar.faq')
     @include('partials.left_sidebar.tos')
 
-<div class="left fullh flexcol center between">
-    <span class="flexcol center fullw">
-        <button class="mb5 btnModal">TOS</button>
-        <button class="mb5 btnModal">FAQ</button>
-        <button class="btnModal">ALT</button>
-    </span>
-    <button id="chatToggleBTN" class="fas fa-arrow-left mb15"></button>
-</div>
-@include('partials.left_sidebar.chat')
+    <div class="d-flex flex-column">
+        
+        <button>TOS</button>
+        <button>FAQ</button>
+        <button>ALT</button>
+        
+        <button><i class="fas fa-arrow-left mb15"></i></button>
+    </div>
+    @include('partials.left_sidebar.chat')
 </section>

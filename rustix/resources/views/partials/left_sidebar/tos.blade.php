@@ -1,9 +1,11 @@
-<div id="TOS" class="modal fullw fullh flexcol">
-	<div class="container flexcol">
-		<div class="top fullw flexcol center">
-			<button class="closeModalBTN far fa-times-circle pad10 mr15"></button>
+<div id="TOS" class="modal container" tabindex="2">
+	<div class="modal-dialog">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title">TOS</h5>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		</div>
-		<div class="bottom thin">
+		<div class="modal-body">
 			<h2 class="bold mb15">Salut m-am TOS</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -29,5 +31,7 @@
 			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 		</div>
+		
+	  </div>
 	</div>
-</div>
+  </div>

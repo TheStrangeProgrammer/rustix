@@ -1,4 +1,4 @@
-<section id="chat" class="flex between">
+<div id="chat" class="flex between" tabindex="3">
 
 			<div class="right fullh">
 				<div class="top fullw flex between">
@@ -44,4 +44,4 @@
 					<button apartine="emojiBox" class="fas fa-grin ml10 toggler" style="color:rgba(255,255,255,.1);font-size:2rem"></button>
 				</div>
 			</div>
-		</section>
+		</div>
