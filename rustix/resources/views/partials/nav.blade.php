@@ -1,20 +1,19 @@
 
 
-    <div>
-        <a href="#">WITHDRAW></a>
-        <div >BALANCE:<span class="green ms5">33.21USD</span></div>
+    <div class="d-flex">
+        <a href="#">WITHDRAW</a>
+        <span>BALANCE:<span>33.21USD</span></span>
         <a href="#" >DEPOSIT</a>
-        <span>
-            <a href="#">STEAM USERNAME</a>
-            <div>
-                <a href="#" >Profile</a>
-                <a href="#">Affiliate</a>
-                <a href="#">Log Out</a>
-                <a href="#">Admin Panel</a>
-            </div>
-        </span>
+        <button>STEAM USERNAME</a>
+        <div>
+            <a href="#" >Profile</a>
+            <a href="#">Affiliate</a>
+            <a href="#">Log Out</a>
+            <a href="#">Admin Panel</a>
+        </div>
+            
     </div>
-    <a href="#" ></a>
+    <a href="#"></a>
 
     <div>
         <div>BALANCE:<span>33.21USD</span></div>

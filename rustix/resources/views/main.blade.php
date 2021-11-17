@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 
-<html>
+<html class="h-100">
     <head>
         @include('head')
     </head>
-    <body>
+    <body class="d-flex flex-column h-100">
 
         <head>
             @include('partials.header')
         </head>
+        <div class="d-flex flex-fill">
+            @include('partials.left_sidebar')
 
-        @include('partials.left_sidebar')
-
-        <main>
-            @yield('content')
-        </main>
-
+            <main>
+                @yield('content')
+            </main>
+        </div>
         @include('partials.footer')
 
         @include('scripts')
