@@ -1,11 +1,12 @@
 
 
     <div class="d-flex">
+        <ul>
         <a href="#">WITHDRAW</a>
         <span>BALANCE:<span>33.21USD</span></span>
         <a href="#" >DEPOSIT</a>
         <button>STEAM USERNAME</a>
-        <div>
+        <div class="d-none">
             <a href="#" >Profile</a>
             <a href="#">Affiliate</a>
             <a href="#">Log Out</a>

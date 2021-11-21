@@ -29,3 +29,18 @@ Route::get('/register', function () {
 
 
 });
+Route::get('/wheel', function () {
+    return view('layouts.christmaswheel');
+
+
+});
+Route::get('/home2', function () {
+    return view('home2');
+
+
+});
+Route::get('/login2', function () {
+    return view('login2');
+
+
+});
