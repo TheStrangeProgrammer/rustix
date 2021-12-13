@@ -1,3 +1,3 @@
-<footer class="mt-auto">
-    Created by someone
+<footer class="mt-auto footer">
+    Created by TheStranger
 </footer>

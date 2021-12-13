@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
-<meta name="author" content="COCOLOVE" />
+<meta name="author" content="TheStranger" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="canonical" href="" />
 <link href="content/favicon.ico" rel="icon">

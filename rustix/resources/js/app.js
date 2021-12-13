@@ -20,7 +20,6 @@ window.Vue = require('vue').default;
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('message', require('./components/Message.vue').default);
-Vue.component('my-message', require('./components/MyMessage.vue').default);
 Vue.component('chat', require('./components/Chat.vue').default);
 
 /**

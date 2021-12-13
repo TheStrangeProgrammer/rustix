@@ -1,4 +1,4 @@
-<div id="FAQ" class="modal container" tabindex="1">
+<div id="FAQ" class="modal fade" tabindex="1">
 	<div class="modal-dialog">
 	  <div class="modal-content">
 		<div class="modal-header">
@@ -31,8 +31,8 @@
 			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 		</div>
-		
+
 	  </div>
 	</div>
   </div>
-  
+

@@ -1,8 +1,14 @@
 <template>
     <div class="is-clearfix">
-        <div class="notification is-info is-pulled-left">
-            <small>Sent by {{ user }}</small><br />
-            {{ message }}
+        <div class="message is-info is-pulled-left">
+            <div class="flex-fill flex-wrap">
+                <span class="message-user">
+                    <div class="message-photo"></div>
+                    <div class="message-level">43</div>
+                    <p class="message-username">{{ user }}:</p>
+                </span>
+                <p class="message-text">{{ message }}</p>
+            </div>
         </div>
     </div>
 </template>
@@ -16,13 +22,3 @@
     }
 </script>
 
-<style scoped>
-    .notification {
-        max-width: 80%;
-        margin-bottom: 1em;
-    }
-    small {
-        color: #ccc;
-        font-size: 0.65em;
-    }
-</style>

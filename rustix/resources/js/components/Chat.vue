@@ -1,28 +1,21 @@
 <template>
-    <div>
-        <div class="box">
-            <p v-if="!messages.length">Start typing the first message</p>
-
+    <div class="d-flex flex-column">
+        <div class="chat-wrapper">
             <div v-for="message in messages">
-                <my-message
-                    v-if="message.user == userId"
-                    :message="message.text"
-                ></my-message>
 
                 <message
-                    v-if="message.user != userId"
                     :message="message.text"
                     :user="message.user"
                 ></message>
             </div>
         </div>
 
-        <form @submit.prevent="submit">
-            <div class="field has-addons has-addons-fullwidth">
-                <div class="control is-expanded">
-                    <input class="input" type="text" placeholder="Type a message" v-model="newMessage">
+        <form @submit.prevent="submit" class="p-2 chat-form">
+            <div class="field has-addons has-addons-fullwidth d-flex p-2">
+                <div class="control is-expanded p-2">
+                    <input class="input chat-input" type="text" placeholder="Type a message" v-model="newMessage">
                 </div>
-                <div class="control">
+                <div class="control p-2">
                     <button type="submit" class="button is-danger" :disabled="!newMessage">
                         Send
                     </button>

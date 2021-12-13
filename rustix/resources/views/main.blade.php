@@ -4,15 +4,16 @@
     <head>
         @include('head')
     </head>
-    <body class="d-flex flex-column h-100">
+    <body class="d-flex flex-column h-100 body">
 
         <head>
             @include('partials.header')
         </head>
-        <div id="app" class="d-flex flex-fill">
-            @include('partials.left_sidebar')
-
-            <main>
+        <div id="app" class="d-flex h-100">
+            <section class="sidebar d-flex">
+                @include('partials.left_sidebar')
+            </section>
+            <main class="main">
                 @yield('content')
             </main>
         </div>
