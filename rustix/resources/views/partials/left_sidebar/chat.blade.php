@@ -1,47 +1,46 @@
-<div id="chat" class="flex between" tabindex="3">
 
-			<div>
-				<div>
-					<span>ENG <span>63</span> ONLINE</span>
-					<span>
-						<a href="#"></a>
-						<a href="#"></a>
-						<a href="#"></a>
+			<div class="right fullh">
+				<div class="top fullw flex between">
+					<span class="ml10"><p>ENG <span class="green ml5">63</span> ONLINE</p></span>
+					<span class="flex around">
+						<button class="fab fa-discord pad10"></button>
+						<button class="fab fa-twitter pad10"></button>
+						<button class="fab fa-instagram pad10"></button>
 					</span>
 				</div>
-				<div>
-					<div>
+				<div class="middle fullw">
+					<div class="chatMessage fullw flex">
 						<div>
-							<span>
-								<div></div>
-								<div>43</div>
+							<span class="floatleft ml10 mr5 flex center">
+								<div class="userPhoto"></div>
+								<div class="userLevel flexcol center ml5 mr5">43</div>
 								<span>
-								<button></button>
-								<div>
-									<button>mute</button>
-									<button>option</button>
-									<button>option</button>
+								<button apartine="userSettingsDropDown" class="toggler fas fa-cog"></button>
+								<div id="userSettingsDropDown" class="dropdown  flexcol mt5">
+									<button class="fullw btnChoice">mute</button>
+									<button class="fullw btnChoice">option</button>
+									<button class="fullw btnChoice">option</button>
 								</div>
 								</span>
-								<p>COCOLOVE:</p>
+								<p class="ml5 bold">COCOLOVE:</p>
 							</span>
-							<p>Sa-mi bag pula in word-break:break-word ca am stat 1 ora sa fac cacatu asta</p>
+							<p class="chatText ml10 mr10">Sa-mi bag pula in word-break:break-word ca am stat 1 ora sa fac cacatu asta</p>
 						</div>
 					</div>
-					<div>
-						<button></button>
-						<button></button>
-						<button></button>
-						<button></button>
-						<button></button>
-						<button></button>
-						<button></button>
-						<button></button>
+					<div id="emojiBox" class="dropdown flex around">
+						<button class="emoji btnChoice"></button>
+						<button class="emoji btnChoice"></button>
+						<button class="emoji btnChoice"></button>
+						<button class="emoji btnChoice"></button>
+						<button class="emoji btnChoice"></button>
+						<button class="emoji btnChoice"></button>
+						<button class="emoji btnChoice"></button>
+						<button class="emoji btnChoice"></button>
 					</div>
 				</div>
-				<div>
+				<div class="bottom fullw flex center">
 					<input type="text"placeholder="type something...">
-					<button></button>
+					<button apartine="emojiBox" class="fas fa-grin ml10 toggler" style="color:rgba(255,255,255,.1);font-size:2rem"></button>
 				</div>
 			</div>
-		</div>
+

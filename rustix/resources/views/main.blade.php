@@ -9,7 +9,7 @@
         <head>
             @include('partials.header')
         </head>
-        <div class="d-flex flex-fill">
+        <div id="app" class="d-flex flex-fill">
             @include('partials.left_sidebar')
 
             <main>
