@@ -19,9 +19,9 @@
 <meta name="twitter:description" content="" />
 <meta name="twitter:title" content="" />
 <!--SHEETS-->
-<link rel="stylesheet" type="text/css" href="{{asset('assets/user/css/style.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('assets/user/css/loader.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('assets/user/css/reset.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('css/loader.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('css/reset.css')}}">
 <!-- BOOTSTRAP -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 

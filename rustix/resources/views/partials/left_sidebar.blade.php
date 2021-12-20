@@ -12,5 +12,5 @@
 
         <button class="mt-auto p-1"><i class="fas fa-arrow-left mb15"></i></button>
     </div>
-    <chat></chat>
+    <chat user="{{ auth()->user() }}" class="chat"></chat>
 

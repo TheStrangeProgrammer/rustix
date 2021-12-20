@@ -10,7 +10,7 @@
             </div>
         </div>
 
-        <form @submit.prevent="submit" class="p-2 chat-form">
+        <form @submit.prevent="submit" class="chat-form">
             <div class="field has-addons has-addons-fullwidth d-flex p-2">
                 <div class="control is-expanded p-2">
                     <input class="input chat-input" type="text" placeholder="Type a message" v-model="newMessage">
@@ -27,9 +27,11 @@
 
 <script>
     export default {
+        props: {
+            user:String
+            },
         data () {
             return {
-                userId: Math.random().toString(36).slice(-5),
                 messages: [],
                 newMessage: ''
             }
@@ -37,7 +39,7 @@
         mounted () {
             Echo.channel('chat')
                 .listen('NewChatMessage', (e) => {
-                    if(e.user != this.userId) {
+                    if(e.user != this.user) {
                         this.messages.push({
                             text: e.message,
                             user: e.user
@@ -48,12 +50,12 @@
         methods: {
             submit() {
                 axios.post(`${process.env.MIX_WEBSOCKET_SERVER_BASE_URL}/api/message`, {
-                    user: this.userId,
+                    user: this.user,
                     message: this.newMessage
                 }).then((response) => {
                     this.messages.push({
                         text: this.newMessage,
-                        user: this.userId
+                        user: this.user
                     });
 
                     this.newMessage = '';

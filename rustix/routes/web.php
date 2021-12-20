@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AuthController;
+use Laravel\Socialite\Facades\Socialite;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,13 +35,14 @@ Route::get('/wheel', function () {
 
 
 });
-Route::get('/home2', function () {
-    return view('home2');
 
 
+Route::get('/auth/redirect', function () {
+    return Socialite::driver('steam')->redirect();
 });
-Route::get('/login2', function () {
-    return view('login2');
 
-
+Route::get('/auth/callback', function () {
+    $user = Socialite::driver('steam')->user();
+    echo $user->name;
+    // $user->token
 });
