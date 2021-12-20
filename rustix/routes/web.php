@@ -39,10 +39,6 @@ Route::get('/wheel', function () {
 
 Route::get('/auth/redirect', function () {
     return Socialite::driver('steam')->redirect();
-});
+})->name('steam');
 
-Route::get('/auth/callback', function () {
-    $user = Socialite::driver('steam')->user();
-    echo $user->name;
-    // $user->token
-});
+Route::get('/auth/callback', [AuthController::class, 'callback']);

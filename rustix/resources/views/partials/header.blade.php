@@ -22,16 +22,24 @@
                     <a class="nav-link" href="#">Deposit</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Username
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
-                    <li><a class="dropdown-item" href="#">Referral</a></li>
-                    <li><a class="dropdown-item" href="#">Log Out</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Admin Panel</a></li>
-                    </ul>
+                    @if (Auth::check())
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ Auth::user()->name }}
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Referral</a></li>
+                        <li><a class="dropdown-item" href="#">Log Out</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Admin Panel</a></li>
+                        </ul>
+                    @else
+                        <a class="nav-link" href="{{ URL::route('steam') }}">
+                        Log In
+                        </a>
+                        
+                    @endif
+                    
                 </li>
 
                 </ul>
