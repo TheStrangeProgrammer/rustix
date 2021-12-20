@@ -22,6 +22,7 @@
                     <a class="nav-link" href="#">Deposit</a>
                 </li>
                 <li class="nav-item dropdown">
+                    
                     @if (Auth::check())
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ Auth::user()->name }}
