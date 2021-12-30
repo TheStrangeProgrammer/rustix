@@ -37,6 +37,7 @@
             }
         },
         mounted () {
+            //this.fetchMessages();
             Echo.channel('chat')
                 .listen('NewChatMessage', (e) => {
                     if(e.user != this.user) {
@@ -48,6 +49,12 @@
                 });
         },
         methods: {
+            /*fetchMessages() {
+                axios.get(`${process.env.MIX_WEBSOCKET_SERVER_BASE_URL}/api/messages`).then(response => {
+                    this.messages = response.data;
+                })
+            },*/
+
             submit() {
                 axios.post(`${process.env.MIX_WEBSOCKET_SERVER_BASE_URL}/api/message`, {
                     user: this.user,

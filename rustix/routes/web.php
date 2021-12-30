@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 use Laravel\Socialite\Facades\Socialite;
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +43,6 @@ Route::get('/auth/redirect', function () {
 })->name('steam');
 
 Route::get('/auth/callback', [AuthController::class, 'callback']);
+Route::get('/inventory', [UserController::class, 'getUserInventory'])->name("getUserInventory");
+Route::get('/logout', [AuthController::class, 'logout'])->name("logOut");
+Route::get('/balance', [UserController::class, 'getBalance'])->name("balance");

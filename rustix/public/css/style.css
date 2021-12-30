@@ -94,3 +94,13 @@
     height: 0px;
     background-color:#1A1D29;
 }
+.inventory{
+
+}
+.item{
+    width:150px;
+    height:150px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

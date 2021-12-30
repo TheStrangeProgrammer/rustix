@@ -15,14 +15,12 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Withdraw</a>
                 </li>
-                <span class="navbar-text">
-                    BALANCE:<span>33.21USD</span>
-                </span>
+                <balance></balance>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Deposit</a>
+                    <a class="nav-link" href="{{ URL::route('getUserInventory') }}">Deposit</a>
                 </li>
                 <li class="nav-item dropdown">
-                    
+
                     @if (Auth::check())
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ Auth::user()->name }}
@@ -30,7 +28,7 @@
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#">Profile</a></li>
                         <li><a class="dropdown-item" href="#">Referral</a></li>
-                        <li><a class="dropdown-item" href="#">Log Out</a></li>
+                        <li><a class="dropdown-item" href="{{ URL::route('logOut') }}">Log Out</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">Admin Panel</a></li>
                         </ul>
@@ -38,9 +36,9 @@
                         <a class="nav-link" href="{{ URL::route('steam') }}">
                         Log In
                         </a>
-                        
+
                     @endif
-                    
+
                 </li>
 
                 </ul>

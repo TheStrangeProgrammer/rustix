@@ -12,6 +12,11 @@ class AuthController extends Controller
     {
         return Socialite::driver('steam')->redirect();
     }
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/');
+    }
     public function callback()
     {
         try {
@@ -24,9 +29,10 @@ class AuthController extends Controller
                 return redirect('/');
             }else{
                 $createUser = User::create([
-                    'nickname' => $user->name,
-                    'steamid' => $user->steamid,
-                    'avatar' => $user->avatar
+                    'name' => $user->nickname,
+                    'steamid' => $user->id,
+                    'avatar' => $user->avatar,
+                    'balance' => 20
                 ]);
 
                 Auth::login($createUser);

@@ -18,9 +18,10 @@ window.Vue = require('vue').default;
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-
+Vue.component('balance', require('./components/Balance.vue').default);
 Vue.component('message', require('./components/Message.vue').default);
 Vue.component('chat', require('./components/Chat.vue').default);
+Vue.component('guestchat', require('./components/GuestChat.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
