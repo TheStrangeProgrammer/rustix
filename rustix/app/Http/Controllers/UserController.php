@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Events\NewBalance;
+use App\Models\User;
 
 class UserController extends Controller
 {
@@ -39,9 +41,23 @@ class UserController extends Controller
         return view("layouts/inventory",['data' => session('inventory','never')]);
 
     }
-    public function getBalance(){
-        return response(Auth::user()->balance, 200)
-                  ->header('Content-Type', 'text/plain');
+    public function updateBalance(Request $request) {
+        $response = User::where('steamid',  $request->user)->first()->balance;
+
+        event(new NewBalance($request->user,$response));
+
+        return response($response,200);
+
+    }
+    public function addbalance() {
+        $user = User::where('steamid',  Auth::user()->steamid)->first();
+        $user->balance+=2;
+        $user->save();
+        //Auth::user()->balance;
+        event(new NewBalance($user->steamid,$user->balance));
+        //event(new NewBalance($request->user,$response));
+
+        //return response($response,200);
 
     }
 }

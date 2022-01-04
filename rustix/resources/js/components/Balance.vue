@@ -6,23 +6,31 @@
 
 <script>
     export default {
+        props: [
+            'user'
+        ],
         data() {
             return {
                 balance: 0
             }
         },
-        created() {
+        mounted () {
             this.fetchBalance();
-            setInterval(() => this.fetchBalance(),2000);
-        },
+            Echo.private(`balance.${this.user}`)
+                .listen('NewBalance', (e) => {
+                    this.balance = e.balance;
+                });
 
-        methods: {
+
+        },
+        methods:{
             fetchBalance(){
-                axios.get(`/balance`).then(response => {
+                axios.post(`${process.env.MIX_WEBSOCKET_SERVER_BASE_URL}/api/balance`,{
+                    user: this.user
+                }).then((response) => {
                     this.balance = response.data;
                 })
             }
         }
-
     }
 </script>

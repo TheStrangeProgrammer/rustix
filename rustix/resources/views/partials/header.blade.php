@@ -15,7 +15,7 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Withdraw</a>
                 </li>
-                <balance></balance>
+                <balance user="{{ Auth::user()->steamid }}"></balance>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ URL::route('getUserInventory') }}">Deposit</a>
                 </li>

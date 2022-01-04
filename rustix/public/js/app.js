@@ -5250,24 +5250,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['user'],
   data: function data() {
     return {
       balance: 0
     };
   },
-  created: function created() {
+  mounted: function mounted() {
     var _this = this;
 
     this.fetchBalance();
-    setInterval(function () {
-      return _this.fetchBalance();
-    }, 2000);
+    Echo["private"]("balance.".concat(this.user)).listen('NewBalance', function (e) {
+      _this.balance = e.balance;
+    });
   },
   methods: {
     fetchBalance: function fetchBalance() {
       var _this2 = this;
 
-      axios.get("/balance").then(function (response) {
+      axios.post("".concat("http://localhost", "/api/balance"), {
+        user: this.user
+      }).then(function (response) {
         _this2.balance = response.data;
       });
     }
@@ -5346,7 +5349,7 @@ __webpack_require__.r(__webpack_exports__);
     submit: function submit() {
       var _this2 = this;
 
-      axios.post("".concat("http://chatserver.testupper.biz", "/api/message"), {
+      axios.post("".concat("http://localhost", "/api/message"), {
         user: this.user,
         message: this.newMessage
       }).then(function (response) {
@@ -5523,7 +5526,7 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   key: "chat_server_key",
   cluster: "mt1",
   encrypted: false,
-  wsHost: "chatserver.testupper.biz",
+  wsHost: "localhost",
   wsPort: "6001",
   disableStats: true,
   forceTLS: false,

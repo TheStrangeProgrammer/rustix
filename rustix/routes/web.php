@@ -45,4 +45,4 @@ Route::get('/auth/redirect', function () {
 Route::get('/auth/callback', [AuthController::class, 'callback']);
 Route::get('/inventory', [UserController::class, 'getUserInventory'])->name("getUserInventory");
 Route::get('/logout', [AuthController::class, 'logout'])->name("logOut");
-Route::get('/balance', [UserController::class, 'getBalance'])->name("balance");
+Route::get('/addbalance', [UserController::class, 'addbalance']);

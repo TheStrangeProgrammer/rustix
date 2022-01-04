@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'steamid',
         'avatar',
+        'balance'
     ];
 
     /**
