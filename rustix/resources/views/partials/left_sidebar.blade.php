@@ -5,7 +5,7 @@
     @include('partials.left_sidebar.tos')
 
 
-  
+
     <div class="d-flex flex-column sidebar bor">
 
         <button class="p-1 mt-3" data-bs-toggle="modal" data-bs-target="#TOS">TOS</button>
@@ -17,33 +17,25 @@
 
         <div class="d-flex flex-column">
             <div class="d-flex chat-top">
-               
+
                     <p class="pt-2 ps-2 fw-bold">ENG <span class="green">63 </span>ONLINE
-                            
-                        
+
+
                     </p>
-                
+
                 <button class="fab fa-discord pad10 margin"></button>
                 <button class="fab fa-twitter pad10 me-1 ms-2"></button>
                 <button class="fab fa-instagram pad10 mx-1"></button>
 
-                
-        
+
+
             </div>
             @if (Auth::check())
             <chat user="{{ Auth::user()->name }}" class="chat"></chat>
             @else
             <guestchat class="chat"></guestchat>
             @endif
-          
-            
+
+
 
         </div>
-
-  
-     
-
-    
-    
- 
-
