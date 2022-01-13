@@ -1,3 +1,3 @@
 <footer class="mt-auto footer">
-    Created by TheStranger&Tomi
+    Created by TheStranger
 </footer>
