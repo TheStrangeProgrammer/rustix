@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html class="h-100">
-    <head>
+    <head
         @include('head')
     </head>
     <body class="h-100 body">
