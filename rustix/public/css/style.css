@@ -31,9 +31,10 @@
     width: 350px;
     background-color: #0d0e14;
     border-right: 1px solid black;
-    
+
 }
 .sidebar{
+    border-right: 1px solid black;
     width: 50px;
     border-right: 1px solid black;
 }
@@ -95,6 +96,12 @@
     background-color:#1A1D29;
 }
 
+.inventory-wrapper{
+
+    overflow-y: auto;
+    height: 90%;
+    background-color:#1A1D29;
+}
 .item{
     width:150px;
     height:150px;
@@ -102,92 +109,21 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-.white{
-    
-    font-weight: 600;
-    color: rgb(255, 253, 253);
-    
+.itemImage{
+    width:150px;
+    height:150px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.itemActive{
+    background: rgba(0, 0, 0);
+  background: rgba(119, 223, 255, 0.5);
+ /* Black see-through */
+  color: #f1f1f1;
+  transition: .5s ease;
 }
 
-.d-flex{
-    background-color: solid black ;
-    
-    
-}
+.header{
 
-.ms-1{
-
-    font-size: 1rem;
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-}
-
-.color{
-
-    background-color: #14DB1A;
-    align-items: center;
-    
-}
-.text-white{
-    color: rgb(255, 255, 255);
-    font-weight: 600;
-}
-.nav-item{
-    width: 100;
-    height: 32;
-    text-align: center;
-}
-
-
-.wee{
-    height: 100px;
-    
-}
-.the{
-    font-size: 2rem;
-    margin-left: 50px;
-}
-.mr{
-    margin-right: 50px;
-    
-}
-.ms-auto{
-    font-weight: 600;
-    
-}
-.aa{
-    min-width: 11.0 rem;
-}
-.bold{
-    font-weight: 600;
-}
-.margin{
-    margin-left: 40px !important;
-}
-.bord{
-    border:1px solid black;
-    border-right: 0px !important;
-}
-.bor{
-    border-top: 1px solid black;
-    padding-top: 10%;
-}
-.font{
-    
-    font-size: 15px;
-    
-}
-.chat{
-    height: 93%;
-}
-.chat-top{
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
-}
-.color:hover{
-    background-color: #25c52a;
-}
-
-.hov-green:hover{
-    background-color: #25c52a !important;
 }

@@ -3,8 +3,9 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Socialite;
+
 use Exception;
+use Laravel\Socialite\Facades\Socialite;
 
 class AuthController extends Controller
 {

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\BotController;
 use Laravel\Socialite\Facades\Socialite;
 /*
 |--------------------------------------------------------------------------
@@ -40,9 +41,12 @@ Route::get('/wheel', function () {
 
 Route::get('/auth/redirect', function () {
     return Socialite::driver('steam')->redirect();
-})->name('steam');
+})->name('login');
+
 
 Route::get('/auth/callback', [AuthController::class, 'callback']);
-Route::get('/inventory', [UserController::class, 'getUserInventory'])->name("getUserInventory");
-Route::get('/logout', [AuthController::class, 'logout'])->name("logOut");
-Route::get('/addbalance', [UserController::class, 'addbalance']);
+Route::get('/inventory', [UserController::class, 'getUserInventory'])->middleware('auth')->name("getUserInventory");
+Route::post('/depositItems', [BotController::class, 'depositItems'])->middleware('auth')->name("depositItems");
+Route::get('/withdraw', [BotController::class, 'getDeposit'])->middleware('auth')->name("getDeposit");
+Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth')->name("logOut");
+Route::get('/addbalance', [UserController::class, 'addbalance'])->middleware('auth');
