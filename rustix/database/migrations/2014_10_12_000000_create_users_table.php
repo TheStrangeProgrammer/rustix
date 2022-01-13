@@ -19,7 +19,6 @@ class CreateUsersTable extends Migration
             $table->string('steamid')->unique();
             $table->string('avatar');
             $table->integer('balance');
-            $table->string('tradeURL')->default("");
             $table->rememberToken();
             $table->timestamps();
         });
