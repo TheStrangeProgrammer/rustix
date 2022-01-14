@@ -17,11 +17,12 @@
                     <balance user="{{ Auth::user()->steamid }}" class="me-4 ms-2 text-white nav-item"></balance>
                     <li class="nav-item me-2 color"><a class="nav-link me-4 ms-4 text-white" href="{{ URL::route('getUserInventory') }}">DEPOSIT</a></li>
 
-                    <li class="nav-item dropdown dropdown-menu-end me-2 rounded-0">
-                            <a class="nav-link dropdown-toggle text-white " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <li class="nav-item dropdown dropdown-menu-end me-2 ms-2">
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             {{ Auth::user()->name }}
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-white mt-4" aria-labelledby="navbarDropdown">
+                            
+                            <ul class="dropdown-menu dropdown-menu-white mt-4 rounded-0" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item py-3 " href="#">Profile</a></li>
                             <li><a class="dropdown-item py-3" href="#">Referral</a></li>
                             <li><a class="dropdown-item py-3" href="{{ URL::route('logOut') }}">Log Out</a></li>
