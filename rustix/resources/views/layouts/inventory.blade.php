@@ -11,6 +11,7 @@
                             <p>{{ $item['name'] }}</p>
                             <p class="amount">{{ $item['amount'] }}</p>
                             <p>{{ $item['price'] }}$</p>
+                            <input class="d-none amountInput" type="text">
                         </div>
                     </div>
                 @endforeach
