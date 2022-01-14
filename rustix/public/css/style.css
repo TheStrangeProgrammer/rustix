@@ -192,23 +192,35 @@
     background-color:#1A1D29;
 }
 .item{
-    width:150px;
-    height:150px;
+    
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    
 }
 .itemImage{
-    width:150px;
-    height:150px;
+    width: 100px;
+    height:100px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 .itemActive{
     background: rgba(0, 0, 0);
-  background: rgba(119, 223, 255, 0.5);
+  background: #0d0e14;
  /* Black see-through */
   color: #f1f1f1;
   transition: .5s ease;
+}
+
+.border-dark:hover:hover{
+    background-color: #191b26;
+    
+}
+.display{
+    display: inline;
+}
+.number{
+    width: 50px;
+    
 }

@@ -20,6 +20,7 @@
     $(document).ready(function() {
         if($(".navbar-toggler").is(":visible")){
             $(".navbar-nav").addClass("");
+            
         } else{
             $(".navbar-nav").removeClass("");
         }

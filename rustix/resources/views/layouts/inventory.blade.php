@@ -5,15 +5,21 @@
         <div class="inventory-wrapper">
             <div class="d-flex flex-wrap inventory">
                 @foreach ($inventory['inventory'] as $item)
-                    <div class="item" >
-                        <div class="itemImage" style="background-image: url({{ $item['icon_url'] }});">
-                            <p class="d-none id">{{ $item['id'] }}</p>
-                            <p>{{ $item['name'] }}</p>
-                            <p class="amount">{{ $item['amount'] }}</p>
-                            <p>{{ $item['price'] }}$</p>
+                <div>
+                <div class="item m-2 border border-dark ">               
+                    <p class="text-center fw-bold mt-1">{{ $item['name'] }}</p>               
+                        <div class="itemImage ms-5" style="background-image: url({{ $item['icon_url'] }});">                                 
                             <input class="d-none amountInput" type="text">
                         </div>
-                    </div>
+                    <p class="d-none id">{{ $item['id'] }}</p> 
+                    <p class="amount ms-2 display">Amount: {{ $item['amount'] }}</p>
+                    <p class="ms-2 me-2 display">Price: {{ $item['price'] }}</p> <br>
+                 </div>
+                 
+                    <p class="display ms-3">Quantity</p>
+                    <input type="number" class="number ">
+
+                 </div>
                 @endforeach
             </div>
         </div>
