@@ -32,7 +32,7 @@
 
 
 
-                    <li class="nav-item "><a class="nav-link" href="{{ URL::route('steam') }}">Log In</a></li>
+                    <li class="nav-item "><a class="nav-link" href="{{ URL::route('login') }}">Log In</a></li>
                     @endif
                 </ul>
             </div>
