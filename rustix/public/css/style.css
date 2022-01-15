@@ -111,53 +111,13 @@
     color: rgb(255, 255, 255);
     font-weight: 600;
 }
-.nav-item{
-    width: 100;
-    height: 32;
-    text-align: center;
-}
 
 
-.wee{
-    height: 100px;
-
-}
-.the{
-    font-size: 2rem;
-    margin-left: 50px;
-}
-.mr{
-    margin-right: 50px;
-
-}
-.ms-auto{
-    font-weight: 600;
-
-}
-.aa{
-    min-width: 11.0 rem;
-}
-.bold{
-    font-weight: 600;
-}
-.margin{
-    margin-left: 40px !important;
-}
-.bord{
-    border:1px solid black;
-    border-right: 0px !important;
-}
-.bor{
-    border-top: 1px solid black;
-    padding-top: 10%;
-}
 .font{
-
     font-size: 15px;
-
 }
 .chat{
-    height: 93%;
+
 }
 .chat-top{
     border-bottom: 1px solid black;
@@ -172,7 +132,6 @@
 }
 
 .inventory-wrapper{
-
     overflow-y: auto;
     height: 90%;
     background-color:#1A1D29;
@@ -183,20 +142,6 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-}
-.itemImage{
-    width: 100px;
-    height:100px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.itemActive{
-    background: rgba(0, 0, 0);
-  background: #0d0e14;
- /* Black see-through */
-  color: #f1f1f1;
-  transition: .5s ease;
 }
 
 .border-dark:hover{
@@ -221,4 +166,8 @@ i.bi{
 img.overflow-visible{
     width: 32px;
     height: 32px;
+}
+ul.dropdown-menu {
+    margin-top:35px !important;
+    margin-left:-12px !important;
 }

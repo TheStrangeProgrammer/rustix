@@ -19,7 +19,7 @@ class InventoryController extends Controller
                     $itemId=$item['classid'].'_'.$item['instanceid'];
                     $itemDesc = $inventory['rgDescriptions'][$itemId];
                     if($itemDesc['tradable']==1){
-                        $parsed['inventory'][$itemId]['id']=$item['classid'];
+                        $parsed['inventory'][$itemId]['id']=$item['id'];
                         $parsed['inventory'][$itemId]['name']=$itemDesc['name'];
                         $parsed['inventory'][$itemId]['amount']=$item['amount'];
                         $parsed['inventory'][$itemId]['price']=PriceController::getItemPrice($itemDesc['market_hash_name']);

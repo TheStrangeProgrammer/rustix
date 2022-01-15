@@ -31,9 +31,9 @@
 
             </div>
             @if (Auth::check())
-            <chat user="{{ Auth::user()->name }}" class="chat"></chat>
+            <chat class="h-100" user="{{ Auth::user()->name }}" ></chat>
             @else
-            <guestchat class="chat"></guestchat>
+            <guestchat class="h-100"></guestchat>
             @endif
 
 

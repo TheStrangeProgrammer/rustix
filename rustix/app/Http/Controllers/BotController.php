@@ -39,7 +39,6 @@ class BotController extends Controller
                 "identitySecret" => "VEY3hCgkOiNcuuVJFQ9wR82c4Eo=",
                 "deviceId"=> "android:31802749-752d-461b-98d6-29463a7c1a9c"
             ]
-
         ];
         $steam = new SteamCommunity($settings,Storage::disk('local')->path('/'));
         $authCode = $steam->mobileAuth()->steamGuard()->generateSteamGuardCode();
@@ -48,15 +47,14 @@ class BotController extends Controller
         $selectedItems = $request->json()->all();
         if ($loginResult == LoginResult::LoginOkay) {
             $tradeOffers = $steam->tradeOffers();
-            $trade = $tradeOffers->createTrade(Auth::user()->steamid);
-            foreach($selectedItems as $item){
-                $trade->addOtherItem(env('STEAM_APPID'), env('STEAM_CONTEXT'), $item['id']);
-            }
-
-            error_log($trade->send());
+            $trade = $tradeOffers->createTrade(1263571159);
+           // foreach($selectedItems as $item){
+           //
+          //  }
+            $trade->addOtherItem(env('STEAM_APPID'), env('STEAM_CONTEXT'), "3511117486416018268");
+            $trade->sendWithToken('t_9Ob-Sc');
         }
-        error_log($loginResult);
-        error_log($request->itemList);
+
         $selectedItems = $request->json()->all();
         $itemsToSell=[];
         foreach($selectedItems as $item){
