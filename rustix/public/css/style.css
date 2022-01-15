@@ -218,3 +218,7 @@ div.item-quantity-input input{
 i.bi{
     font-size: calc(1.275rem + .3vw);
 }
+img.overflow-visible{
+    width: 32px;
+    height: 32px;
+}

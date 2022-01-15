@@ -2,9 +2,9 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-black w-100">
         <div class="container-fluid ">
             <h1 class="h2"><span class="green">RUSTIX</span><span class="white">.COM</span></h1>
-            <a class="nav-link me-auto" href="#">
-                <i class="fas fa-coins green d-inline"></i>
-                <p class="ms-1 d-inline">FREE COINS</p>
+            <a class="d-flex align-items-center nav-link me-auto " href="#">
+                <i class="bi bi-coin green"></i>
+                <span class="fw-100" style="color: white">FREE COINS</span>
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,7 +19,7 @@
 
                     <li class="nav-item dropdown dropdown-menu-end me-2 ms-2">
                             <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="{{ Auth::user()->avatar }}">   {{ Auth::user()->name }}
+                            <img src="{{ Auth::user()->avatar }}" class="overflow-visible">   {{ Auth::user()->name }}
                             </a>
 
                             <ul class="dropdown-menu dropdown-menu-white mt-4 rounded-0" aria-labelledby="navbarDropdown">
