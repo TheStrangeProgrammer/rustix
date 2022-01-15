@@ -15,7 +15,6 @@
     text-size-adjust: none;
 }
 .main{
-    width: 100%;
     background-color: #1A1D29;
     border-top: 1px solid black;
 }
@@ -102,19 +101,6 @@
 
 }
 
-.d-flex{
-    background-color: solid black ;
-
-
-}
-
-.ms-1{
-
-    font-size: 1rem;
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-}
-
 .color{
 
     background-color: #14DB1A;
@@ -192,11 +178,11 @@
     background-color:#1A1D29;
 }
 .item{
-    
+
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
+
 }
 .itemImage{
     width: 100px;
@@ -213,14 +199,22 @@
   transition: .5s ease;
 }
 
-.border-dark:hover:hover{
+.border-dark:hover{
     background-color: #191b26;
-    
+
 }
-.display{
-    display: inline;
+
+div.item-quantity-input{
+    width: 150px;
 }
-.number{
-    width: 50px;
-    
+div.item-quantity-input span{
+    background-color: #171922;
+    color: white;
+}
+div.item-quantity-input input{
+    background-color: #161820;
+    color: white;
+}
+i.bi{
+    font-size: calc(1.275rem + .3vw);
 }

@@ -22,7 +22,12 @@ class User extends Authenticatable
         'steamid',
         'avatar',
         'balance',
-        'tradeURL'
+        'referralCode',
+        'referredBy',
+        'totalDeposit',
+        'totalWithdraw',
+        'totalSpent',
+        'tradeUrl'
     ];
 
     /**

@@ -1,28 +1,29 @@
 
 <script src="{{ asset('js/app.js') }}"></script>
 <script>
-    var items = [];
     $(document).ready(function() {
-        $('.item').click(function() {
-            if($(this).hasClass("itemActive")){
-                $(this).removeClass("itemActive");
-                items = items.filter(it => it.id!=$(this).find(".id").text());
-            }else{
-                $(this).addClass("itemActive");
-                var item =new Object();
-                item.id= $(this).find(".id").text();
-                item.amount=$(this).find(".amount").text();
-                items.push(item);
+        if($(window).width()<=720){
+            if($("#sidebar-and-content").hasClass("flex-row-reverse")){
+                $("#sidebar-and-content").removeClass("flex-row-reverse").addClass("flex-column");
             }
-
-        })
-    });
-    $(document).ready(function() {
-        if($(".navbar-toggler").is(":visible")){
-            $(".navbar-nav").addClass("");
-            
-        } else{
-            $(".navbar-nav").removeClass("");
+        }else{
+            if(!$("#sidebar-and-content").hasClass("flex-row-reverse")){
+                $("#sidebar-and-content").removeClass("flex-column").addClass("flex-row-reverse");
+            }
         }
+
+        $(window).resize(function(){
+            if($(window).width()<=720){
+            if($("#sidebar-and-content").hasClass("flex-row-reverse")){
+                $("#sidebar-and-content").removeClass("flex-row-reverse").addClass("flex-column");
+            }
+        }else{
+            if(!$("#sidebar-and-content").hasClass("flex-row-reverse")){
+                $("#sidebar-and-content").removeClass("flex-column").addClass("flex-row-reverse");
+            }
+        }
+        });
     });
-   </script>
+</script>
+@yield('js')
+

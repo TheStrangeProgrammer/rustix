@@ -21,9 +21,9 @@
                             <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="{{ Auth::user()->avatar }}">   {{ Auth::user()->name }}
                             </a>
-                            
+
                             <ul class="dropdown-menu dropdown-menu-white mt-4 rounded-0" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item py-3 " href="#">Profile</a></li>
+                            <li><a class="dropdown-item py-3 " href="{{ URL::route('getProfile') }}">Profile</a></li>
                             <li><a class="dropdown-item py-3" href="#">Referral</a></li>
                             <li><a class="dropdown-item py-3" href="{{ URL::route('logOut') }}">Log Out</a></li>
                             <li class="color"><a class="dropdown-item py-3 text-white hov-green" href="#">Admin Panel</a></li>
