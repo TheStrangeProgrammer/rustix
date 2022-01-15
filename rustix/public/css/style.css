@@ -216,7 +216,10 @@
     background-color: #191b26;
 
 }
-.number{
-    width: 50px;
 
+div.item-quantity-input{
+    width: 150px;
+}
+i.bi{
+    font-size: calc(1.275rem + .3vw);
 }

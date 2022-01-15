@@ -16,7 +16,7 @@
                 <form method="POST" action="{{ URL::route('setReferral') }}">
                     @csrf
                     <input name="referrerCode" type="text">
-                    <input type="submit">
+                    <input type="submit" value="Set Code">
                 </form>
             @else
                 <p>You are already referred to: {{ $referrerName }}</p>
