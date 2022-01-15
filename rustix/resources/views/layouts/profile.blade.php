@@ -7,7 +7,11 @@
             <p>Total Deposited: {{ $totalDeposit }}</p>
             <p>Total Spent: {{ $totalSpent }}</p>
             <p>Total Withdrawed: {{ $totalWithdraw }}</p>
-
+            <form method="POST" action="{{ URL::route('setTradeUrl') }}">
+                @csrf
+                <input name="tradeUrl" type="text">
+                <input type="submit" value="Set Trade URL">
+            </form>
         </div>
         <div>
             <h3>Referrals</h3>

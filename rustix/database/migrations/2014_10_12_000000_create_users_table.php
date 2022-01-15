@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->integer('totalSpent');
             $table->integer('totalWithdraw');
             $table->string('referralCode')->unique();
+            $table->string('tradeUrl')->nullable();
             $table->bigInteger('referredBy')->nullable();
             $table->rememberToken();
             $table->timestamps();

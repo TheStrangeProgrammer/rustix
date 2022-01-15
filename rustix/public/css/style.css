@@ -101,19 +101,6 @@
 
 }
 
-.d-flex{
-    background-color: solid black ;
-
-
-}
-
-.ms-1{
-
-    font-size: 1rem;
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-}
-
 .color{
 
     background-color: #14DB1A;
@@ -212,13 +199,21 @@
   transition: .5s ease;
 }
 
-.border-dark:hover:hover{
+.border-dark:hover{
     background-color: #191b26;
 
 }
 
 div.item-quantity-input{
     width: 150px;
+}
+div.item-quantity-input span{
+    background-color: #171922;
+    color: white;
+}
+div.item-quantity-input input{
+    background-color: #161820;
+    color: white;
 }
 i.bi{
     font-size: calc(1.275rem + .3vw);

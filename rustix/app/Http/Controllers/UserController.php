@@ -39,9 +39,6 @@ class UserController extends Controller
     public function depositItems(){
 
     }
-    public function setTradeURL(){
-
-    }
     public function addbalance() {
         /*$user = User::where('steamid',  Auth::user()->steamid)->first();
         $user->balance+=2;
@@ -83,6 +80,13 @@ class UserController extends Controller
         if($referringUser==null) return view("layouts/error",['error' => "code does not exist"]);
         if($referringUser->id==$user->id) return view("layouts/error",['error' => "you cannot refer yourself"]);
         $user->referredBy=$referringUser->id;
+        $user->save();
+        return redirect("profile");
+
+    }
+    public function setTradeUrl(Request $request){
+        $user = User::where('id', Auth::user()->id)->first();
+        $user->tradeUrl=$request->tradeUrl;
         $user->save();
         return redirect("profile");
 
