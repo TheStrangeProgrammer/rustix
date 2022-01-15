@@ -16,18 +16,18 @@
                     <li class="nav-item my-2"><a class="nav-link text-center active font" aria-current="page" href="#">WITHDRAW</a></li>
                     <balance class="text-center text-white nav-item mx-3 my-2" user="{{ Auth::user()->steamid }}" ></balance>
                     <li class="nav-item color mx-3 my-2"><a class="nav-link text-center text-white mx-4" href="{{ URL::route('getUserInventory') }}">DEPOSIT</a></li>
-                    <li class="nav-item dropdown dropdown-menu-end px-auto d-flex align-items-center mx-4 my-2">
-                        <img class="ms-auto d-inline-block overflow-visible" src="{{ Auth::user()->avatar }}">
-                            <a class="nav-link dropdown-toggle text-white me-auto" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {{ Auth::user()->name }}
-                            </a>
 
-                            <ul class="dropdown-menu dropdown-menu-white py-0 rounded-0" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item text-center py-3" href="{{ URL::route('getProfile') }}">Profile</a></li>
-                                <li><a class="dropdown-item text-center py-3" href="#">Referral</a></li>
-                                <li><a class="dropdown-item text-center py-3" href="{{ URL::route('logOut') }}">Log Out</a></li>
-                                <li class="color"><a class="dropdown-item text-center py-3 text-white hov-green" href="#">Admin Panel</a></li>
-                            </ul>
+                    <li class="nav-item dropdown dropdown-menu-end px-auto mx-4 my-2">
+                        <a class="nav-link dropdown-toggle text-white me-auto d-flex align-items-center justify-content-center py-0" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img class=" overflow-visible" src="{{ Auth::user()->avatar }}">
+                            <span>{{ Auth::user()->name }}</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-white py-0 rounded-0" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item text-center py-3" href="{{ URL::route('getProfile') }}">Profile</a></li>
+                            <li><a class="dropdown-item text-center py-3" href="#">Referral</a></li>
+                            <li><a class="dropdown-item text-center py-3" href="{{ URL::route('logOut') }}">Log Out</a></li>
+                            <li class="color"><a class="dropdown-item text-center py-3 text-white hov-green" href="#">Admin Panel</a></li>
+                        </ul>
                     </li>
                     @else
 
