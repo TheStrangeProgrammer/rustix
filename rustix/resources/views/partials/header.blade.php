@@ -19,7 +19,7 @@
 
                     <li class="nav-item dropdown dropdown-menu-end me-2 ms-2">
                             <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            {{ Auth::user()->name }}
+                            <img src="{{ Auth::user()->avatar }}">   {{ Auth::user()->name }}
                             </a>
                             
                             <ul class="dropdown-menu dropdown-menu-white mt-4 rounded-0" aria-labelledby="navbarDropdown">
