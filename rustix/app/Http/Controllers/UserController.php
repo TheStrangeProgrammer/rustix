@@ -54,4 +54,37 @@ class UserController extends Controller
             error_log($response);
 */
     }
+    public function getProfile(){
+        $user = User::where('id', Auth::user()->id)->first();
+
+        $data['totalDeposit'] = $user->totalDeposit;
+        $data['totalWithdraw'] = $user->totalWithdraw;
+        $data['totalSpent'] = $user->totalSpent;
+
+        $data['referralCode'] = $user->referralCode;
+        $referrer = User::where('id', Auth::user()->referredBy)->first();
+        if($referrer!=null){
+            $data['referrerName'] = $referrer->name;
+        }else{
+            $data['referrerName'] = null;
+        }
+        $data['referrals']=[];
+        $users = User::where('referredBy', Auth::user()->id)->get();
+        foreach($users as $userReferred){
+
+            $data['referrals'][$userReferred->id]['name'] = $userReferred->name;
+        }
+
+        return view("layouts/profile",$data);
+    }
+    public function setReferral(Request $request){
+        $user = User::where('id', Auth::user()->id)->first();
+        $referringUser = User::where('referralCode',$request->referrerCode )->first();
+        if($referringUser==null) return view("layouts/error",['error' => "code does not exist"]);
+        if($referringUser->id==$user->id) return view("layouts/error",['error' => "you cannot refer yourself"]);
+        $user->referredBy=$referringUser->id;
+        $user->save();
+        return redirect("profile");
+
+    }
 }

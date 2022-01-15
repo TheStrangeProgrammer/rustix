@@ -15,7 +15,6 @@
     text-size-adjust: none;
 }
 .main{
-    width: 100%;
     background-color: #1A1D29;
     border-top: 1px solid black;
 }
@@ -192,11 +191,11 @@
     background-color:#1A1D29;
 }
 .item{
-    
+
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
+
 }
 .itemImage{
     width: 100px;
@@ -215,12 +214,9 @@
 
 .border-dark:hover:hover{
     background-color: #191b26;
-    
-}
-.display{
-    display: inline;
+
 }
 .number{
     width: 50px;
-    
+
 }

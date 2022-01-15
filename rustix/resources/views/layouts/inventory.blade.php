@@ -4,20 +4,28 @@
     <div class="d-flex flex-column h-100">
         <div class="inventory-wrapper">
             <div class="d-flex flex-wrap inventory">
+
                 @foreach ($inventory['inventory'] as $item)
-                <div>
-                <div class="item m-2 border border-dark ">               
-                    <p class="text-center fw-bold mt-1">{{ $item['name'] }}</p>               
-                        <div class="itemImage ms-5" style="background-image: url({{ $item['icon_url'] }});">                                 
-                            <input class="d-none amountInput" type="text">
-                        </div>
-                    <p class="d-none id">{{ $item['id'] }}</p> 
-                    <p class="amount ms-2 display">Amount: {{ $item['amount'] }}</p>
-                    <p class="ms-2 me-2 display">Price: {{ $item['price'] }}</p> <br>
-                 </div>
-                 
-                    <p class="display ms-3">Quantity</p>
-                    <input type="number" class="number ">
+                <div class="d-flex flex-column align-items-center m-2 border border-dark item">
+                    <p class="d-none id">{{ $item['id'] }}</p>
+                    <input class="d-none amountInput" type="text">
+
+                    <p class="text-center fw-bold mt-1">{{ $item['name'] }}</p>
+                    <img src="{{ $item['icon_url'] }}" width="100px">
+
+
+                    <div class="d-flex" >
+                        <p class="ms-2 amount">Amount: {{ $item['amount'] }}</p>
+                        <p class="ms-2 me-2 ">Price: {{ $item['price'] }}</p>
+                    </div>
+
+                    <div class="d-flex">
+                        <p class="ms-3">Quantity</p>
+                        <input type="number" class="number " max="">
+                        <button class="cancel"></button>
+                        <button class="select"></button>
+                    </div>
+
 
                  </div>
                 @endforeach

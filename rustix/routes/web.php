@@ -46,6 +46,8 @@ Route::get('/auth/redirect', function () {
 
 Route::get('/auth/callback', [AuthController::class, 'callback']);
 Route::get('/inventory', [UserController::class, 'getUserInventory'])->middleware('auth')->name("getUserInventory");
+Route::get('/profile', [UserController::class, 'getProfile'])->middleware('auth')->name("getProfile");
+Route::post('/setReferral', [UserController::class, 'setReferral'])->middleware('auth')->name("setReferral");
 Route::post('/depositItems', [BotController::class, 'depositItems'])->middleware('auth')->name("depositItems");
 Route::get('/withdraw', [BotController::class, 'getDeposit'])->middleware('auth')->name("getDeposit");
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth')->name("logOut");

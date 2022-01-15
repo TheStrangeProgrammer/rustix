@@ -19,6 +19,11 @@ class CreateUsersTable extends Migration
             $table->string('steamid')->unique();
             $table->string('avatar');
             $table->integer('balance');
+            $table->integer('totalDeposit');
+            $table->integer('totalSpent');
+            $table->integer('totalWithdraw');
+            $table->string('referralCode')->unique();
+            $table->bigInteger('referredBy')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
