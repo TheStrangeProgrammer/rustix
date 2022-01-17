@@ -8,7 +8,7 @@
 .body{
     color: #F9F9F9;
     font-family: 'Prompt', sans-serif;
-    
+
     line-height: 16px;
     font-size: 16px;
     word-spacing: 0;
@@ -166,7 +166,7 @@ img.overflow-visible{
 ul.dropdown-menu {
     margin-top:33px !important;
     min-width: 13.7rem !important;
-  
+    margin-right: -3.70rem !important;
 }
 
 @media screen and (max-width: 991px) {
@@ -174,14 +174,14 @@ ul.dropdown-menu {
       background-color: #ffffff;
       width: 100% !important;
       margin-top: 50px !important;
-      
-    
+
+
     }
     ul.dropdown-menu{
         border: none !important;
         margin: 0px !important;
         width: 100% !important;
-        
+
     }
     .black {
         color: rgb(17, 17, 17) !important;
@@ -189,16 +189,16 @@ ul.dropdown-menu {
     .ped{
         padding-top: 1rem !important;
         padding-bottom: 1rem !important;
-        
+
     }
     li.nav-item{
         margin-left: 0px !important;
         margin-right: 0px !important;
 
     }
-    
-   
-    
+
+
+
   }
 
 
