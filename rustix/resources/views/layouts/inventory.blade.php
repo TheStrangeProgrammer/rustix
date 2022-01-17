@@ -37,12 +37,26 @@
                 @endforeach
             </div>
         </div>
-        <div>
-            <form method="POST" action="{{ URL::route('depositItems') }}">
-                @csrf
-                <input id="item-list" class="d-none" type="text" name="itemList">
-                <input id="submit-item-list" type="submit" value="Sell">
-            </form>
+        <div> 
+        <span class="d-flex justify-content-end fw-bold px-3"> 
+        <div class="btn-group dropup">
+            <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #0d0e14" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-cart-check"></i>
+            </button>
+                <ul class="dropdown-menu second-one text-center " style="background-color: #0d0e14" >
+                   <li><p class="py-2 text-white">Total: </p></li>
+                   <li class="py-3 rounded-2" style="background-color: #14DB1A"><form method="POST" action="{{ URL::route('depositItems') }}">
+                       @csrf
+                         <input id="item-list" class="d-none" type="text" name="itemList">
+                         <input class="text-white"  id="submit-item-list" type="submit" value="SELL"> 
+                  </form></li> 
+                </ul>
+              </div>
+        
+            
+            
+        </span>
+        
 
         </div>
     </div>

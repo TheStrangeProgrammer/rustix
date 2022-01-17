@@ -168,6 +168,9 @@ ul.dropdown-menu {
     min-width: 13.7rem !important;
     margin-right: -3.70rem !important;
 }
+ul.second-one{
+    margin-right: -1rem !important;
+}
 
 @media screen and (max-width: 991px) {
     .navbar-nav {
@@ -265,3 +268,6 @@ body{
   *{
     box-sizing:border-box;
   }
+.rounded-2:hover{
+        background-color: #25c52a !important;
+}
