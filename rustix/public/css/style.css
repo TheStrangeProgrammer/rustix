@@ -129,7 +129,6 @@
 
 .inventory-wrapper{
     overflow-y: auto;
-    height: 90%;
     background-color:#1A1D29;
 }
 .item{
@@ -270,4 +269,25 @@ body{
   }
 .rounded-2:hover{
         background-color: #25c52a !important;
+}
+.sell-custom{
+    border-top: 1px solid black;
+    height: 55px;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-child {
+    flex: 1;
+    margin-top: 20px;
+}  
+
+.flex-child:first-child {
+    margin-right: 20px;
+} 
+.history-custom{
+    background-color: #0d0e14;
+    border: 2px solid #25c52a;
 }

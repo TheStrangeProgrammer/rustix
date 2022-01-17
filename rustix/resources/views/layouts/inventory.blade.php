@@ -2,7 +2,7 @@
 @section('content')
     @if ($inventory['success']==true)
     <div class="d-flex flex-column h-100">
-        <div class="inventory-wrapper">
+        <div class="flex-fill inventory-wrapper">
             <div class="d-flex flex-wrap inventory">
 
                 @foreach ($inventory['inventory'] as $item)
@@ -37,27 +37,13 @@
                 @endforeach
             </div>
         </div>
-        <div> 
-        <span class="d-flex justify-content-end fw-bold px-3"> 
-        <div class="btn-group dropup">
-            <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #0d0e14" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="bi bi-cart-check"></i>
-            </button>
-                <ul class="dropdown-menu second-one text-center " style="background-color: #0d0e14" >
-                   <li><p class="py-2 text-white">Total: </p></li>
-                   <li class="py-3 rounded-2" style="background-color: #14DB1A"><form method="POST" action="{{ URL::route('depositItems') }}">
+        <div class="d-flex container-fluid  fw-bold sell-custom p-2" style="background-color: #141620">   
+                   <form class="d-inline mx-auto" method="POST" action="{{ URL::route('depositItems') }}">
                        @csrf
+                         <p class="text-white d-inline me-5">Total: </p>
                          <input id="item-list" class="d-none" type="text" name="itemList">
-                         <input class="text-white"  id="submit-item-list" type="submit" value="SELL"> 
-                  </form></li> 
-                </ul>
-              </div>
-        
-            
-            
-        </span>
-        
-
+                         <input class="text-white px-4 py-2" style="background-color:#14DB1A "  id="submit-item-list" type="submit" value="SELL"> 
+                  </form></li>            
         </div>
     </div>
     @else
