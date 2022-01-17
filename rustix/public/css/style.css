@@ -8,7 +8,7 @@
 .body{
     color: #F9F9F9;
     font-family: 'Prompt', sans-serif;
-    font-weight: 500;
+    
     line-height: 16px;
     font-size: 16px;
     word-spacing: 0;
@@ -116,9 +116,7 @@
 .font{
     font-size: 15px;
 }
-.chat{
 
-}
 .chat-top{
     border-bottom: 1px solid black;
     border-top: 1px solid black;
@@ -168,6 +166,39 @@ img.overflow-visible{
     height: 32px;
 }
 ul.dropdown-menu {
-    margin-top:35px !important;
-    margin-left:-12px !important;
+    margin-top:33px !important;
+    min-width: 13.7rem !important;
+  
 }
+
+@media screen and (max-width: 991px) {
+    .navbar-nav {
+      background-color: #ffffff;
+      width: 100% !important;
+      margin-top: 50px !important;
+      
+    
+    }
+    ul.dropdown-menu{
+        border: none !important;
+        margin: 0px !important;
+        width: 100% !important;
+        
+    }
+    .black {
+        color: rgb(17, 17, 17) !important;
+    }
+    .ped{
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+        
+    }
+    li.nav-item{
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+
+    }
+    
+   
+    
+  }

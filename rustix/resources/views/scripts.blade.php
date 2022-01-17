@@ -19,7 +19,7 @@
         }
 
         $(window).resize(function(){
-            if($(window).width()<=720){
+            if($(window).width()<=991){
                 if(!$("#coins").hasClass("d-none")){
                 $("#coins").addClass("d-none");
             }
