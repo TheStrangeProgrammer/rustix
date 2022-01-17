@@ -91,4 +91,15 @@ class UserController extends Controller
         return redirect("profile");
 
     }
+    public function roulette(){
+        return view("layouts/roulette");
+    }
+    public function getRouletteSpin(){
+        $values=[];
+        for ($i = 0; $i < 10; $i++) {
+            $values[]= rand(100,10000) / 100;
+        }
+
+        return response()->json($values);
+    }
 }

@@ -45363,7 +45363,7 @@ var render = function () {
   return _c("div", { staticClass: "d-flex flex-column" }, [
     _c(
       "div",
-      { staticClass: "chat-wrapper" },
+      { staticClass: "d-flex flex-fill chat-wrapper" },
       _vm._l(_vm.messages, function (message) {
         return _c(
           "div",
