@@ -27,7 +27,6 @@
 
 }
 .left-sidebar{
-    width: 350px;
     background-color: #0d0e14;
     border-right: 1px solid black;
 
@@ -88,7 +87,6 @@
     border-top: 1px solid black;
 }
 .chat-wrapper{
-    flex: 1 1 auto;
     overflow-y: auto;
     height: 0px;
     background-color:#1A1D29;
@@ -171,3 +169,66 @@ ul.dropdown-menu {
     margin-top:35px !important;
     margin-left:-12px !important;
 }
+
+body{
+    font-family: 'Titillium Web', sans-serif;
+    background:#191B28;
+  }
+
+  .roulette-wrapper{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    width:100%;
+    margin:0 auto;
+    overflow:hidden;
+  }
+
+  .roulette-wrapper .roulette-selector{
+    width:3px;
+    background:grey;
+    left:50%;
+    height:100%;
+    transform:translate(-50%,0%);
+    position:absolute;
+    z-index:2;
+  }
+
+  .roulette-wrapper .roulette-wheel{
+    display:flex;
+    flex-direction: row;
+  }
+
+  .roulette-wrapper .roulette-wheel .roulette-row{
+    display:flex;
+    flex-direction: row;
+  }
+
+  .roulette-wrapper .roulette-wheel .roulette-row .card{
+    height:75px;
+    width:75px;
+    margin:3px;
+    border-radius:8px;
+    border-bottom:3px solid rgba(0,0,0,0.2);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:1.5em;
+  }
+
+  .card.red{
+    background:#F95146;
+  }
+
+  .card.black{
+    background:#2D3035;
+  }
+
+  .card.green{
+    background:#00C74D;
+  }
+
+  *{
+    box-sizing:border-box;
+  }

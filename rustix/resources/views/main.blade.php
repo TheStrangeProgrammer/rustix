@@ -9,10 +9,10 @@
             @include('partials.header')
             <div id="sidebar-and-content" class="d-flex flex-row-reverse h-100">
 
-                <main class="main flex-grow-1">
+                <main class="flex-fill main">
                     @yield('content')
                 </main>
-                <section class="d-flex left-sidebar">
+                <section class="d-flex left-sidebar h-100">
                     @include('partials.left_sidebar')
                 </section>
             </div>

@@ -1,6 +1,6 @@
 <template>
     <div class="d-flex flex-column">
-        <div class="chat-wrapper">
+        <div class="d-flex flex-fill chat-wrapper">
             <div v-for="message in messages">
 
                 <message
