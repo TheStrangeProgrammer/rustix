@@ -1,7 +1,6 @@
 @extends('main')
 @section('content')
 
-
     <div class='roulette-wrapper'>
         <div class='roulette-selector'></div>
         <div class='roulette-wheel'></div>
@@ -11,7 +10,6 @@
     <button>
       Spin Wheel
     </button>
-
 
 
 
@@ -44,7 +42,7 @@ $(document).ready(function() {
 function addOutcome(outcome){
     return "<div class='card red'>1<\/div>";
 }
-function initWheel(values){
+function initWheel(values,outcome){
     var $wheel = $('.roulette-wrapper .roulette-wheel');
   		row = "<div class='roulette-row'>";
     values.forEach(value => {
@@ -65,19 +63,21 @@ function initWheel(values){
 
 function spinWheel(outcome,values){
   var wheel = $('.roulette-wrapper .roulette-wheel');
-  var position = values.indexOf(outcome)-5;
+  var position = values.indexOf(outcome)-values.length/2;
     console.log(position);
-  var rows = 12;
-  var card = 75 + 3 * 2;
-  var landingPosition = (rows * 15 * card) + (position * card) ;
+  var cardCount = values.length;
+  var cardWidth = 75;
+  var cardMargin = 3 * 2;
+  var card = cardWidth + cardMargin;
+  var landingPosition = (cardCount * card)*5 + (position * card);
 
-  var randomize = Math.floor(Math.random() * 75) - (75/2);
+  var randomize = Math.floor(Math.random() * 75);
 
   landingPosition = landingPosition + randomize;
 
   var object = {
 		x: Math.floor(Math.random() * 50) / 100,
-    y: Math.floor(Math.random() * 20) / 100
+        y: Math.floor(Math.random() * 20) / 100
 	};
 
   wheel.css({

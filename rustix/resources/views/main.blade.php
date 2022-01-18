@@ -7,7 +7,7 @@
     <body class="h-100 body">
         <div id="app" class="d-flex flex-column h-100">
             @include('partials.header')
-            <div id="sidebar-and-content" class="d-flex flex-row-reverse h-100">
+            <div id="sidebar-and-content" class="d-flex flex-row-reverse h-100 w-100">
 
                 <main class="flex-fill main">
                     @yield('content')

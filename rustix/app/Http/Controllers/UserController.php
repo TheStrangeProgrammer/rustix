@@ -96,7 +96,7 @@ class UserController extends Controller
     }
     public function getRouletteSpin(){
         $values=[];
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 11; $i++) {
             $values[]= rand(100,10000) / 100;
         }
 
