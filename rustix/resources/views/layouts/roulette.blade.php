@@ -38,6 +38,9 @@ $(document).ready(function() {
   setInterval(function() {
         $('.roulette-timer').text(Math.round((start - new Date) / 1000, 0));
     }, 1000);
+setInterval(
+    document.elementFromPoint(x, y);
+)
 });
 function addOutcome(outcome){
     return "<div class='card red'>1<\/div>";
@@ -71,7 +74,7 @@ function spinWheel(outcome,values){
   var card = cardWidth + cardMargin;
   var landingPosition = (cardCount * card)*5 + (position * card);
 
-  var randomize = Math.floor(Math.random() * 75);
+  var randomize = Math.floor(Math.random() * cardWidth);
 
   landingPosition = landingPosition + randomize;
 
