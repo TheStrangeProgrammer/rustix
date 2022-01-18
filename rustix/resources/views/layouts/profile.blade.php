@@ -42,6 +42,7 @@
     
     <div>
             <h3 class="max-width: 100%  mx-auto py-3 text-center mb-0 history-custom">History</h3>
+            
     </div>
 </div>
 @endsection
