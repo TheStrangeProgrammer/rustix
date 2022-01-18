@@ -54,4 +54,5 @@ Route::get('/withdraw', [BotController::class, 'getDeposit'])->middleware('auth'
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth')->name("logOut");
 Route::get('/addbalance', [UserController::class, 'addbalance'])->middleware('auth');
 Route::get('/roulette', [UserController::class, 'roulette'])->middleware('auth');
+Route::get('/x-roulette', [UserController::class, 'xroulette'])->middleware('auth');
 Route::get('/getRouletteSpin', [UserController::class, 'getRouletteSpin'])->middleware('auth');

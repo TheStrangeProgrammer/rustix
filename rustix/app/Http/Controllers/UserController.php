@@ -94,6 +94,9 @@ class UserController extends Controller
     public function roulette(){
         return view("layouts/roulette");
     }
+    public function xroulette(){
+        return view("layouts/x-roulette");
+    }
     public function getRouletteSpin(){
         $values=[];
         for ($i = 0; $i < 11; $i++) {
