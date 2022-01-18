@@ -38,9 +38,7 @@ $(document).ready(function() {
   setInterval(function() {
         $('.roulette-timer').text(Math.round((start - new Date) / 1000, 0));
     }, 1000);
-setInterval(
-    document.elementFromPoint(x, y);
-)
+
 });
 function addOutcome(outcome){
     return "<div class='card red'>1<\/div>";
