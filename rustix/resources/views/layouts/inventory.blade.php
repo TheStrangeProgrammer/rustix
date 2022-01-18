@@ -12,6 +12,7 @@
 
                     <p class="text-center fw-bold mt-1">{{ $item['name'] }}</p>
                     <img src="{{ $item['icon_url'] }}" width="100px">
+                    
 
 
                     <div class="d-flex" >
