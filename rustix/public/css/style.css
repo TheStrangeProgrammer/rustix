@@ -254,25 +254,24 @@ body{
     
   }
 .roulette-house{
-    background-image: url("../assets/R.png") !important;
+    background-image: url("../assets/R.png");
     background-repeat: no-repeat;
-    background-position: center !important;
     background-size: cover;
     background:#00C74D;
 
 }
 .roulette-bait-left{
-    background-image: url("../assets/Hook.svg") !important;
+    background-image: url("../assets/Hook.svg");
     background-repeat: no-repeat;
-    background-position: center !important;
+    
     background:#F95146;
     background-size: cover;
 
 }
 .roulette-bait-right{
-    background-image: url("../assets/Hook.svg") !important;
+    background-image: url("../assets/Hook.svg");
     background-repeat: no-repeat;
-    background-position: center !important;
+    
     background:#2D3035;
     background-size: cover;
 
@@ -282,7 +281,7 @@ body{
     background-image: url("../assets/blade.svg") !important;
     background-color: #F95146 ;
     background-repeat: no-repeat;
-    background-position: center !important;
+    
     background-size: cover;
    
     
@@ -290,7 +289,7 @@ body{
   
 
   .roulette-black{
-    background-image: url("../assets/Shield.svg") !important;
+    background-image: url("../assets/Shield.svg");
     background:#2D3035;
   }
 
