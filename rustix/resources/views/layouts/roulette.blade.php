@@ -1,7 +1,7 @@
 @extends('main')
 @section('content')
-
-    <div class='roulette-wrapper'>
+<div class="d-flex ">
+    <div class='roulette-wrapper flex-grow-0'>
         <div class='roulette-selector'></div>
         <div class='roulette-wheel'></div>
     </div>
@@ -10,7 +10,7 @@
     <button>
       Spin Wheel
     </button>
-
+</div>
 
 
 @endsection
