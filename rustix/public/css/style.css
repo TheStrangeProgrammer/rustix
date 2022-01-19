@@ -240,25 +240,26 @@ body{
   }
 
   .roulette-wrapper .roulette-wheel .roulette-row .card{
-    height:200px;
-    width:150px;
+    height:70px;
+    width:70px;
     margin:3px;
     border-radius:8px;
     border-bottom:3px solid rgba(0,0,0,0.2);
     display:flex;
-    align-items:center;
-    justify-content:center;
+    align-items: center !important;
+    justify-content: end !important;
+    padding-bottom: 5px;
     color:white;
-    font-size:1.5em;
+    font-size:1em;
     
   }
 
   .card.red{
-    background-image: url("../assets/bigwin.png") !important;
+    background-image: url("../assets/blade.svg") !important;
     background:#F95146;
     background-repeat: no-repeat;
     background-position: center !important;
-    background-size: 150px 100px;
+    background-size: 70px 70px;
    
     
   }
@@ -269,7 +270,11 @@ body{
   }
 
   .card.green{
+    background-image: url("../assets/Shield.svg") !important;
     background:#00C74D;
+    background-repeat: no-repeat;
+    background-position: center !important;
+    background-size: 70px 70px;
     
     
   }
