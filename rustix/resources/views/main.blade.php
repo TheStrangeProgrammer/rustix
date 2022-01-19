@@ -7,14 +7,14 @@
     <body class="h-100 body">
         <div id="app" class="d-flex flex-column h-100">
             @include('partials.header')
-            <div id="sidebar-and-content" class="d-flex flex-row-reverse h-100 w-100">
-
-                <main class="flex-fill main">
-                    @yield('content')
-                </main>
+            <div id="sidebar-and-content" class="d-flex h-100 w-100">
                 <section class="d-flex left-sidebar h-100">
                     @include('partials.left_sidebar')
                 </section>
+                <main class="flex-fill main">
+                    @yield('content')
+                </main>
+                
             </div>
 
             @include('partials.footer')
