@@ -280,7 +280,7 @@ body{
 
   .roulette-red{
     background-image: url("../assets/blade.svg") !important;
-    background:#F95146;
+    background-color: #F95146 ;
     background-repeat: no-repeat;
     background-position: center !important;
     background-size: cover;
