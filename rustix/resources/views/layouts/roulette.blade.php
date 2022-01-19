@@ -60,7 +60,7 @@ function initWheel(values){
         if(value==5) color="roulette-bait-left";
         if(value==7) color="roulette-bait-right";
 
-        row += "<div class='roulette-card "+color+"'><\/div>";
+        row += "<div class='roulette-card'><div class='"+color+"'><\/div><\/div>";
     });
 	row += "<\/div>";
 
