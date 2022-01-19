@@ -98,6 +98,11 @@ class UserController extends Controller
         return view("layouts/x-roulette");
     }
     public function getRouletteSpin(){
+        $outcome = rand(0,14);
+
+        return response()->json($outcome);
+    }
+    public function getXRouletteSpin(){
         $values=[];
         for ($i = 0; $i < 11; $i++) {
             $values[]= rand(100,10000) / 100;

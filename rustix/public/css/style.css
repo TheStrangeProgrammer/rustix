@@ -257,7 +257,7 @@ body{
     background-image: url("../assets/R.svg") !important;
     background-repeat: no-repeat;
     background-position: center !important;
-    background-size: 70px 70px;
+    background-size: cover;
     background:#00C74D;
 
 }
@@ -266,7 +266,7 @@ body{
     background-repeat: no-repeat;
     background-position: center !important;
     background:#F95146;
-    background-size: 70px 70px;
+    background-size: cover;
 
 }
 .roulette-bait-right{
@@ -274,7 +274,7 @@ body{
     background-repeat: no-repeat;
     background-position: center !important;
     background:#2D3035;
-    background-size: 70px 70px;
+    background-size: cover;
 
 }
 
@@ -283,7 +283,7 @@ body{
     background:#F95146;
     background-repeat: no-repeat;
     background-position: center !important;
-    background-size: 70px 70px;
+    background-size: cover;
    
     
   }

@@ -19,11 +19,12 @@
 <script>
 
 $(document).ready(function() {
-    var outcomes;
+    var outcomes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14];
+    var outcome;
+    initWheel(outcomes);
     $.getJSON( "getRouletteSpin", function( data ) {
-        console.log(data);
-        outcomes=data;
-        initWheel(data);
+        outcome=data;
+        
     });
 
 
@@ -43,19 +44,25 @@ $(document).ready(function() {
 function addOutcome(outcome){
     return "<div class='card red'>1<\/div>";
 }
-function initWheel(values,outcome){
+function initWheel(values){
     var $wheel = $('.roulette-wrapper .roulette-wheel');
-  		row = "<div class='roulette-row'>";
+  	var	row = "<div class='roulette-row'>";
     values.forEach(value => {
         var color;
-        if(value<2) color="black";
-        else if(value<10) color="green";
-        else color="red";
-        row += "<div class='card "+color+"'>x"+value+"<\/div>";
+        if(value<6){
+          if(value%2==0) color="roulette-black";
+          else color="roulette-red";
+        } else {
+          if(value%2==1) color="roulette-black";
+          else color="roulette-red";
+        }
+        if(value==6) color="roulette-house";
+        if(value==5) color="roulette-bait-left";
+        if(value==7) color="roulette-bait-right";
+
+        row += "<div class='roulette-card "+color+"'><\/div>";
     });
 	row += "<\/div>";
-
-
 
 	for(var x = 0; x < 29; x++){
   	$wheel.append(row);
@@ -67,14 +74,14 @@ function spinWheel(outcome,values){
   var position = values.indexOf(outcome)-values.length/2;
     console.log(position);
   var cardCount = values.length;
-  var cardWidth = 75;
+  var cardWidth = 70;
   var cardMargin = 3 * 2;
   var card = cardWidth + cardMargin;
   var landingPosition = (cardCount * card)*5 + (position * card);
 
-  var randomize = Math.floor(Math.random() * cardWidth);
+  var randomize = Math.floor(Math.random() * cardWidth)- cardWidth/2;
 
-  landingPosition = landingPosition + randomize;
+  landingPosition = landingPosition + randomize ;
 
   var object = {
 		x: Math.floor(Math.random() * 50) / 100,
