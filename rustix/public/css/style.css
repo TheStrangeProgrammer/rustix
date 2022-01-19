@@ -270,7 +270,7 @@ body{
 
 }
 .roulette-bait-right{
-    background-image: url("../assets/blade.svg") !important;
+    background-image: url("../assets/Hook.svg") !important;
     background-repeat: no-repeat;
     background-position: center !important;
     background:#2D3035;
@@ -278,7 +278,7 @@ body{
 
 }
 
-  .roulette.red{
+  .roulette-red{
     background-image: url("../assets/blade.svg") !important;
     background:#F95146;
     background-repeat: no-repeat;
@@ -289,7 +289,8 @@ body{
   }
   
 
-  .roulette.black{
+  .roulette-black{
+    background-image: url("../assets/Shield.svg") !important;
     background:#2D3035;
   }
 
