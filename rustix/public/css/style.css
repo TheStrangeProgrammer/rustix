@@ -239,7 +239,7 @@ body{
     flex-direction: row;
   }
 
-  .roulette-wrapper .roulette-wheel .roulette-row .card{
+  .roulette-card{
     height:70px;
     width:70px;
     margin:3px;
@@ -253,8 +253,32 @@ body{
     font-size:1em;
     
   }
+.roulette-house{
+    background-image: url("../assets/R.svg") !important;
+    background-repeat: no-repeat;
+    background-position: center !important;
+    background-size: 70px 70px;
+    background:#00C74D;
 
-  .card.red{
+}
+.roulette-bait-left{
+    background-image: url("../assets/Hook.svg") !important;
+    background-repeat: no-repeat;
+    background-position: center !important;
+    background:#F95146;
+    background-size: 70px 70px;
+
+}
+.roulette-bait-right{
+    background-image: url("../assets/blade.svg") !important;
+    background-repeat: no-repeat;
+    background-position: center !important;
+    background:#2D3035;
+    background-size: 70px 70px;
+
+}
+
+  .roulette.red{
     background-image: url("../assets/blade.svg") !important;
     background:#F95146;
     background-repeat: no-repeat;
@@ -265,19 +289,11 @@ body{
   }
   
 
-  .card.black{
+  .roulette.black{
     background:#2D3035;
   }
 
-  .card.green{
-    background-image: url("../assets/Shield.svg") !important;
-    background:#00C74D;
-    background-repeat: no-repeat;
-    background-position: center !important;
-    background-size: 70px 70px;
-    
-    
-  }
+
 
   *{
     box-sizing:border-box;
