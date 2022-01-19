@@ -251,45 +251,37 @@ body{
     padding-bottom: 5px;
     color:white;
     font-size:1em;
-    
+    padding: 5px;
   }
 .roulette-house{
-    background-image: url("../assets/R.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-color:#00C74D;
-
+    
 }
 .roulette-bait-left{
-    background-image: url("../assets/Hook.svg");
     background-repeat: no-repeat;
     
     background-color:#F95146;
     background-size: cover;
-
 }
 .roulette-bait-right{
-    background-image: url("../assets/Hook.svg");
     background-repeat: no-repeat;
     
     background-color: #2D3035;
     background-size: cover;
-
 }
 
   .roulette-red{
-    background-image: url("../assets/blade.svg") !important;
     background-color: #F95146 ;
     background-repeat: no-repeat;
     
     background-size: cover;
-   
     
   }
   
 
   .roulette-black{
-    background-image: url("../assets/Shield.svg");
     background-color:#2D3035;
     background-repeat: no-repeat;
   }

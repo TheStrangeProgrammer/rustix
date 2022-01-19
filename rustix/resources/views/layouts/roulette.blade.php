@@ -49,18 +49,40 @@ function initWheel(values){
   	var	row = "<div class='roulette-row'>";
     values.forEach(value => {
         var color;
+        var image;
         if(value<6){
-          if(value%2==0) color="roulette-black";
-          else color="roulette-red";
+          if(value%2==0) {
+            color="roulette-black";
+            image="Shield";
+          }
+          else { 
+            color="roulette-red";
+            image="blade";
+          }
         } else {
-          if(value%2==1) color="roulette-black";
-          else color="roulette-red";
+          if(value%2==1){
+            color="roulette-black";
+            image="Shield";
+          } 
+          else{
+            color="roulette-red";
+            image="blade";
+          } 
         }
-        if(value==6) color="roulette-house";
-        if(value==5) color="roulette-bait-left";
-        if(value==7) color="roulette-bait-right";
+        if(value==6){
+          color="roulette-house";
+          image="R";
+        } 
+        if(value==5){
+          color="roulette-bait-left";
+          image="Hook";
+        } 
+        if(value==7){
+          color="roulette-bait-right";
+          image="Hook";
+        } 
 
-        row += "<div class='roulette-card'><div class='"+color+"'><\/div><\/div>";
+        row += "<div class='roulette-card "+color+"'><img src='../assets/"+image+".svg' width='60' height='60'><\/div>";
     });
 	row += "<\/div>";
 
