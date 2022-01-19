@@ -11,7 +11,7 @@
                 <section class="d-flex left-sidebar h-100">
                     @include('partials.left_sidebar')
                 </section>
-                <main class="w-auto mw-100 main">
+                <main class="main">
                     @yield('content')
                 </main>
                 

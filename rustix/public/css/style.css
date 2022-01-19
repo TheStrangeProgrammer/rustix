@@ -17,6 +17,7 @@
 .main{
     background-color: #1A1D29;
     border-top: 1px solid black;
+    width: 77%;
 }
 .footer{
     background-color:#0d0e14;
@@ -204,9 +205,6 @@ ul.second-one{
  }
  
   }
-
-
-
 body{
     font-family: 'Titillium Web', sans-serif;
     background:#191B28;
@@ -218,6 +216,9 @@ body{
     justify-content:center;
     margin:0 auto;
     overflow:hidden;
+    width: 90%;
+    background-color: #161820;
+    margin-top: 10%;
 }
 
 .roulette-wrapper .roulette-selector{
@@ -286,7 +287,29 @@ body{
     background-color:#2D3035;
     background-repeat: no-repeat;
 }
-
+.timer-custom{
+    text-align: center;
+    width: 90%;
+    margin-top: 2%;
+    font-weight: bold;
+}
+.round-time-bar[data-style="smooth"] div  {
+    height: 15px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #00C74D, #078b3a);
+    animation: roundtime calc(var(--duration) * 1s) linear forwards;
+    transform-origin: left center;
+    
+    justify-content:center;
+    margin:0 auto;
+    width: 90%;
+  }
+  @keyframes roundtime {
+    to {
+      /* More performant than animating `width` */
+      transform: scaleX(0);
+    }
+  }
 
 
   *{
