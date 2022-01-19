@@ -198,9 +198,11 @@ ul.second-one{
         margin-right: 0px !important;
 
     }
-
-
-
+.display-media{
+     display: none !important;
+ 
+ }
+ 
   }
 
 
@@ -252,6 +254,7 @@ body{
     color:white;
     font-size:1em;
     padding: 5px;
+    
   }
 .roulette-house{
     background-repeat: no-repeat;

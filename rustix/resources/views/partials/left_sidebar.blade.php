@@ -2,7 +2,7 @@
 @include('partials.left_sidebar.faq')
 @include('partials.left_sidebar.tos')
 
-<div class="d-flex flex-column sidebar">
+<div class=" flex-column-reverse sidebar display-media">
 
     <button class="p-1 mt-3" data-bs-toggle="modal" data-bs-target="#TOS">TOS</button>
     <button class="p-1 mt-3" data-bs-toggle="modal" data-bs-target="#FAQ">FAQ</button>
@@ -11,7 +11,7 @@
     <button class="mt-auto p-1"><i class="fas fa-arrow-left mb15"></i></button>
 </div>
 
-<div class="d-flex flex-column flex-fill ">
+<div class=" flex-column-reverse flex-fill">
     <div class="d-flex chat-top">
         <p class="pt-2 ps-2 fw-bold">ENG <span class="green">63 </span>ONLINE</p>
 
