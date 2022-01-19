@@ -291,6 +291,7 @@ body{
   .roulette-black{
     background-image: url("../assets/Shield.svg");
     background-color:#2D3035;
+    background-repeat: no-repeat;
   }
 
 
