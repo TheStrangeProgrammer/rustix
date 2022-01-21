@@ -11,23 +11,37 @@ use Illuminate\Support\Facades\Storage;
 use waylaidwanderer\SteamCommunity\Enum\LoginResult;
 use waylaidwanderer\SteamCommunity\MobileAuth\WgTokenInvalidException;
 use waylaidwanderer\SteamCommunity\SteamCommunity;
-
+use Illuminate\Support\Facades\Config;
 class BotController extends Controller
 {
     const inventoryDelay=30;
 
     public function getDeposit()
     {
-        $lastInventroyAccess=session('lastDepositAccess');
 
-
-        if($lastInventroyAccess==null||now()->diffInSeconds($lastInventroyAccess)>self::inventoryDelay){
-            session(['lastDepositAccess' => Carbon::now()]);
-            $response = InventoryController::getDeposit();
-            session(['deposit' => $response]);
+        return view("layouts/withdraw",['inventory' => json_decode(Storage::disk('local')->get('depositInventory.json'))]);
+    }
+    public function loginDeposit(){
+        $settings=config("rustix.depositInfo");
+        $steam = new SteamCommunity($settings,Storage::disk('local')->path('/'));
+        $authCode = $steam->mobileAuth()->steamGuard()->generateSteamGuardCode();
+        $steam->setTwoFactorCode($authCode);
+        $loginResult = $steam->doLogin(true,false);
+        if($loginResult == LoginResult::LoginOkay){
+            return $steam->mobileAuth()->confirmations();
         }
-
-        return view("layouts/withdraw",['deposit' => session('deposit')]);
+        return null;
+    }
+    public function loginBot($botNumber){
+        $settings=config("rustix.bot".$botNumber."Info");
+        $steam = new SteamCommunity($settings,Storage::disk('local')->path('/'));
+        $authCode = $steam->mobileAuth()->steamGuard()->generateSteamGuardCode();
+        $steam->setTwoFactorCode($authCode);
+        $loginResult = $steam->doLogin(true,false);
+        if($loginResult == LoginResult::LoginOkay){
+            return  $steam->tradeOffers();
+        }
+        return null;
     }
     public static function depositItems(Request $request)
     {

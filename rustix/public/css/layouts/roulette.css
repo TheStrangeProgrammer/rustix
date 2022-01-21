@@ -1,0 +1,110 @@
+
+.roulette-wrapper{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    margin:0 auto;
+    overflow:hidden;
+    width: 90%;
+    background-color: #161820;
+    margin-top: 10%;
+}
+
+.roulette-wrapper .roulette-selector{
+    width:3px;
+    background:grey;
+    left:50%;
+    height:100%;
+    transform:translate(-50%,0%);
+    position:absolute;
+    z-index:2;
+  }
+
+.roulette-wrapper .roulette-wheel{
+    display:flex;
+    flex-direction: row;
+}
+
+.roulette-wrapper .roulette-wheel .roulette-row{
+    display:flex;
+    flex-direction: row;
+}
+
+.roulette-card{
+    height:70px;
+    width:70px;
+    margin:3px;
+    border-radius:8px;
+    border-bottom:3px solid rgba(0,0,0,0.2);
+    display:flex;
+    align-items: center !important;
+    justify-content: end !important;
+    padding-bottom: 5px;
+    color:white;
+    font-size:1em;
+    padding: 5px;
+}
+.roulette-house{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:#00C74D;
+
+}
+.roulette-bait-left{
+    background-repeat: no-repeat;
+
+    background-color:#F95146;
+    background-size: cover;
+}
+.roulette-bait-right{
+    background-repeat: no-repeat;
+
+    background-color: #2D3035;
+    background-size: cover;
+}
+
+.roulette-red{
+    background-color: #F95146 ;
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+}
+
+
+.roulette-black{
+    background-color:#2D3035;
+    background-repeat: no-repeat;
+}
+
+.timer-custom{
+    text-align: center;
+    width: 90%;
+    margin-top: 2%;
+    font-weight: bold;
+}
+.round-time-bar[data-style="smooth"] div  {
+    height: 15px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #00C74D, #078b3a);
+    animation: roundtime calc(var(--duration) * 1s) linear forwards;
+    transform-origin: left center;
+
+    justify-content:center;
+    margin:0 auto;
+    width: 90%;
+  }
+  @keyframes roundtime {
+    to {
+      /* More performant than animating `width` */
+      transform: scaleX(0);
+    }
+  }
+
+
+  *{
+    box-sizing:border-box;
+  }
+.rounded-2:hover{
+        background-color: #25c52a !important;
+}

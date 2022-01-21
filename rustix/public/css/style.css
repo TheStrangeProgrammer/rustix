@@ -7,8 +7,8 @@
 }
 .body{
     color: #F9F9F9;
-    font-family: 'Prompt', sans-serif;
-
+    font-family: 'Titillium Web', sans-serif;
+    background:#191B28;
     line-height: 16px;
     font-size: 16px;
     word-spacing: 0;
@@ -17,7 +17,7 @@
 .main{
     background-color: #1A1D29;
     border-top: 1px solid black;
-    width: 77%;
+    width: 75%;
 }
 .footer{
     background-color:#0d0e14;
@@ -30,7 +30,7 @@
 .left-sidebar{
     background-color: #0d0e14;
     border-right: 1px solid black;
-
+    width: 25%;
 }
 .sidebar{
     width: 50px;
@@ -40,6 +40,7 @@
 .chat-input{
     border: 1px solid rgba(255,255,255, .15);
     background-color:#1A1D29;
+    color:white
 }
 .message{
     background-color: rgba(255,255,255,.05);
@@ -128,37 +129,6 @@
     background-color: #25c52a !important;
 }
 
-.inventory-wrapper{
-    overflow-y: auto;
-    background-color:#1A1D29;
-}
-.item{
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-}
-
-.border-dark:hover{
-    background-color: #191b26;
-
-}
-
-div.item-quantity-input{
-    width: 150px;
-}
-div.item-quantity-input span{
-    background-color: #171922;
-    color: white;
-}
-div.item-quantity-input input{
-    background-color: #161820;
-    color: white;
-}
-i.bi{
-    font-size: calc(1.275rem + .3vw);
-}
 img.overflow-visible{
     width: 32px;
     height: 32px;
@@ -172,170 +142,27 @@ ul.second-one{
     margin-right: -1rem !important;
 }
 
+
+
 @media screen and (max-width: 991px) {
     .navbar-nav {
       background-color: #ffffff;
       width: 100% !important;
       margin-top: 50px !important;
-
-
     }
+
     ul.dropdown-menu{
         border: none !important;
         margin: 0px !important;
         width: 100% !important;
-
     }
     .black {
         color: rgb(17, 17, 17) !important;
-    }
-    .ped{
-        padding-top: 1rem !important;
-        padding-bottom: 1rem !important;
-
     }
     li.nav-item{
         margin-left: 0px !important;
         margin-right: 0px !important;
 
     }
-.display-media{
-     display: none !important;
- 
- }
- 
+
   }
-body{
-    font-family: 'Titillium Web', sans-serif;
-    background:#191B28;
-  }
-
-.roulette-wrapper{
-    position:relative;
-    display:flex;
-    justify-content:center;
-    margin:0 auto;
-    overflow:hidden;
-    width: 90%;
-    background-color: #161820;
-    margin-top: 10%;
-}
-
-.roulette-wrapper .roulette-selector{
-    width:3px;
-    background:grey;
-    left:50%;
-    height:100%;
-    transform:translate(-50%,0%);
-    position:absolute;
-    z-index:2;
-  }
-
-.roulette-wrapper .roulette-wheel{
-    display:flex;
-    flex-direction: row;
-}
-
-.roulette-wrapper .roulette-wheel .roulette-row{
-    display:flex;
-    flex-direction: row;
-}
-
-.roulette-card{
-    height:70px;
-    width:70px;
-    margin:3px;
-    border-radius:8px;
-    border-bottom:3px solid rgba(0,0,0,0.2);
-    display:flex;
-    align-items: center !important;
-    justify-content: end !important;
-    padding-bottom: 5px;
-    color:white;
-    font-size:1em;
-    padding: 5px;
-}
-.roulette-house{
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color:#00C74D;
-    
-}
-.roulette-bait-left{
-    background-repeat: no-repeat;
-    
-    background-color:#F95146;
-    background-size: cover;
-}
-.roulette-bait-right{
-    background-repeat: no-repeat;
-    
-    background-color: #2D3035;
-    background-size: cover;
-}
-
-.roulette-red{
-    background-color: #F95146 ;
-    background-repeat: no-repeat;
-    
-    background-size: cover;
-    
-}
-  
-
-.roulette-black{
-    background-color:#2D3035;
-    background-repeat: no-repeat;
-}
-.timer-custom{
-    text-align: center;
-    width: 90%;
-    margin-top: 2%;
-    font-weight: bold;
-}
-.round-time-bar[data-style="smooth"] div  {
-    height: 15px;
-    border-radius: 10px;
-    background: linear-gradient(to bottom, #00C74D, #078b3a);
-    animation: roundtime calc(var(--duration) * 1s) linear forwards;
-    transform-origin: left center;
-    
-    justify-content:center;
-    margin:0 auto;
-    width: 90%;
-  }
-  @keyframes roundtime {
-    to {
-      /* More performant than animating `width` */
-      transform: scaleX(0);
-    }
-  }
-
-
-  *{
-    box-sizing:border-box;
-  }
-.rounded-2:hover{
-        background-color: #25c52a !important;
-}
-.sell-custom{
-    border-top: 1px solid black;
-    height: 55px;
-}
-
-.flex-container {
-    display: flex;
-}
-
-.flex-child {
-    flex: 1;
-    margin-top: 20px;
-}
-
-.flex-child:first-child {
-    margin-right: 20px;
-}
-.history-custom{
-    background-color: #0d0e14;
-    border: 2px solid #25c52a;
-}

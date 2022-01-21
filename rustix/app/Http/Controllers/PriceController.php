@@ -12,7 +12,7 @@ class PriceController extends Controller
 
     public static function getItemPrice($marketHash)
     {
-        $response = Http::get(sprintf(self::priceURL, env('STEAM_APPID'), 1,$marketHash));
+        $response = Http::get(sprintf(self::priceURL, config('rustix.steamAppId'), 1,$marketHash));
         return $response["median_price"];
     }
 }

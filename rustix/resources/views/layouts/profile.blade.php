@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="flex-container">
-    <div class="d-flex flex-column h-50 flex-child magenta ms-3" >
+    <div class="d-flex flex-column h-50 flex-child ms-3" >
         <div style="border: 2px solid #25c52a">
             <h3 class="max-width: 100% text-center py-3" style="background-color: #0d0e14">Profile</h3>
             <p class="ms-3 my-4">Total Deposited: {{ $totalDeposit }}</p>
@@ -39,11 +39,14 @@
     </div>
     </div>
     <div class="d-flex flex-column h-50 flex-child magenta me-3">
-    
+
     <div>
             <h3 class="max-width: 100%  mx-auto py-3 text-center mb-0 history-custom">History</h3>
-            
+
     </div>
 </div>
 @endsection
 @section('title',"Profile")
+@section('css')
+<link rel="stylesheet" type="text/css" href="{{asset('css/layouts/profile.css')}}">
+@endsection

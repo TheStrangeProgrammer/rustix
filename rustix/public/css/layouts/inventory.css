@@ -1,0 +1,41 @@
+
+.inventory-wrapper{
+    overflow-y: auto;
+    background-color:#1A1D29;
+}
+.inventory-sell{
+    border-top: 1px solid black;
+    height: 55px;
+}
+
+.item{
+    width: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.item:hover{
+    background-color: #191b26;
+
+}
+.item-selected{
+    background-color: #6370a8;
+
+}
+.item.item-selected:hover{
+    background-color: #4e5679;
+
+}
+
+
+
+.item-quantity-input span{
+    background-color: #171922;
+    color: white;
+}
+.item-quantity-input input{
+    background-color: #161820;
+    color: white;
+}
+

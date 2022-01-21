@@ -1,23 +1,23 @@
 @extends('main')
 @section('content')
-    @if ($inventory['success']==true)
+    @if ($inventory->success==true)
     <div class="d-flex flex-column h-100">
         <div class="flex-fill inventory-wrapper">
             <div class="d-flex flex-wrap inventory">
 
-                @foreach ($inventory['inventory'] as $item)
+                @foreach ($inventory->inventory as $item)
                 <div class="d-flex flex-column align-items-center border border-dark m-2 item">
-                    <p class="d-none item-id">{{ $item['id'] }}</p>
-                    <p class="d-none item-quantity">{{ $item['amount'] }}</p>
+                    <p class="d-none item-id">{{ $item->id }}</p>
+                    <p class="d-none item-quantity">{{ $item->amount }}</p>
 
-                    <p class="text-center fw-bold mt-1">{{ $item['name'] }}</p>
-                    <img src="{{ $item['icon_url'] }}" width="100px">
+                    <p class="text-center fw-bold mt-1">{{ $item->name }}</p>
+                    <img src="{{ $item->icon_url }}" width="100px">
 
 
 
                     <div class="d-flex flex-column item-info" >
-                        <p class="ms-2">Amount: {{ $item['amount'] }}</p>
-                        <p class="ms-2 me-2 ">Price: {{ $item['price'] }}</p>
+                        <p class="ms-2">Amount: {{ $item->amount }}</p>
+                        <p class="ms-2 me-2 ">Price: {{ $item->price }}</p>
                     </div>
 
                     <div class="d-flex">
@@ -46,10 +46,10 @@
     @endif
 
 @endsection
-@section('title',"Inventory")
+@section('title',"Withdraw")
 @section('css')
-<link rel="stylesheet" type="text/css" href="{{asset('css/layouts/inventory.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('css/layouts/withdraw.css')}}">
 @endsection
 @section('js')
-<script src="{{ asset('js/layouts/inventory.js') }}"></script>
+<script src="{{ asset('js/layouts/withdraw.js') }}"></script>
 @endsection

@@ -13,9 +13,9 @@
            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto ">
                     @if (Auth::check())
-                    <li class="nav-item py-2 "><a class="nav-link text-center active font black" aria-current="page" href="#">WITHDRAW</a></li>
+                    <li class="nav-item py-2 "><a class="nav-link text-center active font black" aria-current="page" href="{{ URL::route('getDeposit') }}">WITHDRAW</a></li>
                     <balance class="text-center nav-item mx-3 py-3 black fw-bold" style="color: rgb(255, 255, 255)" user="{{ Auth::user()->steamid }}" ></balance>
-                    <li class="nav-item color mx-3 my-2 "><a class="nav-link text-center mx-4 black fw-bold ped" style="color: white" href="{{ URL::route('getUserInventory') }}">DEPOSIT</a></li>
+                    <li class="nav-item color mx-3 my-2 "><a class="nav-link text-center mx-4 black fw-bold" style="color: white" href="{{ URL::route('getUserInventory') }}">DEPOSIT</a></li>
 
                     <li class="nav-item dropdown py-2">
                         <a class="nav-link dropdown-toggle me-auto d-flex align-items-center justify-content-center py-0 black fw-bold" style="color: white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

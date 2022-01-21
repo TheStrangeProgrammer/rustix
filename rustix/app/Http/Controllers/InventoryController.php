@@ -43,8 +43,7 @@ class InventoryController extends Controller
     }
     public static function getInventory($steamId)
     {
-        $response = Http::get(sprintf(self::inventoryURL, $steamId, env('STEAM_APPID'), env('STEAM_CONTEXT')));
-
+        $response = Http::get(sprintf(self::inventoryURL, $steamId, config('rustix.steamAppId'), config('rustix.steamContext')));
         return Self::parseInventory($response);
     }
     public static function getDeposit()
