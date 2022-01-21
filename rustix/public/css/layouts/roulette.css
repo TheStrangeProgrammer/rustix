@@ -7,7 +7,6 @@
     overflow:hidden;
     width: 90%;
     background-color: #161820;
-    margin-top: 10%;
     border-radius: 30px;
     box-shadow: 0 2px 1px rgba(0,0,0,0.09),
     0 4px 2px rgba(0,0,0,0.09),
@@ -103,6 +102,27 @@
   }
 
 
+.last-100{
+
+    margin:0 auto;
+    width: 90%;
+    padding: .5rem;
+    margin-top: 3%;
+    font-size: .85em;
+    opacity: .5;
+}
+.circle-score{
+    width: 1rem ;
+    height: 1rem ;
+    display: inline-block;
+    vertical-align: -2px;
+}
+.score-bet{
+    font-size: 16px;
+    color: #fff;
+    font-family: var(--font-family-base);
+}
+
 
   .bet{
 
@@ -168,13 +188,50 @@
 
 
  }
+ .betamount{
+    width: 90%;
+    justify-content:center;
+    margin:0 auto;
+    font-size: 12px ;
+    font-weight: 400;
+    margin-left: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+ }
  .btn-bet {
      background-color:rgb(45, 48, 53) ;
      font-weight: bold;
-     min-width: 50px;
      font-size: 12px;
      padding: 0 16px;
      border-radius: .5rem;
      height: 33px;
      margin-right: 5px ;
+
  }
+
+ .input-bet{
+     width: 5%;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+     opacity: .5;
+     background: transparent;
+     border: none;
+     color: currentColor;
+     -webkit-appearance: none;
+     -webkit-appearance: none; 
+     margin: 0; 
+     -moz-appearance: textfield;
+     
+ }
+ .users-section{
+     position: relative;
+     opacity: .3;
+     margin-right: 0 !important;
+     width: calc(25%-1.875em);
+     background-color: chartreuse;
+ }
+ @media screen and (max-width: 991px) {
+
+.media-bet{
+    display: none;
+}
+}
