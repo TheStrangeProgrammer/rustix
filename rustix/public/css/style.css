@@ -18,6 +18,8 @@
     background-color: #1A1D29;
     border-top: 1px solid black;
     width: 75%;
+    height: 100%;
+    overflow-y: auto;
 }
 .footer{
     background-color:#0d0e14;

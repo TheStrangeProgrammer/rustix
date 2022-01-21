@@ -1,6 +1,6 @@
 @extends('main')
 @section('content')
-<div class="h-100" >
+<div >
     <div class='roulette-wrapper flex-grow-0 p-2'>
         <div class='roulette-selector'></div>
         <div class='roulette-wheel'></div>
@@ -42,7 +42,7 @@
                 <div class="d-inline me-0">
                   <img class="image-circle rounded-circle" style="background-color: #00C74D" src='../assets/R.svg' width="30" height="30">
                 </div>
-                <p class="d-inline">Win 4x</p>
+                <p class="d-inline">Win 14x</p>
               </div>
               <button class="col-md-12 button-bet zoom-in-out-box" style="background-color: #00C74D" aria-setsize="4" aria-posinset="2">Place Bet</button>
             </li>
@@ -68,7 +68,7 @@
                 <div class="d-inline ms-0">
                   <img class="image-circle rounded-circle" style="background-color:#2D3035 " src='../assets/hook.svg' width="30" height="30">
                 </div>
-                <p class="d-inline">Win 2x</p>
+                <p class="d-inline">Win 7x</p>
               </div>
               <button class="col-md-12 button-bet zoom-in-out-box" style="background-color: #7c99b4" aria-setsize="4" aria-posinset="4">Place Bet</button>
             </li>
