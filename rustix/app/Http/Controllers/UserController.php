@@ -98,9 +98,9 @@ class UserController extends Controller
         return view("layouts/x-roulette");
     }
     public function getRouletteSpin(){
-        $outcome = rand(0,14);
-
-        return response()->json($outcome);
+        $data["outcome"] = rand(0,14);
+        //$data["currentTime"] =
+        return response()->json($data);
     }
     public function getXRouletteSpin(){
         $values=[];

@@ -166,4 +166,13 @@ ul.second-one{
         margin-right: 0px !important;
 
     }
+    #sidebar-and-content {
+        flex-direction: column-reverse;
+    }
+    .main{
+        width: 100%;
+    }
+    .left-sidebar{
+        width: 100%;
+    }
 }

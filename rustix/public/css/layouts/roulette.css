@@ -124,16 +124,11 @@
 }
 
 
-  .bet{
-
-
+.bet{
     background-color: #0d0e14;
     border-radius: 10px;
-    width: 22% !important;
-    height: 50% !important ;
+    height: 50% !important;
     display: inline-block;
-
-
  }
  .bet-roulette{
      justify-content:center;
@@ -173,7 +168,7 @@
        transform: scaleX(0);
      }
    }
- .bet-amount{
+.bet-amount{
      background-color: #0d0e14;
      flex-direction: row;
      width: 90%;
@@ -188,7 +183,7 @@
 
 
  }
- .betamount{
+.betamount{
     width: 90%;
     justify-content:center;
     margin:0 auto;
@@ -196,9 +191,9 @@
     font-weight: 400;
     margin-left: 5px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
+
  }
- .btn-bet {
+.btn-bet {
      background-color:rgb(45, 48, 53) ;
      font-weight: bold;
      font-size: 12px;
@@ -209,7 +204,7 @@
 
  }
 
- .input-bet{
+.input-bet{
      width: 5%;
      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
      opacity: .5;
@@ -217,21 +212,24 @@
      border: none;
      color: currentColor;
      -webkit-appearance: none;
-     -webkit-appearance: none; 
-     margin: 0; 
+     -webkit-appearance: none;
+     margin: 0;
      -moz-appearance: textfield;
-     
+
  }
- .users-section{
+.users-section{
      position: relative;
      opacity: .3;
      margin-right: 0 !important;
      width: calc(25%-1.875em);
      background-color: chartreuse;
  }
- @media screen and (max-width: 991px) {
+@media screen and (max-width: 991px) {
 
-.media-bet{
-    display: none;
-}
+    .media-bet{
+        display: none;
+    }
+    .bet-roulette div{
+        flex-direction: column;
+    }
 }

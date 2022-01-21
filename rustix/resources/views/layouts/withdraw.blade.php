@@ -32,7 +32,7 @@
                 @endforeach
             </div>
         </div>
-        <div class="d-flex container-fluid  fw-bold inventory-sell p-2" style="background-color: #141620">
+        <div class="d-flex container-fluid fw-bold inventory-sell p-2" style="background-color: #141620">
                    <form class="d-inline mx-auto" method="POST" action="{{ URL::route('depositItems') }}">
                        @csrf
                          <p class="text-white d-inline me-5">Total: </p>
