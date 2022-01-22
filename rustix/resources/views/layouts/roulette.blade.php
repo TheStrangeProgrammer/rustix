@@ -70,57 +70,42 @@
       <button type="button" class="btn-bet media-bet">MAX</button>
     </div>
 
-    <div class="bet-roulette p-3 mt-4">
-      <div class="d-flex ms-2">
+    <div class="p-3 mt-4">
+      <div class="d-flex ms-2 bet-roulette">
 
-            <div class="bet flex-fill m-2">
-              <div class="text-bet">
-                <div class="d-inline me-0">
-                  <img class="image-circle rounded-circle" style="background-color:#F95146" src='../assets/blade.svg' width="30" height="30">
-                </div>
-                <div class="d-inline ms-0">
-                  <img class="image-circle rounded-circle" style="background-color:#F95146 " src='../assets/hook.svg' width="30" height="30">
-                </div>
-                <p class="d-inline">Win 2x</p>
+            <div class="d-flex flex-column flex-fill m-2 bet">
+              <div class="d-flex justify-content-center align-items-center text-bet">
+                <img class="mx-1 image-circle rounded-circle" style="background-color:#F95146" src='../assets/blade.svg' width="30" height="30">
+                <img class="mx-1 image-circle rounded-circle" style="background-color:#F95146 " src='../assets/hook.svg' width="30" height="30">
+                <span class="mx-1">Win 2x</span>
               </div>
-              <button class="col-md-12 button-bet zoom-in-out-box"  style="background-color: #F95146"  aria-setsize="4" aria-posinset="1">Place Bet</button>
-
+              <button class="button-bet zoom-in-out-box"  style="background-color: #F95146"  aria-setsize="4" aria-posinset="1">Place Bet</button>
             </div>
 
-            <div class="bet flex-fill m-2">
-              <div class="text-bet">
-                <div class="d-inline me-0">
-                  <img class="image-circle rounded-circle" style="background-color: #00C74D" src='../assets/R.svg' width="30" height="30">
+            <div class="d-flex flex-column flex-fill m-2 bet">
+                <div class="d-flex justify-content-center align-items-center text-bet">
+                    <img class="mx-1 image-circle rounded-circle" style="background-color: #00C74D" src='../assets/R.svg' width="30" height="30">
+                    <span class="mx-1">Win 14x</span>
                 </div>
-                <p class="d-inline">Win 14x</p>
-              </div>
-              <button class="col-md-12 button-bet zoom-in-out-box" style="background-color: #00C74D" aria-setsize="4" aria-posinset="2">Place Bet</button>
+                <button class="button-bet zoom-in-out-box" style="background-color: #00C74D" aria-setsize="4" aria-posinset="2">Place Bet</button>
             </div>
 
-            <div  class="bet flex-fill m-2">
-              <div class="text-bet">
-                <div class="d-inline me-0">
-                  <img class="image-circle rounded-circle" style="background-color:#2D3035" src='../assets/shield.svg' width="30" height="30">
+            <div class="d-flex flex-column flex-fill m-2 bet">
+                <div class="d-flex justify-content-center align-items-center text-bet">
+                    <img class="mx-1 image-circle rounded-circle" style="background-color:#2D3035" src='../assets/shield.svg' width="30" height="30">
+                    <img class="mx-1 image-circle rounded-circle" style="background-color:#2D3035 " src='../assets/hook.svg' width="30" height="30">
+                    <span class="mx-1">Win 2x</span>
                 </div>
-                <div class="d-inline ms-0">
-                  <img class="image-circle rounded-circle" style="background-color:#2D3035 " src='../assets/hook.svg' width="30" height="30">
-                </div>
-                <p class="d-inline">Win 2x</p>
-              </div>
-              <button class="col-md-12 button-bet zoom-in-out-box" style="background-color: #2D3035" aria-setsize="4" aria-posinset="3">Place Bet</button>
-            </div >
+                <button class="button-bet zoom-in-out-box" style="background-color: #2D3035" aria-setsize="4" aria-posinset="3">Place Bet</button>
+            </div>
 
-            <div  class="bet flex-fill m-2">
-              <div class="text-bet">
-                <div class="d-inline me-0">
-                  <img class="image-circle rounded-circle" style="background-color:#F95146" src='../assets/hook.svg' width="30" height="30">
+            <div class="d-flex flex-column flex-fill m-2 bet">
+                <div class="d-flex justify-content-center align-items-center text-bet">
+                    <img class="mx-1 image-circle rounded-circle" style="background-color:#F95146" src='../assets/hook.svg' width="30" height="30">
+                    <img class="mx-1 image-circle rounded-circle" style="background-color:#2D3035 " src='../assets/hook.svg' width="30" height="30">
+                    <span class="mx-1">Win 7x</span>
                 </div>
-                <div class="d-inline ms-0">
-                  <img class="image-circle rounded-circle" style="background-color:#2D3035 " src='../assets/hook.svg' width="30" height="30">
-                </div>
-                <p class="d-inline">Win 7x</p>
-              </div>
-              <button class="col-md-12 button-bet zoom-in-out-box" style="background-color: #7c99b4" aria-setsize="4" aria-posinset="4">Place Bet</button>
+                <button class="button-bet zoom-in-out-box" style="background-color: #7c99b4" aria-setsize="4" aria-posinset="4">Place Bet</button>
             </div>
 
     </div>
