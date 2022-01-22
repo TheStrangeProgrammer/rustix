@@ -2,8 +2,8 @@
 @section('content')
 
 <div class="flex-container">
-    <div class="d-flex flex-column h-50 flex-child ms-3" >
-        <div style="border: 2px solid #25c52a">
+    <div class="d-flex flex-column h-50 flex-child ms-3 shadow" >
+        <div class="shadow" style="border: 2px solid #25c52a ">
             <h3 class="max-width: 100% text-center py-3" style="background-color: #0d0e14">Profile</h3>
             <p class="ms-3 my-4">Total Deposited: {{ $totalDeposit }}</p>
             <p class="ms-3 my-4">Total Spent: {{ $totalSpent }}</p>
@@ -14,7 +14,7 @@
                 <input type="submit" value="Set Trade URL">
             </form>
         </div>
-    <div style="border: 2px solid #25c52a">
+    <div class="mt-4 shadow" style="border: 2px solid #25c52a">
         <div>
             <h3 class="max-width: 100%  mx-auto py-3 text-center" style="background-color: #0d0e14">Referrals</h3>
             <p class="ms-3 my-4">Your Code: {{ $referralCode }}</p>
