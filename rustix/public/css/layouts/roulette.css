@@ -131,8 +131,6 @@
     display: inline-block;
  }
  .bet-roulette{
-     justify-content:center;
-
 
  }
  .text-bet{
@@ -223,13 +221,13 @@
      margin-right: 0 !important;
      width: calc(25%-1.875em);
      background-color: chartreuse;
- }
+}
 @media screen and (max-width: 991px) {
 
     .media-bet{
         display: none;
     }
-    .bet-roulette div{
+    .bet-roulette{
         flex-direction: column;
     }
 }
