@@ -127,8 +127,9 @@
 .bet{
     background-color: #0d0e14;
     border-radius: 10px;
-    height: 50% !important;
-    display: inline-block;
+    width: 100%;
+
+
  }
  .bet-roulette{
 
