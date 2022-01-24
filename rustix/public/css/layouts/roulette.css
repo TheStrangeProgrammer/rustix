@@ -89,14 +89,18 @@
 .round-time-bar[data-style="smooth"] div  {
     height: 15px;
     border-radius: 10px;
-    background: linear-gradient(to bottom, #00C74D, #078b3a);
-
-
     justify-content:center;
-    margin:0 auto;
-    width: 90%;
-  }
 
+  }
+.round-time-bar .progress-bar{
+    background: linear-gradient(to bottom, #00C74D, #078b3a);
+}
+.progress{
+
+    background-color: #2D3035 !important;
+    width: 90%;
+    margin: 0 auto !important;
+}
 
 .last-100{
 

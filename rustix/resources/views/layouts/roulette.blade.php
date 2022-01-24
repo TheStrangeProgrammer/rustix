@@ -49,7 +49,7 @@
     </div>
     <p class="timer-custom">ROLLING IN: <span class="roulette-timer">0</span></p>
     <div class="round-time-bar progress">
-        <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
     <div class="d-flex justify-content-end bet-amount py-2 rounded-3">
       <div class="flex-column justify-content-end betamount">
