@@ -213,7 +213,7 @@
      -webkit-appearance: none;
      margin: 0;
      -moz-appearance: textfield;
-     
+
 
  }
 .users-section{
@@ -232,3 +232,13 @@
         flex-direction: column;
     }
 }
+#overlay {
+    position: absolute;
+
+    width: inherit;
+    height: inherit;
+
+    background-color: #1A1D29;
+    z-index: 99;
+    cursor: pointer;
+  }
