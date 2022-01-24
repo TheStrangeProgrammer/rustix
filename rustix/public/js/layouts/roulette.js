@@ -6,6 +6,8 @@ $.getJSON( "getCurrentSecond").done(function( currentSecond ) {
     currentSecond=currentSecond%20;
     $.getJSON( "getRouletteSpin").done(function( outcome ) {
         spinWheel(outcome,outcomes);
+        $('#overlay').removeClass("d-flex");
+        $('#overlay').addClass("d-none");
     });
     setInterval(function() {
         if(currentSecond<=0){
@@ -21,7 +23,6 @@ $.getJSON( "getCurrentSecond").done(function( currentSecond ) {
     }, 1000);
 
 });
-
 
 
 function addOutcome(outcome){
