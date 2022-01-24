@@ -96,14 +96,13 @@
 .round-time-bar .progress-bar{
     background: linear-gradient(to bottom, #00C74D, #078b3a);
 }
-.progress{
+.progress {
 
     background-color: #2D3035 !important;
-    width: 90%;
+    width: 90% !important;
     margin: 0 auto !important;
     height: 15px;
     border-radius: 10px;
-   
     
 
 }
@@ -124,13 +123,7 @@
     font-family: var(--font-family-base);
 }
 
-.bet{
-    background-color: #0d0e14;
-    border-radius: 10px;
-    width: 100%;
 
-
- }
  .bet-roulette{
 
  }
@@ -139,6 +132,15 @@
      padding-top: 5%;
      padding-bottom: 5%;
      font-weight: bold;
+     
+ }
+ .bet{
+    background-color: #0d0e14;
+    border-radius: 10px;
+ }
+ .bg-list{
+     background-color: #242630 ;
+     opacity: 50%;
  }
  .button-bet{
      padding-top: 5%;
@@ -216,6 +218,7 @@
 
 
  }
+
 .users-section{
      position: relative;
      opacity: .3;
