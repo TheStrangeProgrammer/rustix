@@ -56,3 +56,4 @@ Route::get('/addbalance', [UserController::class, 'addbalance'])->middleware('au
 Route::get('/roulette', [UserController::class, 'roulette'])->middleware('auth');
 Route::get('/x-roulette', [UserController::class, 'xroulette'])->middleware('auth');
 Route::get('/getRouletteSpin', [UserController::class, 'getRouletteSpin'])->middleware('auth');
+Route::get('/getCurrentSecond', [UserController::class, 'getCurrentSecond'])->middleware('auth');

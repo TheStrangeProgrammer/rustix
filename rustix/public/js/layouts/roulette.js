@@ -1,34 +1,29 @@
 
 var outcomes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14];
-var outcome;
-var start;
+var currentSecond;
 initWheel(outcomes);
-$.getJSON( "getRouletteSpin", function( ) {
-
-}).done(function( data ) {
-    outcome=data["outcome"];
-    start=data["start"];
-    console.log(start);
+$.getJSON( "getCurrentSecond").done(function( currentSecond ) {
+    currentSecond=currentSecond%20;
+    $.getJSON( "getRouletteSpin").done(function( outcome ) {
+        spinWheel(outcome,outcomes);
+    });
     setInterval(function() {
-        $('.roulette-timer').text(Math.round((start - new Date().getSeconds()%20), 0));
+        if(currentSecond<=0){
+            currentSecond=20;
+            $.getJSON( "getRouletteSpin").done(function( outcome ) {
+                spinWheel(outcome,outcomes);
+            });
+        }
+        $('.roulette-timer').text(Math.round((currentSecond), 0));
+        $('.round-time-bar .progress-bar').css("width",currentSecond*5+"%");
+
+        currentSecond -= 1;
     }, 1000);
-    $('.round-time-bar').css("--duration","15");
-}
-);
-
-$(document).ready(function() {
-
-
-
-
- 	$('button').on('click', function(){
-		var outcome = parseFloat($('input').val());
-    spinWheel(outcome,outcomes);
-
-  });
-  // = new Date(new Date().getTime()+(15*1000));
 
 });
+
+
+
 function addOutcome(outcome){
     return "<div class='card red'>1<\/div>";
 }
@@ -82,7 +77,6 @@ function initWheel(values){
 function spinWheel(outcome,values){
   var wheel = $('.roulette-wrapper .roulette-wheel');
   var position = values.indexOf(outcome)-values.length/2;
-    console.log(position);
   var cardCount = values.length;
   var cardWidth = 70;
   var cardMargin = 3 * 2;
