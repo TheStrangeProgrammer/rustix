@@ -77,46 +77,138 @@
     <div class="p-3 mt-4">
       <div class="d-flex ms-2 bet-roulette">
 
-            <div class="d-flex flex-column flex-fill m-2 bet">
+            <div class="d-flex flex-column flex-fill m-2 ">
+              <div class="d-flex flex-column flex-fill bet">
               <div class="d-flex justify-content-center align-items-center text-bet">
                 <img class="mx-1 image-circle rounded-circle" style="background-color:#F95146" src='../assets/blade.svg' width="30" height="30">
                 <img class="mx-1 image-circle rounded-circle" style="background-color:#F95146 " src='../assets/hook.svg' width="30" height="30">
                 <span class="mx-1">Win 2x</span>
               </div>
               <button class="button-bet zoom-in-out-box"  style="background-color: #F95146"  aria-setsize="4" aria-posinset="1">Place Bet</button>
-              <div class=" align-items-end ">
-              <input type="number" class="input-bet">
-              <span>Bets</span>
-              <img class="input-prefix" src="assets/dollar_coin.svg" width="16" height="16">
-              <input type="number" class="input-bet" style="align-items: flex-end">
+            </div>
+              <div class="d-flex">
+                <div class="me-auto p-2 ">
+                  <span class="score-bet fw-bold">6</span>
+                  <span class="fw-bold">Bets</span>
+                </div>
+                <div class="d-flex flex-row justify-content-end align-items-center me-2">
+                  <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
+                  <span class="score-bet fw-bold">32</span>
+                </div>
+
+              </div>
+              <div class="d-flex mt-2 ps-2 bg-list">
+                <div class="me-auto p-2">
+                  <img class="mx-1 image-circle rounded-circle" style="background-color:#F95146" src='../assets/hook.svg' width="30" height="30">
+                  <span class="fw-bold">Joe</span>
+                </div>
+                <div class="d-flex flex-row justify-content-end align-items-center me-2">
+                  <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
+                  <span class="score-bet fw-bold">1.200</span>
+                </div>
+
               </div>
             </div>
 
-            <div class="d-flex flex-column flex-fill m-2 bet">
+            <div class="d-flex flex-column flex-fill m-2">
+              <div class="d-flex flex-column flex-fill bet">
                 <div class="d-flex justify-content-center align-items-center text-bet">
                     <img class="mx-1 image-circle rounded-circle" style="background-color: #00C74D" src='../assets/R.svg' width="30" height="30">
                     <span class="mx-1">Win 14x</span>
                 </div>
                 <button class="button-bet zoom-in-out-box" style="background-color: #00C74D" aria-setsize="4" aria-posinset="2">Place Bet</button>
-            </div>
+              </div>
+                <div class="d-flex">
+                  <div class="me-auto p-2 ">
+                    <span class="score-bet fw-bold">6</span>
+                    <span class="fw-bold">Bets</span>
+                  </div>
+                  <div class="d-flex flex-row justify-content-end align-items-center me-2">
+                    <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
+                    <span class="score-bet fw-bold">32</span>
+                  </div>
 
-            <div class="d-flex flex-column flex-fill m-2 bet">
+                </div>
+                <div class="d-flex mt-2 ps-2 bg-list">
+                  <div class="me-auto p-2">
+                    <img class="mx-1 image-circle rounded-circle" style="background-color:#F95146" src='../assets/hook.svg' width="30" height="30">
+                    <span class="fw-bold">Joe</span>
+                  </div>
+                  <div class="d-flex flex-row justify-content-end align-items-center me-2">
+                    <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
+                    <span class="score-bet fw-bold">1.200</span>
+                  </div>
+
+                </div>
+              </div>
+
+
+            <div class="d-flex flex-column flex-fill m-2">
+              <div class="d-flex flex-column flex-fill bet">
                 <div class="d-flex justify-content-center align-items-center text-bet">
                     <img class="mx-1 image-circle rounded-circle" style="background-color:#2D3035" src='../assets/shield.svg' width="30" height="30">
                     <img class="mx-1 image-circle rounded-circle" style="background-color:#2D3035 " src='../assets/hook.svg' width="30" height="30">
                     <span class="mx-1">Win 2x</span>
                 </div>
                 <button class="button-bet zoom-in-out-box" style="background-color: #2D3035" aria-setsize="4" aria-posinset="3">Place Bet</button>
-            </div>
+              </div>
+              <div class="d-flex">
+                <div class="me-auto p-2 ">
+                  <span class="score-bet fw-bold">6</span>
+                  <span class="fw-bold">Bets</span>
+                </div>
+                <div class="d-flex flex-row justify-content-end align-items-center me-2">
+                  <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
+                  <span class="score-bet fw-bold">32</span>
+                </div>
 
-            <div class="d-flex flex-column flex-fill m-2 bet">
+              </div>
+              <div class="d-flex mt-2 ps-2 bg-list">
+                <div class="me-auto p-2">
+                  <img class="mx-1 image-circle rounded-circle" style="background-color:#F95146" src='../assets/hook.svg' width="30" height="30">
+                  <span class="fw-bold">Joe</span>
+                </div>
+                <div class="d-flex flex-row justify-content-end align-items-center me-2">
+                  <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
+                  <span class="score-bet fw-bold">1.200</span>
+                </div>
+
+              </div>
+
+              </div>
+
+            <div class="d-flex flex-column flex-fill m-2">
+              <div class="d-flex flex-column flex-fill bet">
                 <div class="d-flex justify-content-center align-items-center text-bet">
                     <img class="mx-1 image-circle rounded-circle" style="background-color:#F95146" src='../assets/hook.svg' width="30" height="30">
                     <img class="mx-1 image-circle rounded-circle" style="background-color:#2D3035 " src='../assets/hook.svg' width="30" height="30">
                     <span class="mx-1">Win 7x</span>
                 </div>
                 <button class="button-bet zoom-in-out-box" style="background-color: #7c99b4" aria-setsize="4" aria-posinset="4">Place Bet</button>
-            </div>
+              </div>
+              <div class="d-flex">
+                <div class="me-auto p-2 ">
+                  <span class="score-bet fw-bold">6</span>
+                  <span class="fw-bold">Bets</span>
+                </div>
+                <div class="d-flex flex-row justify-content-end align-items-center me-2">
+                  <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
+                  <span class="score-bet fw-bold">32</span>
+                </div>
+
+              </div>
+              <div class="d-flex mt-2 ps-2 bg-list">
+                <div class="me-auto p-2">
+                  <img class="mx-1 image-circle rounded-circle" style="background-color:#F95146" src='../assets/hook.svg' width="30" height="30">
+                  <span class="fw-bold">Joe</span>
+                </div>
+                <div class="d-flex flex-row justify-content-end align-items-center me-2">
+                  <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
+                  <span class="score-bet fw-bold">1.200</span>
+                </div>
+
+              </div>
+              </div>
 
     </div>
 
