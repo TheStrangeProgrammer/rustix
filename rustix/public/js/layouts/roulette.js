@@ -15,7 +15,7 @@ $.getJSON( "getCurrentSecond").done(function( currentSecond ) {
         $('#overlay').addClass("d-none");
     });
     setInterval(function() {
-        if(currentSecond<=0){
+        if(currentSecond<=0.00){
             currentSecond=20.00;
             isPaused=true;
             $.getJSON( "getRouletteSpin").done(function( outcome ) {
