@@ -55,7 +55,7 @@
       <div class="flex-column justify-content-end betamount">
        <div style="opacity: 50%">Bet amount</div>
        <div class="d-inline">
-        <img class="input-prefix ng-star-inserted" src="assets/dollar_coin.svg" width="16" height="16">
+        <img class="input-prefix " src="assets/dollar_coin.svg" width="16" height="16">
       </div>
       <input type="number" class="input-bet">
     </div>
@@ -80,6 +80,12 @@
                 <span class="mx-1">Win 2x</span>
               </div>
               <button class="button-bet zoom-in-out-box"  style="background-color: #F95146"  aria-setsize="4" aria-posinset="1">Place Bet</button>
+              <div class=" align-items-end ">
+              <input type="number" class="input-bet">
+              <span>Bets</span>
+              <img class="input-prefix" src="assets/dollar_coin.svg" width="16" height="16">
+              <input type="number" class="input-bet" style="align-items: flex-end">
+              </div>
             </div>
 
             <div class="d-flex flex-column flex-fill m-2 bet">
