@@ -86,21 +86,18 @@
     margin-top: 2%;
     font-weight: bold;
 }
-.round-time-bar[data-style="smooth"] div  {
+.round-time-bar  {
     height: 15px;
     border-radius: 10px;
-    justify-content:center;
-
-  }
-.round-time-bar .progress-bar{
-    background: linear-gradient(to bottom, #00C74D, #078b3a);
-}
-.progress{
-
     background-color: #2D3035 !important;
     width: 90%;
     margin: 0 auto !important;
+
+  }
+.round-time-bar div{
+    background: linear-gradient(to bottom, #00C74D, #078b3a);
 }
+
 
 .last-100{
 

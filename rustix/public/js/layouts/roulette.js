@@ -1,6 +1,11 @@
 
 var outcomes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14];
 var currentSecond;
+var isPaused=false;
+var selector=$(".roulette-selector");
+var timer=$(".roulette-timer");
+var progress=$(".round-time-bar div");
+
 initWheel(outcomes);
 $.getJSON( "getCurrentSecond").done(function( currentSecond ) {
     currentSecond=currentSecond%20;
@@ -11,16 +16,31 @@ $.getJSON( "getCurrentSecond").done(function( currentSecond ) {
     });
     setInterval(function() {
         if(currentSecond<=0){
-            currentSecond=20;
+            currentSecond=20.00;
+            isPaused=true;
             $.getJSON( "getRouletteSpin").done(function( outcome ) {
                 spinWheel(outcome,outcomes);
             });
+            setTimeout(function(){
+                isPaused=false;
+            }, 10000);
         }
-        $('.roulette-timer').text(Math.round((currentSecond), 0));
-        $('.round-time-bar .progress-bar').css("width",currentSecond*5+"%");
+        if(!isPaused){
+            timer.text(currentSecond.toFixed(2));
+            progress.css("width",currentSecond*5+"%");
+           // $('.round-time-bar .progress-bar').attr("aria-valuenow",(currentSecond*5).toFixed(2));
 
-        currentSecond -= 1;
-    }, 1000);
+           var position = selector.offset();
+          // console.log(position);
+            var elem = document.elementFromPoint(position.left, position.top);
+            $(elem).find("card").css("background-color", "red");
+
+
+            currentSecond -= 0.01;
+        }
+
+
+    }, 10);
 
 });
 
