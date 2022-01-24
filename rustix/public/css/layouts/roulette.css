@@ -90,6 +90,7 @@
     height: 15px;
     border-radius: 10px;
     justify-content:center;
+    
 
   }
 .round-time-bar .progress-bar{
@@ -100,6 +101,11 @@
     background-color: #2D3035 !important;
     width: 90%;
     margin: 0 auto !important;
+    height: 15px;
+    border-radius: 10px;
+   
+    
+
 }
 
 .last-100{
