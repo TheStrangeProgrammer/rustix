@@ -99,7 +99,7 @@ class UserController extends Controller
     }
     public function getRouletteSpin(){
         $data["outcome"] = rand(0,14);
-        //$data["currentTime"] =
+        $data["start"] = Carbon::now()->isoFormat('s')%20;
         return response()->json($data);
     }
     public function getXRouletteSpin(){

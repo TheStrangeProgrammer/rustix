@@ -1,12 +1,23 @@
 
-$(document).ready(function() {
-    var outcomes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14];
-    var outcome;
-    initWheel(outcomes);
-    $.getJSON( "getRouletteSpin", function( data ) {
-        outcome=data;
+var outcomes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14];
+var outcome;
+var start;
+initWheel(outcomes);
+$.getJSON( "getRouletteSpin", function( ) {
 
-    });
+}).done(function( data ) {
+    outcome=data["outcome"];
+    start=data["start"];
+    console.log(start);
+    setInterval(function() {
+        $('.roulette-timer').text(Math.round((start - new Date().getSeconds()%20), 0));
+    }, 1000);
+    $('.round-time-bar').css("--duration","15");
+}
+);
+
+$(document).ready(function() {
+
 
 
 
@@ -15,11 +26,7 @@ $(document).ready(function() {
     spinWheel(outcome,outcomes);
 
   });
-  var start = new Date(new Date().getTime()+(15*1000));
-
-  setInterval(function() {
-        $('.roulette-timer').text(Math.round((start - new Date) / 1000, 0));
-    }, 1000);
+  // = new Date(new Date().getTime()+(15*1000));
 
 });
 function addOutcome(outcome){
