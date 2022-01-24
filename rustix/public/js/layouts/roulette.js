@@ -32,7 +32,7 @@ $.getJSON( "getCurrentSecond").done(function( currentSecond ) {
 
            var position = selector.offset();
           // console.log(position);
-            var elem = document.elementFromPoint(position.left, position.top);
+            var elem = document.elementsFromPoint(position.left, position.top);
             $(elem).find("card").css("background-color", "red");
 
 
