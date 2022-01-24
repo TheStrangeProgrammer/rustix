@@ -90,8 +90,9 @@
     height: 15px;
     border-radius: 10px;
     background: linear-gradient(to bottom, #00C74D, #078b3a);
-    animation: roundtime calc(var(--duration) * 1s) linear forwards;
-    transform-origin: left center;
+
+
+    justify-content:center;
     margin:0 auto;
     width: 90%;
   }
