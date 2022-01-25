@@ -39,7 +39,7 @@
         <div class="rounded-pill"></div>
       </div>
     <div class="d-flex justify-content-end bet-amount py-2 rounded-3">
-      <div class="flex-column justify-content-end betamount">
+      <div class="flex-column flex-fill betamount">
        <div style="opacity: 50%">Bet amount</div>
        <div class="d-inline">
         <img class="input-prefix " src="assets/dollar_coin.svg" width="16" height="16">
