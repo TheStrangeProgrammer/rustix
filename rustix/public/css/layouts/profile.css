@@ -1,6 +1,7 @@
 
 .flex-container {
     display: flex;
+    
 }
 
 .flex-child {
@@ -10,9 +11,14 @@
 
 .flex-child:first-child {
     margin-right: 20px;
+    
 }
 .history-custom{
     background-color: #0d0e14;
     border: 2px solid #25c52a;
     
+    
+}
+.profile-borders{
+    border: 2px solid #25c52a;
 }
