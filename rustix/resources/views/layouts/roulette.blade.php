@@ -121,15 +121,14 @@
                         <span class="fw-bold">Bets</span>
                     </div>
                     <div class="d-flex flex-row justify-content-end align-items-center me-2">
-                        <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
+                        <img class="me-1 " src="assets/dollar_coin.svg" width="16" height="16"> 
                         <span class="score-bet fw-bold">32</span>
                     </div>
 
                 </div>
                 <div class="d-flex mt-2 ps-2 bg-list">
                     <div class="me-auto p-2">
-                        <img class=" image-circle rounded-circle" style="background-color:#F95146" src='../assets/hook.svg'
-                            width="30" height="30">
+                        <img class=" image-circle rounded-circle bor" style="background-color:#F95146" src='../assets/hook.svg' width="30" height="30">
                         <span class="fw-bold">Joe</span>
                     </div>
                     <div class="d-flex flex-row justify-content-end align-items-center me-2">
