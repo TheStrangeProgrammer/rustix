@@ -66,7 +66,7 @@ function addOutcome(outcome){
 }
 function initWheel(values){
     var $wheel = $('.roulette-wrapper .roulette-wheel');
-  	var	row = "<div class='roulette-row'>";
+  	var	row = "<div class='d-flex roulette-row'>";
     values.forEach(value => {
         var color;
         var image;

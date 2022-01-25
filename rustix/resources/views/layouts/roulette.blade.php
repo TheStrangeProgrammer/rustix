@@ -30,9 +30,9 @@
 </div>
 
 
-    <div class='roulette-wrapper'>
+    <div class='d-flex justify-content-center overflow-hidden roulette-wrapper'>
         <div class='roulette-selector'></div>
-        <div class='roulette-wheel'></div>
+        <div class='d-flex roulette-wheel'></div>
     </div>
     <p class="timer-custom">ROLLING IN: <span class="roulette-timer">0</span></p>
     <div class="d-flex rounded-pill round-time-bar">
