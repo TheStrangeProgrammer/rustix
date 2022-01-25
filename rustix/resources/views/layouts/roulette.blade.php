@@ -30,7 +30,7 @@
 </div>
 
 
-    <div class="d-flex justify-content-center overflow-hidden roulette-wrapper ">
+    <div class="d-flex flex-shrink-0 justify-content-center overflow-hidden roulette-wrapper ">
         <div class='roulette-selector'></div>
         <div class='d-flex roulette-wheel'></div>
     </div>
@@ -199,7 +199,7 @@
 
 
 @endsection
-@section('title',"XRoulette")
+@section('title',"Roulette")
 
 @section('css')
 <link rel="stylesheet" type="text/css" href="{{asset('css/layouts/roulette.css')}}">
