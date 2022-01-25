@@ -1,102 +1,229 @@
 @extends('main')
 @section('content')
+<div id="overlay" class="d-flex justify-content-center align-items-center">
+    <div class="spinner-border text-light" style="width: 10rem; height: 10rem;" role="status">
+    </div>
+</div>
+<div>
 
-    <div class='roulette-wrapper'>
+  <div class="d-flex last-100">
+    <section>
+      <article class="last-percent justify-content-start fw-bold">
+        <div class="label d-inline">Last 100</div>
+        <div class="d-inline ms-2 ">
+          <span class="rounded-circle circle-score" style="background-color: #F95146"></span>
+          <span class="score-bet">45</span>
+        </div>
+       <div class="d-inline ms-2 ">
+          <span class="rounded-circle circle-score" style="background-color: #00C74D"></span>
+          <span class="score-bet">5</span>
+        </div>
+        <div class="d-inline ms-2 ">
+          <span class="rounded-circle circle-score" style="background-color: #2D3035"></span>
+          <span class="score-bet">47</span>
+        </div>
+      </article>
+      <div class="mt-3">
+      <div class="d-inline">
+        <img class="image-circle rounded-circle" style="background-color:#F95146" src='../assets/blade.svg' width="30" height="30">
+      </div>
+      <div class="d-inline">
+        <img class="image-circle rounded-circle" style="background-color:#F95146" src='../assets/blade.svg' width="30" height="30">
+      </div>
+      <div class="d-inline">
+        <img class="image-circle rounded-circle" style="background-color:#F95146" src='../assets/blade.svg' width="30" height="30">
+      </div>
+      <div class="d-inline">
+        <img class="image-circle rounded-circle" style="background-color:#2D3035" src='../assets/blade.svg' width="30" height="30">
+      </div>
+      <div class="d-inline">
+        <img class="image-circle rounded-circle" style="background-color:#00C74D" src='../assets/blade.svg' width="30" height="30">
+      </div>
+    </div>
+    </section>
+
+
+
+    </div>
+
+  </div>
+    <div class='roulette-wrapper flex-grow-0 p-2 mt-5'>
         <div class='roulette-selector'></div>
         <div class='roulette-wheel'></div>
     </div>
-    <p>Timer:<span class="roulette-timer">0</span></p>
-    <input placeholder='roulette-outcome'>
-    <button>
-      Spin Wheel
-    </button>
+    <p class="timer-custom">ROLLING IN: <span class="roulette-timer">0</span></p>
+    <div class="d-flex rounded-pill round-time-bar">
+        <div class="rounded-pill"></div>
+      </div>
+    <div class="d-flex justify-content-end bet-amount py-2 rounded-3">
+      <div class="flex-column justify-content-end betamount">
+       <div style="opacity: 50%">Bet amount</div>
+       <div class="d-inline">
+        <img class="input-prefix " src="assets/dollar_coin.svg" width="16" height="16">
+      </div>
+      <input type="number" class="input-bet">
+    </div>
+      <button type="button" class="btn-bet " style="background-color: #0d0e14 !important">CLEAR</button>
+      <button type="button" class="btn-bet ">LAST</button>
+      <button type="button" class="btn-bet media-bet">+1</button>
+      <button type="button" class="btn-bet media-bet">+10</button>
+      <button type="button" class="btn-bet media-bet">+100</button>
+      <button type="button" class="btn-bet media-bet">+1000</button>
+      <button type="button" class="btn-bet ">1/2</button>
+      <button type="button" class="btn-bet ">X2</button>
+      <button type="button" class="btn-bet media-bet">MAX</button>
+    </div>
 
+    <div class="p-3 mt-4">
+      <div class="d-flex ms-2 bet-roulette">
+
+            <div class="d-flex flex-column flex-fill m-2 ">
+              <div class="d-flex flex-column flex-fill bet">
+              <div class="d-flex justify-content-center align-items-center text-bet">
+                <img class="mx-1 image-circle rounded-circle" style="background-color:#F95146" src='../assets/blade.svg' width="30" height="30">
+                <img class="mx-1 image-circle rounded-circle" style="background-color:#F95146 " src='../assets/hook.svg' width="30" height="30">
+                <span class="mx-1">Win 2x</span>
+              </div>
+              <button class="button-bet zoom-in-out-box"  style="background-color: #F95146"  aria-setsize="4" aria-posinset="1">Place Bet</button>
+            </div>
+              <div class="d-flex">
+                <div class="me-auto p-2 ">
+                  <span class="score-bet fw-bold">6</span>
+                  <span class="fw-bold">Bets</span>
+                </div>
+                <div class="d-flex flex-row justify-content-end align-items-center me-2">
+                  <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
+                  <span class="score-bet fw-bold">32</span>
+                </div>
+
+              </div>
+              <div class="d-flex mt-2 ps-2 bg-list">
+                <div class="me-auto p-2">
+                  <img class="mx-1 image-circle rounded-circle" style="background-color:#F95146" src='../assets/hook.svg' width="30" height="30">
+                  <span class="fw-bold">Joe</span>
+                </div>
+                <div class="d-flex flex-row justify-content-end align-items-center me-2">
+                  <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
+                  <span class="score-bet fw-bold">1.200</span>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="d-flex flex-column flex-fill m-2">
+              <div class="d-flex flex-column flex-fill bet">
+                <div class="d-flex justify-content-center align-items-center text-bet">
+                    <img class="mx-1 image-circle rounded-circle" style="background-color: #00C74D" src='../assets/R.svg' width="30" height="30">
+                    <span class="mx-1">Win 14x</span>
+                </div>
+                <button class="button-bet zoom-in-out-box" style="background-color: #00C74D" aria-setsize="4" aria-posinset="2">Place Bet</button>
+              </div>
+                <div class="d-flex">
+                  <div class="me-auto p-2 ">
+                    <span class="score-bet fw-bold">6</span>
+                    <span class="fw-bold">Bets</span>
+                  </div>
+                  <div class="d-flex flex-row justify-content-end align-items-center me-2">
+                    <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
+                    <span class="score-bet fw-bold">32</span>
+                  </div>
+
+                </div>
+                <div class="d-flex mt-2 ps-2 bg-list">
+                  <div class="me-auto p-2">
+                    <img class="mx-1 image-circle rounded-circle" style="background-color:#F95146" src='../assets/hook.svg' width="30" height="30">
+                    <span class="fw-bold">Joe</span>
+                  </div>
+                  <div class="d-flex flex-row justify-content-end align-items-center me-2">
+                    <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
+                    <span class="score-bet fw-bold">1.200</span>
+                  </div>
+
+                </div>
+              </div>
+
+
+            <div class="d-flex flex-column flex-fill m-2">
+              <div class="d-flex flex-column flex-fill bet">
+                <div class="d-flex justify-content-center align-items-center text-bet">
+                    <img class="mx-1 image-circle rounded-circle" style="background-color:#2D3035" src='../assets/shield.svg' width="30" height="30">
+                    <img class="mx-1 image-circle rounded-circle" style="background-color:#2D3035 " src='../assets/hook.svg' width="30" height="30">
+                    <span class="mx-1">Win 2x</span>
+                </div>
+                <button class="button-bet zoom-in-out-box" style="background-color: #2D3035" aria-setsize="4" aria-posinset="3">Place Bet</button>
+              </div>
+              <div class="d-flex">
+                <div class="me-auto p-2 ">
+                  <span class="score-bet fw-bold">6</span>
+                  <span class="fw-bold">Bets</span>
+                </div>
+                <div class="d-flex flex-row justify-content-end align-items-center me-2">
+                  <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
+                  <span class="score-bet fw-bold">32</span>
+                </div>
+
+              </div>
+              <div class="d-flex mt-2 ps-2 bg-list">
+                <div class="me-auto p-2">
+                  <img class="mx-1 image-circle rounded-circle" style="background-color:#F95146" src='../assets/hook.svg' width="30" height="30">
+                  <span class="fw-bold">Joe</span>
+                </div>
+                <div class="d-flex flex-row justify-content-end align-items-center me-2">
+                  <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
+                  <span class="score-bet fw-bold">1.200</span>
+                </div>
+
+              </div>
+
+              </div>
+
+            <div class="d-flex flex-column flex-fill m-2">
+              <div class="d-flex flex-column flex-fill bet">
+                <div class="d-flex justify-content-center align-items-center text-bet">
+                    <img class="mx-1 image-circle rounded-circle" style="background-color:#F95146" src='../assets/hook.svg' width="30" height="30">
+                    <img class="mx-1 image-circle rounded-circle" style="background-color:#2D3035 " src='../assets/hook.svg' width="30" height="30">
+                    <span class="mx-1">Win 7x</span>
+                </div>
+                <button class="button-bet zoom-in-out-box" style="background-color: #7c99b4" aria-setsize="4" aria-posinset="4">Place Bet</button>
+              </div>
+              <div class="d-flex">
+                <div class="me-auto p-2 ">
+                  <span class="score-bet fw-bold">6</span>
+                  <span class="fw-bold">Bets</span>
+                </div>
+                <div class="d-flex flex-row justify-content-end align-items-center me-2">
+                  <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
+                  <span class="score-bet fw-bold">32</span>
+                </div>
+
+              </div>
+              <div class="d-flex mt-2 ps-2 bg-list">
+                <div class="me-auto p-2">
+                  <img class="mx-1 image-circle rounded-circle" style="background-color:#F95146" src='../assets/hook.svg' width="30" height="30">
+                  <span class="fw-bold">Joe</span>
+                </div>
+                <div class="d-flex flex-row justify-content-end align-items-center me-2">
+                  <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
+                  <span class="score-bet fw-bold">1.200</span>
+                </div>
+
+              </div>
+              </div>
+
+    </div>
+
+    </div>
+
+
+</div>
 
 
 @endsection
-@section('title',"XRoulette")
+@section('title',"X-Roulette")
 
+@section('css')
+<link rel="stylesheet" type="text/css" href="{{asset('css/layouts/x-roulette.css')}}">
+@endsection
 @section('js')
-<script>
-$(document).ready(function() {
-    var outcomes;
-    $.getJSON( "getRouletteSpin", function( data ) {
-        console.log(data);
-        outcomes=data;
-        initWheel(data);
-    });
-
-
-
- 	$('button').on('click', function(){
-		var outcome = parseFloat($('input').val());
-    spinWheel(outcome,outcomes);
-
-  });
-  var start = new Date(new Date().getTime()+(15*1000));
-
-  setInterval(function() {
-        $('.roulette-timer').text(Math.round((start - new Date) / 1000, 0));
-    }, 1000);
-
-});
-function addOutcome(outcome){
-    return "<div class='card red'>1<\/div>";
-}
-function initWheel(values,outcome){
-    var $wheel = $('.roulette-wrapper .roulette-wheel');
-  		row = "<div class='roulette-row'>";
-    values.forEach(value => {
-        var color;
-        if(value<2) color="black";
-        else if(value<10) color="green";
-        else color="red";
-        row += "<div class='card "+color+"'>x"+value+"<\/div>";
-    });
-	row += "<\/div>";
-
-
-
-	for(var x = 0; x < 29; x++){
-  	$wheel.append(row);
-  }
-}
-
-function spinWheel(outcome,values){
-  var wheel = $('.roulette-wrapper .roulette-wheel');
-  var position = values.indexOf(outcome)-values.length/2;
-    console.log(position);
-  var cardCount = values.length;
-  var cardWidth = 75;
-  var cardMargin = 3 * 2;
-  var card = cardWidth + cardMargin;
-  var landingPosition = (cardCount * card)*5 + (position * card);
-
-  var randomize = Math.floor(Math.random() * cardWidth);
-
-  landingPosition = landingPosition + randomize;
-
-  var object = {
-		x: Math.floor(Math.random() * 50) / 100,
-        y: Math.floor(Math.random() * 20) / 100
-	};
-
-  wheel.css({
-		'transition-timing-function':'cubic-bezier(0,'+ object.x +','+ object.y + ',1)',
-		'transition-duration':'6s',
-		'transform':'translate3d(-'+landingPosition+'px, 0px, 0px)'
-	});
-
-  setTimeout(function(){
-		wheel.css({
-			'transition-timing-function':'',
-			'transition-duration':'',
-		});
-
-    var resetTo = -(position * card + randomize);
-	wheel.css('transform', 'translate3d('+resetTo+'px, 0px, 0px)');
-  }, 6 * 1000);
-}
-
-</script>
+<script src="{{ asset('js/layouts/x-roulette.js') }}"></script>
 @endsection

@@ -98,11 +98,13 @@ class UserController extends Controller
         return view("layouts/x-roulette");
     }
     public function getRouletteSpin(){
-        $outcome = rand(0,14);
-        return response()->json($outcome);
+        $data['outcome'] = rand(0,14);
+        $data["currentSecond"] = abs(Carbon::now()->isoFormat('s')-60)%30;
+        return response()->json($data);
     }
     public function getCurrentSecond(){
-        $currentSecond = Carbon::now()->isoFormat('s');
+
+        $currentSecond = abs(Carbon::now()->isoFormat('s')-60);
         return response()->json($currentSecond);
     }
     public function getXRouletteSpin(){
