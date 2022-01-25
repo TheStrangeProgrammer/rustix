@@ -8,10 +8,10 @@
         <div id="app" class="d-flex flex-column h-100">
             @include('partials.header')
             <div id="sidebar-and-content" class="d-flex h-100 w-100">
-                <section class="d-flex left-sidebar h-100">
+                <section class="d-flex left-sidebar h-100 ">
                     @include('partials.left_sidebar')
                 </section>
-                <main class="main">
+                <main class="d-flex main">
                     @yield('content')
                 </main>
 

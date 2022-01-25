@@ -4,50 +4,33 @@
     <div class="spinner-border text-light" style="width: 10rem; height: 10rem;" role="status">
     </div>
 </div>
-<div>
-
-  <div class="d-flex last-100">
-    <section>
-      <article class="last-percent justify-content-start fw-bold">
+<div class="d-flex flex-column last-100">
+    <div class="last-percent justify-content-start fw-bold">
         <div class="label d-inline">Last 100</div>
         <div class="d-inline ms-2 ">
-          <span class="rounded-circle circle-score" style="background-color: #F95146"></span>
-          <span class="score-bet">45</span>
-        </div>
-       <div class="d-inline ms-2 ">
-          <span class="rounded-circle circle-score" style="background-color: #00C74D"></span>
-          <span class="score-bet">5</span>
+            <span class="rounded-circle circle-score" style="background-color: #F95146"></span>
+            <span class="score-bet">45</span>
         </div>
         <div class="d-inline ms-2 ">
-          <span class="rounded-circle circle-score" style="background-color: #2D3035"></span>
-          <span class="score-bet">47</span>
+            <span class="rounded-circle circle-score" style="background-color: #00C74D"></span>
+            <span class="score-bet">5</span>
         </div>
-      </article>
-      <div class="mt-3">
-      <div class="d-inline">
+        <div class="d-inline ms-2 ">
+            <span class="rounded-circle circle-score" style="background-color: #2D3035"></span>
+            <span class="score-bet">47</span>
+        </div>
+    </div>
+    <div class="d-flex">
         <img class="image-circle rounded-circle" style="background-color:#F95146" src='../assets/blade.svg' width="30" height="30">
-      </div>
-      <div class="d-inline">
         <img class="image-circle rounded-circle" style="background-color:#F95146" src='../assets/blade.svg' width="30" height="30">
-      </div>
-      <div class="d-inline">
         <img class="image-circle rounded-circle" style="background-color:#F95146" src='../assets/blade.svg' width="30" height="30">
-      </div>
-      <div class="d-inline">
         <img class="image-circle rounded-circle" style="background-color:#2D3035" src='../assets/blade.svg' width="30" height="30">
-      </div>
-      <div class="d-inline">
         <img class="image-circle rounded-circle" style="background-color:#00C74D" src='../assets/blade.svg' width="30" height="30">
-      </div>
     </div>
-    </section>
+</div>
 
 
-
-    </div>
-
-  </div>
-    <div class='roulette-wrapper flex-grow-0 p-2 mt-5'>
+    <div class='roulette-wrapper'>
         <div class='roulette-selector'></div>
         <div class='roulette-wheel'></div>
     </div>
@@ -213,9 +196,6 @@
     </div>
 
     </div>
-
-
-</div>
 
 
 @endsection

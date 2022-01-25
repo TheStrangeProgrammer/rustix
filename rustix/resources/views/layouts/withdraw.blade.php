@@ -1,7 +1,7 @@
 @extends('main')
 @section('content')
     @if ($inventory->success==true)
-    <div class="d-flex flex-column h-100">
+    <div class="d-flex flex-column flex-fill h-100">
         <div class="flex-fill inventory-wrapper">
             <div class="d-flex flex-wrap inventory">
 

@@ -236,3 +236,6 @@
     z-index: 99;
     cursor: pointer;
   }
+.main{
+    flex-direction: row;
+}
