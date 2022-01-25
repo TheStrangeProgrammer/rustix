@@ -8,9 +8,12 @@ var timer=$(".roulette-timer");
 var progress=$(".round-time-bar div");
 var wheel = $('.roulette-wrapper .roulette-wheel');
 var overlay = $('#overlay');
+var main = $('.main');
 var cardWidth = 70;
 var cardMargin = 3 * 2;
 var card = cardWidth + cardMargin;
+
+
 
 initWheel(outcomes);
 $.getJSON( "getRouletteSpin").done(function( data ) {
@@ -18,8 +21,10 @@ $.getJSON( "getRouletteSpin").done(function( data ) {
     serverSecond=data['currentSecond'];
     console.log(serverSecond);
     setWheelLocation(position);
-    overlay.removeClass("d-flex");
-    overlay.addClass("d-none");
+
+    overlay.css("display","none");
+    main.css("display","flex");
+
     var endTime = new Date(new Date().getTime() + serverSecond*1000);
     currentSecond = (endTime.getTime() - new Date().getTime()) / 1000;
     setInterval(function() {

@@ -207,17 +207,20 @@
     .bet-roulette{
         flex-direction: column;
     }
+    .roulette{
+        flex-direction: column;
+    }
 }
-#overlay {
-    position: absolute;
 
-    width: inherit;
-    height: inherit;
-
-    background-color: #1A1D29;
-    z-index: 99;
-  }
   .main{
-    flex-direction: column;
+    display: none;
+    flex-direction: row;
     padding: 0 30px;
 }
+.roulette{
+    width: inherit;
+}
+#overlay {
+    display: flex;
+
+  }

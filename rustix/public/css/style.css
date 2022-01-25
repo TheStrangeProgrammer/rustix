@@ -15,6 +15,7 @@
     text-size-adjust: none;
 }
 .main{
+    display: flex;
     background-color: #1A1D29;
     border-top: 1px solid black;
     width: 75%;
@@ -175,4 +176,14 @@ ul.second-one{
     .left-sidebar{
         width: 100%;
     }
+    #overlay {
+        width: 100%;
+    }
 }
+#overlay {
+    display: none;
+    background-color: #1A1D29;
+    border-top: 1px solid black;
+    width: 75%;
+    height: 100%;
+  }

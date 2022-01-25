@@ -208,16 +208,13 @@
         flex-direction: column;
     }
 }
-#overlay {
-    position: absolute;
 
-    width: inherit;
-    height: inherit;
-
-    background-color: #1A1D29;
-    z-index: 99;
-  }
   .main{
+      display: none;
     flex-direction: column;
     padding: 0 30px;
 }
+#overlay {
+    display: flex;
+
+  }

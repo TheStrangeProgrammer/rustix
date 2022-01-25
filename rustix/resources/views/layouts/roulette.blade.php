@@ -1,10 +1,6 @@
 @extends('main')
 @section('content')
 
-    <div id="overlay" class="d-flex justify-content-center align-items-center">
-        <div class="spinner-border text-light" style="width: 10rem; height: 10rem;" role="status">
-        </div>
-    </div>
 
 
     <div class="d-flex flex-column last-100">
