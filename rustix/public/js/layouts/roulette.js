@@ -1,48 +1,64 @@
 
 var outcomes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14];
 var currentSecond;
+var serverSecond;
 var isPaused=false;
 var selector=$(".roulette-selector");
 var timer=$(".roulette-timer");
 var progress=$(".round-time-bar div");
+var wheel = $('.roulette-wrapper .roulette-wheel');
+var overlay = $('#overlay');
+var cardWidth = 70;
+var cardMargin = 3 * 2;
+var card = cardWidth + cardMargin;
 
 initWheel(outcomes);
-$.getJSON( "getCurrentSecond").done(function( currentSecond ) {
-    currentSecond=currentSecond%20;
-    $.getJSON( "getRouletteSpin").done(function( outcome ) {
-        spinWheel(outcome,outcomes);
-        $('#overlay').removeClass("d-flex");
-        $('#overlay').addClass("d-none");
-    });
+$.getJSON( "getRouletteSpin").done(function( data ) {
+    var position = outcomes.indexOf(data['outcome'])-outcomes.length/2;
+    serverSecond=data['currentSecond'];
+    console.log(serverSecond);
+    setWheelLocation(position);
+    overlay.removeClass("d-flex");
+    overlay.addClass("d-none");
+    var endTime = new Date(new Date().getTime() + serverSecond*1000);
+    currentSecond = (endTime.getTime() - new Date().getTime()) / 1000;
     setInterval(function() {
-        if(currentSecond<=0.00){
-            currentSecond=20.00;
+        if(currentSecond>20.00){
             isPaused=true;
-            $.getJSON( "getRouletteSpin").done(function( outcome ) {
-                spinWheel(outcome,outcomes);
+            setTimeout(function(){
+                isPaused=false;
+            }, currentSecond*100);
+        }
+        if(currentSecond<=0.00&&!isPaused){
+            isPaused=true;
+            $.getJSON( "getRouletteSpin").done(function( data ) {
+                serverSecond=data['currentSecond'];
+                if(serverSecond==0) serverSecond=30;
+                endTime = new Date(new Date().getTime() + serverSecond*1000);
+                currentSecond = (endTime.getTime() - new Date().getTime()) / 1000;
+                console.log(currentSecond);
+                spinWheel(data['outcome'],outcomes);
             });
             setTimeout(function(){
                 isPaused=false;
             }, 10000);
         }
+
         if(!isPaused){
             timer.text(currentSecond.toFixed(2));
             progress.css("width",currentSecond*5+"%");
-           // $('.round-time-bar .progress-bar').attr("aria-valuenow",(currentSecond*5).toFixed(2));
+            // $('.round-time-bar .progress-bar').attr("aria-valuenow",(currentSecond*5).toFixed(2));
 
-           var position = selector.offset();
-          // console.log(position);
+            var position = selector.offset();
+            // console.log(position);
             var elem = document.elementsFromPoint(position.left, position.top);
             $(elem).find("card").css("background-color", "red");
 
-
-            currentSecond -= 0.01;
         }
-
-
+        currentSecond = (endTime.getTime() - new Date().getTime()) / 1000;
     }, 10);
-
 });
+
 
 
 function addOutcome(outcome){
@@ -96,12 +112,11 @@ function initWheel(values){
 }
 
 function spinWheel(outcome,values){
-  var wheel = $('.roulette-wrapper .roulette-wheel');
+
   var position = values.indexOf(outcome)-values.length/2;
   var cardCount = values.length;
-  var cardWidth = 70;
-  var cardMargin = 3 * 2;
-  var card = cardWidth + cardMargin;
+
+
   var landingPosition = (cardCount * card)*5 + (position * card);
 
   var randomize = Math.floor(Math.random() * cardWidth)- cardWidth/2;
@@ -120,12 +135,15 @@ function spinWheel(outcome,values){
 	});
 
   setTimeout(function(){
-		wheel.css({
-			'transition-timing-function':'',
-			'transition-duration':'',
-		});
-
-    var resetTo = -(position * card + randomize);
-	wheel.css('transform', 'translate3d('+resetTo+'px, 0px, 0px)');
+    setWheelLocation(position,randomize);
   }, 6 * 1000);
+}
+
+function setWheelLocation(position,randomize=-cardWidth/2){
+    wheel.css({
+        'transition-timing-function':'',
+        'transition-duration':'',
+    });
+    var resetTo = -(position * card + randomize);
+    wheel.css('transform', 'translate3d('+resetTo+'px, 0px, 0px)');
 }
