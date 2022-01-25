@@ -160,13 +160,20 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
  }
+ .btn-clear {
+    font-weight: bold;
+    font-size: 12px;
+    padding: 0 16px;
+    border-radius: .5rem;
+    margin-right: 5px ;
+
+}
 .btn-bet {
      background-color:rgb(45, 48, 53) ;
      font-weight: bold;
      font-size: 12px;
      padding: 0 16px;
      border-radius: .5rem;
-     height: 33px;
      margin-right: 5px ;
 
  }
@@ -194,7 +201,7 @@
 }
 @media screen and (max-width: 991px) {
 
-    .media-bet{
+    .btn-bet{
         display: none;
     }
     .bet-roulette{
@@ -209,7 +216,6 @@
 
     background-color: #1A1D29;
     z-index: 99;
-    cursor: pointer;
   }
   .main{
     flex-direction: column;

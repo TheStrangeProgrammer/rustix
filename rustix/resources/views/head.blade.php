@@ -1,4 +1,3 @@
-
 <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
@@ -17,13 +16,13 @@
 <meta name="twitter:description" content="" />
 <meta name="twitter:title" content="" />
 <!--SHEETS-->
-<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('css/loader.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('css/reset.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/loader.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/reset.css') }}">
 @yield('css')
 <!-- BOOTSTRAP -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 <!-- EXTERNALS -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-

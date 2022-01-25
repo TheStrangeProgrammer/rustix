@@ -4,4 +4,4 @@
     <p>{{ $error }}</p>
 
 @endsection
-@section('title',"Error")
+@section('title', 'Error')

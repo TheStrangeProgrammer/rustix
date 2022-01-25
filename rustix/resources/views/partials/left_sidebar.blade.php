@@ -21,12 +21,11 @@
     </div>
 
     @if (Auth::check())
-    <chat class="flex-fill" user="{{ Auth::user()->name }}" ></chat>
+        <chat class="flex-fill" user="{{ Auth::user()->name }}"></chat>
     @else
-    <guestchat class="flex-fill"></guestchat>
+        <guestchat class="flex-fill"></guestchat>
     @endif
 
 
 
 </div>
-
