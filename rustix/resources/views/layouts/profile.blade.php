@@ -2,7 +2,7 @@
 @section('content')
 
     <div class="flex-container">
-        <div class="d-flex flex-column h-50 flex-child ms-3 ">
+        <div class="d-flex flex-column h-50 flex-child ms-3">
             <div style="border: 2px solid #25c52a ">
                 <h3 class="max-width: 100% text-center py-3" style="background-color: #0d0e14">Profile</h3>
                 <p class="ms-3 my-4 fw-bold">Total Deposited: {{ $totalDeposit }}</p>
