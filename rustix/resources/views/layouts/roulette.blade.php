@@ -97,6 +97,7 @@
               <div class="d-flex flex-column flex-fill bet">
                 <div class="d-flex justify-content-center align-items-center text-bet">
                     <img class=" image-circle rounded-circle" style="background-color: #00C74D" src='../assets/R.svg' width="30" height="30">
+                    
                     <span class="mx-1">Win 14x</span>
                 </div>
                 <button class="button-bet zoom-in-out-box" style="background-color: #00C74D" aria-setsize="4" aria-posinset="2">Place Bet</button>
