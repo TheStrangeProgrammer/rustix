@@ -4,7 +4,7 @@
     <div class="spinner-border text-light" style="width: 10rem; height: 10rem;" role="status">
     </div>
 </div>
-<div class="d-flex flex-column last-100 p-5">
+<div class="d-flex flex-column last-100">
     <div class="last-percent justify-content-start fw-bold ">
         <div class="label d-inline">Last 100</div>
         <div class="d-inline ms-2 ">
