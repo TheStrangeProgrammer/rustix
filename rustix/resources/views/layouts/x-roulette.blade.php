@@ -10,7 +10,14 @@
     <button>
       Spin Wheel
     </button>
-
+    <div class='roulette-wrapper flex-grow-0 p-2 mt-5'>
+      <div class='roulette-selector'></div>
+      <div class='roulette-wheel'></div>
+  </div>
+  <p class="timer-custom">ROLLING IN: <span class="roulette-timer">0</span></p>
+  <div class="d-flex rounded-pill round-time-bar">
+      <div class="rounded-pill"></div>
+    </div>
 
 
 @endsection
