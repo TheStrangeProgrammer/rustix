@@ -13,7 +13,11 @@
             <section class="d-flex left-sidebar h-100 ">
                 @include('partials.left_sidebar')
             </section>
-            <main class="d-flex main">
+            <div id="overlay" class="justify-content-center align-items-center">
+                <div class="spinner-border text-light" style="width: 10rem; height: 10rem;" role="status">
+                </div>
+            </div>
+            <main class="main">
                 @yield('content')
             </main>
 
