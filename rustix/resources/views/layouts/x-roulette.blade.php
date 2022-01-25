@@ -1,9 +1,12 @@
 @extends('main')
 @section('content')
+
     <div id="overlay" class="d-flex justify-content-center align-items-center">
         <div class="spinner-border text-light" style="width: 10rem; height: 10rem;" role="status">
         </div>
     </div>
+
+
     <div class="d-flex flex-column last-100">
         <div class="last-percent justify-content-start fw-bold ">
             <div class="label d-inline">Last 100</div>
@@ -40,7 +43,7 @@
         <div class='d-flex roulette-wheel'></div>
     </div>
     <p class="timer-custom">ROLLING IN: <span class="roulette-timer">0</span></p>
-    <div class="d-flex rounded-pill round-time-bar">
+    <div class="d-flex flex-shrink-0 rounded-pill round-time-bar">
         <div class="rounded-pill"></div>
     </div>
     <div class="d-flex justify-content-end bet-amount py-2 rounded-3">
@@ -51,15 +54,15 @@
             </div>
             <input type="number" class="input-bet">
         </div>
-        <button type="button" class="btn-bet " style="background-color: #0d0e14 !important">CLEAR</button>
+        <button type="button" class="btn-clear">CLEAR</button>
         <button type="button" class="btn-bet ">LAST</button>
-        <button type="button" class="btn-bet media-bet">+1</button>
-        <button type="button" class="btn-bet media-bet">+10</button>
-        <button type="button" class="btn-bet media-bet">+100</button>
-        <button type="button" class="btn-bet media-bet">+1000</button>
-        <button type="button" class="btn-bet ">1/2</button>
-        <button type="button" class="btn-bet ">X2</button>
-        <button type="button" class="btn-bet media-bet">MAX</button>
+        <button type="button" class="btn-bet">+1</button>
+        <button type="button" class="btn-bet">+10</button>
+        <button type="button" class="btn-bet">+100</button>
+        <button type="button" class="btn-bet">+1000</button>
+        <button type="button" class="btn-bet">1/2</button>
+        <button type="button" class="btn-bet">X2</button>
+        <button type="button" class="btn-bet">MAX</button>
     </div>
 
     <div class="p-3 mt-4">
