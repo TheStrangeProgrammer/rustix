@@ -34,14 +34,14 @@ $.getJSON( "getRouletteSpin").done(function( data ) {
                 isPaused=false;
             }, currentSecond*100);
         }
-        if(currentSecond<=0.00&&!isPaused){
+        if(currentSecond<=0&&!isPaused){
             isPaused=true;
             $.getJSON( "getRouletteSpin").done(function( data ) {
                 serverSecond=data['currentSecond'];
                 if(serverSecond==0) serverSecond=30;
                 endTime = new Date(new Date().getTime() + serverSecond*1000);
                 currentSecond = (endTime.getTime() - new Date().getTime()) / 1000;
-                console.log(currentSecond);
+                console.log(serverSecond);
                 spinWheel(data['outcome'],outcomes);
             });
             setTimeout(function(){

@@ -8,7 +8,7 @@ use Illuminate\Http\Client\Response;
 use App\Events\NewBalance;
 use App\Models\User;
 use App\Http\Requests\InventoryRequest;
-
+use Illuminate\Support\Facades\Storage;
 class UserController extends Controller
 {
 
@@ -98,8 +98,13 @@ class UserController extends Controller
         return view("layouts/x-roulette");
     }
     public function getRouletteSpin(){
-        $data['outcome'] = rand(0,14);
-        $data["currentSecond"] = abs(Carbon::now()->isoFormat('s')-60)%30;
+        $currentSecond = Carbon::now()->isoFormat('s');
+        if($currentSecond<=30){
+            $data['outcome'] = json_decode(Storage::disk('local')->get('scheduleData.json'))->rouletteRoll;
+        }else {
+            $data['outcome'] = json_decode(Storage::disk('local')->get('scheduleData.json'))->rouletteRoll;
+        }
+        $data["currentSecond"] = abs($currentSecond-60)%30;
         return response()->json($data);
     }
     public function getCurrentSecond(){
