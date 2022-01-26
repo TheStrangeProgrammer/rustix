@@ -2,41 +2,17 @@
 @section('content')
 
     <div class="d-flex flex-column roulette">
-
-
-
-        <div class="d-flex flex-column last-100">
-            <div class="last-percent justify-content-start fw-bold ">
-                <div class="label d-inline">Last 100</div>
-                <div class="d-inline ms-2 ">
-                    <span class="rounded-circle circle-score" style="background-color: #F95146"></span>
-                    <span class="score-bet">45</span>
-                </div>
-                <div class="d-inline ms-2 ">
-                    <span class="rounded-circle circle-score" style="background-color: #00C74D"></span>
-                    <span class="score-bet">5</span>
-                </div>
-                <div class="d-inline ms-2 ">
-                    <span class="rounded-circle circle-score" style="background-color: #2D3035"></span>
-                    <span class="score-bet">47</span>
-                </div>
-            </div>
-            <div class="d-flex mt-3">
-                <img class="image-circle rounded-circle" style="background-color:#F95146" src='../assets/blade.svg'
-                    width="30" height="30">
-                <img class="image-circle rounded-circle" style="background-color:#F95146" src='../assets/blade.svg'
-                    width="30" height="30">
-                <img class="image-circle rounded-circle" style="background-color:#F95146" src='../assets/blade.svg'
-                    width="30" height="30">
-                <img class="image-circle rounded-circle" style="background-color:#2D3035" src='../assets/blade.svg'
-                    width="30" height="30">
-                <img class="image-circle rounded-circle" style="background-color:#00C74D" src='../assets/blade.svg'
-                    width="30" height="30">
-            </div>
+        <div class="d-flex justify-content-center py-2 rounded-3">
+            <button type="button" class="btn-top" style="background-color: #7c99b4">x6.69</button>
+            <button type="button" class="btn-top" style="background-color: #2D3035">+1</button>
+            <button type="button" class="btn-top" style="background-color: #00C74D">+10</button>
+            <button type="button" class="btn-top" style="background-color: #00C74D">+100</button>
+            <button type="button" class="btn-top" style="background-color: #F95146">+1000</button>
+            <button type="button" class="btn-top" style="background-color: #7c99b4">1/2</button>
+            <button type="button" class="btn-top" style="background-color: #2D3035">X2</button>
+            <button type="button" class="btn-top" style="background-color: #F95146">MAX</button>
         </div>
-
-
-        <div class="d-flex flex-shrink-0 flex-grow-0 justify-content-center overflow-hidden roulette-wrapper ">
+        <div class="d-flex flex-shrink-0 flex-grow-0 justify-content-center overflow-hidden roulette-wrapper w-100">
             <div class='roulette-selector'></div>
             <div class='d-flex roulette-wheel'></div>
         </div>
@@ -44,37 +20,38 @@
         <div class="d-flex flex-shrink-0 rounded-pill round-time-bar">
             <div class="rounded-pill"></div>
         </div>
-        <div class="d-flex justify-content-end bet-amount py-2 rounded-3">
-            <div class="flex-column flex-fill betamount">
-                <div style="opacity: 50%">Bet amount</div>
-                <div class="d-inline">
-                    <img class="input-prefix " src="assets/dollar_coin.svg" width="16" height="16">
-                </div>
-                <input type="number" class="input-bet">
+        <div class="d-flex justify-content-center" style="margin-top: 50px">
+            <div class="d-flex flex-column my-auto">
+                <span class="text-center text-wager">WAGER</span>
+                <div class="d-flex flex-row wager">
+                    <span class="fw-bolder my-auto" style="color: rgb(255, 255, 255);">$</span>
+                    <input type="number" class="my-auto ms-2 input-wager">
+                </div>   
             </div>
-            <button type="button" class="btn-clear">CLEAR</button>
-            <button type="button" class="btn-bet ">LAST</button>
-            <button type="button" class="btn-bet">+1</button>
-            <button type="button" class="btn-bet">+10</button>
-            <button type="button" class="btn-bet">+100</button>
-            <button type="button" class="btn-bet">+1000</button>
-            <button type="button" class="btn-bet">1/2</button>
-            <button type="button" class="btn-bet">X2</button>
-            <button type="button" class="btn-bet">MAX</button>
+            <div class="d-flex flex-column ms-2 my-auto">
+                <span class="text-center text-wager">MULTIPLIER</span>
+                <div class="d-flex flex-row wager">
+                    <span class="fw-bolder my-auto" style="color: rgb(255, 255, 255);">x</span>
+                    <input type="number" class="my-auto ms-2 input-wager">
+                </div>   
+            </div>
+            <div class="d-flex flex-row justify-content-evenly ms-2 my-auto max-bet">
+                <button type="button" class="max-btn">MAX BET</button>
+                <button type="button" class="place-bet mx-auto align-self-center">PLACE BET</button>
+                <button type="button" class="replay">
+                    <img src="assets/replay.svg" style="color-adjust: white" width="50" height="50">
+                </button>
+                
+            </div>
         </div>
     </div>
 
 
-    <div class="d-flex flex-column flex-fill m-2">
-        <div class="d-flex flex-column flex-fill bet">
-            <div class="d-flex">
+    <div class="d-flex flex-column flex-fill m-2 p-2 flex-shrink-1 bet">
+        <div class="d-flex flex-column flex-fill ">
+            <div class="d-flex flex-column">
                 <div class="me-auto p-2 ">
-                    <span class="score-bet fw-bold">6</span>
-                    <span class="fw-bold">Bets</span>
-                </div>
-                <div class="d-flex flex-row justify-content-end align-items-center me-2">
-                    <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
-                    <span class="score-bet fw-bold">32</span>
+                    <span class="fw-bold">Top Bets</span>
                 </div>
                 <div class="d-flex mt-2 ps-2 bg-list">
                     <div class="me-auto p-2">
@@ -82,9 +59,28 @@
                             width="30" height="30">
                         <span class="fw-bold">Joe</span>
                     </div>
-                    <div class="d-flex flex-row justify-content-end align-items-center me-2">
-                        <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
-                        <span class="score-bet fw-bold">1.200</span>
+                    <div class="d-flex flex-row justify-content-end align-items-center p-2 me-2">
+                        <span class="score-bet fw-bold">x2</span>
+                        <span class="fw-bolder ms-3 ">$</span>
+                        <span class="score-bet fw-bold">1.000</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="d-flex flex-column mt-3">
+                <div class="me-auto p-2 ">
+                    <span class="fw-bold">All Bets</span>
+                </div>
+                <div class="d-flex mt-2 ps-2 bg-list">
+                    <div class="me-auto p-2">
+                        <img class=" image-circle rounded-circle" style="background-color:#F95146" src='../assets/hook.svg'
+                            width="30" height="30">
+                        <span class="fw-bold">Joe</span>
+                    </div>
+                    <div class="d-flex flex-row justify-content-end align-items-center p-2 me-2">
+                        <span class="score-bet fw-bold">x2</span>
+                        <span class="fw-bolder ms-3 ">$</span>
+                        <span class="score-bet fw-bold">1.000</span>
                     </div>
 
                 </div>
