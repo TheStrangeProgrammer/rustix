@@ -20,7 +20,14 @@ class Kernel extends ConsoleKernel
         $schedule->call(function () {
             $this->bootstrap();
 
-            Storage::disk('local')->put('depositInventory.json', json_encode(InventoryController::getInventory(config("rustix.depositId"))));
+            $data["inventory"] = InventoryController::getInventory(config("rustix.depositId"));
+            Storage::disk('local')->put('depositInventory.json', json_encode($data));
+            sleep(27);
+            $data["rouletteRoll"]=rand(0,14);
+            Storage::disk('local')->put('scheduleData.json', json_encode($data));
+            sleep(30);
+            $data["rouletteRoll"]=rand(0,14);
+            Storage::disk('local')->put('scheduleData.json', json_encode($data));
 
         })->everyMinute();
     }
