@@ -4,19 +4,19 @@
 
 
     <div class="d-flex flex-column last-100">
-        <div class="last-percent justify-content-start fw-bold ">
+        <div class="d-flex flex-row last-percent justify-content-start fw-bold align-items-center">
             <div class="label d-inline">Last 100</div>
-            <div class="d-inline ms-2 ">
-                <span class="rounded-circle circle-score" style="background-color: #F95146"></span>
-                <span class="score-bet">45</span>
+            <div class="d-flex flex-row ms-2 align-items-center">
+                <div class="rounded-circle circle-score ms-1" style="background-color: #F95146" ></div>
+                <span class="score-bet ms-1">45</span>
             </div>
-            <div class="d-inline ms-2 ">
-                <span class="rounded-circle circle-score" style="background-color: #00C74D"></span>
-                <span class="score-bet">5</span>
+            <div class="d-flex flex-row ms-2 align-items-center">
+                <span class="rounded-circle circle-score ms-1" style="background-color: #00C74D"></span>
+                <span class="score-bet ms-1">5</span>
             </div>
-            <div class="d-inline ms-2 ">
-                <span class="rounded-circle circle-score" style="background-color: #2D3035"></span>
-                <span class="score-bet">47</span>
+            <div class="d-flex flex-row ms-2 align-items-center">
+                <span class="rounded-circle circle-score ms-1" style="background-color: #2D3035"></span>
+                <span class="score-bet ms-1">47</span>
             </div>
         </div>
         <div class="d-flex mt-3">

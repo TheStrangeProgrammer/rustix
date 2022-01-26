@@ -98,7 +98,10 @@
     font-family: var(--font-family-base);
 }
 
-
+.circle-score{
+    width: 20px;
+    height: 20px;
+}
 
  .text-bet{
      text-align: center;

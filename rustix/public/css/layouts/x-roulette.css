@@ -41,6 +41,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-color:#00C74D;
+    background-image: url("blade.svg") !important;
 
 }
 .roulette-bait-left{
@@ -60,7 +61,6 @@
     background-size: cover;
 
 }
-
 
 .roulette-black{
     background-color:#2D3035;
@@ -97,76 +97,19 @@
     font-family: var(--font-family-base);
 }
 
-
-
- .text-bet{
-     text-align: center;
-     padding-top: 5%;
-     padding-bottom: 5%;
-     font-weight: bold;
-
- }
  .bet{
     background-color: #0d0e14;
     border-radius: 10px;
-
  }
  .bg-list{
      background-color: #242630 ;
- }
- .button-bet{
-     padding-top: 5%;
-     padding-bottom: 5%;
-     border-radius: 10px;
-     font-weight: bold;
  }
  .image-circle{
      padding: 3px;
      margin: 0 3px;
  }
- .zoom-in-out-box:hover {
+ 
 
-     background: #f50057;
-     animation: zoom-in-zoom-out 2s;
-   }
-
-   @keyframes zoom-in-zoom-out {
-     100% {
-       transform: scale(1, 1);
-     }
-   }
-   @keyframes roundtime {
-     to {
-       /* More performant than animating `width` */
-       transform: scaleX(0);
-     }
-   }
-.bet-amount{
-     background-color: #0d0e14;
-     margin-top: 30px;
-     box-shadow: 0 2px 1px rgba(0,0,0,0.09),
-     0 4px 2px rgba(0,0,0,0.09),
-     0 8px 4px rgba(0,0,0,0.09),
-     0 16px 8px rgba(0,0,0,0.09),
-     0 32px 16px rgba(0,0,0,0.09);
-
-
- }
-.betamount{
-    font-size: 12px ;
-    font-weight: 400;
-    margin-left: 5px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
- }
- .btn-clear {
-    font-weight: bold;
-    font-size: 12px;
-    padding: 0 16px;
-    border-radius: .5rem;
-    margin-right: 5px ;
-
-}
 .btn-top{
     background-color:rgb(45, 48, 53) ;
     font-weight: bold;
@@ -183,17 +126,7 @@
      0 16px 8px rgba(0,0,0,0.09),
      0 32px 16px rgba(0,0,0,0.09);
 }
-.btn-bot{
-    background-color:rgb(45, 48, 53) ;
-    font-weight: bold;
-    font-size: 12px;
-    padding: 0 16px;
-    border-radius: 1.10rem;
-    margin-right: 5px ;
-    height: 35px;
-    min-width: 75px;
-    margin-top: 30px;
-}
+
 .text-wager{
     font-size: 12px;
     font-weight: 800;
@@ -203,11 +136,10 @@
     font-weight: bold;
     font-size: 13px;
     padding: 0 8px;
-    border-radius: 1.10rem;
+    border-radius: 0.5rem;
     height: 41px;
     width: 99px;
     margin-top: 7px;
-    border: 2px solid rgb(37, 197, 42);
     box-shadow: 0 2px 1px rgba(0,0,0,0.09),
     0 4px 2px rgba(0,0,0,0.09),
     0 8px 4px rgba(0,0,0,0.09),
@@ -215,61 +147,37 @@
     0 32px 16px rgba(0,0,0,0.09);
 }
 .input-wager{
-    background-color:rgb(45, 48, 53) ;
+    background-color:rgb(67, 70, 73) ;
     border: 0;
     font-weight: bold;
     font-size: 13px;
-    height: 30px;
-    width: 60px;
+    border-radius: 0 0.5rem 0.5rem 0;
+    height: 41px;
+    width: 75px;
     -webkit-appearance: none;  
     -moz-appearance: textfield;
 }
 .max-btn{
-    font-weight: bolder;
-    font-size: 13px;
-    height: 72px;
-    width: 80px;
-    margin-right: 5px;
-    
-}
-
-.max-bet{
-    background-color:rgb(45, 48, 53) ;
-    font-weight: bold;
-    font-size: 13px;
-    padding: 0 8px;
-    border-radius: 1.10rem;
-    height: 72px;
-    width: 300px;
-    margin-top: 7px;
-    border: 2px solid rgb(37, 197, 42);
-    box-shadow: 0 2px 1px rgba(0,0,0,0.09),
-    0 4px 2px rgba(0,0,0,0.09),
-    0 8px 4px rgba(0,0,0,0.09),
-    0 16px 8px rgba(0,0,0,0.09),
-    0 32px 16px rgba(0,0,0,0.09);
-}
-.place-bet{
-    font-size: 20px;
+    background-color:rgb(0, 199, 77);
     font-weight: 800;
+    font-size: 12px;
     padding: 0 8px;
-    border-radius: 1.10rem;
-    height: 100px;
-    width: 200px;
-    background-color:#293e1d;
-    border: 5px solid rgb(37, 197, 42);
+    border-radius: 0.5rem;
+    height: 41px;
+    width: 99px;
+    transition: 0.3s;
     box-shadow: 0 2px 1px rgba(0,0,0,0.09),
     0 4px 2px rgba(0,0,0,0.09),
     0 8px 4px rgba(0,0,0,0.09),
     0 16px 8px rgba(0,0,0,0.09),
     0 32px 16px rgba(0,0,0,0.09);
 }
-
-.replay{
-    height: 72px;
-    width: 80px;
-    margin-left: 5px;
+.max-btn:hover{
+    background-color: rgb(25, 158, 76);
 }
+
+
+
 .btn-bet {
      background-color:rgb(45, 48, 53) ;
      font-weight: bold;

@@ -2,7 +2,7 @@
 @section('content')
 
     <div class="d-flex flex-column roulette">
-        <div class="d-flex justify-content-center py-2 rounded-3">
+        <div class="d-flex justify-content-start py-2 rounded-3">
             <button type="button" class="btn-top" style="background-color: #7c99b4">x6.69</button>
             <button type="button" class="btn-top" style="background-color: #2D3035">+1</button>
             <button type="button" class="btn-top" style="background-color: #00C74D">+10</button>
@@ -20,29 +20,31 @@
         <div class="d-flex flex-shrink-0 rounded-pill round-time-bar">
             <div class="rounded-pill"></div>
         </div>
-        <div class="d-flex justify-content-center" style="margin-top: 50px">
-            <div class="d-flex flex-column my-auto">
+        <div class="d-flex justify-content-center " style="margin-top: 50px">
+            <div class="d-flex flex-column">
                 <span class="text-center text-wager">WAGER</span>
                 <div class="d-flex flex-row wager">
                     <span class="fw-bolder my-auto" style="color: rgb(255, 255, 255);">$</span>
                     <input type="number" class="my-auto ms-2 input-wager">
                 </div>   
             </div>
-            <div class="d-flex flex-column ms-2 my-auto">
+            <div class="d-flex flex-column ms-2">
                 <span class="text-center text-wager">MULTIPLIER</span>
                 <div class="d-flex flex-row wager">
                     <span class="fw-bolder my-auto" style="color: rgb(255, 255, 255);">x</span>
                     <input type="number" class="my-auto ms-2 input-wager">
                 </div>   
             </div>
-            <div class="d-flex flex-row justify-content-evenly ms-2 my-auto max-bet">
-                <button type="button" class="max-btn">MAX BET</button>
-                <button type="button" class="place-bet mx-auto align-self-center">PLACE BET</button>
-                <button type="button" class="replay">
-                    <img src="assets/replay.svg" style="color-adjust: white" width="50" height="50">
-                </button>
-                
+            
+            <div class="d-flex ms-2  align-self-end">
+                <button type="button" class=" max-btn">MAX BET</button> 
             </div>
+            <div class="d-flex ms-2  align-self-end">
+                <button type="button" class=" max-btn">PLACE BET</button> 
+            </div>        
+            <button type="button" class="d-flex ms-2 align-self-end replay">
+                <img src="assets/replay.svg" style="color-adjust: white" width="41" height="41">
+            </button>
         </div>
     </div>
 
