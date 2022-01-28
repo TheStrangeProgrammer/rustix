@@ -3,8 +3,9 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Socialite;
+
 use Exception;
+use Laravel\Socialite\Facades\Socialite;
 
 class AuthController extends Controller
 {
@@ -26,13 +27,20 @@ class AuthController extends Controller
 
             if($isUser){
                 Auth::login($isUser);
+                $isUser->name=$user->nickname;
+                $isUser->avatar=$user->avatar;
+                $isUser->save();
                 return redirect('/');
             }else{
                 $createUser = User::create([
                     'name' => $user->nickname,
                     'steamid' => $user->id,
                     'avatar' => $user->avatar,
-                    'balance' => 20
+                    'referralCode' => uniqid(),
+                    'balance' => 20,
+                    'totalDeposit' => 0,
+                    'totalWithdraw' => 0,
+                    'totalSpent' => 0
                 ]);
 
                 Auth::login($createUser);

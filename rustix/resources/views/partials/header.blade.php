@@ -1,96 +1,56 @@
-<header class="d-flex">
+<header class="d-flex ps-5 pe-5 pt-4 pb-4 header">
     <nav class="navbar navbar-expand-lg navbar-dark bg-black w-100">
-        <div class="container-fluid">
-            <h3><span class="green">RUSTIX</span>.COM</h3>
-            <a class="nav-link me-auto" href="#">
-                <i class="fas fa-coins green d-inline"></i>
-                <p class="ms-1 d-inline">FREE COINS</p>
+        <div class="container-fluid ">
+            <h1 class="h2 mb-0"><span class="green">RUSTIX</span><span class="white">.COM</span>
+            </h1>
+            <a id="coins" class="d-flex nav-link d-none" href="#">
+                <i class="bi bi-coin green"></i>
+                <span class="fw-100 align-self-center" style="color: white">FREE COINS</span>
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Withdraw</a>
-                </li>
-                @if (Auth::check())
-                <balance user="{{ Auth::user()->steamid }}"></balance>
-                @endif
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ URL::route('getUserInventory') }}">Deposit</a>
-                </li>
-                <li class="nav-item dropdown">
-
+                <ul class="navbar-nav ms-auto ">
                     @if (Auth::check())
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        {{ Auth::user()->name }}
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li><a class="dropdown-item" href="#">Referral</a></li>
-                        <li><a class="dropdown-item" href="{{ URL::route('logOut') }}">Log Out</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Admin Panel</a></li>
-                        </ul>
+                        <li class="nav-item py-2 "><a class="nav-link text-center active font black" aria-current="page"
+                                href="{{ URL::route('getDeposit') }}">WITHDRAW</a></li>
+                        <balance class="text-center nav-item mx-3 py-3 black fw-bold" style="color: rgb(255, 255, 255)"
+                            user="{{ Auth::user()->steamid }}"></balance>
+                        <li class="nav-item color mx-3 my-2 "><a class="nav-link text-center mx-4 black fw-bold"
+                                style="color: white" href="{{ URL::route('getUserInventory') }}">DEPOSIT</a></li>
+
+                        <li class="nav-item dropdown py-2">
+                            <a class="nav-link dropdown-toggle me-auto d-flex align-items-center justify-content-center py-0 black fw-bold"
+                                style="color: white" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <img class=" overflow-visible" src="{{ Auth::user()->avatar }}">
+                                <span>{{ Auth::user()->name }}</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-white dropdown-menu-end py-0 rounded-0"
+                                aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item text-center py-3"
+                                        href="{{ URL::route('getProfile') }}">Profile</a></li>
+                                <li><a class="dropdown-item text-center py-3" href="#">Referral</a></li>
+                                <li><a class="dropdown-item text-center py-3" href="{{ URL::route('logOut') }}">Log
+                                        Out</a></li>
+                                <li class="color"><a
+                                        class="dropdown-item text-center py-3 text-white hov-green" href="#">Admin
+                                        Panel</a></li>
+                            </ul>
+                        </li>
                     @else
-                        <a class="nav-link" href="{{ URL::route('steam') }}">
-                        Log In
-                        </a>
 
+
+
+                        <li class="nav-item "><a class="nav-link" href="{{ URL::route('login') }}">Log
+                                In</a></li>
                     @endif
-
-                </li>
-
                 </ul>
             </div>
         </div>
-      </nav>
-</header>
-<!--
-<header class="d-flex navbar">
-
-    <h3><span class="green">RUSTIX</span>.COM</h3>
-    <a href="">
-        <i class="fas fa-coins green"></i>
-        <p class="ms-1">FREE COINS</p>
-    </a>
-
-
-    <nav class="d-flex navbar navbar-expand-lg">
-        <div class="d-flex">
-            <ul>
-            <a href="#">WITHDRAW</a>
-            <span>BALANCE:<span>33.21USD</span></span>
-            <a href="#" >DEPOSIT</a>
-            <button>STEAM USERNAME</a>
-            <div class="d-none">
-                <a href="#" >Profile</a>
-                <a href="#">Affiliate</a>
-                <a href="#">Log Out</a>
-                <a href="#">Admin Panel</a>
-            </div>
-
-        </div>
-        <a href="#"></a>
-
-        <div>
-            <div>BALANCE:<span>33.21USD</span></div>
-            <a href="#">WITHDRAW</a>
-            <a href="#">DEPOSIT</a>
-            <span>
-                <a href="#">STEAM USERNAME <i></i></a>
-                <div>
-                    <a href="#">Profile</a>
-                    <a href="#">Affiliate</a>
-                    <a href="#">Log Out</a>
-                    <a href="#">Admin Panel</a>
-                </div>
-            </span>
-
     </nav>
-
 </header>
--->

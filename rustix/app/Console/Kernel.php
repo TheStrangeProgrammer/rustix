@@ -2,9 +2,10 @@
 
 namespace App\Console;
 
+use App\Http\Controllers\InventoryController;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-
+use Illuminate\Support\Facades\Storage;
 class Kernel extends ConsoleKernel
 {
     /**
@@ -15,7 +16,20 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+
+        $schedule->call(function () {
+            $this->bootstrap();
+
+            $data["inventory"] = InventoryController::getInventory(config("rustix.depositId"));
+            Storage::disk('local')->put('depositInventory.json', json_encode($data));
+            sleep(27);
+            $data["rouletteRoll"]=rand(0,14);
+            Storage::disk('local')->put('scheduleData.json', json_encode($data));
+            sleep(30);
+            $data["rouletteRoll"]=rand(0,14);
+            Storage::disk('local')->put('scheduleData.json', json_encode($data));
+
+        })->everyMinute();
     }
 
     /**
@@ -29,4 +43,5 @@ class Kernel extends ConsoleKernel
 
         require base_path('routes/console.php');
     }
+
 }

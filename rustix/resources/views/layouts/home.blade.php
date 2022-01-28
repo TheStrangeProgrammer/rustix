@@ -1,5 +1,5 @@
 @extends('main')
 @section('content')
-asdf
+    asdf
 @endsection
-@section('title',"Home")
+@section('title', 'Home')

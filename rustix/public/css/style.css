@@ -1,18 +1,26 @@
+.header{
+    background-color: #0d0e14;
+}
 .green{
 	color:#14DB1A;
+    font-weight: 600;
 }
 .body{
     color: #F9F9F9;
-    font-family: 'Prompt', sans-serif;
-    font-weight: 500;
+    font-family: 'Titillium Web', sans-serif;
+    background:#191B28;
     line-height: 16px;
     font-size: 16px;
     word-spacing: 0;
     text-size-adjust: none;
 }
 .main{
-    width: 100%;
-    background-color:#1A1D29;
+    display: flex;
+    background-color: #1A1D29;
+    border-top: 1px solid black;
+    width: 75%;
+    height: 100%;
+    overflow-y: auto;
 }
 .footer{
     background-color:#0d0e14;
@@ -23,24 +31,19 @@
 
 }
 .left-sidebar{
-    width: 350px;
     background-color: #0d0e14;
     border-right: 1px solid black;
+    width: 25%;
 }
 .sidebar{
     width: 50px;
-}
-.chat{
-    width: 300px;
-}
-.navbar{
-    background-color: #0d0e14;
-    border-bottom: 1px solid black;
+    border-right: 1px solid black;
 }
 
 .chat-input{
     border: 1px solid rgba(255,255,255, .15);
     background-color:#1A1D29;
+    color:white
 }
 .message{
     background-color: rgba(255,255,255,.05);
@@ -89,18 +92,98 @@
     border-top: 1px solid black;
 }
 .chat-wrapper{
-    flex: 1 1 auto;
     overflow-y: auto;
     height: 0px;
     background-color:#1A1D29;
 }
-.inventory{
+
+.white{
+
+    font-weight: 600;
+    color: rgb(255, 253, 253);
 
 }
-.item{
-    width:150px;
-    height:150px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+
+.color{
+
+    background-color: #14DB1A;
+    align-items: center;
+
 }
+.text-white{
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+}
+
+
+.font{
+    font-size: 15px;
+}
+
+.chat-top{
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+.color:hover{
+    background-color: #25c52a;
+}
+
+.hov-green:hover{
+    background-color: #25c52a !important;
+}
+
+img.overflow-visible{
+    width: 32px;
+    height: 32px;
+}
+ul.dropdown-menu {
+    margin-top:33px !important;
+    min-width: 13.7rem !important;
+    margin-right: -3.70rem !important;
+}
+ul.second-one{
+    margin-right: -1rem !important;
+}
+
+
+
+@media screen and (max-width: 991px) {
+    .navbar-nav {
+      background-color: #ffffff;
+      width: 100% !important;
+      margin-top: 50px !important;
+    }
+
+    ul.dropdown-menu{
+        border: none !important;
+        margin: 0px !important;
+        width: 100% !important;
+    }
+    .black {
+        color: rgb(17, 17, 17) !important;
+    }
+    li.nav-item{
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+
+    }
+    #sidebar-and-content {
+        flex-direction: column-reverse;
+    }
+    .main{
+        width: 100%;
+    }
+    .left-sidebar{
+        width: 100%;
+    }
+    #overlay {
+        width: 100%;
+    }
+}
+#overlay {
+    display: none;
+    background-color: #1A1D29;
+    border-top: 1px solid black;
+    width: 75%;
+    height: 100%;
+  }
