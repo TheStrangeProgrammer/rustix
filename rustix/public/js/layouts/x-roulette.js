@@ -35,7 +35,7 @@ $.getJSON( "getRouletteSpin").done(function( data ) {
         if(currentSecond<=0.00&&!isPaused){
             isPaused=true;
             $.getJSON( "getRouletteSpin").done(function( data ) {
-                serverSecond=10000;
+                serverSecond=data['currentSecond'];
                 if(serverSecond==0) serverSecond=30;
                 endTime = new Date(new Date().getTime() + serverSecond*1000);
                 currentSecond = (endTime.getTime() - new Date().getTime()) / 1000;
@@ -75,69 +75,69 @@ function initWheel(values){
         var image;
         if(value<6){
           if(value%2==0) {
-            color="roulette-black";
+            color="x-roulette-image-1";
             image="1";
           }
           else {
-            color="roulette-red";
+            color="x-roulette-image-2";
             image="2";
           }
         } else {
           if(value%2==1){
-            color="roulette-black";
+            color="x-roulette-image-3";
             image="3";
           }
           else{
-            color="roulette-red";
+            color="x-roulette-image-4";
             image="4";
           }
         }
         if(value==6){
-          color="roulette-house";
+          color="x-roulette-image-5";
           image="5";
         }
         if(value==5){
-          color="roulette-bait-left";
+          color="x-roulette-image-6";
           image="6";
         }
         if(value==7){
-          color="roulette-bait-right";
+          color="x-roulette-image-7";
           image="7";
         }
         if(value==8){
-            color="roulette-bait-right";
+            color="x-roulette-image-8";
             image="8";
           }
           if(value==9){
-            color="roulette-bait-right";
+            color="x-roulette-image-9";
             image="9";
           }
           if(value==10){
-            color="roulette-bait-right";
+            color="x-roulette-image-10";
             image="10";
           }
           if(value==11){
-            color="roulette-bait-right";
-            image="11nou";
+            color="x-roulette-image-11";
+            image="11";
           }
           if(value==12){
-            color="roulette-bait-right";
+            color="x-roulette-image-12";
             image="12";
           }
           if(value==13){
-            color="roulette-bait-right";
+            color="x-roulette-image-13";
             image="13";
           }
-          if(value==714){
-            color="roulette-bait-right";
+          if(value==14){
+            color="x-roulette-image-14";
             image="14";
           }
           if(value==15){
-            color="roulette-bait-right";
+            color="x-roulette-image-15";
             image="15";
           }
           if(value==16){
-            color="roulette-bait-right";
+            color="x-roulette-image-16";
             image="16";
           }
 
