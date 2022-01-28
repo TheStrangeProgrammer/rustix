@@ -33,9 +33,9 @@
     align-items: center !important;
     justify-content: end !important;
     padding-bottom: 5px;
-    color:white;
     font-size:1em;
     padding: 5px;
+    
 }
 .roulette-house{
     background-repeat: no-repeat;
@@ -59,6 +59,7 @@
     background-color: #F95146 ;
     background-repeat: no-repeat;
     background-size: cover;
+    align-items: center;
 
 }
 
