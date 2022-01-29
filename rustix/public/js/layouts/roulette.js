@@ -13,8 +13,8 @@ var cardMargin = 3 * 2;
 var card = cardWidth + cardMargin;
 
 
-
 initWheel(outcomes);
+
 $.getJSON( "getRouletteSpin").done(function( data ) {
     let main = $('.main');
     let overlay = $('#overlay');
@@ -63,22 +63,44 @@ $.getJSON( "getRouletteSpin").done(function( data ) {
 });
 
 $('#bet-red').click(function() {
-    $.post("placeBet", {  bet:0 , betAmount:inputBet.val() });
+    $.ajax({
+        type:'POST',
+        url:'placeBet',
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+        data: JSON.stringify({  bet:0 , betAmount:parseInt(inputBet.val()) })
+     });
 });
 $('#bet-green').click(function() {
-    $.post("placeBet", {  bet:1,betAmount:inputBet.val() }, function () {
-
-    });
+    $.ajax({
+        type:'POST',
+        url:'placeBet',
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+        data: JSON.stringify({  bet:1 , betAmount:parseInt(inputBet.val()) })
+     });
 });
 $('#bet-black').click(function() {
-    $.post("placeBet", {  bet:2,betAmount:inputBet.val() }, function () {
-
-    });
+    $.ajax({
+        type:'POST',
+        url:'placeBet',
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+        data: JSON.stringify({  bet:2 , betAmount:parseInt(inputBet.val()) })
+     });
 });
 $('#bet-bait').click(function() {
-    $.post("placeBet", {  bet:3,betAmount:inputBet.val() }, function () {
-
-    });
+    $.ajax({
+        type:'POST',
+        url:'placeBet',
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+        data: JSON.stringify({  bet:3 , betAmount:parseInt(inputBet.val()) })
+     });
 });
 
 

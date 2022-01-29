@@ -19,7 +19,7 @@
                         <li class="nav-item py-2 "><a class="nav-link text-center active font black" aria-current="page"
                                 href="{{ URL::route('getDeposit') }}">WITHDRAW</a></li>
                         <balance class="text-center nav-item mx-3 py-3 black fw-bold" style="color: rgb(255, 255, 255)"
-                            user="{{ Auth::user()->steamid }}"></balance>
+                            user="{{ Auth::user()->id }}"></balance>
                         <li class="nav-item color mx-3 my-2 "><a class="nav-link text-center mx-4 black fw-bold"
                                 style="color: white" href="{{ URL::route('getUserInventory') }}">DEPOSIT</a></li>
 

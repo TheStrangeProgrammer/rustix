@@ -6,6 +6,7 @@
 <link rel="canonical" href="" />
 <link href="content/favicon.ico" rel="icon">
 <!--OPEN GRAPH-->
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="" />
 <meta property="og:description" content="" />

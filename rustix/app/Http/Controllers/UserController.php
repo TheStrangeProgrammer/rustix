@@ -28,7 +28,7 @@ class UserController extends Controller
     }
 
     public function updateBalance(Request $request) {
-        $response = User::where('steamid',  $request->user)->first()->balance;
+        $response = User::where('id',  $request->user)->first()->balance;
 
         event(new NewBalance($request->user,$response));
 

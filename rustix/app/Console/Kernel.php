@@ -19,13 +19,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $this->bootstrap();
-        $schedule->call(function () {
-
-
-            $inventory["inventory"] = InventoryController::getInventory(config("rustix.depositId"));
-            Storage::disk('local')->put('depositInventory.json', json_encode($inventory));
-
-        })->everyMinute();
+        //main loop
         $schedule->call(function () {
             sleep(27);
             RouletteController::newOutcome();
@@ -33,6 +27,14 @@ class Kernel extends ConsoleKernel
             RouletteController::newOutcome();
 
         })->everyMinute();
+        $schedule->call(function () {
+
+
+            $inventory["inventory"] = InventoryController::getInventory(config("rustix.depositId"));
+            Storage::disk('local')->put('depositInventory.json', json_encode($inventory));
+
+        })->everyMinute();
+
     }
 
     /**

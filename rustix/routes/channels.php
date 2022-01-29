@@ -17,5 +17,5 @@ Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
 });
 Broadcast::channel('balance.{balanceId}', function ($user,$balanceId) {
-    return $user->steamid==$balanceId;
+    return $user->id==$balanceId;
 });
