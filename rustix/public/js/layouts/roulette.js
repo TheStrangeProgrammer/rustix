@@ -243,3 +243,7 @@ function setWheelLocation(position,randomize=-cardWidth/2){
     let resetTo = -(position * card + randomize);
     wheel.css('transform', 'translate3d('+resetTo+'px, 0px, 0px)');
 }
+
+$("#button-amount-1").click(function(){
+    $(".input-bet").val(parseInt($(".input-bet").val())+1);
+});
