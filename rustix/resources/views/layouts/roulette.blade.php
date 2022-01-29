@@ -51,12 +51,12 @@
         <button id="button-amount-clear" type="button" class="btn-clear">CLEAR</button>
         <button id="button-amount-clear"  type="button" class="btn-bet ">LAST</button>
         <button id="button-amount-1" type="button" class="btn-bet">+1</button>
-        <button id="button-clear" type="button" class="btn-bet">+10</button>
-        <button id="button-clear" type="button" class="btn-bet">+100</button>
-        <button id="button-clear" type="button" class="btn-bet">+1000</button>
-        <button id="button-clear" type="button" class="btn-bet">1/2</button>
-        <button id="button-clear" type="button" class="btn-bet">X2</button>
-        <button id="button-clear" type="button" class="btn-bet">MAX</button>
+        <button id="button-amount-10" type="button" class="btn-bet">+10</button>
+        <button id="button-amount-100" type="button" class="btn-bet">+100</button>
+        <button id="button-amount-1000" type="button" class="btn-bet">+1000</button>
+        <button id="button-amount-2" type="button" class="btn-bet">1/2</button>
+        <button id="button-amount-x2" type="button" class="btn-bet">X2</button>
+        <button id="button-amount-max" type="button" class="btn-bet">MAX</button>
     </div>
 
     <div class="p-3 mt-4">

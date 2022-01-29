@@ -244,6 +244,25 @@ function setWheelLocation(position,randomize=-cardWidth/2){
     wheel.css('transform', 'translate3d('+resetTo+'px, 0px, 0px)');
 }
 
+$("#button-amount-clear").click(function(){
+    $(".input-bet").val(parseInt($(".input-bet").val())*0);
+});
 $("#button-amount-1").click(function(){
     $(".input-bet").val(parseInt($(".input-bet").val())+1);
 });
+$("#button-amount-10").click(function(){
+    $(".input-bet").val(parseInt($(".input-bet").val())+10);
+});
+$("#button-amount-100").click(function(){
+    $(".input-bet").val(parseInt($(".input-bet").val())+100);
+});
+$("#button-amount-1000").click(function(){
+    $(".input-bet").val(parseInt($(".input-bet").val())+1000);
+});
+$("#button-amount-2").click(function(){
+    $(".input-bet").val(parseInt($(".input-bet").val())/2);
+});
+$("#button-amount-x2").click(function(){
+    $(".input-bet").val(parseInt($(".input-bet").val())*2);
+});
+
