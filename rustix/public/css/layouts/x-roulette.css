@@ -20,9 +20,7 @@
     position:absolute;
     z-index:2;
 
-  }
-
-
+}
 
 .roulette-card{
     height:70px;
@@ -38,17 +36,20 @@
     font-size:1em;
     padding: 5px;
 }
+
 .roulette-house{
     background-repeat: no-repeat;
     background-size: cover;
     background-color:#00C74D;
 
 }
+
 .roulette-bait-left{
     background-repeat: no-repeat;
     background-color:#F95146;
     background-size: cover;
 }
+
 .roulette-bait-right{
     background-repeat: no-repeat;
     background-color: #2D3035;
@@ -56,12 +57,11 @@
 }
 
 .roulette-red{
-    background-color: #F95146 ;
+    background-color: #d4c4c3 ;
     background-repeat: no-repeat;
     background-size: cover;
 
 }
-
 
 .roulette-black{
     background-color:#2D3035;
@@ -73,6 +73,7 @@
     font-weight: bold;
     margin-top: 20px;
 }
+
 .round-time-bar  {
     height: 15px;
     border-radius: 10px;

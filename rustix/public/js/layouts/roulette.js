@@ -12,14 +12,14 @@ var main = $('.main');
 var cardWidth = 70;
 var cardMargin = 3 * 2;
 var card = cardWidth + cardMargin;
-
-
+var getSpin=false;
+var last100Div = $('.last-100');
 
 initWheel(outcomes);
 $.getJSON( "getRouletteSpin").done(function( data ) {
     var position = outcomes.indexOf(data['outcome'])-outcomes.length/2;
     serverSecond=data['currentSecond'];
-    console.log(serverSecond);
+    displayLast100(data['rouletteLast100']);
     setWheelLocation(position);
 
     overlay.css("display","none");
@@ -29,85 +29,91 @@ $.getJSON( "getRouletteSpin").done(function( data ) {
     currentSecond = (endTime.getTime() - new Date().getTime()) / 1000;
     setInterval(function() {
         if(currentSecond>20.00){
-            isPaused=true;
-            setTimeout(function(){
-                isPaused=false;
-            }, currentSecond*100);
+            timer.parent().css("opacity","0");
+        }else if(currentSecond<=0){
+            timer.text(0);
+            timer.parent().fadeTo("slow","0");
+            progress.css("width","0%");
+            getSpin=true;
+            endTime = new Date(new Date().getTime() + 30*1000);
+        }else{
+            timer.parent().css("opacity","1");
+            timer.text(currentSecond.toFixed(2));
+            progress.css("width",currentSecond*5+"%");
         }
-        if(currentSecond<=0&&!isPaused){
-            isPaused=true;
+
+        if(getSpin){
+            getSpin=false;
             $.getJSON( "getRouletteSpin").done(function( data ) {
                 serverSecond=data['currentSecond'];
+                displayLast100(data['rouletteLast100']);
                 if(serverSecond==0) serverSecond=30;
                 endTime = new Date(new Date().getTime() + serverSecond*1000);
                 currentSecond = (endTime.getTime() - new Date().getTime()) / 1000;
                 console.log(serverSecond);
                 spinWheel(data['outcome'],outcomes);
             });
-            setTimeout(function(){
-                isPaused=false;
-            }, 10000);
-        }
-
-        if(!isPaused){
-            timer.text(currentSecond.toFixed(2));
-            progress.css("width",currentSecond*5+"%");
-            // $('.round-time-bar .progress-bar').attr("aria-valuenow",(currentSecond*5).toFixed(2));
-
-            var position = selector.offset();
-            // console.log(position);
-            var elem = document.elementsFromPoint(position.left, position.top);
-            $(elem).find("card").css("background-color", "red");
-
         }
         currentSecond = (endTime.getTime() - new Date().getTime()) / 1000;
     }, 10);
 });
 
+function displayLast100(last100){
+    for (let i = 0; i < 7; i++) {
+        let card = valueToCard(last100[i]);
+        row += addRoundImage(card.color,card.image);
 
+     }
+}
 
-function addOutcome(outcome){
-    return "<div class='card red'>1<\/div>";
+function addRoundImage(color,image){
+    return "<img class='image-circle rounded-circle "+color+"'src='../assets/"+image+".svg' width='30' height='30'>";
+}
+function addCard(color,image){
+    return "<img class='roulette-card "+color+"'src='../assets/"+image+".svg' width='60' height='60'>";
+}
+function valueToCard(value){
+    var color;
+    var image;
+    if(value<6){
+        if(value%2==0) {
+          color="roulette-black";
+          image="Shield";
+        }
+        else {
+          color="roulette-red";
+          image="blade";
+        }
+      } else {
+        if(value%2==1){
+          color="roulette-black";
+          image="Shield";
+        }
+        else{
+          color="roulette-red";
+          image="blade";
+        }
+      }
+      if(value==6){
+        color="roulette-house";
+        image="R";
+      }
+      if(value==5){
+        color="roulette-bait-left";
+        image="Hook";
+      }
+      if(value==7){
+        color="roulette-bait-right";
+        image="Hook";
+      }
+    return {"color":color,"image":image};
 }
 function initWheel(values){
     var $wheel = $('.roulette-wrapper .roulette-wheel');
   	var	row = "<div class='d-flex roulette-row'>";
     values.forEach(value => {
-        var color;
-        var image;
-        if(value<6){
-          if(value%2==0) {
-            color="roulette-black";
-            image="Shield";
-          }
-          else {
-            color="roulette-red";
-            image="blade";
-          }
-        } else {
-          if(value%2==1){
-            color="roulette-black";
-            image="Shield";
-          }
-          else{
-            color="roulette-red";
-            image="blade";
-          }
-        }
-        if(value==6){
-          color="roulette-house";
-          image="R";
-        }
-        if(value==5){
-          color="roulette-bait-left";
-          image="Hook";
-        }
-        if(value==7){
-          color="roulette-bait-right";
-          image="Hook";
-        }
-
-        row += "<div class='roulette-card "+color+"'><img src='../assets/"+image+".svg' width='60' height='60'><\/div>";
+        let card = valueToCard(value);
+        row += addCard(card.color,card.image);
     });
 	row += "<\/div>";
 
