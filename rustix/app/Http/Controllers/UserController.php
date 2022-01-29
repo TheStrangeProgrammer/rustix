@@ -11,9 +11,7 @@ use App\Http\Requests\InventoryRequest;
 use Illuminate\Support\Facades\Storage;
 class UserController extends Controller
 {
-
     const inventoryDelay=30;
-
     public function getUserInventory()
     {
         $lastInventroyAccess=session('lastInventroyAccess');
@@ -40,16 +38,7 @@ class UserController extends Controller
 
     }
     public function addbalance() {
-        /*$user = User::where('steamid',  Auth::user()->steamid)->first();
-        $user->balance+=2;
-        $user->save();
 
-        event(new NewBalance($user->steamid,$user->balance));
-        $response = Http::get('https://steamcommunity.com/market/priceoverview/?appid=252490&currency=1&market_hash_name=Shimmering Stone Hatchet');
-            session(['inventory' => $response]);
-
-            error_log($response);
-*/
     }
     public function getProfile(){
         $user = User::where('id', Auth::user()->id)->first();
@@ -100,11 +89,13 @@ class UserController extends Controller
     public function getRouletteSpin(){
         $currentSecond = Carbon::now()->isoFormat('s');
         if($currentSecond<=30){
-            $data['outcome'] = json_decode(Storage::disk('local')->get('scheduleData.json'))->rouletteRoll;
+            $data['outcome'] = json_decode(Storage::disk('local')->get('rouletteData.json'))->rouletteRoll;
         }else {
-            $data['outcome'] = json_decode(Storage::disk('local')->get('scheduleData.json'))->rouletteRoll;
+            $data['outcome'] = json_decode(Storage::disk('local')->get('rouletteData.json'))->rouletteRoll;
         }
         $data["currentSecond"] = abs($currentSecond-60)%30;
+        $data["rouletteLast100"]=json_decode(Storage::disk('local')->get('rouletteData.json'))->rouletteLast100;
+
         return response()->json($data);
     }
     public function getCurrentSecond(){

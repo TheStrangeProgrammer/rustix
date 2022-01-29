@@ -35,7 +35,7 @@
     padding-bottom: 5px;
     font-size:1em;
     padding: 5px;
-    
+
 }
 .x-roulette-image-1{
     background-repeat: no-repeat;
@@ -138,6 +138,7 @@
     font-weight: bold;
     margin-top: 20px;
 }
+
 .round-time-bar  {
     height: 15px;
     border-radius: 10px;
@@ -174,7 +175,7 @@
      padding: 3px;
      margin: 0 3px;
  }
- 
+
 
 .btn-top{
     background-color:rgb(45, 48, 53) ;
@@ -220,7 +221,7 @@
     border-radius: 0 0.5rem 0.5rem 0;
     height: 41px;
     width: 75px;
-    -webkit-appearance: none;  
+    -webkit-appearance: none;
     -moz-appearance: textfield;
 }
 .max-btn{

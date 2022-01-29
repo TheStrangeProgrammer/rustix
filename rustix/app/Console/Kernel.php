@@ -16,18 +16,44 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-
+        $this->bootstrap();
         $schedule->call(function () {
-            $this->bootstrap();
 
-            $data["inventory"] = InventoryController::getInventory(config("rustix.depositId"));
-            Storage::disk('local')->put('depositInventory.json', json_encode($data));
+
+            $inventory["inventory"] = InventoryController::getInventory(config("rustix.depositId"));
+            Storage::disk('local')->put('depositInventory.json', json_encode($inventory));
+
+        })->everyMinute();
+        $schedule->call(function () {
             sleep(27);
-            $data["rouletteRoll"]=rand(0,14);
-            Storage::disk('local')->put('scheduleData.json', json_encode($data));
+            $roulette["rouletteRoll"]=rand(0,14);
+            $roulette["rouletteLast100"]=[];
+            if(Storage::disk('local')->exists('rouletteData.json')){
+                $roulette["rouletteLast100"]=json_decode(Storage::disk('local')->get('rouletteData.json'))->rouletteLast100;
+                if(count($roulette["rouletteLast100"])==0){
+                    $roulette["rouletteLast100"]=[];
+                }
+            }
+            if(count($roulette["rouletteLast100"])>=100){
+                array_pop($roulette["rouletteLast100"]);
+            }
+            array_unshift($roulette["rouletteLast100"],$roulette["rouletteRoll"]);
+
+            Storage::disk('local')->put('rouletteData.json', json_encode($roulette));
             sleep(30);
-            $data["rouletteRoll"]=rand(0,14);
-            Storage::disk('local')->put('scheduleData.json', json_encode($data));
+            $roulette["rouletteRoll"]=rand(0,14);
+            $roulette["rouletteLast100"]=[];
+            if(Storage::disk('local')->exists('rouletteData.json')){
+                $roulette["rouletteLast100"]=json_decode(Storage::disk('local')->get('rouletteData.json'))->rouletteLast100;
+                if(count($roulette["rouletteLast100"])==0){
+                    $roulette["rouletteLast100"]=[];
+                }
+            }
+            if(count($roulette["rouletteLast100"])>=100){
+                array_pop($roulette["rouletteLast100"]);
+            }
+            array_unshift($roulette["rouletteLast100"],$roulette["rouletteRoll"]);
+            Storage::disk('local')->put('rouletteData.json', json_encode($roulette));
 
         })->everyMinute();
     }

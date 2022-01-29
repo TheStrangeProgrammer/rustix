@@ -1,14 +1,13 @@
 
 var outcomes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14];
-var currentSecond;
-var serverSecond;
-var isPaused=false;
-var selector=$(".roulette-selector");
-var timer=$(".roulette-timer");
-var progress=$(".round-time-bar div");
-var wheel = $('.roulette-wrapper .roulette-wheel');
-var overlay = $('#overlay');
-var main = $('.main');
+var wheel = $('.roulette-wheel');
+var last100Red = $('.last-100-red');
+var last100Green = $('.last-100-green');
+var last100Black = $('.last-100-black');
+var last7 = $('.last-7');
+var inputBet = $('.input-bet');
+
+
 var cardWidth = 70;
 var cardMargin = 3 * 2;
 var card = cardWidth + cardMargin;
@@ -17,118 +16,167 @@ var card = cardWidth + cardMargin;
 
 initWheel(outcomes);
 $.getJSON( "getRouletteSpin").done(function( data ) {
-    var position = outcomes.indexOf(data['outcome'])-outcomes.length/2;
-    serverSecond=data['currentSecond'];
-    console.log(serverSecond);
-    setWheelLocation(position);
+    let main = $('.main');
+    let overlay = $('#overlay');
+
+    var timer=$(".roulette-timer");
+    var progress=$(".round-time-bar div");
+    var getSpin=false;
+
+    var serverSecond=data['currentSecond'];
+
+    displayLast100(data['rouletteLast100']);
+    setWheelLocation(getPosition(data['outcome'],outcomes));
 
     overlay.css("display","none");
     main.css("display","flex");
 
     var endTime = new Date(new Date().getTime() + serverSecond*1000);
-    currentSecond = (endTime.getTime() - new Date().getTime()) / 1000;
+    var currentSecond = (endTime.getTime() - new Date().getTime()) / 1000;
     setInterval(function() {
         if(currentSecond>20.00){
-            isPaused=true;
-            setTimeout(function(){
-                isPaused=false;
-            }, currentSecond*100);
+            timer.parent().css("opacity","0");
+        }else if(currentSecond<=0){
+            timer.text(0);
+            timer.parent().fadeTo("slow","0");
+            progress.css("width","0%");
+            getSpin=true;
+            endTime = new Date(new Date().getTime() + 30*1000);
+        }else{
+            timer.parent().css("opacity","1");
+            timer.text(currentSecond.toFixed(2));
+            progress.css("width",currentSecond*5+"%");
         }
-        if(currentSecond<=0&&!isPaused){
-            isPaused=true;
+
+        if(getSpin){
+            getSpin=false;
             $.getJSON( "getRouletteSpin").done(function( data ) {
                 serverSecond=data['currentSecond'];
                 if(serverSecond==0) serverSecond=30;
                 endTime = new Date(new Date().getTime() + serverSecond*1000);
                 currentSecond = (endTime.getTime() - new Date().getTime()) / 1000;
-                console.log(serverSecond);
-                spinWheel(data['outcome'],outcomes);
+                spinWheel(getPosition(data['outcome'],outcomes),outcomes,function () {displayLast100(data['rouletteLast100']);  });
             });
-            setTimeout(function(){
-                isPaused=false;
-            }, 10000);
-        }
-
-        if(!isPaused){
-            timer.text(currentSecond.toFixed(2));
-            progress.css("width",currentSecond*5+"%");
-            // $('.round-time-bar .progress-bar').attr("aria-valuenow",(currentSecond*5).toFixed(2));
-
-            var position = selector.offset();
-            // console.log(position);
-            var elem = document.elementsFromPoint(position.left, position.top);
-            $(elem).find("card").css("background-color", "red");
-
         }
         currentSecond = (endTime.getTime() - new Date().getTime()) / 1000;
     }, 10);
 });
 
-
-
-function addOutcome(outcome){
-    return "<div class='card red'>1<\/div>";
+function displayLast100(last100){
+    var last7html="";
+    var lastTotalRed=0;
+    var lastTotalGreen=0;
+    var lastTotalBlack=0;
+    for (let i = 0; i < 100; i++) {
+        let color = valueToColor(last100[i]);
+        if(color=="roulette-black"){
+            lastTotalBlack++;
+        }
+        if(color=="roulette-red"){
+            lastTotalRed++;
+        }
+        if(color=="roulette-house"){
+            lastTotalGreen++;
+        }
+        if(i<7){
+            last7html += createRoundImage(color,valueToImage(last100[i]));
+        }
+    }
+    last100Red.html(lastTotalRed.toString());
+    last100Green.html(lastTotalGreen.toString());
+    last100Black.html(lastTotalBlack.toString());
+    last7.html(last7html);
 }
+
+function createRoundImage(color,image){
+    return "<img class='image-circle rounded-circle "+color+"'src='../assets/"+image+".svg' width='30' height='30'>";
+}
+function createCard(color,image){
+    return "<img class='roulette-card "+color+"'src='../assets/"+image+".svg' width='60' height='60'>";
+}
+
+function getPosition(outcome,values){
+    return values.indexOf(outcome)-values.length/2+1;
+}
+
+function valueToColor(value){
+    if(value<8){
+        if(value%2==0) {
+            color="roulette-black";
+        }
+        else {
+            color="roulette-red";
+        }
+    }
+    if(value==8){
+        color="roulette-house";
+    }
+    if(value>8){
+        if(value%2==1){
+            color="roulette-black";
+        }
+        else{
+            color="roulette-red";
+        }
+    }
+
+    return color;
+}
+function valueToImage(value){
+    if(value<7){
+        if(value%2==0) {
+            image="Shield";
+        }
+        else {
+            image="blade";
+        }
+    }
+    if(value==7){
+        image="Hook";
+    }
+    if(value==8){
+        image="R";
+    }
+    if(value==9){
+        image="Hook";
+    }
+    if(value>9) {
+        if(value%2==1){
+            image="Shield";
+        }
+        else{
+            image="blade";
+        }
+    }
+
+    return image;
+}
+
 function initWheel(values){
-    var $wheel = $('.roulette-wrapper .roulette-wheel');
   	var	row = "<div class='d-flex roulette-row'>";
     values.forEach(value => {
-        var color;
-        var image;
-        if(value<6){
-          if(value%2==0) {
-            color="roulette-black";
-            image="Shield";
-          }
-          else {
-            color="roulette-red";
-            image="blade";
-          }
-        } else {
-          if(value%2==1){
-            color="roulette-black";
-            image="Shield";
-          }
-          else{
-            color="roulette-red";
-            image="blade";
-          }
-        }
-        if(value==6){
-          color="roulette-house";
-          image="R";
-        }
-        if(value==5){
-          color="roulette-bait-left";
-          image="Hook";
-        }
-        if(value==7){
-          color="roulette-bait-right";
-          image="Hook";
-        }
-
-        row += "<div class='roulette-card "+color+"'><img src='../assets/"+image+".svg' width='60' height='60'><\/div>";
+        row += createCard(valueToColor(value),valueToImage(value));
     });
 	row += "<\/div>";
 
-	for(var x = 0; x < 29; x++){
-  	$wheel.append(row);
+	for(let x = 0; x < 13; x++){
+  	wheel.append(row);
   }
 }
 
-function spinWheel(outcome,values){
-
-  var position = values.indexOf(outcome)-values.length/2;
-  var cardCount = values.length;
+function spinWheel(position,values,callback = function(){}){
 
 
-  var landingPosition = (cardCount * card)*5 + (position * card);
+  let cardCount = values.length;
+
+
+  let landingPosition = (cardCount * card)*5 + (position * card);
 
   var randomize = Math.floor(Math.random() * cardWidth)- cardWidth/2;
 
   landingPosition = landingPosition + randomize ;
 
-  var object = {
+  let object = {
 		x: Math.floor(Math.random() * 50) / 100,
         y: Math.floor(Math.random() * 20) / 100
 	};
@@ -141,6 +189,7 @@ function spinWheel(outcome,values){
 
   setTimeout(function(){
     setWheelLocation(position,randomize);
+    callback();
   }, 6 * 1000);
 }
 
@@ -149,6 +198,6 @@ function setWheelLocation(position,randomize=-cardWidth/2){
         'transition-timing-function':'',
         'transition-duration':'',
     });
-    var resetTo = -(position * card + randomize);
+    let resetTo = -(position * card + randomize);
     wheel.css('transform', 'translate3d('+resetTo+'px, 0px, 0px)');
 }
