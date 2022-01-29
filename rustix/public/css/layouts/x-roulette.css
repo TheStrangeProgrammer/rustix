@@ -4,6 +4,7 @@
     background-color: #161820;
     border-radius: 30px;
     padding: 8px 0;
+    margin-top: 30px;
     box-shadow: 0 2px 1px rgba(0,0,0,0.09),
     0 4px 2px rgba(0,0,0,0.09),
     0 8px 4px rgba(0,0,0,0.09),
@@ -20,11 +21,11 @@
     position:absolute;
     z-index:2;
 
-}
+  }
 
 .roulette-card{
-    height:70px;
-    width:70px;
+    height:180px;
+    width:136px;
     margin:3px;
     border-radius:8px;
     border-bottom:3px solid rgba(0,0,0,0.2);
@@ -32,42 +33,105 @@
     align-items: center !important;
     justify-content: end !important;
     padding-bottom: 5px;
-    color:white;
     font-size:1em;
     padding: 5px;
-}
 
-.roulette-house{
+}
+.x-roulette-image-1{
     background-repeat: no-repeat;
     background-size: cover;
     background-color:#00C74D;
+    background-image: url("blade.svg") !important;
 
 }
-
-.roulette-bait-left{
+.x-roulette-image-2{
     background-repeat: no-repeat;
     background-color:#F95146;
     background-size: cover;
 }
-
-.roulette-bait-right{
+.x-roulette-image-3{
     background-repeat: no-repeat;
     background-color: #2D3035;
     background-size: cover;
 }
 
-.roulette-red{
-    background-color: #d4c4c3 ;
+.x-roulette-image-4{
+    background-color: #F95146 ;
     background-repeat: no-repeat;
     background-size: cover;
+    align-items: center;
 
 }
 
-.roulette-black{
+.x-roulette-image-5{
+    background-color:#2D3035;
+    background-repeat: no-repeat;
+}
+.x-roulette-image-6{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:#00C74D;
+    background-image: url("blade.svg") !important;
+
+}
+.x-roulette-image-7{
+    background-repeat: no-repeat;
+    background-color:#F95146;
+    background-size: cover;
+}
+.x-roulette-image-8{
+    background-repeat: no-repeat;
+    background-color: #2D3035;
+    background-size: cover;
+}
+
+.x-roulette-image-9{
+    background-color: #F95146 ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+
+}
+
+.x-roulette-image-10{
     background-color:#2D3035;
     background-repeat: no-repeat;
 }
 
+.x-roulette-image-11{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:#00C74D;
+    background-image: url("blade.svg") !important;
+
+}
+.x-roulette-image-12{
+    background-repeat: no-repeat;
+    background-color:#F95146;
+    background-size: cover;
+}
+.x-roulette-image-13{
+    background-repeat: no-repeat;
+    background-color: #2D3035;
+    background-size: cover;
+}
+
+.x-roulette-image-14{
+    background-color: #F95146 ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+
+}
+
+.x-roulette-image-15{
+    background-color:#2D3035;
+    background-repeat: no-repeat;
+}
+.x-roulette-image-16{
+    background-color:#2D3035;
+    background-repeat: no-repeat;
+}
 .timer-custom{
     text-align: center;
     font-weight: bold;
@@ -99,76 +163,87 @@
     font-family: var(--font-family-base);
 }
 
-
-
- .text-bet{
-     text-align: center;
-     padding-top: 5%;
-     padding-bottom: 5%;
-     font-weight: bold;
-
- }
  .bet{
     background-color: #0d0e14;
     border-radius: 10px;
  }
  .bg-list{
      background-color: #242630 ;
-     opacity: 50%;
- }
- .button-bet{
-     padding-top: 5%;
-     padding-bottom: 5%;
-     border-radius: 10px;
-     font-weight: bold;
  }
  .image-circle{
      padding: 3px;
      margin: 0 3px;
  }
- .zoom-in-out-box:hover {
 
-     background: #f50057;
-     animation: zoom-in-zoom-out 2s;
-   }
 
-   @keyframes zoom-in-zoom-out {
-     100% {
-       transform: scale(1, 1);
-     }
-   }
-   @keyframes roundtime {
-     to {
-       /* More performant than animating `width` */
-       transform: scaleX(0);
-     }
-   }
-.bet-amount{
-     background-color: #0d0e14;
-     margin-top: 30px;
-     box-shadow: 0 2px 1px rgba(0,0,0,0.09),
+.btn-top{
+    background-color:rgb(45, 48, 53) ;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 0 16px;
+    border-radius: .5rem;
+    margin-right: 5px ;
+    height: 35px;
+    min-width: 75px;
+    margin-top: 30px;
+    box-shadow: 0 2px 1px rgba(0,0,0,0.09),
      0 4px 2px rgba(0,0,0,0.09),
      0 8px 4px rgba(0,0,0,0.09),
      0 16px 8px rgba(0,0,0,0.09),
      0 32px 16px rgba(0,0,0,0.09);
-
-
- }
-.betamount{
-    font-size: 12px ;
-    font-weight: 400;
-    margin-left: 5px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
- }
- .btn-clear {
-    font-weight: bold;
-    font-size: 12px;
-    padding: 0 16px;
-    border-radius: .5rem;
-    margin-right: 5px ;
-
 }
+
+.text-wager{
+    font-size: 12px;
+    font-weight: 800;
+}
+.wager{
+    background-color:rgb(45, 48, 53) ;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 0 8px;
+    border-radius: 0.5rem;
+    height: 41px;
+    width: 99px;
+    margin-top: 7px;
+    box-shadow: 0 2px 1px rgba(0,0,0,0.09),
+    0 4px 2px rgba(0,0,0,0.09),
+    0 8px 4px rgba(0,0,0,0.09),
+    0 16px 8px rgba(0,0,0,0.09),
+    0 32px 16px rgba(0,0,0,0.09);
+}
+.input-wager{
+    background-color:rgb(67, 70, 73) ;
+    border: 0;
+    font-weight: bold;
+    font-size: 13px;
+    border-radius: 0 0.5rem 0.5rem 0;
+    height: 41px;
+    width: 75px;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+.max-btn{
+    background-color:rgb(0, 199, 77);
+    font-weight: 800;
+    font-size: 12px;
+    padding: 0 8px;
+    border-radius: 0.5rem;
+    height: 41px;
+    width: 99px;
+    transition: 0.3s;
+    box-shadow: 0 2px 1px rgba(0,0,0,0.09),
+    0 4px 2px rgba(0,0,0,0.09),
+    0 8px 4px rgba(0,0,0,0.09),
+    0 16px 8px rgba(0,0,0,0.09),
+    0 32px 16px rgba(0,0,0,0.09);
+}
+.max-btn:hover{
+    background-color: rgb(25, 158, 76);
+}
+
+
+
 .btn-bet {
      background-color:rgb(45, 48, 53) ;
      font-weight: bold;

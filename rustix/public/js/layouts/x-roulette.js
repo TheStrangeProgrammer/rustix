@@ -8,7 +8,7 @@ var timer=$(".roulette-timer");
 var progress=$(".round-time-bar div");
 var wheel = $('.roulette-wrapper .roulette-wheel');
 var overlay = $('#overlay');
-var cardWidth = 70;
+var cardWidth = 136;
 var cardMargin = 3 * 2;
 var card = cardWidth + cardMargin;
 var main = $('.main');
@@ -75,37 +75,73 @@ function initWheel(values){
         var image;
         if(value<6){
           if(value%2==0) {
-            color="roulette-black";
-            image="Shield";
+            color="x-roulette-image-1";
+            image="1";
           }
           else {
-            color="roulette-red";
-            image="blade";
+            color="x-roulette-image-2";
+            image="2";
           }
         } else {
           if(value%2==1){
-            color="roulette-black";
-            image="Shield";
+            color="x-roulette-image-3";
+            image="3";
           }
           else{
-            color="roulette-red";
-            image="blade";
+            color="x-roulette-image-4";
+            image="4";
           }
         }
         if(value==6){
-          color="roulette-house";
-          image="R";
+          color="x-roulette-image-5";
+          image="5";
         }
         if(value==5){
-          color="roulette-bait-left";
-          image="Hook";
+          color="x-roulette-image-6";
+          image="6";
         }
         if(value==7){
-          color="roulette-bait-right";
-          image="Hook";
+          color="x-roulette-image-7";
+          image="7";
         }
+        if(value==8){
+            color="x-roulette-image-8";
+            image="8";
+          }
+          if(value==9){
+            color="x-roulette-image-9";
+            image="9";
+          }
+          if(value==10){
+            color="x-roulette-image-10";
+            image="10";
+          }
+          if(value==11){
+            color="x-roulette-image-11";
+            image="11";
+          }
+          if(value==12){
+            color="x-roulette-image-12";
+            image="12";
+          }
+          if(value==13){
+            color="x-roulette-image-13";
+            image="13";
+          }
+          if(value==14){
+            color="x-roulette-image-14";
+            image="14";
+          }
+          if(value==15){
+            color="x-roulette-image-15";
+            image="15";
+          }
+          if(value==16){
+            color="x-roulette-image-16";
+            image="16";
+          }
 
-        row += "<div class='roulette-card "+color+"'><img src='../assets/"+image+".svg' width='60' height='60'><\/div>";
+        row += "<div class='roulette-card "+color+"'><img class='img-custom' src='../assets/"+image+".svg'><\/div>";
     });
 	row += "<\/div>";
 
