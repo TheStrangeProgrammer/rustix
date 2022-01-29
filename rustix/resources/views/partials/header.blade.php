@@ -3,9 +3,9 @@
         <div class="container-fluid ">
             <h1 class="h2 mb-0"><span class="green">RUSTIX</span><span class="white">.COM</span>
             </h1>
-            <a id="coins" class="d-flex nav-link d-none" href="#">
+            <a id="coins" class="d-flex nav-link" href="#">
                 <i class="bi bi-coin green"></i>
-                <span class="fw-100 align-self-center" style="color: white">FREE COINS</span>
+                <span class="fw-100 align-self-center ms-1" style="color: white">FREE COINS</span>
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

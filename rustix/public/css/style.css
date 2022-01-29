@@ -1,6 +1,53 @@
 .header{
     background-color: #0d0e14;
 }
+
+.container {
+    position: relative;
+    background-image: url('../assets/roulette-game.svg');
+    width: 421px !important;
+    height: 224.474px;
+    box-shadow: #2f7e32 0px 5px 15px;
+    opacity: 100%;
+  }
+  
+.button {
+    opacity: 0;
+    transition: opacity .35s ease;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    width: 90px;
+    height: 45px;
+    background-color:#14DB1A ;
+    text-decoration: none;
+    border-radius: .5rem;
+    box-shadow: 0 2px 1px rgba(0,0,0,0.09),
+     0 4px 2px rgba(0,0,0,0.09),
+     0 8px 4px rgba(0,0,0,0.09),
+     0 16px 8px rgba(0,0,0,0.09),
+     0 32px 16px rgba(0,0,0,0.09);
+  }
+  
+.container:hover .button {
+    opacity: 1;
+    transition: 0.5s;
+  }
+.roulette-game-title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+  
+
+
+
+
+
+
+
+
 .green{
 	color:#14DB1A;
     font-weight: 600;
@@ -152,6 +199,7 @@ ul.second-one{
       background-color: #ffffff;
       width: 100% !important;
       margin-top: 50px !important;
+    
     }
 
     ul.dropdown-menu{
@@ -179,6 +227,7 @@ ul.second-one{
     #overlay {
         width: 100%;
     }
+    
 }
 #overlay {
     display: none;

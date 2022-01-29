@@ -41,7 +41,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-color:#00C74D;
-    background-image: url("blade.svg") !important;
 
 }
 .x-roulette-image-2{
@@ -66,12 +65,12 @@
 .x-roulette-image-5{
     background-color:#2D3035;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 .x-roulette-image-6{
     background-repeat: no-repeat;
     background-size: cover;
     background-color:#00C74D;
-    background-image: url("blade.svg") !important;
 
 }
 .x-roulette-image-7{
@@ -96,13 +95,13 @@
 .x-roulette-image-10{
     background-color:#2D3035;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .x-roulette-image-11{
     background-repeat: no-repeat;
     background-size: cover;
     background-color:#00C74D;
-    background-image: url("blade.svg") !important;
 
 }
 .x-roulette-image-12{
@@ -127,10 +126,12 @@
 .x-roulette-image-15{
     background-color:#2D3035;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 .x-roulette-image-16{
     background-color:#2D3035;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 .timer-custom{
     text-align: center;
