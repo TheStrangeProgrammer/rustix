@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Storage;
 class UserController extends Controller
 {
     const inventoryDelay=30;
-
     public function getUserInventory()
     {
         $lastInventroyAccess=session('lastInventroyAccess');
