@@ -62,6 +62,26 @@ $.getJSON( "getRouletteSpin").done(function( data ) {
     }, 10);
 });
 
+$('#bet-red').click(function() {
+    $.post("placeBet", {  bet:0 , betAmount:inputBet.val() });
+});
+$('#bet-green').click(function() {
+    $.post("placeBet", {  bet:1,betAmount:inputBet.val() }, function () {
+
+    });
+});
+$('#bet-black').click(function() {
+    $.post("placeBet", {  bet:2,betAmount:inputBet.val() }, function () {
+
+    });
+});
+$('#bet-bait').click(function() {
+    $.post("placeBet", {  bet:3,betAmount:inputBet.val() }, function () {
+
+    });
+});
+
+
 function displayLast100(last100){
     var last7html="";
     var lastTotalRed=0;
@@ -96,11 +116,11 @@ function createCard(color,image){
 }
 
 function getPosition(outcome,values){
-    return values.indexOf(outcome)-values.length/2+1;
+    return values.indexOf(outcome)-values.length/2+0.5;
 }
 
 function valueToColor(value){
-    if(value<8){
+    if(value<7){
         if(value%2==0) {
             color="roulette-black";
         }
@@ -108,10 +128,10 @@ function valueToColor(value){
             color="roulette-red";
         }
     }
-    if(value==8){
+    if(value==7){
         color="roulette-house";
     }
-    if(value>8){
+    if(value>7){
         if(value%2==1){
             color="roulette-black";
         }
@@ -123,7 +143,7 @@ function valueToColor(value){
     return color;
 }
 function valueToImage(value){
-    if(value<7){
+    if(value<6){
         if(value%2==0) {
             image="Shield";
         }
@@ -131,16 +151,16 @@ function valueToImage(value){
             image="blade";
         }
     }
-    if(value==7){
+    if(value==6){
         image="Hook";
     }
-    if(value==8){
+    if(value==7){
         image="R";
     }
-    if(value==9){
+    if(value==8){
         image="Hook";
     }
-    if(value>9) {
+    if(value>8) {
         if(value%2==1){
             image="Shield";
         }

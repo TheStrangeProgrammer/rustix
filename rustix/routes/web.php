@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BotController;
+use App\Http\Controllers\RouletteController;
 use Laravel\Socialite\Facades\Socialite;
 /*
 |--------------------------------------------------------------------------
@@ -53,7 +54,8 @@ Route::post('/depositItems', [BotController::class, 'depositItems'])->middleware
 Route::get('/withdraw', [BotController::class, 'getDeposit'])->middleware('auth')->name("getDeposit");
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth')->name("logOut");
 Route::get('/addbalance', [UserController::class, 'addbalance'])->middleware('auth');
-Route::get('/roulette', [UserController::class, 'roulette'])->middleware('auth');
+Route::get('/roulette', [RouletteController::class, 'roulette'])->middleware('auth');
 Route::get('/x-roulette', [UserController::class, 'xroulette'])->middleware('auth');
-Route::get('/getRouletteSpin', [UserController::class, 'getRouletteSpin'])->middleware('auth');
+Route::get('/getRouletteSpin', [RouletteController::class, 'getRouletteSpin'])->middleware('auth');
+Route::post('/placeBet', [RouletteController::class, 'placeBet'])->middleware('auth');
 Route::get('/getCurrentSecond', [UserController::class, 'getCurrentSecond'])->middleware('auth');

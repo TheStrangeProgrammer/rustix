@@ -86,17 +86,11 @@ class UserController extends Controller
     public function xroulette(){
         return view("layouts/x-roulette");
     }
-    public function getRouletteSpin(){
-        $currentSecond = Carbon::now()->isoFormat('s');
-        if($currentSecond<=30){
-            $data['outcome'] = json_decode(Storage::disk('local')->get('rouletteData.json'))->rouletteRoll;
-        }else {
-            $data['outcome'] = json_decode(Storage::disk('local')->get('rouletteData.json'))->rouletteRoll;
-        }
-        $data["currentSecond"] = abs($currentSecond-60)%30;
-        $data["rouletteLast100"]=json_decode(Storage::disk('local')->get('rouletteData.json'))->rouletteLast100;
 
-        return response()->json($data);
+    public function placeBet(Request $request){
+        $data = $request->json();
+        $data["bet"];
+        $data["betAmount"];
     }
     public function getCurrentSecond(){
 

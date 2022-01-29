@@ -46,7 +46,7 @@
             <div class="d-inline">
                 <img class="input-prefix " src="assets/dollar_coin.svg" width="16" height="16">
             </div>
-            <input type="number" class="input-bet">
+            <input type="number" class="input-bet" value="0">
         </div>
         <button type="button" class="btn-clear">CLEAR</button>
         <button type="button" class="btn-bet ">LAST</button>
@@ -71,7 +71,7 @@
                             width="30" height="30">
                         <span class="mx-1">Win 2x</span>
                     </div>
-                    <button class="button-bet zoom-in-out-box" style="background-color: #F95146" aria-setsize="4"
+                    <button id="bet-red" class="button-bet zoom-in-out-box" style="background-color: #F95146" aria-setsize="4"
                         aria-posinset="1">Place Bet</button>
                 </div>
                 <div class="d-flex">
@@ -106,7 +106,7 @@
                             width="30" height="30">
                         <span class="mx-1">Win 14x</span>
                     </div>
-                    <button class="button-bet zoom-in-out-box" style="background-color: #00C74D" aria-setsize="4"
+                    <button id="bet-green" class="button-bet zoom-in-out-box" style="background-color: #00C74D" aria-setsize="4"
                         aria-posinset="2">Place Bet</button>
                 </div>
                 <div class="d-flex">
@@ -143,7 +143,7 @@
                             width="30" height="30">
                         <span class="mx-1">Win 2x</span>
                     </div>
-                    <button class="button-bet zoom-in-out-box" style="background-color: #2D3035" aria-setsize="4"
+                    <button id="bet-black" class="button-bet zoom-in-out-box" style="background-color: #2D3035" aria-setsize="4"
                         aria-posinset="3">Place Bet</button>
                 </div>
                 <div class="d-flex">
@@ -181,7 +181,7 @@
                             src='../assets/hook.svg' width="30" height="30">
                         <span class="mx-1">Win 7x</span>
                     </div>
-                    <button class="button-bet zoom-in-out-box" style="background-color: #7c99b4" aria-setsize="4"
+                    <button id="bet-bait" class="button-bet zoom-in-out-box" style="background-color: #7c99b4" aria-setsize="4"
                         aria-posinset="4">Place Bet</button>
                 </div>
                 <div class="d-flex">
