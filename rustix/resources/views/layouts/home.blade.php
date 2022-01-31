@@ -2,7 +2,7 @@
 @section('content')
 
     <div class="m-4">
-        <div class="card">
+        <div class="card-game">
           <div class=" card-img-top-wrapper">
             <div class="d-flex card-overlay">
                 <a href="http://localhost/roulette" class="button m-auto py-3" style="color: white;">PLAY</a>

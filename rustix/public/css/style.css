@@ -21,7 +21,7 @@
      0 32px 16px rgba(0,0,0,0.09);
   }
   
-.card{
+.card-game{
     width: 417px;
     background-color: #141620 !important;
     box-shadow: #2f7e32 0px 5px 15px;
@@ -45,10 +45,10 @@
     border-radius: 0.25rem 0.25rem 0 0 ;
     }
   
-  .card:hover .card-overlay {
+  .card-game:hover .card-overlay {
       opacity: 1;
     }
-    .card:hover .button {
+    .card-game:hover .button {
         opacity: 1;
         transition: 0.5s;
       }
