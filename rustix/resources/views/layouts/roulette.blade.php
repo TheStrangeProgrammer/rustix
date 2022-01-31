@@ -16,6 +16,14 @@
                 <span class="rounded-circle circle-score ms-1" style="background-color: #2D3035"></span>
                 <span class="score-bet ms-1 last-100-black">47</span>
             </div>
+            <div class="d-flex flex-row ms-2 align-items-center">
+                <span class="rounded-circle circle-score ms-1" style="background: linear-gradient(90deg,#7c99b4 50%,#de4c41 50%)"></span>
+                <span class="score-bet ms-1 last-100-black">47</span>
+            </div>
+            <div class="d-flex flex-row ms-2 align-items-center">
+                <span class="rounded-circle circle-score ms-1" style="background: linear-gradient(90deg,#7c99b4 50%,#31353d 50%"></span>
+                <span class="score-bet ms-1 last-100-black">47</span>
+            </div>
         </div>
         <div class="d-flex mt-3 last-7">
             <img class="image-circle rounded-circle" style="background-color:#F95146" src='../assets/blade.svg' width="30"
