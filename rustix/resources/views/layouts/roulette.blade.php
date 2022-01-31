@@ -62,8 +62,8 @@
     <div class="p-3 mt-4">
         <div class="d-flex ms-2 bet-roulette">
 
-            <div id="bet-list-red" class="d-flex flex-column flex-fill m-2 ">
-                <div class="d-flex flex-column flex-fill bet">
+            <div id="bet-list-red" class="d-flex flex-column m-2 bet-list">
+                <div class="d-flex flex-column bet">
                     <div class="d-flex justify-content-center align-items-center text-bet">
                         <img class=" image-circle rounded-circle" style="background-color:#F95146" src='../assets/blade.svg'
                             width="30" height="30">
@@ -89,8 +89,8 @@
                 </div>
             </div>
 
-            <div id="bet-list-green" class="d-flex flex-column flex-fill m-2">
-                <div class="d-flex flex-column flex-fill bet">
+            <div id="bet-list-green" class="d-flex flex-column m-2 bet-list" >
+                <div class="d-flex flex-column bet">
                     <div class="d-flex justify-content-center align-items-center text-bet">
                         <img class=" image-circle rounded-circle" style="background-color: #00C74D" src='../assets/R.svg'
                             width="30" height="30">
@@ -115,8 +115,8 @@
             </div>
 
 
-            <div id="bet-list-black" class="d-flex flex-column flex-fill m-2">
-                <div class="d-flex flex-column flex-fill bet">
+            <div id="bet-list-black" class="d-flex flex-column m-2 bet-list">
+                <div class="d-flex flex-column bet">
                     <div class="d-flex justify-content-center align-items-center text-bet">
                         <img class=" image-circle rounded-circle" style="background-color:#2D3035"
                             src='../assets/shield.svg' width="30" height="30">
@@ -142,8 +142,8 @@
                 </div>
             </div>
 
-            <div id="bet-list-bait" class="d-flex flex-column flex-fill m-2">
-                <div class="d-flex flex-column flex-fill bet">
+            <div id="bet-list-bait" class="d-flex flex-column m-2 bet-list">
+                <div class="d-flex flex-column bet">
                     <div class="d-flex justify-content-center align-items-center text-bet">
                         <img class=" image-circle rounded-circle" style="background-color:#F95146" src='../assets/hook.svg'
                             width="30" height="30">
@@ -165,7 +165,7 @@
                     </div>
 
                 </div>
-                <div class="d-flex bet-list-bets">
+                <div class="bet-list-bets">
 
                 </div>
             </div>

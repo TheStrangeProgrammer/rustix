@@ -13,6 +13,9 @@
 .roulette-wheel{
 
 }
+.bet-list-bets{
+ display: flex;
+}
 .roulette-selector{
     width:3px;
     background:grey;
@@ -63,7 +66,9 @@
     background-size: cover;
 
 }
-
+.bet-list{
+    width: 25%;
+}
 
 .roulette-black{
     background-color:#2D3035;
@@ -213,6 +218,12 @@
     .bet-roulette{
         flex-direction: column;
     }
+    .bet-list{
+        width: 100%;
+    }
+    .bet-list-bets{
+        display: none;
+       }
 }
 
   .main{
