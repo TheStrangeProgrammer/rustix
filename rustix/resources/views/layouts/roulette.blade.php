@@ -62,8 +62,8 @@
     <div class="p-3 mt-4">
         <div class="d-flex ms-2 bet-roulette">
 
-            <div class="d-flex flex-column flex-fill m-2 ">
-                <div class="d-flex flex-column flex-fill bet">
+            <div id="bet-list-red" class="d-flex flex-column m-2 bet-list">
+                <div class="d-flex flex-column bet">
                     <div class="d-flex justify-content-center align-items-center text-bet">
                         <img class=" image-circle rounded-circle" style="background-color:#F95146" src='../assets/blade.svg'
                             width="30" height="30">
@@ -76,31 +76,21 @@
                 </div>
                 <div class="d-flex">
                     <div class="me-auto p-2 ">
-                        <span class="score-bet fw-bold">1</span>
+                        <span class="score-bet fw-bold bet-total-number">0</span>
                         <span class="fw-bold">Bets</span>
                     </div>
                     <div class="d-flex flex-row justify-content-end align-items-center me-2">
                         <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
-                        <span class="score-bet fw-bold">32.3</span>
+                        <span class="score-bet fw-bold bet-total-amount">0</span>
                     </div>
-
                 </div>
-                <div class="d-flex mt-2 ps-2 bg-list">
-                    <div class="me-auto p-2">
-                        <img class="image-circle rounded-circle" style="background-color:#F95146"  src='../assets/Face1.svg'
-                            width="30" height="30">
-                        <span class="fw-bold">Joe</span>
-                    </div>
-                    <div class="d-flex flex-row justify-content-end align-items-center me-2">
-                        <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
-                        <span class="score-bet fw-bold">32.3</span>
-                    </div>
+                <div class="bet-list-bets">
 
                 </div>
             </div>
 
-            <div class="d-flex flex-column flex-fill m-2">
-                <div class="d-flex flex-column flex-fill bet">
+            <div id="bet-list-green" class="d-flex flex-column m-2 bet-list" >
+                <div class="d-flex flex-column bet">
                     <div class="d-flex justify-content-center align-items-center text-bet">
                         <img class=" image-circle rounded-circle" style="background-color: #00C74D" src='../assets/R.svg'
                             width="30" height="30">
@@ -111,31 +101,22 @@
                 </div>
                 <div class="d-flex">
                     <div class="me-auto p-2 ">
-                        <span class="score-bet fw-bold">1</span>
+                        <span class="score-bet fw-bold bet-total-number">0</span>
                         <span class="fw-bold">Bets</span>
                     </div>
                     <div class="d-flex flex-row justify-content-end align-items-center me-2">
                         <img class="me-1 " src="assets/dollar_coin.svg" width="16" height="16">
-                        <span class="score-bet fw-bold">40.54</span>
+                        <span class="score-bet fw-bold bet-total-amount">0</span>
                     </div>
-
                 </div>
-                <div class="d-flex mt-2 ps-2 bg-list">
-                    <div class="me-auto p-2">
-                        <img class=" image-circle rounded-circle bor" style="background-color: #00C74D" src='../assets/Face2.svg' width="30" height="30">
-                        <span class="fw-bold">Eder</span>
-                    </div>
-                    <div class="d-flex flex-row justify-content-end align-items-center me-2">
-                        <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
-                        <span class="score-bet fw-bold">40.54</span>
-                    </div>
+                <div class="bet-list-bets">
 
                 </div>
             </div>
 
 
-            <div class="d-flex flex-column flex-fill m-2">
-                <div class="d-flex flex-column flex-fill bet">
+            <div id="bet-list-black" class="d-flex flex-column m-2 bet-list">
+                <div class="d-flex flex-column bet">
                     <div class="d-flex justify-content-center align-items-center text-bet">
                         <img class=" image-circle rounded-circle" style="background-color:#2D3035"
                             src='../assets/shield.svg' width="30" height="30">
@@ -148,32 +129,21 @@
                 </div>
                 <div class="d-flex">
                     <div class="me-auto p-2 ">
-                        <span class="score-bet fw-bold">1</span>
+                        <span class="score-bet fw-bold bet-total-number">0</span>
                         <span class="fw-bold">Bets</span>
                     </div>
                     <div class="d-flex flex-row justify-content-end align-items-center me-2">
                         <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
-                        <span class="score-bet fw-bold">85.63</span>
+                        <span class="score-bet fw-bold bet-total-amount">0</span>
                     </div>
+                </div>
+                <div class="bet-list-bets">
 
                 </div>
-                <div class="d-flex mt-2 ps-2 bg-list">
-                    <div class="me-auto p-2">
-                        <img class=" image-circle rounded-circle" style="background-color: #2D3035" src='../assets/Face3.svg'
-                            width="30" height="30">
-                        <span class="fw-bold">Mate</span>
-                    </div>
-                    <div class="d-flex flex-row justify-content-end align-items-center me-2">
-                        <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
-                        <span class="score-bet fw-bold">85.63</span>
-                    </div>
-
-                </div>
-
             </div>
 
-            <div class="d-flex flex-column flex-fill m-2">
-                <div class="d-flex flex-column flex-fill bet">
+            <div id="bet-list-bait" class="d-flex flex-column m-2 bet-list">
+                <div class="d-flex flex-column bet">
                     <div class="d-flex justify-content-center align-items-center text-bet">
                         <img class=" image-circle rounded-circle" style="background-color:#F95146" src='../assets/hook.svg'
                             width="30" height="30">
@@ -186,25 +156,16 @@
                 </div>
                 <div class="d-flex">
                     <div class="me-auto p-2 ">
-                        <span class="score-bet fw-bold">1</span>
+                        <span class="score-bet fw-bold bet-total-number">0</span>
                         <span class="fw-bold">Bets</span>
                     </div>
                     <div class="d-flex flex-row justify-content-end align-items-center me-2">
                         <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
-                        <span class="score-bet fw-bold">66.73</span>
+                        <span class="score-bet fw-bold bet-total-amount">0</span>
                     </div>
 
                 </div>
-                <div class="d-flex mt-2 ps-2 bg-list">
-                    <div class="me-auto p-2">
-                        <img class=" image-circle rounded-circle" style="background-color: #7c99b4"  src='../assets/Face4.svg'
-                            width="30" height="30">
-                        <span class="fw-bold">John</span>
-                    </div>
-                    <div class="d-flex flex-row justify-content-end align-items-center me-2">
-                        <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
-                        <span class="score-bet fw-bold">66.73</span>
-                    </div>
+                <div class="bet-list-bets">
 
                 </div>
             </div>
