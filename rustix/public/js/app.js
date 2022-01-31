@@ -45334,7 +45334,7 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("span", { staticClass: "navbar-text" }, [
     _vm._v("\n    BALANCE:"),
-    _c("span", [_vm._v(_vm._s(_vm.balance))]),
+    _c("span", { attrs: { id: "balance" } }, [_vm._v(_vm._s(_vm.balance))]),
   ])
 }
 var staticRenderFns = []
@@ -45460,7 +45460,7 @@ var render = function () {
   return _c("div", { staticClass: "d-flex flex-column" }, [
     _c(
       "div",
-      { staticClass: "chat-wrapper" },
+      { staticClass: "d-flex flex-fill chat-wrapper" },
       _vm._l(_vm.messages, function (message) {
         return _c(
           "div",

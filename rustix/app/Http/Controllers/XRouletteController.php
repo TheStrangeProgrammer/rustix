@@ -20,7 +20,7 @@ class XRouletteController extends Controller
     public static function randomOutcomeList(){
         $outcomes=[];
         for($i=0;$i<15;$i++){
-            $outcomes[]=round(floor(100.0*(1.0-0.05)/((float)rand() / (float)getrandmax()))/100,2);
+            $outcomes[]=round(min(1000000.0,max(1.0,floor(100.0*(1.0-0.05)/((float)rand() / (float)getrandmax()))/100)),2);
         }
         return $outcomes;
     }
@@ -126,7 +126,7 @@ class XRouletteController extends Controller
             if($outcome>$value->bet){
                 $value->amount*=$value->bet;
                 $user = User::where('id',$value->id)->first();
-                $user->balance+=$value->amount;
+                $user->balance+=round($value->amount);
                 $user->save();
                 event(new NewBalance($value->id,$user->balance));
             }

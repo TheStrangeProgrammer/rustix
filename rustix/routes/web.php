@@ -57,13 +57,9 @@ Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth')->na
 
 Route::prefix('roulette')->group(function () {
     Route::get('/', [RouletteController::class, 'roulette']);
-    Route::get('/spin', [RouletteController::class, 'getSpin']);
-    Route::get('/bets', [RouletteController::class, 'getBets']);
     Route::post('/bet', [RouletteController::class, 'placeBet'])->middleware('auth');
 });
 Route::prefix('x-roulette')->group(function () {
     Route::get('/', [XRouletteController::class, 'roulette']);
-    Route::get('/spin', [XRouletteController::class, 'getSpin']);
-    Route::get('/bets', [XRouletteController::class, 'getBets']);
     Route::post('/bet', [XRouletteController::class, 'placeBet'])->middleware('auth');
 });

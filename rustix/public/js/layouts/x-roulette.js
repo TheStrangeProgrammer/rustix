@@ -12,7 +12,7 @@ var card = cardWidth + cardMargin;
 
 
 
-$.getJSON("x-roulette/spin").done(function( data ) {
+$.getJSON("api/x-roulette/spin").done(function( data ) {
     let main = $('.main');
     let overlay = $('#overlay');
 
@@ -25,7 +25,7 @@ $.getJSON("x-roulette/spin").done(function( data ) {
     var outcomes = data['outcomes'];
     initWheel(outcomes);
     displayLast10(data['rouletteLast10']);
-    setWheelLocation(getPosition(data['outcome'],outcomes));
+    setWheelLocation(getPosition(data['outcome'],outcomes),Math.floor(Math.random() * cardWidth)- cardWidth/2);
 
     overlay.css("display","none");
     main.css("display","flex");
@@ -49,7 +49,7 @@ $.getJSON("x-roulette/spin").done(function( data ) {
 
         if(getSpin){
             getSpin=false;
-            $.getJSON( "x-roulette/spin").done(function( data ) {
+            $.getJSON( "api/x-roulette/spin").done(function( data ) {
                 serverSecond=data['currentSecond'];
                 outcomes = data['outcomes'];
                 initWheel(outcomes);
@@ -63,8 +63,16 @@ $.getJSON("x-roulette/spin").done(function( data ) {
     }, 10);
 
     setInterval(function() {
-        $.getJSON( "x-roulette/bets").done(function( data ) {
-            updateBets($("#bet-list"),data['bets'].red);
+        $.getJSON( "api/x-roulette/bets").done(function( data ) {
+            console.log(data['bets']);
+            betValues = Object.values(data['bets']).sort(function(a, b){return b.amount - a.amount});
+            $(".bet-total-number").html(Object.keys(data['bets']).length);
+            $(".bet-total-amount").html(betValues.reduce((p,c)=>p+c.amount,0));
+            var betList="";
+            for(const key in betValues){
+                betList+=addBet(betValues[key].name,betValues[key].avatar,betValues[key].amount,betValues[key].bet)
+            }
+            $(".bet-list-bets").html(betList);
         });
     }, 1000);
 });
@@ -81,21 +89,17 @@ $('#bet-button').click(function() {
 });
 
 
-function updateBets(betlist,bets){
-    betlist.find(".bet-total-number").html(Object.keys(bets).length);
-    betlist.find(".bet-total-amount").html(Object.values(bets).reduce((p,c)=>p+c.amount,0));
-    var betList="";
-    for(const key in bets){
-        betList+=addBet(bets[key].name,bets[key].avatar,bets[key].amount)
-    }
-    betlist.find(".bet-list-bets").html(betList);
-}
-function addBet(name,avatar,amount){
+
+function addBet(name,avatar,amount,mult){
     return `<div class="d-flex flex-fill mt-2 ps-2 bg-list">
                 <div class="me-auto p-2">
                     <img class="image-circle rounded-circle" style="background-color:#F95146"  src='`+avatar+`'
                         width="30" height="30">
                     <span class="fw-bold">`+name+`</span>
+                </div>
+                <div class="d-flex flex-row justify-content-end align-items-center me-2">
+                    <i class="bi bi-x"></i>
+                    <span class="score-bet fw-bold">`+mult+`</span>
                 </div>
                 <div class="d-flex flex-row justify-content-end align-items-center me-2">
                     <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
@@ -121,7 +125,7 @@ function createCard(color,image,value){
 }
 
 function getPosition(outcome,values){
-    return values.indexOf(outcome)-values.length/2+0.5;
+    return outcome-values.length/2+0.5;
 }
 
 function valueToColor(value){
@@ -136,14 +140,15 @@ function valueToImage(value){
 }
 
 function initWheel(values){
+
   	var	row = "<div class='d-flex roulette-row'>";
     values.forEach(value => {
         row += createCard(valueToColor(value),valueToImage(value),value);
     });
 	row += "<\/div>";
-
+    wheel.empty();
 	for(let x = 0; x < 13; x++){
-  	wheel.append(row);
+  	    wheel.append(row);
   }
 }
 
@@ -189,3 +194,6 @@ $("#button-amount-clear").click(function(){
     $(".input-bet").val(parseInt($(".input-bet").val())*0);
 });
 
+$("#button-amount-max").click(function(){
+    $(".input-bet").val(parseInt($("#balance").html()));
+});
