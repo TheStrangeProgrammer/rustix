@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\BotController;
 use App\Http\Controllers\RouletteController;
 use App\Http\Controllers\XRouletteController;
+use App\Http\Controllers\MessageController;
 use Laravel\Socialite\Facades\Socialite;
 /*
 |--------------------------------------------------------------------------
@@ -63,3 +64,4 @@ Route::prefix('x-roulette')->group(function () {
     Route::get('/', [XRouletteController::class, 'roulette']);
     Route::post('/bet', [XRouletteController::class, 'placeBet'])->middleware('auth');
 });
+Route::post('/message', [MessageController::class ,'broadcast'])->middleware('auth');

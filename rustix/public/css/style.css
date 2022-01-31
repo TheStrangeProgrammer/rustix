@@ -2,7 +2,7 @@
     background-color: #0d0e14;
 }
 
-.button {
+.play-button {
     opacity: 0;
     align-items: center;
     transition: opacity .35s ease;
@@ -48,7 +48,7 @@
   .card-game:hover .card-overlay {
       opacity: 1;
     }
-    .card-game:hover .button {
+    .card-game:hover .play-button {
         opacity: 1;
         transition: 0.5s;
       }

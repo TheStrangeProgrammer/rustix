@@ -5330,7 +5330,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    //this.fetchMessages();
+    this.fetchMessages();
     Echo.channel('chat').listen('NewChatMessage', function (e) {
       if (e.user != _this.user) {
         _this.messages.push({
@@ -5341,24 +5341,27 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
-    /*fetchMessages() {
-        axios.get(`${process.env.MIX_WEBSOCKET_SERVER_BASE_URL}/api/messages`).then(response => {
-            this.messages = response.data;
-        })
-    },*/
-    submit: function submit() {
+    fetchMessages: function fetchMessages() {
       var _this2 = this;
 
-      axios.post("".concat("http://localhost", "/api/message"), {
+      axios.get("".concat("http://localhost", "/api/messages")).then(function (response) {
+        console.log(response.data);
+        _this2.messages = response.data;
+      });
+    },
+    submit: function submit() {
+      var _this3 = this;
+
+      axios.post("".concat("http://localhost", "/message"), {
         user: this.user,
         message: this.newMessage
       }).then(function (response) {
-        _this2.messages.push({
-          text: _this2.newMessage,
-          user: _this2.user
+        _this3.messages.push({
+          text: _this3.newMessage,
+          user: _this3.user
         });
 
-        _this2.newMessage = '';
+        _this3.newMessage = '';
       }, function (error) {
         console.log(error);
       });
@@ -5405,6 +5408,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
+    this.fetchMessages();
     Echo.channel('chat').listen('NewChatMessage', function (e) {
       if (e.user != _this.user) {
         _this.messages.push({
@@ -5413,6 +5417,15 @@ __webpack_require__.r(__webpack_exports__);
         });
       }
     });
+  },
+  methods: {
+    fetchMessages: function fetchMessages() {
+      var _this2 = this;
+
+      axios.get("".concat("http://localhost", "/api/messages")).then(function (response) {
+        _this2.messages = response.data;
+      });
+    }
   }
 });
 
@@ -45394,29 +45407,33 @@ var render = function () {
           "div",
           { staticClass: "field has-addons has-addons-fullwidth d-flex p-2" },
           [
-            _c("div", { staticClass: "control is-expanded p-2" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.newMessage,
-                    expression: "newMessage",
+            _c(
+              "div",
+              { staticClass: "d-flex flex-fill control is-expanded p-2" },
+              [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.newMessage,
+                      expression: "newMessage",
+                    },
+                  ],
+                  staticClass: "input chat-input flex-fill",
+                  attrs: { type: "text", placeholder: "Type a message" },
+                  domProps: { value: _vm.newMessage },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.newMessage = $event.target.value
+                    },
                   },
-                ],
-                staticClass: "input chat-input",
-                attrs: { type: "text", placeholder: "Type a message" },
-                domProps: { value: _vm.newMessage },
-                on: {
-                  input: function ($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.newMessage = $event.target.value
-                  },
-                },
-              }),
-            ]),
+                }),
+              ]
+            ),
             _vm._v(" "),
             _c("div", { staticClass: "control p-2" }, [
               _c(

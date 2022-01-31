@@ -12,8 +12,8 @@
 
         <form @submit.prevent="submit" class="chat-form">
             <div class="field has-addons has-addons-fullwidth d-flex p-2">
-                <div class="control is-expanded p-2">
-                    <input class="input chat-input" type="text" placeholder="Type a message" v-model="newMessage">
+                <div class="d-flex flex-fill control is-expanded p-2">
+                    <input class="input chat-input flex-fill" type="text" placeholder="Type a message" v-model="newMessage">
                 </div>
                 <div class="control p-2">
                     <button type="submit" class="button is-danger" :disabled="!newMessage">
@@ -37,7 +37,7 @@
             }
         },
         mounted () {
-            //this.fetchMessages();
+            this.fetchMessages();
             Echo.channel('chat')
                 .listen('NewChatMessage', (e) => {
                     if(e.user != this.user) {
@@ -49,14 +49,15 @@
                 });
         },
         methods: {
-            /*fetchMessages() {
+            fetchMessages() {
                 axios.get(`${process.env.MIX_WEBSOCKET_SERVER_BASE_URL}/api/messages`).then(response => {
+                    console.log( response.data);
                     this.messages = response.data;
                 })
-            },*/
+            },
 
             submit() {
-                axios.post(`${process.env.MIX_WEBSOCKET_SERVER_BASE_URL}/api/message`, {
+                axios.post(`${process.env.MIX_WEBSOCKET_SERVER_BASE_URL}/message`, {
                     user: this.user,
                     message: this.newMessage
                 }).then((response) => {
