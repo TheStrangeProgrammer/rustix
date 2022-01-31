@@ -2,15 +2,8 @@
 @section('content')
 
     <div class="d-flex flex-column roulette">
-        <div class="d-flex justify-content-start py-2 rounded-3">
-            <button type="button" class="btn-top" style="background-color: #7c99b4">x6.69</button>
-            <button type="button" class="btn-top" style="background-color: #2D3035">+1</button>
-            <button type="button" class="btn-top" style="background-color: #00C74D">+10</button>
-            <button type="button" class="btn-top" style="background-color: #00C74D">+100</button>
-            <button type="button" class="btn-top" style="background-color: #F95146">+1000</button>
-            <button type="button" class="btn-top" style="background-color: #7c99b4">1/2</button>
-            <button type="button" class="btn-top" style="background-color: #2D3035">X2</button>
-            <button type="button" class="btn-top" style="background-color: #F95146">MAX</button>
+        <div class="d-flex justify-content-start py-2 rounded-3 last-10">
+
         </div>
         <div class="d-flex flex-shrink-0 flex-grow-0 justify-content-center overflow-hidden roulette-wrapper w-100">
             <div class='roulette-selector'></div>
@@ -25,23 +18,23 @@
                 <span class="text-center text-wager">WAGER</span>
                 <div class="d-flex flex-row wager">
                     <span class="fw-bolder my-auto" style="color: rgb(255, 255, 255);">$</span>
-                    <input type="number" class="my-auto ms-2 input-wager">
-                </div>   
+                    <input type="number" class="my-auto ms-2 input-wager input-bet">
+                </div>
             </div>
             <div class="d-flex flex-column ms-2">
                 <span class="text-center text-wager">MULTIPLIER</span>
                 <div class="d-flex flex-row wager">
                     <span class="fw-bolder my-auto" style="color: rgb(255, 255, 255);">x</span>
-                    <input type="number" class="my-auto ms-2 input-wager">
-                </div>   
+                    <input type="number" class="my-auto ms-2 input-wager input-mult">
+                </div>
             </div>
-            
+
             <div class="d-flex ms-2  align-self-end">
-                <button type="button" class=" max-btn">MAX BET</button> 
+                <button type="button" class=" max-btn">MAX BET</button>
             </div>
             <div class="d-flex ms-2  align-self-end">
-                <button type="button" class=" max-btn">PLACE BET</button> 
-            </div>        
+                <button type="button" class=" max-btn">PLACE BET</button>
+            </div>
             <button type="button" class="d-flex ms-2 align-self-end replay">
                 <img src="assets/replay.svg" style="color-adjust: white" width="41" height="41">
             </button>

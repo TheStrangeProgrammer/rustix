@@ -15,7 +15,7 @@ var card = cardWidth + cardMargin;
 
 initWheel(outcomes);
 
-$.getJSON( "getRouletteSpin").done(function( data ) {
+$.getJSON("roulette/spin").done(function( data ) {
     let main = $('.main');
     let overlay = $('#overlay');
 
@@ -50,7 +50,7 @@ $.getJSON( "getRouletteSpin").done(function( data ) {
 
         if(getSpin){
             getSpin=false;
-            $.getJSON( "getRouletteSpin").done(function( data ) {
+            $.getJSON( "roulette/spin").done(function( data ) {
                 serverSecond=data['currentSecond'];
                 if(serverSecond==0) serverSecond=30;
                 endTime = new Date(new Date().getTime() + serverSecond*1000);
@@ -62,7 +62,7 @@ $.getJSON( "getRouletteSpin").done(function( data ) {
     }, 10);
 
     setInterval(function() {
-        $.getJSON( "getBets").done(function( data ) {
+        $.getJSON( "roulette/bets").done(function( data ) {
             updateBets($("#bet-list-red"),data['bets'].red);
             updateBets($("#bet-list-black"),data['bets'].black);
             updateBets($("#bet-list-green"),data['bets'].green);
@@ -74,7 +74,7 @@ $.getJSON( "getRouletteSpin").done(function( data ) {
 $('#bet-red').click(function() {
     $.ajax({
         type:'POST',
-        url:'placeBet',
+        url:'roulette/bet',
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
@@ -84,7 +84,7 @@ $('#bet-red').click(function() {
 $('#bet-green').click(function() {
     $.ajax({
         type:'POST',
-        url:'placeBet',
+        url:'roulette/bet',
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
@@ -94,7 +94,7 @@ $('#bet-green').click(function() {
 $('#bet-black').click(function() {
     $.ajax({
         type:'POST',
-        url:'placeBet',
+        url:'roulette/bet',
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
@@ -104,7 +104,7 @@ $('#bet-black').click(function() {
 $('#bet-bait').click(function() {
     $.ajax({
         type:'POST',
-        url:'placeBet',
+        url:'roulette/bet',
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
