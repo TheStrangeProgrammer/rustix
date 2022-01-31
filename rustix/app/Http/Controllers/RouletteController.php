@@ -23,12 +23,13 @@ class RouletteController extends Controller
         $data['outcome'] = $roulette->rouletteRoll;
         $data["currentSecond"] = abs(Carbon::now()->isoFormat('s')-60)%30;
         $data["rouletteLast100"]=$roulette->rouletteLast100;
-        $data["win"]=array_filter($roulette->wins,function($item){
-            return $item->user==Auth::user()->id;
-        });
+
         return response()->json($data);
     }
-
+    public function getBets(){
+        $data["bets"]=json_decode(Storage::disk('local')->get('rouletteData.json'))->bets;
+        return response()->json($data);
+    }
     public function placeBet(Request $request){
 
         if(abs(Carbon::now()->isoFormat('s')-60)%30<1){
@@ -59,26 +60,43 @@ class RouletteController extends Controller
         $user->balance-=$data["betAmount"];
         $user->save();
         event(new NewBalance(Auth::user()->id,$user->balance));
-        RouletteController::addBet(Auth::user()->id,$data["bet"],$data["betAmount"]);
+        RouletteController::addBet(Auth::user()->id,Auth::user()->name,Auth::user()->avatar,$data["bet"],$data["betAmount"]);
 
         $response["success"]=true;
         $response["error"]="";
         return response()->json($response);
     }
 
-    private static function addBet($userId,$bet,$betAmount){
-        $roulette = json_decode(Storage::disk('local')->get('rouletteData.json'));
+    private static function addBet($userId,$userName,$userAvatar,$bet,$betAmount){
+        $roulette = json_decode(Storage::disk('local')->get('rouletteData.json'),true);
+        $toPlace=[
+            "name" =>$userName,
+            "avatar" =>$userAvatar,
+            "amount" =>$betAmount,
+        ];
         if($bet==0){
-            array_push($roulette->bets->red,["user"=>$userId,"bet"=>$bet,"amount"=>$betAmount]);
+            if (array_key_exists($userId, $roulette["bets"]["red"]))
+                $roulette["bets"]["red"][$userId]["amount"]=$roulette["bets"]["red"][$userId]["amount"]+$betAmount;
+            else
+                $roulette["bets"]["red"][$userId]=$toPlace;
         }
         if($bet==1){
-            array_push($roulette->bets->green,["user"=>$userId,"bet"=>$bet,"amount"=>$betAmount]);
+            if (array_key_exists($userId,$roulette["bets"]["green"]))
+                $roulette["bets"]["green"][$userId]["amount"]=$roulette["bets"]["green"][$userId]["amount"]+$betAmount;
+            else
+            $roulette["bets"]["green"][$userId]=$toPlace;
         }
         if($bet==2){
-            array_push($roulette->bets->black,["user"=>$userId,"bet"=>$bet,"amount"=>$betAmount]);
+            if (array_key_exists($userId,$roulette["bets"]["black"]))
+                $roulette["bets"]["black"][$userId]["amount"]=$roulette["bets"]["black"][$userId]["amount"]+$betAmount;
+            else
+            $roulette["bets"]["black"][$userId]=$toPlace;
         }
         if($bet==3){
-            array_push($roulette->bets->bait,["user"=>$userId,"bet"=>$bet,"amount"=>$betAmount]);
+            if (array_key_exists($userId,$roulette["bets"]["bait"]))
+                $roulette["bets"]["bait"][$userId]["amount"]=$roulette["bets"]["bait"][$userId]["amount"]+$betAmount;
+            else
+            $roulette["bets"]["bait"][$userId]=$toPlace;
         }
         Storage::disk('local')->put('rouletteData.json', json_encode($roulette));
     }
@@ -110,7 +128,7 @@ class RouletteController extends Controller
         $roulette = json_decode(Storage::disk('local')->get('rouletteData.json'));
 
         $roulette->rouletteRoll=rand(0,14);
-        $roulette->wins=RouletteController::processBets($roulette->rouletteRoll,$roulette->bets);
+        $roulette->wins=RouletteController::processWins($roulette->rouletteRoll,$roulette->bets);
         $roulette->bets=[
             "red"=>[],
             "green"=>[],
@@ -122,79 +140,42 @@ class RouletteController extends Controller
         Storage::disk('local')->put('rouletteData.json', json_encode($roulette));
     }
 
-    public static function toBet($value){
-        $bet=-1;
-        if($value<6){
+    public static function processWins($value,$bets){
+        $wins=[];
+        if($value<=6){
             if($value%2==0) {
-                $bet=2;
+                RouletteController::updateBalance($bets->black,2);
             }
             else {
-                $bet=0;
+                RouletteController::updateBalance($bets->red,2);
             }
-        }
-        if($value==6){
-            $bet=3;
-        }
-        if($value==7){
-            $bet=1;
-        }
-        if($value==8){
-            $bet=3;
-        }
-        if($value>8){
+            if($value==6){
+                RouletteController::updateBalance($bets->bait,7);
+            }
+        } else if($value==7){
+            RouletteController::updateBalance($bets->green,14);
+        } else if($value>=8){
             if($value%2==1){
-                $bet=2;
+                RouletteController::updateBalance($bets->black,2);
             }
             else{
-                $bet=0;
+                RouletteController::updateBalance($bets->red,2);
+            }
+            if($value==8){
+                RouletteController::updateBalance($bets->bait,7);
             }
         }
-        return $bet;
+        return $wins;
     }
 
-    public static function processBets($outcome,$bets){
-        $win = RouletteController::toBet($outcome);
-        if($win==0){
-            for($i=0;$i<count($bets->red);$i++){
-                $bets->red[$i]->amount*=2;
-                $user = User::where('id', $bets->red[$i]->user)->first();
-                $user->balance+=$bets->red[$i]->amount;
-                $user->save();
-                event(new NewBalance($bets->red[$i]->user,$user->balance));
-            }
-            return $bets->red;
-        }
-        if($win==1){
-            for($i=0;$i<count($bets->green);$i++){
-                $bets->green[$i]->amount*=14;
-                $user = User::where('id', $bets->green[$i]->user)->first();
-                $user->balance+=$bets->green[$i]->amount;
-                $user->save();
-                event(new NewBalance($bets->green[$i]->user,$user->balance));
-            }
-            return $bets->green;
-        }
-        if($win==2){
-            for($i=0;$i<count($bets->black);$i++){
-                $bets->black[$i]->amount*=2;
-                $user = User::where('id', $bets->black[$i]->user)->first();
-                $user->balance+=$bets->black[$i]->amount;
-                $user->save();
-                event(new NewBalance($bets->black[$i]->user,$user->balance));
-            }
-            return $bets->black;
-        }
-        if($win==3){
-            for($i=0;$i<count($bets->bait);$i++){
-                $bets->bait[$i]->amount*=7;
-                $user = User::where('id', $bets->bait[$i]->user)->first();
-                $user->balance+=$bets->bait[$i]->amount;
-                $user->save();
-                event(new NewBalance($bets->bait[$i]->user,$user->balance));
-            }
-            return $bets->bait;
-        }
-        return [];
+    public static function updateBalance($wins,$multiplier){
 
+        foreach($wins as $key=>$value){
+            $value->amount*=$multiplier;
+            $user = User::where('id',$key)->first();
+            $user->balance+=$value->amount;
+            $user->save();
+            event(new NewBalance($key,$user->balance));
+        }
     }
 }

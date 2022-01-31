@@ -21,7 +21,7 @@ class Kernel extends ConsoleKernel
         $this->bootstrap();
         //main loop
         $schedule->call(function () {
-            sleep(27);
+            sleep(29);
             RouletteController::newOutcome();
             sleep(30);
             RouletteController::newOutcome();

@@ -60,6 +60,15 @@ $.getJSON( "getRouletteSpin").done(function( data ) {
         }
         currentSecond = (endTime.getTime() - new Date().getTime()) / 1000;
     }, 10);
+
+    setInterval(function() {
+        $.getJSON( "getBets").done(function( data ) {
+            updateBets($("#bet-list-red"),data['bets'].red);
+            updateBets($("#bet-list-black"),data['bets'].black);
+            updateBets($("#bet-list-green"),data['bets'].green);
+            updateBets($("#bet-list-bait"),data['bets'].bait);
+        });
+    }, 1000);
 });
 
 $('#bet-red').click(function() {
@@ -102,6 +111,29 @@ $('#bet-bait').click(function() {
         data: JSON.stringify({  bet:3 , betAmount:parseInt(inputBet.val()) })
      });
 });
+
+function updateBets(betlist,bets){
+    betlist.find(".bet-total-number").html(Object.keys(bets).length);
+    betlist.find(".bet-total-amount").html(Object.values(bets).reduce((p,c)=>p+c.amount,0));
+    var betList="";
+    for(const key in bets){
+        betList+=addBet(bets[key].name,bets[key].avatar,bets[key].amount)
+    }
+    betlist.find(".bet-list-bets").html(betList);
+}
+function addBet(name,avatar,amount){
+    return `<div class="d-flex mt-2 ps-2 bg-list">
+                <div class="me-auto p-2">
+                    <img class="image-circle rounded-circle" style="background-color:#F95146"  src='`+avatar+`'
+                        width="30" height="30">
+                    <span class="fw-bold">`+name+`</span>
+                </div>
+                <div class="d-flex flex-row justify-content-end align-items-center me-2">
+                    <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
+                    <span class="score-bet fw-bold">`+amount+`</span>
+                </div>
+            </div>`
+}
 
 
 function displayLast100(last100){

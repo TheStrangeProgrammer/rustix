@@ -57,5 +57,6 @@ Route::get('/addbalance', [UserController::class, 'addbalance'])->middleware('au
 Route::get('/roulette', [RouletteController::class, 'roulette'])->middleware('auth');
 Route::get('/x-roulette', [UserController::class, 'xroulette'])->middleware('auth');
 Route::get('/getRouletteSpin', [RouletteController::class, 'getRouletteSpin'])->middleware('auth');
+Route::get('/getBets', [RouletteController::class, 'getBets']);
 Route::post('/placeBet', [RouletteController::class, 'placeBet'])->middleware('auth');
 Route::get('/getCurrentSecond', [UserController::class, 'getCurrentSecond'])->middleware('auth');
