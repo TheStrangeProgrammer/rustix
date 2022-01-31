@@ -1,10 +1,6 @@
 
 var outcomes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14];
 var wheel = $('.roulette-wheel');
-var last100Red = $('.last-100-red');
-var last100Green = $('.last-100-green');
-var last100Black = $('.last-100-black');
-var last7 = $('.last-7');
 var inputBet = $('.input-bet');
 
 
@@ -142,26 +138,40 @@ function displayLast100(last100){
     var lastTotalRed=0;
     var lastTotalGreen=0;
     var lastTotalBlack=0;
+    var lastTotalBaitRed=0;
+    var lastTotalBaitBlack=0;
 
     for (let i = 0; i < 100; i++) {
         let color = valueToColor(last100[i]);
+        let image = valueToImage(last100[i]);
         if(color=="roulette-black"){
             lastTotalBlack++;
+            if(image=="Hook"){
+                lastTotalBaitBlack++;
+            }
         }
         if(color=="roulette-red"){
             lastTotalRed++;
+            if(image=="Hook"){
+                lastTotalBaitRed++;
+            }
         }
         if(color=="roulette-house"){
             lastTotalGreen++;
         }
+
+
         if(i<7){
-            last7html += createRoundImage(color,valueToImage(last100[i]));
+            last7html += createRoundImage(color,image);
         }
     }
-    last100Red.html(lastTotalRed.toString());
-    last100Green.html(lastTotalGreen.toString());
-    last100Black.html(lastTotalBlack.toString());
-    last7.html(last7html);
+
+    $('.last-100-red').html(lastTotalRed.toString());
+    $('.last-100-green').html(lastTotalGreen.toString());
+    $('.last-100-black').html(lastTotalBlack.toString());
+    $('.last-100-bait-red').html(lastTotalBaitRed.toString());
+    $('.last-100-bait-black').html(lastTotalBaitBlack.toString());
+    $('.last-7').html(last7html);
 }
 
 function createRoundImage(color,image){

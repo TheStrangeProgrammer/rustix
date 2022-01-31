@@ -20,7 +20,7 @@
                 <div class="d-flex ">
                     <i class="bi bi-x"></i>
 
-                    <input type="number" class="input-mult" value="1.00">
+                    <input type="number" class="input-mult" value="1.01">
                 </div>
             </div>
             <div class="d-flex flex-column flex-fill my-2 betamount">

@@ -1,7 +1,7 @@
 .header{
     background-color: #0d0e14;
 }
-  
+
 .button {
     opacity: 0;
     align-items: center;
@@ -20,7 +20,7 @@
      0 16px 8px rgba(0,0,0,0.09),
      0 32px 16px rgba(0,0,0,0.09);
   }
-  
+
 .card-game{
     width: 417px;
     background-color: #141620 !important;
@@ -44,7 +44,7 @@
     background: rgba(0, 0, 0, 0.5);
     border-radius: 0.25rem 0.25rem 0 0 ;
     }
-  
+
   .card-game:hover .card-overlay {
       opacity: 1;
     }
@@ -160,6 +160,7 @@
     overflow-y: auto;
     height: 0px;
     background-color:#1A1D29;
+    flex-direction: column;
 }
 
 .white{
@@ -217,7 +218,7 @@ ul.second-one{
       background-color: #ffffff;
       width: 100% !important;
       margin-top: 50px !important;
-    
+
     }
 
     ul.dropdown-menu{
@@ -245,7 +246,7 @@ ul.second-one{
     #overlay {
         width: 100%;
     }
-    
+
 }
 #overlay {
     display: none;

@@ -61,7 +61,7 @@ class XRouletteController extends Controller
             $response["error"]="Not enough coins";
             return response()->json($response);
         }
-        if($data["bet"]<0){
+        if($data["bet"]<1.01){
             $response["success"]=false;
             $response["error"]="You can't bet negative";
             return response()->json($response);

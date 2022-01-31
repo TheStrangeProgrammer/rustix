@@ -118,10 +118,10 @@ function displayLast10(last10){
 }
 
 function createLastImage(color,value){
-    return "<div class='card "+color+"'>x"+value+"</div>";
+    return "<div class='x-roulette-card-last "+color+"'>x"+value+"</div>";
 }
 function createCard(color,image,value){
-    return "<div class='roulette-card "+color+"'><img class='flex-fill' src='../assets/"+image+".svg' ><span>x"+value+"</span></div>";
+    return "<div class='roulette-card "+color+"'><img  src='../assets/"+image+".svg' width='110' height='110' ><span >x"+value+"</span></div>";
 }
 
 function getPosition(outcome,values){
@@ -129,13 +129,61 @@ function getPosition(outcome,values){
 }
 
 function valueToColor(value){
-    color="x-roulette-image-14"
-
+    color="";
+    if(value<=1)
+        color="x-roulette-red";
+    else if(value<2)
+        color="x-roulette-light-green";
+    else if(value<5)
+        color="x-roulette-green";
+    else if(value<10)
+        color="x-roulette-light-blue";
+    else if(value<50)
+        color="x-roulette-blue";
+    else if(value<100)
+        color="x-roulette-light-purple";
+    else if(value<1000)
+        color="x-roulette-purple";
+    else if(value<100000)
+        color="x-roulette-gold";
+    else
+        color="x-roulette-rainbow";
     return color;
 }
 function valueToImage(value){
-    image="R";
-
+    image="";
+    if(value<=1)
+        image="1";
+    else if(value<1.25)
+        image="2";
+    else if(value<1.50)
+        image="3";
+    else if(value<2)
+        image="4";
+    else if(value<3)
+        image="5";
+    else if(value<4)
+        image="6";
+    else if(value<5)
+        image="7";
+    else if(value<10)
+        image="8";
+    else if(value<50)
+        image="9";
+    else if(value<100)
+        image="10";
+    else if(value<500)
+        image="11";
+    else if(value<1000)
+        image="12";
+    else if(value<5000)
+        image="13";
+    else if(value<10000)
+        image="14";
+    else if(value<100000)
+        image="15";
+    else
+        image="16";
     return image;
 }
 
