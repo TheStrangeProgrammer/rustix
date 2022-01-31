@@ -38,7 +38,7 @@
                                 <li><a class="dropdown-item text-center py-3" href="{{ URL::route('logOut') }}">Log
                                         Out</a></li>
                                 <li class="color"><a
-                                        class="dropdown-item text-center py-3 text-white hov-green" href="#">Admin
+                                        class="dropdown-item text-center py-3 text-white hov-green" href="http://localhost/admin">Admin
                                         Panel</a></li>
                             </ul>
                         </li>

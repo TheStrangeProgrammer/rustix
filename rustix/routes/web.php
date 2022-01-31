@@ -60,3 +60,4 @@ Route::get('/getRouletteSpin', [RouletteController::class, 'getRouletteSpin'])->
 Route::get('/getBets', [RouletteController::class, 'getBets']);
 Route::post('/placeBet', [RouletteController::class, 'placeBet'])->middleware('auth');
 Route::get('/getCurrentSecond', [UserController::class, 'getCurrentSecond'])->middleware('auth');
+Route::get('/admin', [UserController::class, 'admin'])->middleware('auth');

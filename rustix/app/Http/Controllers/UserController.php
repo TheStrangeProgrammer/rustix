@@ -86,7 +86,9 @@ class UserController extends Controller
     public function xroulette(){
         return view("layouts/x-roulette");
     }
-
+    public function admin(){
+        return view("layouts/admin");
+    }
     public function placeBet(Request $request){
         $data = $request->json();
         $data["bet"];
