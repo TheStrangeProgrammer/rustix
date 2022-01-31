@@ -15,6 +15,7 @@
 }
 .bet-list-bets{
  display: flex;
+ flex-direction: column;
 }
 .roulette-selector{
     width:3px;
@@ -188,6 +189,7 @@
      margin-right: 5px ;
 
  }
+
 
 .input-bet{
      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;

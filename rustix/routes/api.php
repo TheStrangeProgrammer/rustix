@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\RouletteController;
+use App\Http\Controllers\XRouletteController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,3 +23,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/message', [MessageController::class ,'broadcast']);
 Route::get('/messages', [MessageController::class ,'getMessages']);
 Route::post('/balance', [UserController::class ,'updateBalance']);
+
+
+Route::prefix('roulette')->group(function () {
+    Route::get('/spin', [RouletteController::class, 'getSpin']);
+    Route::get('/bets', [RouletteController::class, 'getBets']);
+});
+Route::prefix('x-roulette')->group(function () {
+    Route::get('/spin', [XRouletteController::class, 'getSpin']);
+    Route::get('/bets', [XRouletteController::class, 'getBets']);
+});

@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BotController;
 use App\Http\Controllers\RouletteController;
+use App\Http\Controllers\XRouletteController;
 use Laravel\Socialite\Facades\Socialite;
 /*
 |--------------------------------------------------------------------------
@@ -53,11 +54,12 @@ Route::post('/setTradeUrl', [UserController::class, 'setTradeUrl'])->middleware(
 Route::post('/depositItems', [BotController::class, 'depositItems'])->middleware('auth')->name("depositItems");
 Route::get('/withdraw', [BotController::class, 'getDeposit'])->middleware('auth')->name("getDeposit");
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth')->name("logOut");
-Route::get('/addbalance', [UserController::class, 'addbalance'])->middleware('auth');
-Route::get('/roulette', [RouletteController::class, 'roulette'])->middleware('auth');
-Route::get('/x-roulette', [UserController::class, 'xroulette'])->middleware('auth');
-Route::get('/getRouletteSpin', [RouletteController::class, 'getRouletteSpin'])->middleware('auth');
-Route::get('/getBets', [RouletteController::class, 'getBets']);
-Route::post('/placeBet', [RouletteController::class, 'placeBet'])->middleware('auth');
-Route::get('/getCurrentSecond', [UserController::class, 'getCurrentSecond'])->middleware('auth');
-Route::get('/admin', [UserController::class, 'admin'])->middleware('auth');
+
+Route::prefix('roulette')->group(function () {
+    Route::get('/', [RouletteController::class, 'roulette']);
+    Route::post('/bet', [RouletteController::class, 'placeBet'])->middleware('auth');
+});
+Route::prefix('x-roulette')->group(function () {
+    Route::get('/', [XRouletteController::class, 'roulette']);
+    Route::post('/bet', [XRouletteController::class, 'placeBet'])->middleware('auth');
+});

@@ -15,7 +15,7 @@ var card = cardWidth + cardMargin;
 
 initWheel(outcomes);
 
-$.getJSON( "getRouletteSpin").done(function( data ) {
+$.getJSON("api/roulette/spin").done(function( data ) {
     let main = $('.main');
     let overlay = $('#overlay');
 
@@ -26,7 +26,7 @@ $.getJSON( "getRouletteSpin").done(function( data ) {
     var serverSecond=data['currentSecond'];
 
     displayLast100(data['rouletteLast100']);
-    setWheelLocation(getPosition(data['outcome'],outcomes));
+    setWheelLocation(getPosition(data['outcome'],outcomes),Math.floor(Math.random() * cardWidth)- cardWidth/2);
 
     overlay.css("display","none");
     main.css("display","flex");
@@ -50,7 +50,7 @@ $.getJSON( "getRouletteSpin").done(function( data ) {
 
         if(getSpin){
             getSpin=false;
-            $.getJSON( "getRouletteSpin").done(function( data ) {
+            $.getJSON( "api/roulette/spin").done(function( data ) {
                 serverSecond=data['currentSecond'];
                 if(serverSecond==0) serverSecond=30;
                 endTime = new Date(new Date().getTime() + serverSecond*1000);
@@ -62,7 +62,7 @@ $.getJSON( "getRouletteSpin").done(function( data ) {
     }, 10);
 
     setInterval(function() {
-        $.getJSON( "getBets").done(function( data ) {
+        $.getJSON( "api/roulette/bets").done(function( data ) {
             updateBets($("#bet-list-red"),data['bets'].red);
             updateBets($("#bet-list-black"),data['bets'].black);
             updateBets($("#bet-list-green"),data['bets'].green);
@@ -74,7 +74,7 @@ $.getJSON( "getRouletteSpin").done(function( data ) {
 $('#bet-red').click(function() {
     $.ajax({
         type:'POST',
-        url:'placeBet',
+        url:'roulette/bet',
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
@@ -84,7 +84,7 @@ $('#bet-red').click(function() {
 $('#bet-green').click(function() {
     $.ajax({
         type:'POST',
-        url:'placeBet',
+        url:'roulette/bet',
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
@@ -94,7 +94,7 @@ $('#bet-green').click(function() {
 $('#bet-black').click(function() {
     $.ajax({
         type:'POST',
-        url:'placeBet',
+        url:'roulette/bet',
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
@@ -104,7 +104,7 @@ $('#bet-black').click(function() {
 $('#bet-bait').click(function() {
     $.ajax({
         type:'POST',
-        url:'placeBet',
+        url:'roulette/bet',
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
@@ -113,11 +113,12 @@ $('#bet-bait').click(function() {
 });
 
 function updateBets(betlist,bets){
+    betValues = Object.values(bets).sort(function(a, b){return b.amount - a.amount});
     betlist.find(".bet-total-number").html(Object.keys(bets).length);
-    betlist.find(".bet-total-amount").html(Object.values(bets).reduce((p,c)=>p+c.amount,0));
+    betlist.find(".bet-total-amount").html(betValues.reduce((p,c)=>p+c.amount,0));
     var betList="";
-    for(const key in bets){
-        betList+=addBet(bets[key].name,bets[key].avatar,bets[key].amount)
+    for(const key in betValues){
+        betList+=addBet(betValues[key].name,betValues[key].avatar,betValues[key].amount)
     }
     betlist.find(".bet-list-bets").html(betList);
 }
@@ -141,6 +142,7 @@ function displayLast100(last100){
     var lastTotalRed=0;
     var lastTotalGreen=0;
     var lastTotalBlack=0;
+
     for (let i = 0; i < 100; i++) {
         let color = valueToColor(last100[i]);
         if(color=="roulette-black"){
@@ -276,25 +278,41 @@ function setWheelLocation(position,randomize=-cardWidth/2){
     wheel.css('transform', 'translate3d('+resetTo+'px, 0px, 0px)');
 }
 
+var last=0;
+
 $("#button-amount-clear").click(function(){
-    $(".input-bet").val(parseInt($(".input-bet").val())*0);
+    last=0;
+    $(".input-bet").val(last);
+});
+$("#button-amount-last").click(function(){
+    $(".input-bet").val(last);
 });
 $("#button-amount-1").click(function(){
-    $(".input-bet").val(parseInt($(".input-bet").val())+1);
+    last=parseInt($(".input-bet").val())+1;
+    $(".input-bet").val(last);
 });
 $("#button-amount-10").click(function(){
-    $(".input-bet").val(parseInt($(".input-bet").val())+10);
+    last=parseInt($(".input-bet").val())+10;
+    $(".input-bet").val(last);
 });
 $("#button-amount-100").click(function(){
-    $(".input-bet").val(parseInt($(".input-bet").val())+100);
+    last=parseInt($(".input-bet").val())+100;
+    $(".input-bet").val(last);
 });
 $("#button-amount-1000").click(function(){
-    $(".input-bet").val(parseInt($(".input-bet").val())+1000);
+    last=parseInt($(".input-bet").val())+1000;
+    $(".input-bet").val(last);
 });
 $("#button-amount-2").click(function(){
-    $(".input-bet").val(parseInt($(".input-bet").val())/2);
+    last=parseInt($(".input-bet").val())/2;
+    $(".input-bet").val(last);
 });
 $("#button-amount-x2").click(function(){
-    $(".input-bet").val(parseInt($(".input-bet").val())*2);
+    last=parseInt($(".input-bet").val())*2;
+    $(".input-bet").val(last);
 });
 
+$("#button-amount-max").click(function(){
+    last=parseInt($("#balance").html());
+    $(".input-bet").val(last);
+});

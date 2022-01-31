@@ -2,15 +2,8 @@
 @section('content')
 
     <div class="d-flex flex-column roulette">
-        <div class="d-flex justify-content-start py-2 rounded-3">
-            <button type="button" class="btn-top" style="background-color: #7c99b4">x6.69</button>
-            <button type="button" class="btn-top" style="background-color: #2D3035">+1</button>
-            <button type="button" class="btn-top" style="background-color: #00C74D">+10</button>
-            <button type="button" class="btn-top" style="background-color: #00C74D">+100</button>
-            <button type="button" class="btn-top" style="background-color: #F95146">+1000</button>
-            <button type="button" class="btn-top" style="background-color: #7c99b4">1/2</button>
-            <button type="button" class="btn-top" style="background-color: #2D3035">X2</button>
-            <button type="button" class="btn-top" style="background-color: #F95146">MAX</button>
+        <div class="d-flex justify-content-start py-2 rounded-3 last-10">
+
         </div>
         <div class="d-flex flex-shrink-0 flex-grow-0 justify-content-center overflow-hidden roulette-wrapper w-100">
             <div class='roulette-selector'></div>
@@ -20,77 +13,48 @@
         <div class="d-flex flex-shrink-0 rounded-pill round-time-bar">
             <div class="rounded-pill"></div>
         </div>
-        <div class="d-flex justify-content-center " style="margin-top: 50px">
-            <div class="d-flex flex-column">
-                <span class="text-center text-wager">WAGER</span>
-                <div class="d-flex flex-row wager">
-                    <span class="fw-bolder my-auto" style="color: rgb(255, 255, 255);">$</span>
-                    <input type="number" class="my-auto ms-2 input-wager">
-                </div>   
+        <div class="d-flex bet-amount rounded-3">
+            <button id="bet-button" class="m-2 btn-bet">Place Bet</button>
+            <div class="d-flex flex-column flex-fill my-2 betamount">
+                <div style="opacity: 50%">Multiplier</div>
+                <div class="d-flex ">
+                    <i class="bi bi-x"></i>
+
+                    <input type="number" class="input-mult" value="1.00">
+                </div>
             </div>
-            <div class="d-flex flex-column ms-2">
-                <span class="text-center text-wager">MULTIPLIER</span>
-                <div class="d-flex flex-row wager">
-                    <span class="fw-bolder my-auto" style="color: rgb(255, 255, 255);">x</span>
-                    <input type="number" class="my-auto ms-2 input-wager">
-                </div>   
+            <div class="d-flex flex-column flex-fill my-2 betamount">
+                <div style="opacity: 50%">Bet amount</div>
+                <div class="d-flex">
+                    <img class="input-prefix " src="assets/dollar_coin.svg" width="16" height="16">
+
+                    <input type="number" class="input-bet" value="0">
+                </div>
             </div>
-            
-            <div class="d-flex ms-2  align-self-end">
-                <button type="button" class=" max-btn">MAX BET</button> 
+            <div class="d-flex justify-content-evenly my-2">
+                <button id="button-amount-clear" type="button" class="btn-clear">CLEAR</button>
+                <button id="button-amount-max" type="button" class="btn-bet">MAX</button>
+                <button id="button-amount-repeat"  type="button" class="btn-bet ">REPEAT</button>
             </div>
-            <div class="d-flex ms-2  align-self-end">
-                <button type="button" class=" max-btn">PLACE BET</button> 
-            </div>        
-            <button type="button" class="d-flex ms-2 align-self-end replay">
-                <img src="assets/replay.svg" style="color-adjust: white" width="41" height="41">
-            </button>
         </div>
     </div>
 
 
-    <div class="d-flex flex-column flex-fill m-2 p-2 flex-shrink-1 bet">
-        <div class="d-flex flex-column flex-fill ">
-            <div class="d-flex flex-column">
-                <div class="me-auto p-2 ">
-                    <span class="fw-bold">Top Bets</span>
-                </div>
-                <div class="d-flex mt-2 ps-2 bg-list">
-                    <div class="me-auto p-2">
-                        <img class=" image-circle rounded-circle" style="background-color:#F95146" src='../assets/hook.svg'
-                            width="30" height="30">
-                        <span class="fw-bold">Joe</span>
-                    </div>
-                    <div class="d-flex flex-row justify-content-end align-items-center p-2 me-2">
-                        <span class="score-bet fw-bold">x2</span>
-                        <span class="fw-bolder ms-3 ">$</span>
-                        <span class="score-bet fw-bold">1.000</span>
-                    </div>
-
-                </div>
+    <div class="d-flex flex-column m-2 bet-list">
+        <div class="d-flex">
+            <div class="me-auto p-2 ">
+                <span class="score-bet fw-bold bet-total-number">0</span>
+                <span class="fw-bold">Bets</span>
             </div>
-            <div class="d-flex flex-column mt-3">
-                <div class="me-auto p-2 ">
-                    <span class="fw-bold">All Bets</span>
-                </div>
-                <div class="d-flex mt-2 ps-2 bg-list">
-                    <div class="me-auto p-2">
-                        <img class=" image-circle rounded-circle" style="background-color:#F95146" src='../assets/hook.svg'
-                            width="30" height="30">
-                        <span class="fw-bold">Joe</span>
-                    </div>
-                    <div class="d-flex flex-row justify-content-end align-items-center p-2 me-2">
-                        <span class="score-bet fw-bold">x2</span>
-                        <span class="fw-bolder ms-3 ">$</span>
-                        <span class="score-bet fw-bold">1.000</span>
-                    </div>
-
-                </div>
+            <div class="d-flex flex-row justify-content-end align-items-center me-2">
+                <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
+                <span class="score-bet fw-bold bet-total-amount">0</span>
             </div>
 
         </div>
+        <div class="bet-list-bets">
 
-
+        </div>
     </div>
 @endsection
 @section('title', 'X-Roulette')

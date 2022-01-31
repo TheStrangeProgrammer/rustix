@@ -5,6 +5,7 @@ namespace App\Console;
 use App\Http\Controllers\InventoryController;
 
 use App\Http\Controllers\RouletteController;
+use App\Http\Controllers\XRouletteController;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use Illuminate\Support\Facades\Storage;
@@ -23,8 +24,10 @@ class Kernel extends ConsoleKernel
         $schedule->call(function () {
             sleep(29);
             RouletteController::newOutcome();
+            XRouletteController::newOutcome();
             sleep(30);
             RouletteController::newOutcome();
+            XRouletteController::newOutcome();
 
         })->everyMinute();
         $schedule->call(function () {

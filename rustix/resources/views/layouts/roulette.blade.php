@@ -48,16 +48,17 @@
     <div class="d-flex flex-shrink-0 rounded-pill round-time-bar">
         <div class="rounded-pill"></div>
     </div>
-    <div class="d-flex justify-content-end bet-amount py-2 rounded-3">
-        <div class="flex-column flex-fill betamount">
+    <div class="d-flex bet-amount py-2 rounded-3">
+
+        <div class="d-flex flex-column flex-fill betamount">
             <div style="opacity: 50%">Bet amount</div>
-            <div class="d-inline">
+            <div class="d-flex">
                 <img class="input-prefix " src="assets/dollar_coin.svg" width="16" height="16">
+                <input type="number" class="input-bet" value="0">
             </div>
-            <input type="number" class="input-bet" value="0">
         </div>
         <button id="button-amount-clear" type="button" class="btn-clear">CLEAR</button>
-        <button id="button-amount-clear"  type="button" class="btn-bet ">LAST</button>
+        <button id="button-amount-last"  type="button" class="btn-bet ">LAST</button>
         <button id="button-amount-1" type="button" class="btn-bet">+1</button>
         <button id="button-amount-10" type="button" class="btn-bet">+10</button>
         <button id="button-amount-100" type="button" class="btn-bet">+100</button>

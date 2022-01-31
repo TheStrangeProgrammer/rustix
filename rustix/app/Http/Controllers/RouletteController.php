@@ -17,8 +17,10 @@ class RouletteController extends Controller
     public function roulette(){
         return view("layouts/roulette");
     }
-
-    public function getRouletteSpin(){
+    public static function randomOutcome(){
+        return rand(0,14);
+    }
+    public function getSpin(){
         $roulette = json_decode(Storage::disk('local')->get('rouletteData.json'));
         $data['outcome'] = $roulette->rouletteRoll;
         $data["currentSecond"] = abs(Carbon::now()->isoFormat('s')-60)%30;
@@ -39,14 +41,14 @@ class RouletteController extends Controller
         }
 
         $data = $request->all();
-
-        if($data["betAmount"]<1){
+        $betAmount = intval($data["betAmount"]);
+        if($betAmount<1){
             $response["success"]=false;
             $response["error"]="At least 1 coin";
             return response()->json($response);
         }
         $user = User::where('id', Auth::user()->id)->first();
-        if($data["betAmount"]>$user->balance){
+        if($betAmount>$user->balance){
             $response["success"]=false;
             $response["error"]="Not enough coins";
             return response()->json($response);
@@ -57,10 +59,10 @@ class RouletteController extends Controller
             return response()->json($response);
         }
 
-        $user->balance-=$data["betAmount"];
+        $user->balance-=$betAmount;
         $user->save();
         event(new NewBalance(Auth::user()->id,$user->balance));
-        RouletteController::addBet(Auth::user()->id,Auth::user()->name,Auth::user()->avatar,$data["bet"],$data["betAmount"]);
+        RouletteController::addBet(Auth::user()->id,Auth::user()->name,Auth::user()->avatar,$data["bet"],$betAmount);
 
         $response["success"]=true;
         $response["error"]="";
@@ -127,8 +129,8 @@ class RouletteController extends Controller
         }
         $roulette = json_decode(Storage::disk('local')->get('rouletteData.json'));
 
-        $roulette->rouletteRoll=rand(0,14);
-        $roulette->wins=RouletteController::processWins($roulette->rouletteRoll,$roulette->bets);
+        $roulette->rouletteRoll=RouletteController::randomOutcome();
+        RouletteController::processWins($roulette->rouletteRoll,$roulette->bets);
         $roulette->bets=[
             "red"=>[],
             "green"=>[],
@@ -140,32 +142,30 @@ class RouletteController extends Controller
         Storage::disk('local')->put('rouletteData.json', json_encode($roulette));
     }
 
-    public static function processWins($value,$bets){
-        $wins=[];
-        if($value<=6){
-            if($value%2==0) {
+    public static function processWins($outcome,$bets){
+        if($outcome<=6){
+            if($outcome%2==0) {
                 RouletteController::updateBalance($bets->black,2);
             }
             else {
                 RouletteController::updateBalance($bets->red,2);
             }
-            if($value==6){
+            if($outcome==6){
                 RouletteController::updateBalance($bets->bait,7);
             }
-        } else if($value==7){
+        } else if($outcome==7){
             RouletteController::updateBalance($bets->green,14);
-        } else if($value>=8){
-            if($value%2==1){
+        } else if($outcome>=8){
+            if($outcome%2==1){
                 RouletteController::updateBalance($bets->black,2);
             }
             else{
                 RouletteController::updateBalance($bets->red,2);
             }
-            if($value==8){
+            if($outcome==8){
                 RouletteController::updateBalance($bets->bait,7);
             }
         }
-        return $wins;
     }
 
     public static function updateBalance($wins,$multiplier){

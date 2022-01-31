@@ -1,168 +1,170 @@
 
-var outcomes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14];
-var currentSecond;
-var serverSecond;
-var isPaused=false;
-var selector=$(".roulette-selector");
-var timer=$(".roulette-timer");
-var progress=$(".round-time-bar div");
-var wheel = $('.roulette-wrapper .roulette-wheel');
-var overlay = $('#overlay');
+
+var wheel = $('.roulette-wheel');
+
+var inputBet = $('.input-bet');
+
+
 var cardWidth = 136;
 var cardMargin = 3 * 2;
 var card = cardWidth + cardMargin;
-var main = $('.main');
 
-initWheel(outcomes);
-$.getJSON( "getRouletteSpin").done(function( data ) {
-    var position = outcomes.indexOf(data['outcome'])-outcomes.length/2;
-    serverSecond=data['currentSecond'];
-    console.log(serverSecond);
-    setWheelLocation(position);
+
+
+
+$.getJSON("api/x-roulette/spin").done(function( data ) {
+    let main = $('.main');
+    let overlay = $('#overlay');
+
+    var timer=$(".roulette-timer");
+    var progress=$(".round-time-bar div");
+    var getSpin=false;
+
+    var serverSecond=data['currentSecond'];
+
+    var outcomes = data['outcomes'];
+    initWheel(outcomes);
+    displayLast10(data['rouletteLast10']);
+    setWheelLocation(getPosition(data['outcome'],outcomes),Math.floor(Math.random() * cardWidth)- cardWidth/2);
 
     overlay.css("display","none");
     main.css("display","flex");
 
     var endTime = new Date(new Date().getTime() + serverSecond*1000);
-    currentSecond = (endTime.getTime() - new Date().getTime()) / 1000;
+    var currentSecond = (endTime.getTime() - new Date().getTime()) / 1000;
     setInterval(function() {
         if(currentSecond>20.00){
-            isPaused=true;
-            setTimeout(function(){
-                isPaused=false;
-            }, currentSecond*100);
+            timer.parent().css("opacity","0");
+        }else if(currentSecond<=0){
+            timer.text(0);
+            timer.parent().fadeTo("slow","0");
+            progress.css("width","0%");
+            getSpin=true;
+            endTime = new Date(new Date().getTime() + 30*1000);
+        }else{
+            timer.parent().css("opacity","1");
+            timer.text(currentSecond.toFixed(2));
+            progress.css("width",currentSecond*5+"%");
         }
-        if(currentSecond<=0.00&&!isPaused){
-            isPaused=true;
-            $.getJSON( "getRouletteSpin").done(function( data ) {
+
+        if(getSpin){
+            getSpin=false;
+            $.getJSON( "api/x-roulette/spin").done(function( data ) {
                 serverSecond=data['currentSecond'];
+                outcomes = data['outcomes'];
+                initWheel(outcomes);
                 if(serverSecond==0) serverSecond=30;
                 endTime = new Date(new Date().getTime() + serverSecond*1000);
                 currentSecond = (endTime.getTime() - new Date().getTime()) / 1000;
-                console.log(currentSecond);
-                spinWheel(data['outcome'],outcomes);
+                spinWheel(getPosition(data['outcome'],outcomes),outcomes,function () {displayLast10(data['rouletteLast10']);  });
             });
-            setTimeout(function(){
-                isPaused=false;
-            }, 10000);
-        }
-
-        if(!isPaused){
-            timer.text(currentSecond.toFixed(2));
-            progress.css("width",currentSecond*5+"%");
-            // $('.round-time-bar .progress-bar').attr("aria-valuenow",(currentSecond*5).toFixed(2));
-
-            var position = selector.offset();
-            // console.log(position);
-            var elem = document.elementsFromPoint(position.left, position.top);
-            $(elem).find("card").css("background-color", "red");
-
         }
         currentSecond = (endTime.getTime() - new Date().getTime()) / 1000;
     }, 10);
+
+    setInterval(function() {
+        $.getJSON( "api/x-roulette/bets").done(function( data ) {
+            console.log(data['bets']);
+            betValues = Object.values(data['bets']).sort(function(a, b){return b.amount - a.amount});
+            $(".bet-total-number").html(Object.keys(data['bets']).length);
+            $(".bet-total-amount").html(betValues.reduce((p,c)=>p+c.amount,0));
+            var betList="";
+            for(const key in betValues){
+                betList+=addBet(betValues[key].name,betValues[key].avatar,betValues[key].amount,betValues[key].bet)
+            }
+            $(".bet-list-bets").html(betList);
+        });
+    }, 1000);
+});
+
+$('#bet-button').click(function() {
+    $.ajax({
+        type:'POST',
+        url:'x-roulette/bet',
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+        data: JSON.stringify({  bet:parseFloat($('.input-mult').val()) , betAmount:parseInt($('.input-bet').val()) })
+     });
 });
 
 
 
-function addOutcome(outcome){
-    return "<div class='card red'>1<\/div>";
+function addBet(name,avatar,amount,mult){
+    return `<div class="d-flex flex-fill mt-2 ps-2 bg-list">
+                <div class="me-auto p-2">
+                    <img class="image-circle rounded-circle" style="background-color:#F95146"  src='`+avatar+`'
+                        width="30" height="30">
+                    <span class="fw-bold">`+name+`</span>
+                </div>
+                <div class="d-flex flex-row justify-content-end align-items-center me-2">
+                    <i class="bi bi-x"></i>
+                    <span class="score-bet fw-bold">`+mult+`</span>
+                </div>
+                <div class="d-flex flex-row justify-content-end align-items-center me-2">
+                    <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
+                    <span class="score-bet fw-bold">`+amount+`</span>
+                </div>
+            </div>`
 }
+
+
+function displayLast10(last10){
+    var last10html="";
+    for (let i = 0; i < 10; i++) {
+        last10html += createLastImage(valueToColor(last10[i]),last10[i]);
+    }
+    $('.last-10').html(last10html);
+}
+
+function createLastImage(color,value){
+    return "<div class='card "+color+"'>x"+value+"</div>";
+}
+function createCard(color,image,value){
+    return "<div class='roulette-card "+color+"'><img class='flex-fill' src='../assets/"+image+".svg' ><span>x"+value+"</span></div>";
+}
+
+function getPosition(outcome,values){
+    return outcome-values.length/2+0.5;
+}
+
+function valueToColor(value){
+    color="x-roulette-image-14"
+
+    return color;
+}
+function valueToImage(value){
+    image="R";
+
+    return image;
+}
+
 function initWheel(values){
-    var $wheel = $('.roulette-wrapper .roulette-wheel');
+
   	var	row = "<div class='d-flex roulette-row'>";
     values.forEach(value => {
-        var color;
-        var image;
-        if(value<6){
-          if(value%2==0) {
-            color="x-roulette-image-1";
-            image="1";
-          }
-          else {
-            color="x-roulette-image-2";
-            image="2";
-          }
-        } else {
-          if(value%2==1){
-            color="x-roulette-image-3";
-            image="3";
-          }
-          else{
-            color="x-roulette-image-4";
-            image="4";
-          }
-        }
-        if(value==6){
-          color="x-roulette-image-5";
-          image="5";
-        }
-        if(value==5){
-          color="x-roulette-image-6";
-          image="6";
-        }
-        if(value==7){
-          color="x-roulette-image-7";
-          image="7";
-        }
-        if(value==8){
-            color="x-roulette-image-8";
-            image="8";
-          }
-          if(value==9){
-            color="x-roulette-image-9";
-            image="9";
-          }
-          if(value==10){
-            color="x-roulette-image-10";
-            image="10";
-          }
-          if(value==11){
-            color="x-roulette-image-11";
-            image="11";
-          }
-          if(value==12){
-            color="x-roulette-image-12";
-            image="12";
-          }
-          if(value==13){
-            color="x-roulette-image-13";
-            image="13";
-          }
-          if(value==14){
-            color="x-roulette-image-14";
-            image="14";
-          }
-          if(value==15){
-            color="x-roulette-image-15";
-            image="15";
-          }
-          if(value==16){
-            color="x-roulette-image-16";
-            image="16";
-          }
-
-        row += "<div class='roulette-card "+color+"'><img class='img-custom' src='../assets/"+image+".svg'><\/div>";
+        row += createCard(valueToColor(value),valueToImage(value),value);
     });
 	row += "<\/div>";
-
-	for(var x = 0; x < 29; x++){
-  	$wheel.append(row);
+    wheel.empty();
+	for(let x = 0; x < 13; x++){
+  	    wheel.append(row);
   }
 }
 
-function spinWheel(outcome,values){
-
-  var position = values.indexOf(outcome)-values.length/2;
-  var cardCount = values.length;
+function spinWheel(position,values,callback = function(){}){
 
 
-  var landingPosition = (cardCount * card)*5 + (position * card);
+  let cardCount = values.length;
+
+
+  let landingPosition = (cardCount * card)*5 + (position * card);
 
   var randomize = Math.floor(Math.random() * cardWidth)- cardWidth/2;
 
   landingPosition = landingPosition + randomize ;
 
-  var object = {
+  let object = {
 		x: Math.floor(Math.random() * 50) / 100,
         y: Math.floor(Math.random() * 20) / 100
 	};
@@ -175,6 +177,7 @@ function spinWheel(outcome,values){
 
   setTimeout(function(){
     setWheelLocation(position,randomize);
+    callback();
   }, 6 * 1000);
 }
 
@@ -183,6 +186,14 @@ function setWheelLocation(position,randomize=-cardWidth/2){
         'transition-timing-function':'',
         'transition-duration':'',
     });
-    var resetTo = -(position * card + randomize);
+    let resetTo = -(position * card + randomize);
     wheel.css('transform', 'translate3d('+resetTo+'px, 0px, 0px)');
 }
+
+$("#button-amount-clear").click(function(){
+    $(".input-bet").val(parseInt($(".input-bet").val())*0);
+});
+
+$("#button-amount-max").click(function(){
+    $(".input-bet").val(parseInt($("#balance").html()));
+});
