@@ -31,7 +31,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
      encrypted: false,
      wsHost: process.env.MIX_WEBSOCKET_HOST,
      wsPort: process.env.MIX_WEBSOCKET_PORT,
+     wssHost: process.env.MIX_WEBSOCKET_HOST,
+     wssPort: process.env.MIX_WEBSOCKET_PORT,
      disableStats: true,
-     forceTLS: false,
+     forceTLS: true,
      enabledTransports: ['ws']
  });

@@ -5539,10 +5539,12 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   key: "chat_server_key",
   cluster: "mt1",
   encrypted: false,
-  wsHost: "localhost",
+  wsHost: "rustix.testupper.biz",
   wsPort: "6001",
+  wssHost: "rustix.testupper.biz",
+  wssPort: "6001",
   disableStats: true,
-  forceTLS: false,
+  forceTLS: true,
   enabledTransports: ['ws']
 });
 
