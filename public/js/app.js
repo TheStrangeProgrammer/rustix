@@ -5268,7 +5268,7 @@ __webpack_require__.r(__webpack_exports__);
     fetchBalance: function fetchBalance() {
       var _this2 = this;
 
-      axios.post("".concat("http://localhost", "/api/balance"), {
+      axios.post("".concat("https://rustix.testupper.biz", "/api/balance"), {
         user: this.user
       }).then(function (response) {
         _this2.balance = response.data;
@@ -5344,14 +5344,14 @@ __webpack_require__.r(__webpack_exports__);
     fetchMessages: function fetchMessages() {
       var _this2 = this;
 
-      axios.get("".concat("http://localhost", "/api/messages")).then(function (response) {
+      axios.get("".concat("https://rustix.testupper.biz", "/api/messages")).then(function (response) {
         _this2.messages = response.data;
       });
     },
     submit: function submit() {
       var _this3 = this;
 
-      axios.post("".concat("http://localhost", "/message"), {
+      axios.post("".concat("https://rustix.testupper.biz", "/message"), {
         user: this.user,
         message: this.newMessage
       }).then(function (response) {
@@ -5421,7 +5421,7 @@ __webpack_require__.r(__webpack_exports__);
     fetchMessages: function fetchMessages() {
       var _this2 = this;
 
-      axios.get("".concat("http://localhost", "/api/messages")).then(function (response) {
+      axios.get("".concat("https://rustix.testupper.biz", "/api/messages")).then(function (response) {
         _this2.messages = response.data;
       });
     }

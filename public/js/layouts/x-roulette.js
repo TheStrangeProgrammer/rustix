@@ -64,7 +64,6 @@ $.getJSON("api/x-roulette/spin").done(function( data ) {
 
     setInterval(function() {
         $.getJSON( "api/x-roulette/bets").done(function( data ) {
-            console.log(data['bets']);
             betValues = Object.values(data['bets']).sort(function(a, b){return b.amount - a.amount});
             $(".bet-total-number").html(Object.keys(data['bets']).length);
             $(".bet-total-amount").html(betValues.reduce((p,c)=>p+c.amount,0));
