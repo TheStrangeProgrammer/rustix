@@ -34,6 +34,6 @@ class MessageController extends Controller
                 "user"=>User::where('id',$message->userId)->first()->name,
                 "text"=>$message->message];
         }
-        return response()->json($messages , 200);
+        return response()->json(array_reverse($messages) , 200);
     }
 }
