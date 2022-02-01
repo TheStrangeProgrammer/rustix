@@ -20,7 +20,6 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/loader.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/reset.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('css/admin.css') }}">
 @yield('css')
 <!-- BOOTSTRAP -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
