@@ -32,17 +32,20 @@ return [
 
         'pusher' => [
             'driver' => 'pusher',
-            'key' => env('PUSHER_APP_KEY'),
-            'secret' => env('PUSHER_APP_SECRET'),
-            'app_id' => env('PUSHER_APP_ID'),
-            'options' => [
-                'cluster' => env('PUSHER_APP_CLUSTER'),
-                'encrypted' => env('PUSHER_APP_ENCRYPTED'),
-                'host' => env('PUSHER_APP_HOST'),
-                'port' => env('PUSHER_APP_PORT'),
-                'scheme' => env('PUSHER_APP_SCHEME'),
-                'useTLS' => false,
-            ],
+                'key' => env('PUSHER_APP_KEY'),
+                'secret' => env('PUSHER_APP_SECRET'),
+                'app_id' => env('PUSHER_APP_ID'),
+                'options' => [
+                    'cluster' => env('PUSHER_APP_CLUSTER'),
+                    'encrypted' => true, // true if using HTTPS else false
+                    'host' => env('PUSHER_APP_HOST'), // Change this to your domain
+                    'port' => env('PUSHER_APP_PORT'), // Change this whatever port you are serving your website from
+                    'scheme' => env('PUSHER_APP_SCHEME'),
+                    'curl_options' => [
+                        CURLOPT_SSL_VERIFYHOST => 0,
+                        CURLOPT_SSL_VERIFYPEER => 0,
+                    ],
+                ],
         ],
 
         'ably' => [

@@ -127,9 +127,9 @@
             <div id="bet-list-black" class="d-flex flex-column m-2 bet-list">
                 <div class="d-flex flex-column bet">
                     <div class="d-flex justify-content-center align-items-center text-bet">
-                        <img class=" image-circle rounded-circle" style="background-color:#2D3035"
+                        <img class="rounded-circle" style="background-color:#2D3035"
                             src='../assets/Shield.svg' width="30" height="30">
-                        <img class=" image-circle rounded-circle" style="background-color:#2D3035 " src='../assets/Hook.svg'
+                        <img class="rounded-circle" style="background-color:#2D3035 " src='../assets/Hook.svg'
                             width="30" height="30">
                         <span class="mx-1">Win 2x</span>
                     </div>

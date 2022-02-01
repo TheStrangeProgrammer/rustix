@@ -5538,12 +5538,20 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   broadcaster: 'pusher',
   key: "chat_server_key",
   cluster: "mt1",
+  wsHost: 'rustix.testupper.biz',
+  // Your domain
+  wssHost: 'rustix.testupper.biz',
+  // Your domain
+  wsPort: 6001,
+  wssPort: 6001,
   encrypted: false,
-  wsHost: "rustix.testupper.biz",
-  wsPort: "6001",
+  // Https port
   disableStats: true,
+  // Change this to your liking this disables statistics
   forceTLS: false,
-  enabledTransports: ['ws']
+  enabledTransports: ['ws', 'wss'],
+  disabledTransports: ['sockjs', 'xhr_polling', 'xhr_streaming'] // Can be removed
+
 });
 
 /***/ }),

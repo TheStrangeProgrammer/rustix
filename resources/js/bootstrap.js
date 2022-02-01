@@ -25,13 +25,17 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  window.Pusher = require('pusher-js');
 
  window.Echo = new Echo({
-     broadcaster: 'pusher',
-     key: process.env.MIX_PUSHER_APP_KEY,
-     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
-     encrypted: false,
-     wsHost: process.env.MIX_WEBSOCKET_HOST,
-     wsPort: process.env.MIX_WEBSOCKET_PORT,
-     disableStats: true,
-     forceTLS: false,
-     enabledTransports: ['ws']
+    broadcaster: 'pusher',
+    key: process.env.MIX_PUSHER_APP_KEY,
+    cluster: process.env.MIX_PUSHER_APP_CLUSTER,
+    wsHost: 'rustix.testupper.biz', // Your domain
+    wssHost: 'rustix.testupper.biz', // Your domain
+    wsPort: 6001,
+    wssPort: 6001,
+    encrypted: false,
+     // Https port
+    disableStats: true, // Change this to your liking this disables statistics
+    forceTLS: false,
+    enabledTransports: ['ws', 'wss'],
+    disabledTransports: ['sockjs', 'xhr_polling', 'xhr_streaming'] // Can be removed
  });

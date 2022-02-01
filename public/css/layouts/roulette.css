@@ -10,6 +10,7 @@
     0 16px 8px rgba(0,0,0,0.09),
     0 32px 16px rgba(0,0,0,0.09);
 }
+
 .roulette-wheel{
 
 }
@@ -132,11 +133,11 @@
      border-radius: 10px;
      font-weight: bold;
  }
- .image-circle{
-     padding: 3px;
-     margin: 0 3px;
- }
 
+ img.rounded-circle{
+    padding: 3px;
+    margin: 0 3px;
+ }
  .zoom-in-out-box:hover {
 
      background: #f50057;
