@@ -129,15 +129,18 @@ function getPosition(outcome,values){
 }
 
 function valueToColor(value){
-    color="x-roulette-image-14"
-
+    color="x-roulette-image-1";
+    if(value==1)
+    {
+        color="x-roulett-red";
+    }
     return color;
 }
 function valueToImage(value){
-    image="R";
-
+    image="1";
     return image;
 }
+
 
 function initWheel(values){
 

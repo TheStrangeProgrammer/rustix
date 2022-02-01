@@ -91,12 +91,12 @@
 .x-roulette-image-1{
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:#00C74D;
+
 
 }
 .x-roulette-image-2{
     background-repeat: no-repeat;
-    background-color:#F95146;
+  
     background-size: cover;
 }
 .x-roulette-image-3{
@@ -183,6 +183,10 @@
     background-color:#2D3035;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.x-roulett-red{
+    background-color: #F95146 ;
 }
 .timer-custom{
     text-align: center;
