@@ -76,7 +76,7 @@
                     <div class="d-flex justify-content-center align-items-center text-bet">
                         <img class=" image-circle rounded-circle" style="background-color:#F95146" src='../assets/blade.svg'
                             width="30" height="30">
-                        <img class=" image-circle rounded-circle" style="background-color:#F95146 " src='../assets/hook.svg'
+                        <img class=" image-circle rounded-circle" style="background-color:#F95146 " src='../assets/Hook.svg'
                             width="30" height="30">
                         <span class="mx-1">Win 2x</span>
                     </div>
@@ -128,8 +128,8 @@
                 <div class="d-flex flex-column bet">
                     <div class="d-flex justify-content-center align-items-center text-bet">
                         <img class=" image-circle rounded-circle" style="background-color:#2D3035"
-                            src='../assets/shield.svg' width="30" height="30">
-                        <img class=" image-circle rounded-circle" style="background-color:#2D3035 " src='../assets/hook.svg'
+                            src='../assets/Shield.svg' width="30" height="30">
+                        <img class=" image-circle rounded-circle" style="background-color:#2D3035 " src='../assets/Hook.svg'
                             width="30" height="30">
                         <span class="mx-1">Win 2x</span>
                     </div>
@@ -154,10 +154,10 @@
             <div id="bet-list-bait" class="d-flex flex-column m-2 bet-list">
                 <div class="d-flex flex-column bet">
                     <div class="d-flex justify-content-center align-items-center text-bet">
-                        <img class=" image-circle rounded-circle" style="background-color:#F95146" src='../assets/hook.svg'
+                        <img class=" image-circle rounded-circle" style="background-color:#F95146" src='../assets/Hook.svg'
                             width="30" height="30">
                         <img class=" image-circle rounded-circle" style="background-color:#2D3035 "
-                            src='../assets/hook.svg' width="30" height="30">
+                            src='../assets/Hook.svg' width="30" height="30">
                         <span class="mx-1">Win 7x</span>
                     </div>
                     <button id="bet-bait" class="button-bet zoom-in-out-box" style="background-color: #7c99b4" aria-setsize="4"
