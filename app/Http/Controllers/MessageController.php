@@ -17,7 +17,7 @@ class MessageController extends Controller
         }
         $message = new Message;
 
-        $message->user = Auth::user()->id;
+        $message->userId = Auth::user()->id;
         $message->message = $request->message;
         $message->save();
         event(new NewChatMessage($request->message, $request->user));
@@ -31,7 +31,7 @@ class MessageController extends Controller
         $messages = [];
         foreach($dbMessages as $message){
             $messages[] = [
-                "user"=>User::where('id',$message->user)->first()->name,
+                "user"=>User::where('id',$message->userId)->first()->name,
                 "text"=>$message->message];
         }
         return response()->json($messages , 200);
