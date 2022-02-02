@@ -2,7 +2,7 @@
 @section('content')
 
     <div class=" roulette">
-        <div class="last-100 last-10">
+        <div class="last-10">
 
         </div>
         <div class="roulette-wrapper">
@@ -13,9 +13,9 @@
         <div class="round-time-bar">
             <div class="rounded-pill"></div>
         </div>
-        <div class="bet-amount ">
+        <div class="bet-section ">
             <button id="bet-button" class="m-2 btn-bet">Place Bet</button>
-            <div class=" betamount">
+            <div class=" bet-amount">
                 <div style="opacity: 50%">Multiplier</div>
                 <div class="d-flex">
                     <i class="bi bi-x"></i>
@@ -23,7 +23,7 @@
                     <input type="number" class="input-mult" value="1.01">
                 </div>
             </div>
-            <div class="flex-fill betamount">
+            <div class="flex-fill bet-amount">
                 <div style="opacity: 50%">Bet amount</div>
                 <div class="d-flex">
                     <img class="input-prefix " src="assets/dollar_coin.svg" width="16" height="16">
