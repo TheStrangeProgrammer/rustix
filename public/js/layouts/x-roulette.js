@@ -186,6 +186,7 @@ function valueToImage(value){
     return image;
 }
 
+
 function initWheel(values){
 
   	var	row = "<div class='d-flex roulette-row'>";
