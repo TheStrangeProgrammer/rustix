@@ -74,7 +74,7 @@
                     </div>
                     <button id="bet-red" class="button-bet ">Place Bet</button>
                 </div>
-                <div class="d-flex">
+                <div class="d-flex mt-2">
                     <div class="me-auto p-2 ">
                         <span class="score-bet bet-total-number">0</span>
                         <span class="fw-bold">Bets</span>
@@ -97,7 +97,7 @@
                     </div>
                     <button id="bet-green" class="button-bet">Place Bet</button>
                 </div>
-                <div class="d-flex">
+                <div class="d-flex mt-2">
                     <div class="me-auto p-2 ">
                         <span class="score-bet bet-total-number">0</span>
                         <span class="fw-bold">Bets</span>
@@ -122,7 +122,7 @@
                     </div>
                     <button id="bet-black" class="button-bet">Place Bet</button>
                 </div>
-                <div class="d-flex">
+                <div class="d-flex mt-2">
                     <div class="me-auto p-2 ">
                         <span class="score-bet bet-total-number">0</span>
                         <span class="fw-bold">Bets</span>
@@ -146,7 +146,7 @@
                     </div>
                     <button id="bet-bait" class="button-bet">Place Bet</button>
                 </div>
-                <div class="d-flex">
+                <div class="d-flex mt-2">
                     <div class="me-auto p-2 ">
                         <span class="score-bet bet-total-number">0</span>
                         <span class="fw-bold">Bets</span>

@@ -87,6 +87,11 @@
  }
 
 .x-roulette-card-last{
+    font-size: 15px;
+    text-align: center;
+    font-weight:bold;
+    min-width: 60px;
+    min-height: 25px;
     border-radius:8px;
     margin:3px;
     padding: 3px 5px;
@@ -107,7 +112,8 @@
 .x-roulette-red{
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:#F95146;
+    background-color:#900c3f;
+    
 
 }
 
