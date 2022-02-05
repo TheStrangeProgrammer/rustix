@@ -14,6 +14,7 @@ use waylaidwanderer\SteamCommunity\Enum\LoginResult;
 use waylaidwanderer\SteamCommunity\MobileAuth\WgTokenInvalidException;
 use waylaidwanderer\SteamCommunity\SteamCommunity;
 use Illuminate\Support\Facades\Trade;
+use Illuminate\Support\Facades\Log;
 class BotController extends Controller
 {
     const inventoryDelay=30;
@@ -33,7 +34,7 @@ class BotController extends Controller
             $authCode = $steam->mobileAuth()->steamGuard()->generateSteamGuardCode();
             $steam->setTwoFactorCode($authCode);
             $loginResult = $steam->doLogin();
-            error_log($loginResult);
+            Log::info($loginResult);
         }
         BotController::$deposit=$steam;
     }
@@ -46,7 +47,7 @@ class BotController extends Controller
             $authCode = $steam->mobileAuth()->steamGuard()->generateSteamGuardCode();
             $steam->setTwoFactorCode($authCode);
             $loginResult = $steam->doLogin();
-            error_log($loginResult);
+            Log::info($loginResult);
         }
         BotController::$bot[$botNumber]=$steam;
     }

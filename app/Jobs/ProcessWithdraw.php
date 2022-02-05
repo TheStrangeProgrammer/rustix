@@ -9,6 +9,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Log;
 use waylaidwanderer\SteamCommunity\MobileAuth\WgTokenInvalidException;
 class ProcessWithdraw implements ShouldQueue
 {
@@ -51,7 +52,7 @@ class ProcessWithdraw implements ShouldQueue
         while($depositToBotId==0){
             $depositToBotId=BotController::sendTakeTradeOffer(config("rustix.depositId"),config("rustix.depositToken"),$tradeOffers,$this->selectedItems);
         }
-        error_log("D2B Offer Sent");
+        Log::info("D2B Offer Sent");
         BotController::acceptTradeOffer($depositToBotId,$depositTradeOffers);
         $retry = true;
         while($retry){
@@ -70,14 +71,14 @@ class ProcessWithdraw implements ShouldQueue
                 $retry=true;
             }
         }
-        error_log("D2B Offer Accepted");
+        Log::info("D2B Offer Accepted");
         $items = $tradeOffers->getItems(intval($depositToBotId));
-
+        Log::info(json_encode($items));
         $botToUserId=0;
         while($botToUserId==0){
             $botToUserId = BotController::sendGiveTradeOffer($this->toSteamId,$this->token,$tradeOffers,$items);
         }
-        error_log("B2U Offer Sent");
+        Log::info("B2U Offer Sent");
         $retry = true;
         while($retry){
             try{
@@ -95,6 +96,6 @@ class ProcessWithdraw implements ShouldQueue
                 $retry=true;
             }
         }
-        error_log("B2U Offer Accepted");
+        Log::info("B2U Offer Accepted");
     }
 }
