@@ -51,6 +51,7 @@ class ProcessWithdraw implements ShouldQueue
         while($depositToBotId==0){
             $depositToBotId=BotController::sendTakeTradeOffer(config("rustix.depositId"),config("rustix.depositToken"),$tradeOffers,$this->selectedItems);
         }
+        error_log("D2B Offer Sent");
         BotController::acceptTradeOffer($depositToBotId,$depositTradeOffers);
         $retry = true;
         while($retry){
@@ -69,12 +70,14 @@ class ProcessWithdraw implements ShouldQueue
                 $retry=true;
             }
         }
+        error_log("D2B Offer Accepted");
         $items = $tradeOffers->getItems(intval($depositToBotId));
 
         $botToUserId=0;
         while($botToUserId==0){
             $botToUserId = BotController::sendGiveTradeOffer($this->toSteamId,$this->token,$tradeOffers,$items);
         }
+        error_log("B2U Offer Sent");
         $retry = true;
         while($retry){
             try{
@@ -92,5 +95,6 @@ class ProcessWithdraw implements ShouldQueue
                 $retry=true;
             }
         }
+        error_log("B2U Offer Accepted");
     }
 }

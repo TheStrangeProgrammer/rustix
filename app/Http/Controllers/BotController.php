@@ -27,26 +27,28 @@ class BotController extends Controller
     public static function loginDeposit(){
         $settings=config("rustix.depositInfo");
         $steam = new SteamCommunity($settings,Storage::disk('local')->path('/'));
-        $authCode = $steam->mobileAuth()->steamGuard()->generateSteamGuardCode();
-        $steam->setTwoFactorCode($authCode);
-        $loginResult = $steam->doLogin(false,false);
-        if($loginResult == LoginResult::LoginOkay){
-            BotController::$deposit=$steam;
-            return;
+        $loginResult = $steam->doLogin();
+
+        while($loginResult != LoginResult::LoginOkay){
+            $authCode = $steam->mobileAuth()->steamGuard()->generateSteamGuardCode();
+            $steam->setTwoFactorCode($authCode);
+            $loginResult = $steam->doLogin();
+            error_log($loginResult);
         }
-        error_log($loginResult);
+        BotController::$deposit=$steam;
     }
     public static function loginBot($botNumber){
         $settings=config("rustix.bot".$botNumber."Info");
         $steam = new SteamCommunity($settings,Storage::disk('local')->path('/'));
-        $authCode = $steam->mobileAuth()->steamGuard()->generateSteamGuardCode();
-        $steam->setTwoFactorCode($authCode);
-        $loginResult = $steam->doLogin(false,false);
-        if($loginResult == LoginResult::LoginOkay){
-            BotController::$bot[$botNumber]=$steam;
-            return;
+        $loginResult = $steam->doLogin();
+
+        while($loginResult != LoginResult::LoginOkay){
+            $authCode = $steam->mobileAuth()->steamGuard()->generateSteamGuardCode();
+            $steam->setTwoFactorCode($authCode);
+            $loginResult = $steam->doLogin();
+            error_log($loginResult);
         }
-        error_log($loginResult);
+        BotController::$bot[$botNumber]=$steam;
     }
     public static function confirmTradeOffer($tradeOfferId,$bot){
 
