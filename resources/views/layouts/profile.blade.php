@@ -8,10 +8,10 @@
                 <p class="ms-3 my-4 fw-bold">Total Deposited: {{ $totalDeposit }}</p>
                 <p class="ms-3 my-4 fw-bold">Total Spent: {{ $totalSpent }}</p>
                 <p class="ms-3 my-4 fw-bold">Total Withdrawed: {{ $totalWithdraw }}</p>
-                <form class="ms-3 my-4 fw-bold" method="POST" action="{{ URL::route('setTradeUrl') }}">
+                <form class="ms-3 my-4 fw-bold" method="POST" action="{{ URL::route('setTradeToken') }}">
                     @csrf
-                    <input name="tradeUrl" type="text">
-                    <input type="submit" value="Set Trade URL">
+                    <input name="tradeToken" type="text" value="{{ $tradeToken }}">
+                    <input type="submit" value="Set Trade Token">
                 </form>
             </div>
             <div class="mt-4 profile-borders">

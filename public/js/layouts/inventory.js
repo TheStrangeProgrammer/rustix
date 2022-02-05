@@ -25,20 +25,25 @@ $(document).ready(function() {
             var id = itemDiv.find(".item-id").text();
             var item = new Object();
             item.id=id;
-            item.quantity=0;
+            item.amount=0;
+            item.price=itemDiv.find(".item-price").text();
             items.push(item)
+
         }
 
     });
     $(".item-quantity-input").click(function (e) {
         e.stopPropagation();
     });
-    $(".item-quantity-input").change(function (e) {
+    $(".item-quantity-input .form-control").change(function (e) {
         e.preventDefault();
-        var itemDiv = $(this).parent().parent();
+        var itemDiv = $(this).parent().parent().parent();
         var id = itemDiv.find(".item-id").text();
         var itemIndex = items.findIndex(element => element.id == id);
-        items[itemIndex].quantity=$(this).find(".form-control").val();
+
+
+        items[itemIndex].amount=itemDiv.find(".form-control").val();
+        $("#total").html( Object.values(items).reduce((p,c)=>p+c.amount*c.price,0));
     });
     $("#submit-item-list").click(function (e) {
         $("#item-list").val(JSON.stringify(items));

@@ -20,8 +20,9 @@ class UserController extends Controller
         if($lastInventroyAccess==null||now()->diffInSeconds($lastInventroyAccess)>self::inventoryDelay){
             session(['lastInventroyAccess' => Carbon::now()]);
             $response = InventoryController::getInventory(Auth::user()->steamid);
-            session(['inventory' => $response]);
-            error_log(json_encode($response));
+
+            if($response!=null)
+                session(['inventory' => $response]);
         }
 
         return view("layouts/inventory",['inventory' => session('inventory')]);
@@ -46,6 +47,7 @@ class UserController extends Controller
         $data['totalDeposit'] = $user->totalDeposit;
         $data['totalWithdraw'] = $user->totalWithdraw;
         $data['totalSpent'] = $user->totalSpent;
+        $data['tradeToken'] = $user->tradeToken;
 
         $data['referralCode'] = $user->referralCode;
         $referrer = User::where('id', Auth::user()->referredBy)->first();
@@ -73,9 +75,9 @@ class UserController extends Controller
         return redirect("profile");
 
     }
-    public function setTradeUrl(Request $request){
+    public function setTradeToken(Request $request){
         $user = User::where('id', Auth::user()->id)->first();
-        $user->tradeUrl=$request->tradeUrl;
+        $user->tradeToken=$request->tradeToken;
         $user->save();
         return redirect("profile");
 

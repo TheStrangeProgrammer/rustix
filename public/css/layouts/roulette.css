@@ -165,7 +165,7 @@
     background-color: #0d0e14;
     border-radius: 10px;
  }
- 
+
  .button-bet{
      padding-top: 5%;
      padding-bottom: 5%;
@@ -174,9 +174,14 @@
      background-color: #F95146;
      transition: 0.7s;
      animation: zoom-in;
-     
+
  }
- 
+ .bet-list-bet{
+    display: flex;
+    flex:1 1;
+    justify-content: space-between;
+    align-items: center;
+ }
  #bet-red{
      background-color: #F95146;
  }

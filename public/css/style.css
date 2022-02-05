@@ -246,6 +246,9 @@ ul.second-one{
     #overlay {
         width: 100%;
     }
+    .left-sidebar{
+        flex-direction: column;
+    }
 
 }
 #overlay {

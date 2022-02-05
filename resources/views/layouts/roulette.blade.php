@@ -38,7 +38,7 @@
         <div class='roulette-selector'></div>
         <div class='d-flex roulette-wheel'></div>
     </div>
-    <p class="timer-custom">ROLLING IN: 
+    <p class="timer-custom">ROLLING IN:
         <span class="roulette-timer">0</span></p>
     <div class="round-time-bar">
         <div class="rounded-pill"></div>
@@ -68,8 +68,8 @@
             <div id="bet-list-red" class="bet-list">
                 <div class="bet">
                     <div class="text-bet">
-                        <img class=" image-circle" src='../assets/Blade.svg'>
-                        <img class=" image-circle" src='../assets/Hook.svg'>
+                        <img class=" image-circle" src='../assets/roulette/red.svg'>
+                        <img class=" image-circle" src='../assets/roulette/hook.svg'>
                         <span class="mx-1">Win 2x</span>
                     </div>
                     <button id="bet-red" class="button-bet ">Place Bet</button>
@@ -92,7 +92,7 @@
             <div id="bet-list-green" class="bet-list" >
                 <div class="bet">
                     <div class="text-bet">
-                        <img class=" image-circle" src='../assets/R.svg'>
+                        <img class=" image-circle" src='../assets/roulette/house.svg'>
                         <span class="mx-1">Win 14x</span>
                     </div>
                     <button id="bet-green" class="button-bet">Place Bet</button>
@@ -116,8 +116,8 @@
             <div id="bet-list-black" class="bet-list">
                 <div class="bet">
                     <div class="text-bet">
-                        <img class=" image-circle " src='../assets/Shield.svg'>
-                        <img class=" image-circle " src='../assets/Hook.svg'>
+                        <img class=" image-circle " src='../assets/roulette/black.svg'>
+                        <img class=" image-circle " src='../assets/roulette/hook.svg'>
                         <span class="mx-1">Win 2x</span>
                     </div>
                     <button id="bet-black" class="button-bet">Place Bet</button>
@@ -140,8 +140,8 @@
             <div id="bet-list-bait" class="bet-list">
                 <div class="bet">
                     <div class="text-bet">
-                        <img class=" image-circle " style="background-color:#F95146" src='../assets/Hook.svg'>
-                        <img class=" image-circle " style="background-color:#2D3035 " src='../assets/Hook.svg'>
+                        <img class=" image-circle " style="background-color:#F95146" src='../assets/roulette/hook.svg'>
+                        <img class=" image-circle " style="background-color:#2D3035 " src='../assets/roulette/hook.svg'>
                         <span class="mx-1">Win 7x</span>
                     </div>
                     <button id="bet-bait" class="button-bet">Place Bet</button>

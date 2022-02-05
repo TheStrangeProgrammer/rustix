@@ -17,7 +17,7 @@
 
                             <div class="d-flex flex-column item-info">
                                 <p class="ms-2">Amount: {{ $item['amount'] }}</p>
-                                <p class="ms-2 me-2 ">Price: {{ $item['price'] }}</p>
+                                <p class="ms-2 me-2 ">Price: <span class="item-price">{{ $item['price'] }}</span></p>
                             </div>
 
                             <div class="d-flex">
@@ -35,7 +35,7 @@
             <div class="d-flex container-fluid  fw-bold inventory-sell p-2" style="background-color: #141620">
                 <form class="d-inline mx-auto" method="POST" action="{{ URL::route('depositItems') }}">
                     @csrf
-                    <p class="text-white d-inline me-5">Total: </p>
+                    <p class="text-white d-inline me-5">Total: <span id="total">0</span></p>
                     <input id="item-list" class="d-none" type="text" name="itemList">
                     <input class="text-white px-4 py-2" style="background-color:#14DB1A " id="submit-item-list"
                         type="submit" value="SELL">
@@ -44,7 +44,7 @@
             </div>
         </div>
     @else
-        <p>You do not have the game or your inventory is private</p>
+        <p>You do not have any items or your inventory is private</p>
     @endif
 
 @endsection
