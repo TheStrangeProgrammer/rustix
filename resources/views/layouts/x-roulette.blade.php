@@ -1,29 +1,29 @@
 @extends('main')
 @section('content')
 
-    <div class="d-flex flex-column roulette">
-        <div class="d-flex justify-content-start py-2 rounded-3 last-10">
+    <div class=" roulette">
+        <div class="last-10">
 
         </div>
-        <div class="d-flex flex-shrink-0 flex-grow-0 justify-content-center overflow-hidden roulette-wrapper w-100">
+        <div class="roulette-wrapper">
             <div class='roulette-selector'></div>
             <div class='d-flex roulette-wheel'></div>
         </div>
         <p class="timer-custom">ROLLING IN: <span class="roulette-timer">0</span></p>
-        <div class="d-flex flex-shrink-0 rounded-pill round-time-bar">
+        <div class="round-time-bar">
             <div class="rounded-pill"></div>
         </div>
-        <div class="d-flex bet-amount rounded-3">
+        <div class="bet-section ">
             <button id="bet-button" class="m-2 btn-bet">Place Bet</button>
-            <div class="d-flex flex-column flex-fill my-2 betamount">
+            <div class=" bet-amount">
                 <div style="opacity: 50%">Multiplier</div>
-                <div class="d-flex ">
+                <div class="d-flex">
                     <i class="bi bi-x"></i>
 
                     <input type="number" class="input-mult" value="1.01">
                 </div>
             </div>
-            <div class="d-flex flex-column flex-fill my-2 betamount">
+            <div class="flex-fill bet-amount">
                 <div style="opacity: 50%">Bet amount</div>
                 <div class="d-flex">
                     <img class="input-prefix " src="assets/dollar_coin.svg" width="16" height="16">
@@ -40,15 +40,15 @@
     </div>
 
 
-    <div class="d-flex flex-column m-2 bet-list">
+    <div class="bet-list">
         <div class="d-flex">
             <div class="me-auto p-2 ">
-                <span class="score-bet fw-bold bet-total-number">0</span>
+                <span class="score-bet bet-total-number">0</span>
                 <span class="fw-bold">Bets</span>
             </div>
-            <div class="d-flex flex-row justify-content-end align-items-center me-2">
+            <div class="user-bets">
                 <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
-                <span class="score-bet fw-bold bet-total-amount">0</span>
+                <span class="score-bet bet-total-amount">0</span>
             </div>
 
         </div>

@@ -27,7 +27,7 @@ class MessageController extends Controller
     }
     public function getMessages()
     {
-        $dbMessages = Message::latest()->take(50)->get();
+        $dbMessages = Message::latest()->take(100)->get();
         $messages = [];
         foreach($dbMessages as $message){
             $messages[] = [

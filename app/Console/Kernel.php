@@ -3,7 +3,8 @@
 namespace App\Console;
 
 use App\Http\Controllers\InventoryController;
-
+use App\Http\Controllers\BotController;
+use App\Http\Controllers\PriceController;
 use App\Http\Controllers\RouletteController;
 use App\Http\Controllers\XRouletteController;
 use Illuminate\Console\Scheduling\Schedule;
@@ -29,15 +30,21 @@ class Kernel extends ConsoleKernel
             RouletteController::newOutcome();
             XRouletteController::newOutcome();
 
-        })->everyMinute();
+        })->everyMinute()->runInBackground();
         $schedule->call(function () {
 
 
             $inventory["inventory"] = InventoryController::getInventory(config("rustix.depositId"));
             Storage::disk('local')->put('depositInventory.json', json_encode($inventory));
 
-        })->everyMinute();
-
+        })->everyMinute()->runInBackground();
+        $schedule->call(function () {
+            BotController::loginDeposit();
+            BotController::loginBot(1);
+            BotController::loginBot(2);
+            BotController::loginBot(3);
+            PriceController::updateAllItemPrices();
+        })->everyTwoHours()->runInBackground();
     }
 
     /**

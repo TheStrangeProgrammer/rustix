@@ -119,14 +119,13 @@ function updateBets(betlist,bets){
     betlist.find(".bet-list-bets").html(betList);
 }
 function addBet(name,avatar,amount){
-    return `<div class="d-flex flex-fill mt-2 ps-2 bg-list">
-                <div class="me-auto p-2">
-                    <img class="image-circle rounded-circle" style="background-color:#F95146"  src='`+avatar+`'
-                        width="30" height="30">
+    return `<div class="bet-list-bet">
+                <div>
+                    <img class="image-circle" style="background-color:#F95146"  src='`+avatar+`'width="30" height="30">
                     <span class="fw-bold">`+name+`</span>
                 </div>
-                <div class="d-flex flex-row justify-content-end align-items-center me-2">
-                    <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
+                <div>
+                    <img  src="assets/dollar_coin.svg" width="16" height="16">
                     <span class="score-bet fw-bold">`+amount+`</span>
                 </div>
             </div>`
@@ -146,13 +145,13 @@ function displayLast100(last100){
         let image = valueToImage(last100[i]);
         if(color=="roulette-black"){
             lastTotalBlack++;
-            if(image=="Hook"){
+            if(image=="hook"){
                 lastTotalBaitBlack++;
             }
         }
         if(color=="roulette-red"){
             lastTotalRed++;
-            if(image=="Hook"){
+            if(image=="hook"){
                 lastTotalBaitRed++;
             }
         }
@@ -175,10 +174,10 @@ function displayLast100(last100){
 }
 
 function createRoundImage(color,image){
-    return "<img class='image-circle rounded-circle "+color+"'src='../assets/"+image+".svg' width='30' height='30'>";
+    return "<img class='image-circle rounded-circle "+color+"'src='../assets/roulette/"+image+".svg' width='30' height='30'>";
 }
 function createCard(color,image){
-    return "<img class='roulette-card "+color+"'src='../assets/"+image+".svg' width='60' height='60'>";
+    return "<img class='roulette-card "+color+"'src='../assets/roulette/"+image+".svg' width='60' height='60'>";
 }
 
 function getPosition(outcome,values){
@@ -211,27 +210,27 @@ function valueToColor(value){
 function valueToImage(value){
     if(value<6){
         if(value%2==0) {
-            image="Shield";
+            image="black";
         }
         else {
-            image="blade";
+            image="red";
         }
     }
     if(value==6){
-        image="Hook";
+        image="hook";
     }
     if(value==7){
-        image="R";
+        image="house";
     }
     if(value==8){
-        image="Hook";
+        image="hook";
     }
     if(value>8) {
         if(value%2==1){
-            image="Shield";
+            image="black";
         }
         else{
-            image="blade";
+            image="red";
         }
     }
 

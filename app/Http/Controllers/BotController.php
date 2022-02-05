@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\ProcessDeposit;
+use App\Jobs\ProcessWithdraw;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Http;
@@ -11,99 +13,147 @@ use Illuminate\Support\Facades\Storage;
 use waylaidwanderer\SteamCommunity\Enum\LoginResult;
 use waylaidwanderer\SteamCommunity\MobileAuth\WgTokenInvalidException;
 use waylaidwanderer\SteamCommunity\SteamCommunity;
-use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Trade;
 class BotController extends Controller
 {
     const inventoryDelay=30;
+    public static $deposit;
+    public static $bot = [];
 
     public function getDeposit()
     {
-
         return view("layouts/withdraw",['inventory' => json_decode(Storage::disk('local')->get('depositInventory.json'))->inventory]);
     }
-    public function loginDeposit(){
+    public static function loginDeposit(){
         $settings=config("rustix.depositInfo");
         $steam = new SteamCommunity($settings,Storage::disk('local')->path('/'));
         $authCode = $steam->mobileAuth()->steamGuard()->generateSteamGuardCode();
         $steam->setTwoFactorCode($authCode);
-        $loginResult = $steam->doLogin(true,false);
+        $loginResult = $steam->doLogin(false,false);
         if($loginResult == LoginResult::LoginOkay){
-            return $steam->mobileAuth()->confirmations();
+            BotController::$deposit=$steam;
+            return;
         }
-        return null;
+        error_log($loginResult);
     }
-    public function loginBot($botNumber){
+    public static function loginBot($botNumber){
         $settings=config("rustix.bot".$botNumber."Info");
         $steam = new SteamCommunity($settings,Storage::disk('local')->path('/'));
         $authCode = $steam->mobileAuth()->steamGuard()->generateSteamGuardCode();
         $steam->setTwoFactorCode($authCode);
-        $loginResult = $steam->doLogin(true,false);
+        $loginResult = $steam->doLogin(false,false);
         if($loginResult == LoginResult::LoginOkay){
-            return  $steam->tradeOffers();
+            BotController::$bot[$botNumber]=$steam;
+            return;
         }
-        return null;
+        error_log($loginResult);
     }
+    public static function confirmTradeOffer($tradeOfferId,$bot){
+
+
+    }
+    public static function acceptTradeOffer($tradeOfferId,$tradeOffers){
+        $incomingOffer = $tradeOffers->getTradeOfferViaAPI($tradeOfferId);
+        $tradeOffers->acceptTrade($incomingOffer);
+        return $incomingOffer;
+        /*foreach ($incomingOffers as $incomingOffer) {
+            if($incomingOffer->getTradeOfferId()==$tradeOfferId){
+                $tradeOffers->acceptTrade($incomingOffer);
+                return $incomingOffer;
+            }
+        }
+        return null;*/
+    }
+    public static function sendTakeTradeOffer($toSteamId,$token,$tradeOffers,$selectedItems){
+        $trade = $tradeOffers->createTrade($toSteamId);
+        foreach($selectedItems as $item){
+            $trade->addOtherItem(config('rustix.steamAppId'), config('rustix.steamContext'), $item->id,$item->amount);
+        }
+        return $trade->send($token);
+    }
+    public static function sendGiveTradeOffer($toSteamId,$token,$tradeOffers,$selectedItems){
+        $trade = $tradeOffers->createTrade($toSteamId);
+
+        foreach($selectedItems as $item){
+            $trade->addMyItem(config('rustix.steamAppId'), config('rustix.steamContext'), $item->id,$item->amount);
+        }
+
+        return $trade->send($token);
+    }
+
     public static function depositItems(Request $request)
     {
-        $settings=[
-            "username"=> "labalamuc84",
-            "password"=> "Mihaibingo1",
-            "mobileAuth"=> [
-                "sharedSecret"=> "f0KS077xz3VFMUxuhVwG4RVyn7A=",
-                "identitySecret" => "VEY3hCgkOiNcuuVJFQ9wR82c4Eo=",
-                "deviceId"=> "android:31802749-752d-461b-98d6-29463a7c1a9c"
-            ]
-        ];
-        $steam = new SteamCommunity($settings,Storage::disk('local')->path('/'));
-        $authCode = $steam->mobileAuth()->steamGuard()->generateSteamGuardCode();
-        $steam->setTwoFactorCode($authCode);
-        $loginResult = $steam->doLogin(true,false);
-        $selectedItems = $request->json()->all();
-        if ($loginResult == LoginResult::LoginOkay) {
-            $tradeOffers = $steam->tradeOffers();
-            $trade = $tradeOffers->createTrade(1263571159);
-           // foreach($selectedItems as $item){
-           //
-          //  }
-            $trade->addOtherItem(env('STEAM_APPID'), env('STEAM_CONTEXT'), "3511117486416018268");
-            $trade->sendWithToken('t_9Ob-Sc');
+        $selectedItems = json_decode($request->input("itemList"));
+        if(count($selectedItems)>0){
+            //ProcessDeposit::dispatch(Auth::user()->steamid,Auth::user()->tradeToken,$selectedItems)->onQueue('deposit');
+        }
+        if(BotController::$deposit==null){
+            BotController::loginDeposit();
+        }
+        $depositTradeOffers=BotController::$deposit->tradeOffers();
+        $random = 1;
+        if(count( BotController::$bot)!=3){
+            BotController::loginBot($random);
+        } else if(BotController::$bot[$random]==null){
+            BotController::loginBot($random);
         }
 
-        $selectedItems = $request->json()->all();
-        $itemsToSell=[];
-        foreach($selectedItems as $item){
-            $itemsToSell[] = InventoryController::createItem($item['id'],$item['amount']);
+        $tradeOffers = BotController::$bot[$random]->tradeOffers();
+        $userToBotId=0;
+        while($userToBotId==0){
+            $userToBotId=BotController::sendTakeTradeOffer(Auth::user()->steamid,Auth::user()->tradeToken,$tradeOffers,$selectedItems);
         }
-        $tradeoffer = array(
-		    'newversion' => TRUE,
-		    'version' => 2,
-		    'me' => ['assets' => [], 'currency' => [], 'ready' => FALSE ],
-		    'them' => ['assets' => $itemsToSell, 'currency' => [], 'ready' => FALSE ]
-	  	);
-        $data = [
-            'sessionid'=>Session::getId(),
-            'serverid'=>1,
-            'partner'=>Auth::user()->steamid,
-            'tradeoffermessage'=>"Request from rustix bot",
-            'json_tradeoffer'=>$tradeoffer,
-            'captcha'=>'',
-            'trade_offer_create_params'=>'',
-            'tradeofferid_countered'=>''
-        ];
-        //$response= Http::withHeaders([
-        //    'referer' => 'foo'
-        //])->post('https://steamcommunity.com/tradeoffer/new/send', $data);
+        BotController::acceptTradeOffer($userToBotId,$depositTradeOffers);
+        $retry = true;
+        while($retry){
+            try{
+                $confirmations =BotController::$deposit->mobileAuth()->confirmations()->fetchConfirmations();
+                foreach ($confirmations as $confirmation) {
+                    if(BotController::$deposit->mobileAuth()->confirmations()->getConfirmationTradeOfferId($confirmation)==$userToBotId){
+                        if(BotController::$deposit->mobileAuth()->confirmations()->acceptConfirmation($confirmation)){
+                            $retry=false;
+                        }
+                        break;
+                    }
+                }
+            } catch (WgTokenInvalidException $ex) {
+                BotController::$deposit->mobileAuth()->refreshMobileSession();
+                $retry=true;
+            }
+        }
 
+/*
 
+        $items = $tradeOffers->getItems(intval($depositToBotId));
 
-
+        $botToUserId=0;
+        while($botToUserId==0){
+            $botToUserId = BotController::sendGiveTradeOffer($this->toSteamId,$this->token,$tradeOffers,$items);
+        }
+        $retry = true;
+        while($retry){
+            try{
+                $confirmations =BotController::$bot[$random]->mobileAuth()->confirmations()->fetchConfirmations();
+                foreach ($confirmations as $confirmation) {
+                    if(BotController::$bot[$random]->mobileAuth()->confirmations()->getConfirmationTradeOfferId($confirmation)==$botToUserId){
+                        if(BotController::$bot[$random]->mobileAuth()->confirmations()->acceptConfirmation($confirmation)){
+                            $retry=false;
+                        }
+                        break;
+                    }
+                }
+            } catch (WgTokenInvalidException $ex) {
+                BotController::$bot[$random]->mobileAuth()->refreshMobileSession();
+                $retry=true;
+            }
+        }*/
     }
-    public static function withdrawItems($tradeURL,$items)
+    public static function withdrawItems(Request $request)
     {
-        session(['lastDepositAccess' => Carbon::now()]);
-        $response = InventoryController::getDeposit();
-        session(['deposit' => $response]);
-        return view("layouts/withdraw",['deposit' => session('deposit')]);
-        return Http::get(sprintf(self::inventoryURL, $steamId, env('STEAM_APPID'), env('STEAM_CONTEXT')));
+        $selectedItems = json_decode($request->input("itemList"));
+        if(count($selectedItems)>0){
+            ProcessWithdraw::dispatch(Auth::user()->steamid,Auth::user()->tradeToken,$selectedItems)->onQueue('withdraw');
+        }
+
     }
 }

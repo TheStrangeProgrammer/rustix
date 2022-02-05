@@ -120,7 +120,7 @@ function createLastImage(color,value){
     return "<div class='x-roulette-card-last "+color+"'>x"+value+"</div>";
 }
 function createCard(color,image,value){
-    return "<div class='roulette-card "+color+"'><img  src='../assets/"+image+".svg' width='110' height='110' ><span >x"+value+"</span></div>";
+    return "<div class='roulette-card "+color+"'><img  src='../assets/"+image+".svg' width='90' height='90' > <span >x"+value+"</span></div>";
 }
 
 function getPosition(outcome,values){
@@ -185,6 +185,7 @@ function valueToImage(value){
         image="16";
     return image;
 }
+
 
 function initWheel(values){
 
