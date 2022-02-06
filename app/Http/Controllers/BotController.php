@@ -83,13 +83,25 @@ class BotController extends Controller
 
         return $trade->send($token);
     }
+    public static function depositContinue(Request $request)
+    {
+        $selectedItems = json_decode(session('selectedItems'));
+        $price = BotController::getItemPriceFromInventory(json_decode(json_encode(session('inventory')))->inventory,$selectedItems);
+        if($selectedItems!=null){
+            ProcessDeposit::dispatch(Auth::user()->steamid,Auth::user()->tradeToken,session('tradeId'),session('botId'),$selectedItems,$price)->onQueue('deposit');
+        }
 
+        return redirect("inventory");
+    }
     public static function depositItems(Request $request)
     {
+        if(Auth::user()->tradeToken=="") return view("layouts/error",['error' => "Please set trade token in profile"]);
+
+
+
         $selectedItems = json_decode($request->input("itemList"));
-        if(count($selectedItems)>0){
-            //ProcessDeposit::dispatch(Auth::user()->steamid,Auth::user()->tradeToken,$selectedItems)->onQueue('deposit');
-        }
+        if(count($selectedItems)<1) view("layouts/error",['error' => "At least 1 selected Item"]);
+
         if(BotController::$deposit==null){
             BotController::loginDeposit();
         }
@@ -102,28 +114,14 @@ class BotController extends Controller
         }
 
         $tradeOffers = BotController::$bot[$random]->tradeOffers();
-        $userToBotId=0;
-        while($userToBotId==0){
-            $userToBotId=BotController::sendTakeTradeOffer(Auth::user()->steamid,Auth::user()->tradeToken,$tradeOffers,$selectedItems);
+        $botToUserId=0;
+        while($botToUserId==0){
+            $botToUserId=BotController::sendTakeTradeOffer(Auth::user()->steamid,Auth::user()->tradeToken,$tradeOffers,$selectedItems);
         }
-        BotController::acceptTradeOffer($userToBotId,$depositTradeOffers);
-        $retry = true;
-        while($retry){
-            try{
-                $confirmations =BotController::$deposit->mobileAuth()->confirmations()->fetchConfirmations();
-                foreach ($confirmations as $confirmation) {
-                    if(BotController::$deposit->mobileAuth()->confirmations()->getConfirmationTradeOfferId($confirmation)==$userToBotId){
-                        if(BotController::$deposit->mobileAuth()->confirmations()->acceptConfirmation($confirmation)){
-                            $retry=false;
-                        }
-                        break;
-                    }
-                }
-            } catch (WgTokenInvalidException $ex) {
-                BotController::$deposit->mobileAuth()->refreshMobileSession();
-                $retry=true;
-            }
-        }
+        session(['selectedItems' => json_encode($selectedItems)]);
+        session(['tradeId' => $botToUserId]);
+        session(['botId' => $random]);
+        return view("layouts/depositAccept");
 
 /*
 
@@ -151,12 +149,33 @@ class BotController extends Controller
             }
         }*/
     }
+    public static function getItemPriceFromInventory($inventory,$selectedItems){
+        $price = 0;
+        foreach($selectedItems as $item){
+            foreach($inventory as $inventoryItem){
+                if($item->id==$inventoryItem->id){
+                    $price+=$item->amount*$inventoryItem->price;
+                }
+
+            }
+        }
+        return $price;
+    }
+
     public static function withdrawItems(Request $request)
     {
+        if(Auth::user()->tradeToken=="") return view("layouts/error",['error' => "Please set trade token in profile"]);
+
         $selectedItems = json_decode($request->input("itemList"));
-        if(count($selectedItems)>0){
-            ProcessWithdraw::dispatch(Auth::user()->steamid,Auth::user()->tradeToken,$selectedItems)->onQueue('withdraw');
-        }
+
+        $price = BotController::getItemPriceFromInventory(json_decode(Storage::disk('local')->get('depositInventory.json'))->inventory->inventory,$selectedItems);
+
+        if(Auth::user()->balance<$price) return view("layouts/error",['error' => "Not Enough Money"]);
+
+        if(count($selectedItems)<1) return view("layouts/error",['error' => "At least 1 selected Item"]);
+
+        ProcessWithdraw::dispatch(Auth::user()->steamid,Auth::user()->tradeToken,$selectedItems,$price)->onQueue('withdraw');
+
 
     }
 }

@@ -9,24 +9,31 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use App\Http\Controllers\BotController;
+use App\Models\User;
 use waylaidwanderer\SteamCommunity\MobileAuth\WgTokenInvalidException;
+use App\Events\NewBalance;
 class ProcessDeposit implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
     protected $toSteamId;
     protected $token;
-    protected $bot;
+    protected $tradeId;
+    protected $botId;
+    protected $price;
     protected $selectedItems;
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($toSteamId,$token,$selectedItems)
+    public function __construct($toSteamId,$token,$tradeId,$botId,$selectedItems,$price)
     {
         $this->toSteamId = $toSteamId;
         $this->token = $token;
+        $this->tradeId = $tradeId;
+        $this->botId = $botId;
         $this->selectedItems = $selectedItems;
+        $this->price = $price;
     }
 
     /**
@@ -40,7 +47,7 @@ class ProcessDeposit implements ShouldQueue
             BotController::loginDeposit();
         }
         $depositTradeOffers=BotController::$deposit->tradeOffers();
-        $random = 1;
+        $random = $this->botId;
         if(count( BotController::$bot)!=3){
             BotController::loginBot($random);
         } else if(BotController::$bot[$random]==null){
@@ -48,43 +55,19 @@ class ProcessDeposit implements ShouldQueue
         }
 
         $tradeOffers = BotController::$bot[$random]->tradeOffers();
-        $userToBotId=0;
-        while($userToBotId==0){
-            $userToBotId=BotController::sendTakeTradeOffer(config("rustix.depositId"),config("rustix.depositToken"),$tradeOffers,$this->selectedItems);
-        }
-        BotController::acceptTradeOffer($userToBotId,$depositTradeOffers);
-        $retry = true;
-        while($retry){
-            try{
-                $confirmations =BotController::$deposit->mobileAuth()->confirmations()->fetchConfirmations();
-                foreach ($confirmations as $confirmation) {
-                    if(BotController::$deposit->mobileAuth()->confirmations()->getConfirmationTradeOfferId($confirmation)==$userToBotId){
-                        if(BotController::$deposit->mobileAuth()->confirmations()->acceptConfirmation($confirmation)){
-                            $retry=false;
-                        }
-                        break;
-                    }
-                }
-            } catch (WgTokenInvalidException $ex) {
-                BotController::$deposit->mobileAuth()->refreshMobileSession();
-                $retry=true;
-            }
-        }
 
+        $items = $tradeOffers->getItems(intval($this->tradeId));
 
-
-        $items = $tradeOffers->getItems(intval($depositToBotId));
-
-        $botToUserId=0;
-        while($botToUserId==0){
-            $botToUserId = BotController::sendGiveTradeOffer($this->toSteamId,$this->token,$tradeOffers,$items);
+        $botToDepositId=0;
+        while($botToDepositId==0){
+            $botToDepositId = BotController::sendGiveTradeOffer(config("rustix.depositId"),config("rustix.depositToken"),$tradeOffers,$items);
         }
         $retry = true;
         while($retry){
             try{
                 $confirmations =BotController::$bot[$random]->mobileAuth()->confirmations()->fetchConfirmations();
                 foreach ($confirmations as $confirmation) {
-                    if(BotController::$bot[$random]->mobileAuth()->confirmations()->getConfirmationTradeOfferId($confirmation)==$botToUserId){
+                    if(BotController::$bot[$random]->mobileAuth()->confirmations()->getConfirmationTradeOfferId($confirmation)==$botToDepositId){
                         if(BotController::$bot[$random]->mobileAuth()->confirmations()->acceptConfirmation($confirmation)){
                             $retry=false;
                         }
@@ -96,5 +79,12 @@ class ProcessDeposit implements ShouldQueue
                 $retry=true;
             }
         }
+        BotController::acceptTradeOffer($botToDepositId,$depositTradeOffers);
+
+        $user = User::where('steamid', $this->toSteamId)->first();
+        $user->balance+=$this->price;
+
+        $user->save();
+        event(new NewBalance($user->id,$user->balance));
     }
 }

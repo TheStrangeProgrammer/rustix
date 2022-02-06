@@ -37,7 +37,7 @@ class AuthController extends Controller
                     'steamid' => $user->id,
                     'avatar' => $user->avatar,
                     'referralCode' => uniqid(),
-                    'balance' => 2000,
+                    'balance' => 20,
                     'totalDeposit' => 0,
                     'totalWithdraw' => 0,
                     'totalSpent' => 0
