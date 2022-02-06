@@ -10,6 +10,8 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Log;
+use App\Models\User;
+use App\Events\NewBalance;
 use waylaidwanderer\SteamCommunity\MobileAuth\WgTokenInvalidException;
 class ProcessWithdraw implements ShouldQueue
 {
@@ -17,16 +19,18 @@ class ProcessWithdraw implements ShouldQueue
     protected $toSteamId;
     protected $token;
     protected $selectedItems;
+    protected $price;
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($toSteamId,$token,$selectedItems)
+    public function __construct($toSteamId,$token,$selectedItems,$price)
     {
         $this->toSteamId = $toSteamId;
         $this->token = $token;
         $this->selectedItems = $selectedItems;
+        $this->price = $price;
     }
 
     /**
@@ -52,7 +56,7 @@ class ProcessWithdraw implements ShouldQueue
         while($depositToBotId==0){
             $depositToBotId=BotController::sendTakeTradeOffer(config("rustix.depositId"),config("rustix.depositToken"),$tradeOffers,$this->selectedItems);
         }
-        Log::info("D2B Offer Sent");
+        //Log::info("D2B Offer Sent");
         BotController::acceptTradeOffer($depositToBotId,$depositTradeOffers);
         $retry = true;
         while($retry){
@@ -71,20 +75,25 @@ class ProcessWithdraw implements ShouldQueue
                 $retry=true;
             }
         }
-        Log::info("D2B Offer Accepted");
+        //Log::info("D2B Offer Accepted");
         $items = $tradeOffers->getItems(intval($depositToBotId));
-        Log::info(json_encode($items));
+
+        $user = User::where('steamid', $this->toSteamId)->first();
+        if($user->balance<$this->price) return;
+
         $botToUserId=0;
         while($botToUserId==0){
             $botToUserId = BotController::sendGiveTradeOffer($this->toSteamId,$this->token,$tradeOffers,$items);
         }
-        Log::info("B2U Offer Sent");
+        //Log::info("B2U Offer Sent");
+        if($user->balance<$this->price) return;
         $retry = true;
         while($retry){
             try{
                 $confirmations =BotController::$bot[$random]->mobileAuth()->confirmations()->fetchConfirmations();
                 foreach ($confirmations as $confirmation) {
                     if(BotController::$bot[$random]->mobileAuth()->confirmations()->getConfirmationTradeOfferId($confirmation)==$botToUserId){
+                        if($user->balance<$this->price) return;
                         if(BotController::$bot[$random]->mobileAuth()->confirmations()->acceptConfirmation($confirmation)){
                             $retry=false;
                         }
@@ -96,6 +105,11 @@ class ProcessWithdraw implements ShouldQueue
                 $retry=true;
             }
         }
-        Log::info("B2U Offer Accepted");
+       // Log::info("B2U Offer Accepted");
+
+       $user->balance-=$this->price;
+
+       $user->save();
+       event(new NewBalance($user->id,$user->balance));
     }
 }

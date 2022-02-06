@@ -53,6 +53,7 @@ Route::get('/profile', [UserController::class, 'getProfile'])->middleware('auth'
 Route::post('/setReferral', [UserController::class, 'setReferral'])->middleware('auth')->name("setReferral");
 Route::post('/setTradeToken', [UserController::class, 'setTradeToken'])->middleware('auth')->name("setTradeToken");
 Route::post('/depositItems', [BotController::class, 'depositItems'])->middleware('auth')->name("depositItems");
+Route::post('/depositContinue', [BotController::class, 'depositContinue'])->middleware('auth')->name("depositContinue");
 Route::post('/withdrawItems', [BotController::class, 'withdrawItems'])->middleware('auth')->name("withdrawItems");
 Route::get('/withdraw', [BotController::class, 'getDeposit'])->middleware('auth')->name("getDeposit");
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth')->name("logOut");
