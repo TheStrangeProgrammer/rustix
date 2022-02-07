@@ -1,8 +1,8 @@
 <header class="d-flex ps-5 pe-5 pt-4 pb-4 header">
     <nav class="navbar navbar-expand-lg navbar-dark bg-black w-100">
         <div class="container-fluid ">
-            <h1 class="h2 mb-0"><span class="green">RUSTIX</span><span class="white">.COM</span>
-            </h1>
+            <a class="h2 mb-0" href="rustix.com"><span class="green">RUSTIX</span><span class="white">.COM</span>
+            </a>
             <a id="coins" class="d-flex nav-link" href="#">
                 <i class="bi bi-coin green"></i>
                 <span class="fw-100 align-self-center ms-1" style="color: white">FREE COINS</span>
