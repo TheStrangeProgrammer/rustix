@@ -1,7 +1,46 @@
 .header{
     background-color: #0d0e14;
 }
+.container-fluid a:first-child{
+    text-decoration: none;
+}
 
+.error{
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto;
+    text-align: center;
+    align-items: center;
+    width: 450px;
+    height: 30px;
+    
+}
+.error div:first-child{
+    background-color:#F95146;
+    width: 100%;
+    height: 120px;
+    border-radius: 20px 20px 0 0;
+}
+
+.error div:last-child{
+    background-color: #0d0e14;
+    width: 100%;
+    font-weight: bold;
+    border-radius: 0 0 20px 20px;
+}
+.error div:last-child p:first-child{
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-size: 30px;
+}
+.error button{
+    width: 80px;
+    height: 30px;
+    background-color:#F95146 ;
+    margin: 20px 0;
+    border-radius: 20px;
+}
 .play-button {
     opacity: 0;
     align-items: center;
@@ -22,7 +61,7 @@
   }
 
 .card-game{
-    width: 417px;
+    width: 317px;
     background-color: #141620 !important;
     box-shadow: #2f7e32 0px 5px 15px;
     border: 0 !important;
@@ -30,15 +69,15 @@
 
 }
 .card-img-top-wrapper{
-    background-image: url('../assets/roulette-game.svg');
-    width: 417px;
-    height: 224.474px;
+    width: 317px;
+    height: 154.474px;
     border-radius: 0.25rem 0.25rem 0 0 ;
+    background-color:#1A1D29 ;
   }
   .card-overlay {
     position: absolute;
-    width: 417px;
-    height: 224.474px;
+    width: 317px;
+    height: 210.467px;
     opacity: 0;
     transition: .5s ease;
     background: rgba(0, 0, 0, 0.5);
