@@ -53,7 +53,7 @@
                         <form method="POST"
                             action="{{ URL::route('setReferral') }}">
                             @csrf
-                            <input name="referrerCode" type="text">
+                            <input name="referrerCode" placeholder="Code here.." type="text">
                             
                         </form>
                     @else
