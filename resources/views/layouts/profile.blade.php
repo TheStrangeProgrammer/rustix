@@ -1,53 +1,91 @@
 @extends('main')
 @section('content')
 
-    <div class="flex-container">
-        <div class="d-flex flex-column h-50 flex-child ms-3">
-            <div style="border: 2px solid #25c52a ">
-                <h3 class="max-width: 100% text-center py-3" style="background-color: #0d0e14">Profile</h3>
-                <p class="ms-3 my-4 fw-bold">Total Deposited: {{ $totalDeposit }}</p>
-                <p class="ms-3 my-4 fw-bold">Total Spent: {{ $totalSpent }}</p>
-                <p class="ms-3 my-4 fw-bold">Total Withdrawed: {{ $totalWithdraw }}</p>
-                <form class="ms-3 my-4 fw-bold" method="POST" action="{{ URL::route('setTradeToken') }}">
-                    @csrf
-                    <input name="tradeToken" type="text" value="{{ $tradeToken }}">
-                    <input type="submit" value="Set Trade Token">
-                </form>
+
+
+    <div class="flex-column flex-container">
+            <div class="p-3"> 
+                <img src="{{ Auth::user()->avatar }}">
+                <span>{{ Auth::user()->name }}</span>
             </div>
-            <div class="mt-4 profile-borders">
-                <div>
-                    <h3 class="max-width: 100%  mx-auto py-3 text-center" style="background-color: #0d0e14">Referrals</h3>
-                    <p class="ms-3 my-4 fw-bold">Your Code: {{ $referralCode }}</p>
+            <div class="head-buttons">
+                <input id="butn" type="button" name="answer" value="Overview" onclick="showDiv()" />
+                <input id="butn" type="button" name="answer" value="Referrals" onclick="showDiv2()" />
+                <input id="butn" type="button" name="answer" value="History" onclick="showDiv3()" />
+            </div>
+            <div class=" profile-edit">        
+            <div id="profile" style="display: none" class="answer_list">               
+                                
+                    <div class="head-information me-2">
+                        <p>Total Deposited:</p>
+                        <p>Total Spent:</p>
+                        <p>Total Withdrawed:</p>
+                        <input name="tradeToken" placeholder="Token here.." type="text" value="{{ $tradeToken }}">
+                    </div>
+                    
+                    <div class="head-information ms-2 ">
+                        <div class="d-flex d-inline">
+                            <img src="assets/dollar_coin.svg">
+                            <p >{{ $totalDeposit }}</p>
+                        </div>
+                        <div class="d-flex d-inline">
+                            <img src="assets/dollar_coin.svg">
+                            <p class="ms-3 py-2 ">{{ $totalSpent }}</p>
+                        </div>
+                        <div class="d-flex d-inline">
+                            <img src="assets/dollar_coin.svg">
+                            <p class="ms-3 py-2 ">{{ $totalWithdraw }}</p>
+                        </div>
+                        <form method="POST" action="{{ URL::route('setTradeToken') }}">
+                            @csrf 
+                            <input class="submit-btn" type="submit" value="Set Token">
+                        </form>
+                    </div>
+            </div>
+            
+        
+        <div class="d-flex"> 
+            
+            <div id="referrals" style="display:none" class="answer_list profile-borders">
+                <div class="head-information me-2">
+                    <p>Your Code: </p>
                     @if (Auth::user()->referredBy == null)
-                        <form class="ms-3 my-4 align-middle fw-bold" method="POST"
+                        <form method="POST"
                             action="{{ URL::route('setReferral') }}">
                             @csrf
                             <input name="referrerCode" type="text">
-                            <input type="submit" value="Set Code">
+                            
                         </form>
                     @else
                         <p>You are already referred to: {{ $referrerName }}</p>
                     @endif
+                    <p >Users Referred By You:</p>
                 </div>
-                <p class="ms-3 py-2 fw-bold">Users Referred By You:</p>
-                <div class="inventory-wrapper">
-                    <div class="d-flex flex-wrap inventory">
+                <div class="head-information ms-2">
+                    <p>{{ $referralCode }}</p>
                         @foreach ($referrals as $referal)
                             <p class="ms-2 me-2">{{ $referal['name'] }}</p>
                         @endforeach
-                    </div>
+                        <input class="submit-btn" type="submit" value="Set Code">
                 </div>
             </div>
-        </div>
-        <div class="d-flex flex-column h-50 flex-child magenta me-3">
+            <div id="history" style="display: none" class="answer_list flex-child ">
 
-            <div>
-                <h3 class="max-width: 100%  mx-auto py-3 text-center mb-0 history-custom">History</h3>
+                <div>
 
+                </div>
+                
             </div>
+        </div>  
         </div>
+    </div>
+    
     @endsection
     @section('title', 'Profile')
     @section('css')
         <link rel="stylesheet" type="text/css" href="{{ asset('css/layouts/profile.css') }}">
     @endsection
+    @section('js')
+        <script src="{{ asset('js/layouts/profile.js') }}"></script>
+    @endsection
+

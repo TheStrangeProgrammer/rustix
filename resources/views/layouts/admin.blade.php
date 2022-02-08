@@ -10,5 +10,5 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/layouts/admin.css') }}">
 @endsection
 @section('js')
-    <script src="{{ asset('js/layouts/admin.js') }}"></script>
+    <script src="{{ asset('js/layouts/profile.js') }}"></script>
 @endsection

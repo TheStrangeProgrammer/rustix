@@ -1,24 +1,100 @@
 
 .flex-container {
+    padding: 1rem;
     display: flex;
     width: 100%;
+    font-weight: bold;
+    font-size: 20px;
 }
 
-.flex-child {
-    flex: 1;
-    margin-top: 20px;
-}
-
-.flex-child:first-child {
-    margin-right: 20px;
-
-}
 .history-custom{
     background-color: #0d0e14;
     border: 2px solid #25c52a;
 
 
 }
-.profile-borders{
-    border: 2px solid #25c52a;
+
+.profile-edit{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    margin-top: 20px;
+    margin-right: .75rem;
+    border-radius: 20px;
+    box-shadow: #2f7e32 0px 5px 15px;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#butn:focus{
+    background-color:#25c52a;
+}
+#butn{
+    padding: .75% 10%;
+    background: #F95146;
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 10px;
+}
+
+.flex-child img{
+    width: 85px;
+    height: 85px;
+}
+
+.head-information p{
+    margin-left: .25rem;
+    padding: .5rem 0;
+    font-weight: bold;
+}
+.head-information input{
+    margin-left: .25rem;
+    padding: .5rem 0;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    width: 90%;
+
+}
+
+.submit-btn {
+    background-color: #25c52a !important;
+    padding: .5rem 0 !important;
+    height: 2.375rem !important;
+    padding: 0 1.25rem !important;
+}
+
+.head-information img{
+    width: 2rem;
+    height: 2rem;
+    padding: .5rem 0;
+
+}
+.head-buttons{
+    display: flex;
+    margin-top: 1rem;
+    margin-left: 3rem;
+    justify-content: center;
+
+}
+@media screen and (max-width: 550px) {
+    .head-buttons{
+        flex-direction: column;
+        margin:0 10%;
+    }
+    .butn{
+        padding: 2.75% ;
+        margin-top: 5%;
+    }
+    .profile-edit{
+        padding: 10px;
+        margin-right: 0;
+        flex: 0;
+    }
+    
+
 }
