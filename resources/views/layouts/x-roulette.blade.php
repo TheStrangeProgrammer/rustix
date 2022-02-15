@@ -1,10 +1,8 @@
 @extends('main')
 @section('content')
 
-    <div class=" roulette">
-        <div class="last-10 " >
-
-        </div>
+    <div class="roulette">
+        <div class="last-10"></div>
         <div class="roulette-wrapper">
             <div class='roulette-selector'></div>
             <div class='roulette-background'></div>
@@ -20,14 +18,13 @@
                 <div style="opacity: 50%">Multiplier</div>
                 <div class="d-flex">
                     <i class="bi bi-x"></i>
-
                     <input type="number" class="input-mult" value="1.01">
                 </div>
             </div>
             <div class="flex-fill bet-amount">
                 <div style="opacity: 50%">Bet amount</div>
                 <div class="d-flex">
-                    <img class="input-prefix " src="assets/dollar_coin.svg" width="16" height="16">
+                    <img class="input-prefix" src="assets/dollar_coin.svg" width="16" height="16">
 
                     <input type="number" class="input-bet" value="0">
                 </div>
