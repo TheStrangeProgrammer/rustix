@@ -13,7 +13,7 @@
     align-items: center;
     width: 450px;
     height: 30px;
-    
+
 }
 .error div:first-child{
     background-color:#F95146;
@@ -69,28 +69,28 @@
 
 }
 .card-img-top-wrapper{
-    width: 317px;
+    width: 100%;
     height: 154.474px;
     border-radius: 0.25rem 0.25rem 0 0 ;
     background-color:#1A1D29 ;
   }
-  .card-overlay {
+.card-overlay {
     position: absolute;
-    width: 317px;
+    width: 100%;
     height: 210.467px;
     opacity: 0;
     transition: .5s ease;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 0.25rem 0.25rem 0 0 ;
-    }
+}
 
-  .card-game:hover .card-overlay {
-      opacity: 1;
-    }
-    .card-game:hover .play-button {
-        opacity: 1;
-        transition: 0.5s;
-      }
+.card-game:hover .card-overlay {
+    opacity: 1;
+}
+.card-game:hover .play-button {
+    opacity: 1;
+    transition: 0.5s;
+}
 .game-text{
     color: rgb(255, 255, 255);
     align-items: center;
@@ -269,9 +269,7 @@ ul.second-one{
         margin: 0px !important;
         width: 100% !important;
     }
-    .black {
-        color: rgb(17, 17, 17) !important;
-    }
+
     li.nav-item{
         margin-left: 0px !important;
         margin-right: 0px !important;
