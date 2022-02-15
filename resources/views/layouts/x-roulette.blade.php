@@ -7,6 +7,7 @@
         </div>
         <div class="roulette-wrapper">
             <div class='roulette-selector'></div>
+            <div class='roulette-background'></div>
             <div class='d-flex roulette-wheel'></div>
         </div>
         <p class="timer-custom">ROLLING IN: <span class="roulette-timer">0</span></p>

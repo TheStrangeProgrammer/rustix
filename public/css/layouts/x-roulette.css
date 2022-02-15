@@ -7,17 +7,20 @@
     overflow: hidden;
     width: 100%;
     position:relative;
-    background-color: #161820;
+    background-color: hsla(0, 0%, 0%, 0);
     border-radius: 30px;
     padding: 8px 0;
     margin-top: 30px;
-    box-shadow: 0 2px 1px rgba(0,0,0,0.09),
-    0 4px 2px rgba(0,0,0,0.09),
-    0 8px 4px rgba(0,0,0,0.09),
-    0 16px 8px rgba(0,0,0,0.09),
-    0 32px 16px rgba(0,0,0,0.09);
 }
+.roulette-background{
+    width: 100%;
+    background-color: #0d0e14;
+    top:20%;
+    height:60%;
+    position:absolute;
+    z-index:0;
 
+  }
 .roulette-selector{
     width: 1%;
     background-image: url("../../assets/separator.png");
