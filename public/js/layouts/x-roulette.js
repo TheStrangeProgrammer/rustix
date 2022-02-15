@@ -120,7 +120,7 @@ function createLastImage(color,value){
     return "<div class='x-roulette-card-last "+color+"'><span style='color:white'>x"+value+"</span></div>";
 }
 function createCard(color,image,value){
-    return "<div class='roulette-card "+color+"'><img  src='../assets/x-roulette/"+image+".png' width='90' height='90' > <span >x"+value+"</span></div>";
+    return "<div class='roulette-card "+color+"'><img  src='../assets/x-roulette/"+image+".png' width='90' height='90' > <span style='color:white'>x"+value+"</span></div>";
 }
 
 function getPosition(outcome,values){
