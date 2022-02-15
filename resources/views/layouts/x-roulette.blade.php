@@ -2,7 +2,7 @@
 @section('content')
 
     <div class=" roulette">
-        <div class="last-10">
+        <div class="last-10 " >
 
         </div>
         <div class="roulette-wrapper">

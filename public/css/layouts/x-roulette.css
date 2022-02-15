@@ -95,17 +95,12 @@
     border-radius:8px;
     margin:3px;
     padding: 6px 5px;
-    box-shadow: 0 2px 1px rgba(0,0,0,0.09),
-    0 4px 2px rgba(0,0,0,0.09),
-    0 8px 4px rgba(0,0,0,0.09),
-    0 16px 8px rgba(0,0,0,0.09),
-    0 32px 16px rgba(0,0,0,0.09);
 }
 .roulette-card{
     font-weight: bold;
-    height:180px;
-    width:136px;
-    margin:3px;
+    height:140px;
+    width:100px;
+    margin:20px;
     border-radius:20px;
     border-bottom:3px solid rgba(0,0,0,0.2);
     display:flex;
@@ -114,16 +109,14 @@
     font-size:1em;
     padding: 5px;
     justify-content: space-evenly;
-    box-shadow: 0 2px 1px rgba(0,0,0,0.09),
-    0 4px 2px rgba(0,0,0,0.09),
-    0 8px 4px rgba(0,0,0,0.09),
-    0 16px 8px rgba(0,0,0,0.09),
-    0 32px 16px rgba(0,0,0,0.09);
+    box-shadow: 0px 0px 0px 15px;
 }
 .color-1{
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:#717171  ; 
+    background-color:#717171  ;   
+    box-shadow: inherit #71717144;   
+
 
 }
 
@@ -131,95 +124,123 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-color:#657769  ;
+    box-shadow: inherit #65776941;   
+
     
 }
 .color-3{
     background-repeat: no-repeat;
     background-size: cover;
     background-color:#7b9371 ;
+    box-shadow: inherit #7b93713b;   
+
 
 }
 .color-4{
     background-repeat: no-repeat;
     background-size: cover;
     background-color:#7b9371;
+    box-shadow: inherit #7b937141;   
+
 
 }
 .color-5{
     background-repeat: no-repeat;
     background-size: cover;
     background-color:#79ad62 ;
+    box-shadow: inherit #78ad623d;   
+
 }
 .color-6{
     background-repeat: no-repeat;
     background-size: cover;
     background-color:#77be56 ;
+    box-shadow: inherit #77be563b;  
+
 
 }
 .color-7{
     background-repeat: no-repeat;
     background-size: cover;
     background-color:#46c957 ;
+    box-shadow: inherit #46c9573b ;  
+
 }
 .color-8{
     background-repeat: no-repeat;
     background-size: cover;
     background-color:#32da47;
+    box-shadow: inherit #32da4834;  
+
 }
+
 .color-9{
     background-repeat: no-repeat;
     background-size: cover;
     background-color:#18d231;
+    box-shadow: inherit #18d23136;  
+
 }
 .color-10{
     background-repeat: no-repeat;
     background-size: cover;
     background-color:#25dc32;
+    box-shadow: inherit #25dc313a;  
+
 }
 .color-11{
     background-repeat: no-repeat;
     background-size: cover;
     background-color:#30ff01;
+    box-shadow: inherit #30ff0134;  
 }
 .color-12{
     background-repeat: no-repeat;
     background-size: cover;
     background-color:#6c43ff;
+    box-shadow: inherit #6c43ff34;  
 }
 .color-13{
     background-repeat: no-repeat;
     background-size: cover;
     background-color:#8923ff;
+    box-shadow: inherit #8a23ff33;  
 }
 .color-14{
     background-repeat: no-repeat;
     background-size: cover;
     background-color:#cc00ff;
+    box-shadow: inherit #cc00ff3a;  
 }
 .color-15{
     background-repeat: no-repeat;
     background-size: cover;
     background-color:#ff00e0;
+    box-shadow: inherit #ff00e134;  
 }
 .color-16{
     background-repeat: no-repeat;
     background-size: cover;
     background-color:#fe00ae;
+    box-shadow: inherit #fe00ae36;  
 }
 .color-17{
     background-repeat: no-repeat;
     background-size: cover;
     background-color:#fe007a;
+    box-shadow: inherit #fe007b34;  
 }
 .color-18{
     background-repeat: no-repeat;
     background-size: cover;
     background-color:#fe2200;
+    box-shadow: inherit #fe220038;  
 }
 .color-19{
     background-repeat: no-repeat;
     background-size: cover;
     background-color:#ff5100;
+    box-shadow: inherit #ff51002f;  
 }
 .x-roulette-rainbow{
     background-size: cover;
@@ -229,6 +250,7 @@
     -o-animation: rainbow 8s linear infinite;
     animation: rainbow 8s linear infinite;
     background-size: 800% 800%;
+    box-shadow: inherit rgba(238, 130, 238, 0.219);  
 
 }
 @-webkit-keyframes rainbow {
@@ -280,6 +302,7 @@
     justify-content: start;
     border-radius: .3rem;
     padding: 1rem 0;
+    box-shadow: 0 !important;
     
 }
 

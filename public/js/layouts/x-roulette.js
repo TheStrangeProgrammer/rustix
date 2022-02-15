@@ -5,8 +5,8 @@ var wheel = $('.roulette-wheel');
 var inputBet = $('.input-bet');
 
 
-var cardWidth = 136;
-var cardMargin = 3 * 2;
+var cardWidth = 100;
+var cardMargin = 20 * 2;
 var card = cardWidth + cardMargin;
 
 
