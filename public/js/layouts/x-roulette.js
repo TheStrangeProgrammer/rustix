@@ -117,7 +117,7 @@ function displayLast10(last10){
 }
 
 function createLastImage(color,value){
-    return "<div class='x-roulette-card-last "+color+"'>x"+value+"</div>";
+    return "<div class='x-roulette-card-last "+color+"'><span style='color:white'>x"+value+"</span></div>";
 }
 function createCard(color,image,value){
     return "<div class='roulette-card "+color+"'><img  src='../assets/x-roulette/"+image+".png' width='90' height='90' > <span >x"+value+"</span></div>";
@@ -168,7 +168,7 @@ function valueToColor(value){
     else if(value<=75)
         color="color-19";
     else
-        color="x-roulette-rainbow";      
+        color="x-roulette-rainbow";
     return color;
 }
 function valueToImage(value){
@@ -213,7 +213,7 @@ function valueToImage(value){
         image="19";
     else if(value<=100)
         image="20";
-    else 
+    else
         image="20";
     return image;
 }
