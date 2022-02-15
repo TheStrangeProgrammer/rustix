@@ -21,9 +21,7 @@ use Laravel\Socialite\Facades\Socialite;
 
 Route::get('/', function () {
     return view('layouts.home');
-
-
-});
+})->name('home');
 
 Route::get('/contact', function () {
     return view('layouts.contact');

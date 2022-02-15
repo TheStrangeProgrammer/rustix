@@ -125,7 +125,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-color:#641E16   ;
-    
+
 
 }
 
@@ -133,7 +133,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-color:#186A3B  ;
-    
+
 }
 .x-roulette-green{
     background-repeat: no-repeat;
@@ -169,34 +169,38 @@
     background-color:#7D6608 ;
 }
 .x-roulette-rainbow{
-    background-size: cover;
-    background-image: repeating-linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red, violet);
-    -webkit-animation: rainbow 18s linear infinite;
-    -z-animation: rainbow 8s linear infinite;
-    -o-animation: rainbow 8s linear infinite;
-    animation: rainbow 8s linear infinite;
-    background-size: 800% 800%;
+    background: -webkit-linear-gradient(left, red,orange,yellow,green,blue,indigo,violet,red);
+    background: -moz-linear-gradient(left, red,orange,yellow,green,blue,indigo,violet,red);
+    background: -o-linear-gradient(left, red,orange,yellow,green,blue,indigo,violet,red);
+    background: -ms-linear-gradient(left, red,orange,yellow,green,blue,indigo,violet,red);
+    background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet,red);
+    background-repeat:repeat-x;
+
+    -webkit-animation:rainbow 8s linear infinite;
+    -moz-animation:rainbow 8s linear infinite;
+    -o-animation:rainbow 8s linear infinite;
+    -ms-animation:rainbow 8s linear infinite;
+    animation:rainbow 8s linear infinite;
+    background-size: 2500% 2500%;
 
 }
 @-webkit-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
+    0%{background-position:0% 0}
+    100%{background-position:100% 0}
+
 }
 @-moz-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
+    0%{background-position:0% 0}
+    100%{background-position:100% 0}
+
 }
 @-o-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
+    0%{background-position:0% 0}
+    100%{background-position:100% 0}
 }
 @keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
+    0%{background-position:0% 0}
+    100%{background-position:100% 0}
 }
 
 .timer-custom{
@@ -227,7 +231,7 @@
     justify-content: start;
     border-radius: .3rem;
     padding: 1rem 0;
-    
+
 }
 
 .score-bet{
