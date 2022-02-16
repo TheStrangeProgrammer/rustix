@@ -43,4 +43,8 @@
     background-color: #161820;
     color: white;
 }
+.head-inventory{
+    display: flex;
+    justify-content: center;
+}
 
