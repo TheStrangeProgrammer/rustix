@@ -27,3 +27,7 @@
     </div>
 @endsection
 @section('title', 'Home')
+@push('css')
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/layouts/home.css') }}">
+@endpush
+

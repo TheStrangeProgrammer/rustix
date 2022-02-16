@@ -2,6 +2,8 @@
 @include('partials.left_sidebar.faq')
 @include('partials.left_sidebar.tos')
 
+<link rel="stylesheet" type="text/css" href="{{ asset('css/partials/chat.css') }}">
+
 <section class="d-flex flex-column left-sidebar h-100 ">
     <div class="d-flex chat-top">
         <p class="pt-2 ps-2 fw-bold">ENG <span class="green">63 </span>ONLINE</p>
@@ -21,3 +23,5 @@
         <button class="mt-auto p-1"><i class="fas fa-arrow-left mb15"></i></button>
     </div>
 </section>
+
+

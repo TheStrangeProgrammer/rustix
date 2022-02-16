@@ -52,9 +52,7 @@
     display: block;
 
 }
-
 .message-text{
-
     display: block;
     word-break: break-word;
     overflow-wrap: break-word;
@@ -64,12 +62,13 @@
     font-size: 1rem;
     margin-bottom: 0;
     border-radius: 10px 10px 10px 0;
-
 }
+
 .chat-form{
     background-color:#141620;
     border-top: 1px solid black;
 }
+
 .chat-wrapper{
     overflow-y: auto;
     height: 0px;

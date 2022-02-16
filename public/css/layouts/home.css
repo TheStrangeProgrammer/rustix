@@ -1,0 +1,58 @@
+
+.play-button {
+    opacity: 0;
+    align-items: center;
+    transition: opacity .35s ease;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    width: 90px;
+    height: 45px;
+    background-color:#14DB1A ;
+    text-decoration: none;
+    border-radius: .5rem;
+    box-shadow: 0 2px 1px rgba(0,0,0,0.09),
+     0 4px 2px rgba(0,0,0,0.09),
+     0 8px 4px rgba(0,0,0,0.09),
+     0 16px 8px rgba(0,0,0,0.09),
+     0 32px 16px rgba(0,0,0,0.09);
+  }
+
+.card-game{
+    width: 317px;
+    background-color: #141620 !important;
+    box-shadow: #2f7e32 0px 5px 15px;
+    border: 0 !important;
+    border-radius: 0.40rem 0.40rem 0.25rem 0.25rem !important ;
+
+}
+.card-img-top-wrapper{
+    width: 100%;
+    height: 154.474px;
+    border-radius: 0.25rem 0.25rem 0 0 ;
+    background-color:#1A1D29 ;
+  }
+.card-overlay {
+    position: absolute;
+    width: 100%;
+    height: 210.467px;
+    opacity: 0;
+    transition: .5s ease;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0.25rem 0.25rem 0 0 ;
+}
+
+.card-game:hover .card-overlay {
+    opacity: 1;
+}
+.card-game:hover .play-button {
+    opacity: 1;
+    transition: 0.5s;
+}
+.game-text{
+    color: rgb(255, 255, 255);
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    font-weight: bold;
+}
