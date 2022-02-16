@@ -33,7 +33,7 @@
                     <span class="p-2">Help me find my steam trade link</span>
                     <a class="btn-bet ms-auto text-edit" href="https://steamcommunity.com/profiles/76561198141872103/tradeoffers">Update</a>
                 </div>
-                    <div class="flex-fill avatar-edit"> 
+                    <div class="flex-fill py-3 avatar-edit"> 
                         <img src="{{ Auth::user()->avatar }}">
                         <span class="text-edit">MOD</span>
                         <span>{{ Auth::user()->name }}</span>

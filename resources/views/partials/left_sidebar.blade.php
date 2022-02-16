@@ -12,17 +12,13 @@
 </div>
 
 <div class="d-flex flex-column flex-fill display-media">
-    <div class="d-flex chat-top">
-        <p class="pt-2 ps-2 fw-bold">ENG <span class="green">63 </span>ONLINE</p>
-
-        <button class="fab fa-discord pad10 margin"></button>
-        <button class="fab fa-twitter pad10 me-1 ms-2"></button>
-        <button class="fab fa-instagram pad10 mx-1"></button>
+    <div class="chat-top">
+        <a id="coins" href="#">Claim your free coins now</a>
     </div>
-
+    
     @if (Auth::check())
      
-        <chat class="flex-fill {{ Auth::user()->name }}"></chat>
+        <chat class="flex-fill chat-wrapper {{ Auth::user()->name }}"></chat>
        
     @else
         <guestchat class="flex-fill"></guestchat>
