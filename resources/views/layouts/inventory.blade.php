@@ -50,8 +50,8 @@
 @endsection
 @section('title', 'Inventory')
 @push('css')
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/layouts/inventory.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/partials/inventory.css') }}">
 @endpush
 @push('js')
-    <script src="{{ asset('js/layouts/inventory.js') }}"></script>
+    <script src="{{ asset('js/partials/inventory.js') }}"></script>
 @endpush

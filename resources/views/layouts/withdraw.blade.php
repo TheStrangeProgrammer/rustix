@@ -50,8 +50,8 @@
 @endsection
 @section('title', 'Withdraw')
 @push('css')
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/layouts/withdraw.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/partials/withdraw.css') }}">
 @endpush
 @push('js')
-    <script src="{{ asset('js/layouts/withdraw.js') }}"></script>
+    <script src="{{ asset('js/partials/withdraw.js') }}"></script>
 @endpush

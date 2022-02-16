@@ -24,7 +24,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 0;
-
+    border-radius: 10px;
 
 }
 .message-user{
