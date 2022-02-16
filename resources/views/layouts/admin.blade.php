@@ -6,9 +6,9 @@
 @endsection
 @section('title', 'admin')
 
-@section('css')
+@push('css')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/layouts/admin.css') }}">
-@endsection
-@section('js')
+@endpush
+@push('js')
     <script src="{{ asset('js/layouts/profile.js') }}"></script>
-@endsection
+@endpush

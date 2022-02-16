@@ -59,9 +59,9 @@ class ProcessDeposit implements ShouldQueue
         $items = $tradeOffers->getItems(intval($this->tradeId));
 
         $botToDepositId=0;
-        while($botToDepositId==0){
-            $botToDepositId = BotController::sendGiveTradeOffer(config("rustix.depositId"),config("rustix.depositToken"),$tradeOffers,$items);
-        }
+
+        $botToDepositId = BotController::sendGiveTradeOffer(config("rustix.depositId"),config("rustix.depositToken"),$tradeOffers,$items);
+        if($botToDepositId==0) return;
         $retry = true;
         while($retry){
             try{

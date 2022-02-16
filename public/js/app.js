@@ -5456,6 +5456,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['message', 'user']
 });
@@ -45344,8 +45346,8 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("span", { staticClass: "navbar-text" }, [
-    _vm._v("\n    BALANCE:"),
+  return _c("span", { staticClass: "balance" }, [
+    _vm._v("\n    $"),
     _c("span", { attrs: { id: "balance" } }, [_vm._v(_vm._s(_vm.balance))]),
   ])
 }
