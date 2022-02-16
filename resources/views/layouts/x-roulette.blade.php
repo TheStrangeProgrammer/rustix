@@ -14,7 +14,7 @@
         </div>
         <div class="bet-section ">
             <button id="bet-button" class="m-2 btn-bet">Place Bet</button>
-            <div class=" bet-amount">
+            <div class="bet-amount">
                 <div style="opacity: 50%">Multiplier</div>
                 <div class="d-flex">
                     <i class="bi bi-x"></i>
@@ -57,9 +57,9 @@
 @endsection
 @section('title', 'X-Roulette')
 
-@section('css')
+@push('css')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/layouts/x-roulette.css') }}">
-@endsection
-@section('js')
+@endpush
+@push('js')
     <script src="{{ asset('js/layouts/x-roulette.js') }}"></script>
-@endsection
+@endpush

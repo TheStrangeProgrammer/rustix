@@ -170,9 +170,9 @@
 @endsection
 @section('title', 'Roulette')
 
-@section('css')
+@push('css')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/layouts/roulette.css') }}">
-@endsection
-@section('js')
+@endpush
+@push('js')
     <script src="{{ asset('js/layouts/roulette.js') }}"></script>
-@endsection
+@endpush

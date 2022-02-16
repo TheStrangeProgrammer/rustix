@@ -49,9 +49,9 @@
 
 @endsection
 @section('title', 'Inventory')
-@section('css')
+@push('css')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/layouts/inventory.css') }}">
-@endsection
-@section('js')
+@endpush
+@push('js')
     <script src="{{ asset('js/layouts/inventory.js') }}"></script>
-@endsection
+@endpush

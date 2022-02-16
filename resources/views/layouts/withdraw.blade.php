@@ -49,9 +49,9 @@
 
 @endsection
 @section('title', 'Withdraw')
-@section('css')
+@push('css')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/layouts/withdraw.css') }}">
-@endsection
-@section('js')
+@endpush
+@push('js')
     <script src="{{ asset('js/layouts/withdraw.js') }}"></script>
-@endsection
+@endpush
