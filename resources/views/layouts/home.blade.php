@@ -1,8 +1,8 @@
 @extends('main')
 @section('content')
-    <div class="d-flex flex-wrap">
+    <div class="d-flex flex-wrap flex-fill">
         <div class="card-game">
-            <div class=" card-img-top-wrapper" style="background-image: url('../assets/roulette-game.svg'">
+            <div class="card-img-top-wrapper" style="background-image: url('../assets/roulette-game.svg'">
                 <div class="d-flex card-overlay">
                     <a href="{{ URL::route('roulette') }}" class="play-button m-auto py-3" style="color: white;">PLAY</a>
                 </div>
