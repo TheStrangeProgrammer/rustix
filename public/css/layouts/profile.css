@@ -1,100 +1,99 @@
-
-.flex-container {
-    padding: 1rem;
+.box-div{
     display: flex;
+    flex-direction: column;
     width: 100%;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.history-custom{
-    background-color: #0d0e14;
-    border: 2px solid #25c52a;
-
-
-}
-
-.profile-edit{
-    display: flex;
-    justify-content: center;
-    flex: 1;
-    margin-top: 20px;
-    margin-right: .75rem;
-    border-radius: 20px;
-    box-shadow: #2f7e32 0px 5px 15px;
-    padding: 20px;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-#butn:focus{
-    background-color:#25c52a;
-}
-#butn{
-    padding: .75% 10%;
-    background: #F95146;
-    color: white;
-    border: none;
-    font-size: 20px;
-    font-weight: bold;
-    margin-right: 10px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    border-radius: 10px;
-}
-
-.flex-child img{
-    width: 85px;
-    height: 85px;
-}
-
-.head-information p{
-    margin-left: .25rem;
-    padding: .5rem 0;
-    font-weight: bold;
-}
-.head-information input{
-    margin-left: .25rem;
-    padding: .5rem 0;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    width: 90%;
-
-}
-
-.submit-btn {
-    background-color: #25c52a !important;
-    padding: .5rem 0 !important;
-    height: 2.375rem !important;
-    padding: 0 1.25rem !important;
-}
-
-.head-information img{
-    width: 2rem;
-    height: 2rem;
-    padding: .5rem 0;
-
-}
-.head-buttons{
-    display: flex;
-    margin-top: 1rem;
-    margin-left: 3rem;
-    justify-content: center;
-
-}
-@media screen and (max-width: 550px) {
-    .head-buttons{
-        flex-direction: column;
-        margin:0 10%;
-    }
-    #butn{
-        padding: 2.75% ;
-        margin-top: 5%;
-    }
-    .profile-edit{
-        padding: 10px;
-        margin-right: 0;
-        flex: 0;
-    }
+    height: 100%;
     
+}
+.head-profile{
+    padding:2rem 0;
+    font-size: 40px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    background-color: #0d0e14;
+}
+.text-edit{
+    color: rgba(242,242,242,1);
+    font-family: Neometric;
+    text-decoration: none;
+}
+.box-columns{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    
+}
+.col-div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    
+}
+.first-span-edit{
+    font-size: 25px;
+    padding: 2.156rem 0;
+}
+.total-deposited{
+    display: flex;
+    padding: .563rem 0;
+    font-size: 18px;
+    
+}
+.scroll .total-deposited{
+    border-bottom: 1px solid #707070;
+}
+.total-deposited a:hover{
+    color: inherit;
+    text-decoration: none;
+}
+.btn-bet {
+    background-color:#00C74D;
+    font-size: 15px;
+    padding: .5rem 1rem;
+    border-radius: .8rem;
+    margin-right: 5px ;
+    text-decoration: none;
 
 }
+.avatar-edit img{
+    border-radius: 50%;
+
+
+}
+.avatar-edit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.avatar-edit .text-edit{
+    font-size: 19px;
+    font-weight: bold;
+    background-color: #7F00C7;
+    padding: .594rem 0.424rem;
+    border-radius: 8px;
+    margin: 0 10px;
+}
+.avatar-edit span:last-child{
+    font-size: 25px;
+}
+div.scroll
+{
+max-height: 500px;
+overflow-y:scroll;
+}
+.scroll .total-deposited{
+    display: flex;
+    justify-content: space-between;
+    padding: .5315rem 0;
+
+}
+@media screen and (max-width: 991px) {
+    .box-columns{
+        flex-wrap: wrap;
+    }
+
+    }
