@@ -11,21 +11,22 @@
                     <span class="first-span-edit">Stats</span>
                     <div class="total-deposited text-edit" style="background-color: rgba(53,59,84,1)">
                         <span class="p-2">Total Deposited:</span>
-                        <span class="ms-auto p-2">$653.44</span>
+                        <span class="ms-auto p-2">$<span id="total-deposited">653.44</span></span>
                     </div>
                     <div class="total-deposited text-edit">
-                        <span class="p-2">Total Grambled:</span>
-                        <span class="ms-auto p-2">$953.66</span>
+                        <span class="p-2">Total Gambled:</span>
+                        <span id="total-gambled" class="ms-auto p-2">$<span id="total-gambled">953.66</span></span>
                     </div>
                     <div class="total-deposited text-edit p0" style="background-color: rgba(53,59,84,1)">
                         <span class="p-2 ">Profit:</span>
-                        <span class="ms-auto p-2">
+                        <span id="profit" class="ms-auto p-2">
                             -321,88
                         </span>
                     </div>
                     <span class="first-span-edit" style="padding: 2.625rem 0">Setting</span>
                     <div class="total-deposited text-edit" style="background-color: rgba(53,59,84,1)">
                         <span class="p-2">Trade URL:</span>
+                        <input id="trade-url">
                     </div>
                     <div class="total-deposited">
                         <a class="p-2 text-edit" style="opacity: 0.24"

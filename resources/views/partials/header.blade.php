@@ -1,6 +1,8 @@
+@if (Auth::check())
 @include('partials.header.deposit')
 @include('partials.header.withdraw')
 @include('partials.header.profile')
+@endif
 <header class="d-flex ps-5 pe-5 header">
     <nav class="navbar navbar-expand-lg navbar-dark bg-black w-100">
         <div class="container-fluid">
@@ -8,9 +10,9 @@
             </a>
 
             @if (Auth::check())
-                <balance class="text-center my-auto " style="align-items: center" user="{{ Auth::user()->id }}">
+                <balance class="text-center my-auto" style="align-items: center" user="{{ Auth::user()->id }}">
                 </balance>
-                <button id="deposit-button" class="p-1 mt-3" data-bs-toggle="modal"
+                <button id="deposit-button" class="text-center p-1 mt-3" data-bs-toggle="modal"
                     data-bs-target="#DEPOSIT">DEPOSIT</button>
 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -22,10 +24,10 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-white dropdown-menu-end py-0 rounded-0"
                             aria-labelledby="navbarDropdown">
-                            <li><button id="profile-button" class="p-1 mt-3" data-bs-toggle="modal"
+                            <li><button id="profile-button" class="dropdown-item text-center py-3" data-bs-toggle="modal"
                                 data-bs-target="#PROFILE">PROFILE</button></li>
 
-                            <li><button id="withdraw-button" class="p-1 mt-3" data-bs-toggle="modal"
+                            <li><button id="withdraw-button" class="dropdown-item text-center py-3" data-bs-toggle="modal"
                                     data-bs-target="#WITHDRAW">WITHDRAW</button></li>
                             <li><a class="dropdown-item text-center py-3" href="#">Referral</a></li>
                             <li><a class="dropdown-item text-center py-3" href="{{ URL::route('logOut') }}">Log

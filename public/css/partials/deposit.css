@@ -46,7 +46,7 @@
     transition: .25s;
 
 }
-.item-selected{
+.item.item-selected{
     box-shadow: 4px 4px #00C74D,
     -4px 4px #00C74D,
     4px -4px #00C74D,

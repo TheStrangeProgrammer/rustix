@@ -8,12 +8,12 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="flex-fill h-100">
-                <div class="flex-fill inventory-wrapper">
-                    <div class="d-flex flex-wrap inventory">
+                <div class="flex-fill withdraw-wrapper">
+                    <div class="d-flex flex-wrap withdraw">
 
                     </div>
                 </div>
-                <div class="d-flex container-fluid  fw-bold inventory-sell p-2" style="background-color: #141620">
+                <div class="d-flex container-fluid  fw-bold withdraw-sell p-2" style="background-color: #141620">
                     <form class="d-inline mx-auto" method="POST" action="{{ URL::route('withdrawItems') }}">
                         @csrf
                         <p class="text-white d-inline me-5">Total: <span id="total">0</span></p>

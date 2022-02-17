@@ -64,7 +64,7 @@ Route::prefix('withdraw')->group(function () {
 });
 
 Route::prefix('profile')->group(function () {
-    Route::get('/', [UserController::class, 'getProfile'])->middleware('auth')->name("getProfile");
+    Route::get('/getProfile', [UserController::class, 'getProfile'])->middleware('auth')->name("getProfile");
 });
 
 Route::prefix('roulette')->group(function () {

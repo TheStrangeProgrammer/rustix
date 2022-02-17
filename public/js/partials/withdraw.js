@@ -3,7 +3,7 @@ $("#withdraw-button").click(function (e) {
     $(".withdraw").html("");
     $.getJSON("withdraw/getItems").done(function( data ) {
         if(data.success==false) $(".withdraw").html("<p>There was an error loading withdraw</p>");
-        Object.values(data.withdraw).forEach(item => {
+        Object.values(data.inventory).forEach(item => {
             let itemToDisplay=`
             <div class="d-flex flex-column align-items-center m-2 item ">
                 <p class="d-none item-id">`+item.id+`</p>

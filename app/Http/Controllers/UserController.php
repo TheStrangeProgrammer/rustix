@@ -47,9 +47,8 @@ class UserController extends Controller
     public function getProfile(){
         $user = User::where('id', Auth::user()->id)->first();
 
-        $data['totalDeposit'] = $user->totalDeposit;
-        $data['totalWithdraw'] = $user->totalWithdraw;
-        $data['totalSpent'] = $user->totalSpent;
+        $data['totalDeposited'] = $user->totalDeposit;
+        $data['totalGambled'] = $user->totalWithdraw;
         $data['tradeToken'] = $user->tradeToken;
 
         $data['referralCode'] = $user->referralCode;
@@ -66,7 +65,7 @@ class UserController extends Controller
             $data['referrals'][$userReferred->id]['name'] = $userReferred->name;
         }
 
-        return view("layouts/profile",$data);
+        return $data;
     }
     public function setReferral(Request $request){
         $user = User::where('id', Auth::user()->id)->first();
