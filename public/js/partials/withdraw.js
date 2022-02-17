@@ -10,7 +10,7 @@ $(document).ready(function() {
         if(itemDiv.hasClass("item-selected")){
             itemDiv.removeClass("item-selected");
             inputDiv.addClass("d-none");
-            infoDiv.addClass("flex-column");
+            infoDiv.addClass("flex-row");
 
 
             var id = itemDiv.find(".item-id").text();
@@ -20,7 +20,7 @@ $(document).ready(function() {
             itemDiv.addClass("item-selected");
             inputDiv.removeClass("d-none");
             inputDiv.find(".form-control").attr("max",itemDiv.find(".item-quantity").text());
-            infoDiv.removeClass("flex-column");
+            infoDiv.removeClass("flex-row");
 
             var id = itemDiv.find(".item-id").text();
             var item = new Object();

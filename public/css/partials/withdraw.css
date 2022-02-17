@@ -2,17 +2,29 @@
 .inventory-wrapper{
     overflow-y: auto;
     background-color:#1A1D29;
+    padding: 1rem;
 }
 .inventory-sell{
-    border-top: 1px solid black;
-    height: 55px;
+    display: flex;
+    width: 100%;
+    padding: 1.5rem 0;
+    background-color: #141620;
 }
 
 .item{
-    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: .5rem;
+    padding: .5rem .5rem;
+    justify-content: center;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: rgba(16,18,26,1);
+    border-radius: 15px ;
+    width: 130px;
+    height: 130px;
     box-shadow: 0 2px 1px rgba(0,0,0,0.09),
      0 4px 2px rgba(0,0,0,0.09),
      0 8px 4px rgba(0,0,0,0.09),
@@ -22,16 +34,18 @@
 }
 .item:hover{
     background-color: #191b26;
+    transition: .25s;
 
 }
 .item-selected{
-    background-color: #6370a8;
+    border: 4px solid #00C74D;
 
 }
 .item.item-selected:hover{
-    background-color: #4e5679;
+    border: 4px solid #00C74D;
 
 }
+
 
 .item-quantity-input span{
     background-color: #171922;
@@ -41,4 +55,61 @@
     background-color: #161820;
     color: white;
 }
+.head-inventory{
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    width: 100%;
+    padding: 2rem 0;
+    background-color: rgba(24,27,38,1);
 
+}
+.item img{
+    width: 70px;
+    height: 70px;
+}
+.item p{
+    margin-bottom: 0 ;
+    font-size: 14px;
+}
+.item-info{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    font-size: 12px;
+
+}
+#total, .span-13{
+    color: #00C74D;
+    font-weight: bold;
+}
+.principal-div{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.inventory-sell form{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+.right-span{
+    display: flex;
+    font-size: 18px !important;
+}
+#submit-item-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .75rem 1.5rem;
+    background-color: #00C74D;
+    border-radius: 10px;
+    font-weight: bold;
+    stroke: rgba(26,29,41,0.271);
+    stroke-width: 3px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
