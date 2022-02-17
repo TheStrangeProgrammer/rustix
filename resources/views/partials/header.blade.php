@@ -12,7 +12,7 @@
             @if (Auth::check())
                 <balance class="text-center my-auto" style="align-items: center" user="{{ Auth::user()->id }}">
                 </balance>
-                <button id="deposit-button" class="text-center p-1 mt-3" data-bs-toggle="modal"
+                <button id="deposit-button" data-bs-toggle="modal"
                     data-bs-target="#DEPOSIT">DEPOSIT</button>
 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -25,14 +25,14 @@
                         <ul class="dropdown-menu dropdown-menu-white dropdown-menu-end py-0 rounded-0"
                             aria-labelledby="navbarDropdown">
                             <li><button id="profile-button" class="dropdown-item text-center py-3" data-bs-toggle="modal"
-                                data-bs-target="#PROFILE">PROFILE</button></li>
+                                data-bs-target="#PROFILE">Profile</button></li>
 
                             <li><button id="withdraw-button" class="dropdown-item text-center py-3" data-bs-toggle="modal"
-                                    data-bs-target="#WITHDRAW">WITHDRAW</button></li>
+                                    data-bs-target="#WITHDRAW">Withdraw</button></li>
                             <li><a class="dropdown-item text-center py-3" href="#">Referral</a></li>
                             <li><a class="dropdown-item text-center py-3" href="{{ URL::route('logOut') }}">Log
                                     Out</a></li>
-                            <li class="color"><a class="dropdown-item text-center py-3 text-white hov-green"
+                            <li><a class="dropdown-item text-center py-3"
                                     href="http://localhost/admin">Admin Panel</a></li>
                         </ul>
                     </li>
