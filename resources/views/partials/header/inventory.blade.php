@@ -6,7 +6,7 @@
                 <h5 id="ALT-title" class="modal-title">Your inventory.</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="d-flex flex-column flex-fill h-100">
+            <div class="flex-fill h-100">
                 <div class="flex-fill inventory-wrapper">
                     <div class="d-flex flex-wrap inventory">
 

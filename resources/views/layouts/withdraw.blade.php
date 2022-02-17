@@ -1,5 +1,5 @@
-@extends('main')
-@section('content')
+<link rel="stylesheet" type="text/css" href="{{ asset('css/partials/withdraw.css') }}">
+
     @if ($inventory->success == true)
         <div class="d-flex flex-column flex-fill h-100">
             <div class="flex-fill inventory-wrapper">
@@ -47,11 +47,6 @@
         <p>You do not have the game or your inventory is private</p>
     @endif
 
-@endsection
-@section('title', 'Withdraw')
-@push('css')
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/partials/withdraw.css') }}">
-@endpush
 @push('js')
     <script src="{{ asset('js/partials/withdraw.js') }}"></script>
 @endpush

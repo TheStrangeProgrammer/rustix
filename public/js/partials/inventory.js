@@ -12,14 +12,15 @@ $("#deposit-button").click(function (e) {
                 <p class="text-center fw-bold">`+item.name+`</p>
                 <img src="`+item.icon_url+`" >
 
-                <div class="d-flex flex-row w-100 item-info">
-                    <p class="me-auto px-3">Q: `+item.amount+`</p>
-                    <p class="px-3">$: <span class="item-price">`+item.price+`</span></p>
+                <div class="d-flex flex-row justify-content-evenly w-100 item-info">
+                    <p>Q: `+item.amount+`</p>
+                    <p>$: <span class="item-price">`+item.price+`</span></p>
                 </div>
-
-                <div class="d-none input-group input-group-sm item-quantity-input">
-                    <span class="input-group-text">Quantity</span>
-                    <input class="form-control" type="number" min="0" max="0" value="0">
+                <div class="d-none item-quantity-overlay">
+                    <div class="input-group input-group-sm item-quantity-input">
+                        <span class="input-group-text">Quantity</span>
+                        <input class="form-control" type="number" min="0" max="0" value="0">
+                    </div>
                 </div>
             </div>
             `
@@ -33,7 +34,7 @@ var itemsToSell=[];
 $("body").on('click', 'div .inventory .item',function (e) {
     e.preventDefault();
 
-    var inputDiv = $(this).find(".item-quantity-input");
+    var inputDiv = $(this).find(".item-quantity-overlay");
     var infoDiv = $(this).find(".item-info");
     var itemDiv =  $(this);
 

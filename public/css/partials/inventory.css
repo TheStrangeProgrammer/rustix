@@ -12,7 +12,8 @@
 }
 
 .item{
-    display: flex;
+    position: relative;
+    display: block;
     flex-direction: column;
     align-items: center;
     margin: .5rem;
@@ -32,21 +33,36 @@
      0 32px 16px rgba(0,0,0,0.09);
 
 }
+.item-quantity-overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #171922be;
+    display: flex;
+    align-items: center;
+}
 .item:hover{
     background-color: #191b26;
     transition: .25s;
 
 }
 .item-selected{
-    border: 4px solid #00C74D;
+    box-shadow: 4px 4px #00C74D,
+    -4px 4px #00C74D,
+    4px -4px #00C74D,
+    -4px -4px #00C74D;
 
 }
 .item.item-selected:hover{
-    border: 4px solid #00C74D;
+    box-shadow: 4px 4px #00C74D,
+    4px -4px #00C74D,
+    -4px 4px #00C74D,
+    -4px -4px #00C74D;
 
 }
-
-
+.item-quantity-input{
+    height: 25%;
+}
 .item-quantity-input span{
     background-color: #171922;
     color: white;
