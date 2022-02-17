@@ -63,3 +63,14 @@
     margin: 0 auto;
     font-weight: bold;
 }
+@media screen and (max-width: 991px) {
+    .card-game{
+
+        width:100%;
+        height:80%;
+
+    }
+    .card-img-top-wrapper{
+        height: 80%;
+      }
+}

@@ -14,6 +14,9 @@ class UserController extends Controller
     const inventoryDelay=30;
     public function getUserInventory()
     {
+        return view("layouts/inventory");
+    }
+    public function getItems(){
         $lastInventroyAccess=session('lastInventroyAccess');
 
 
@@ -25,7 +28,7 @@ class UserController extends Controller
                 session(['inventory' => $response]);
         }
 
-        return view("layouts/inventory",['inventory' => session('inventory')]);
+        return session('inventory');
     }
 
     public function updateBalance(Request $request) {

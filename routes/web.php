@@ -47,14 +47,26 @@ Route::get('/auth/redirect', function () {
 
 Route::get('/auth/callback', [AuthController::class, 'callback']);
 Route::get('/inventory', [UserController::class, 'getUserInventory'])->middleware('auth')->name("getUserInventory");
-Route::get('/profile', [UserController::class, 'getProfile'])->middleware('auth')->name("getProfile");
+
 Route::post('/setReferral', [UserController::class, 'setReferral'])->middleware('auth')->name("setReferral");
 Route::post('/setTradeToken', [UserController::class, 'setTradeToken'])->middleware('auth')->name("setTradeToken");
 Route::post('/depositItems', [BotController::class, 'depositItems'])->middleware('auth')->name("depositItems");
 Route::post('/depositContinue', [BotController::class, 'depositContinue'])->middleware('auth')->name("depositContinue");
 Route::post('/withdrawItems', [BotController::class, 'withdrawItems'])->middleware('auth')->name("withdrawItems");
-Route::get('/withdraw', [BotController::class, 'getDeposit'])->middleware('auth')->name("getDeposit");
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth')->name("logOut");
+
+Route::prefix('deposit')->group(function () {
+    Route::get('/', [UserController::class, 'getInventory'])->middleware('auth')->name("getInventory");
+    Route::get('/getItems', [UserController::class, 'getItems'])->middleware('auth')->name("getItems");
+});
+
+Route::prefix('withdraw')->group(function () {
+    Route::get('/withdraw', [BotController::class, 'getDeposit'])->middleware('auth')->name("getDeposit");
+});
+
+Route::prefix('profile')->group(function () {
+    Route::get('/', [UserController::class, 'getProfile'])->middleware('auth')->name("getProfile");
+});
 
 Route::prefix('roulette')->group(function () {
     Route::get('/', [RouletteController::class, 'roulette'])->name('roulette');
