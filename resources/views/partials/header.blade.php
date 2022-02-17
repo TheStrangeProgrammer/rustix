@@ -1,4 +1,6 @@
-@include('partials.header.inventory')
+@include('partials.header.deposit')
+@include('partials.header.withdraw')
+@include('partials.header.profile')
 <header class="d-flex ps-5 pe-5 header">
     <nav class="navbar navbar-expand-lg navbar-dark bg-black w-100">
         <div class="container-fluid">
@@ -8,25 +10,27 @@
             @if (Auth::check())
                 <balance class="text-center my-auto " style="align-items: center" user="{{ Auth::user()->id }}">
                 </balance>
-                <button id="deposit-button" class="p-1 mt-3" data-bs-toggle="modal" data-bs-target="#DEPOSIT">DEPOSIT</button>
+                <button id="deposit-button" class="p-1 mt-3" data-bs-toggle="modal"
+                    data-bs-target="#DEPOSIT">DEPOSIT</button>
 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle me-auto d-flex align-items-center justify-content-center py-0 black" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle me-auto d-flex align-items-center justify-content-center py-0 black"
+                            href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img class="overflow-visible mx-2" src="{{ Auth::user()->avatar }}">
                             <span id="user-name">{{ Auth::user()->name }}</span>
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-white dropdown-menu-end py-0 rounded-0" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item text-center py-3"
-                                    href="{{ URL::route('getProfile') }}">Profile</a></li>
-                            <li><a class="dropdown-item text-center py-3" aria-current="page"
-                                    href="{{ URL::route('getDeposit') }}">Withdraw</a></li>
+                        <ul class="dropdown-menu dropdown-menu-white dropdown-menu-end py-0 rounded-0"
+                            aria-labelledby="navbarDropdown">
+                            <li><button id="profile-button" class="p-1 mt-3" data-bs-toggle="modal"
+                                data-bs-target="#PROFILE">PROFILE</button></li>
+
+                            <li><button id="withdraw-button" class="p-1 mt-3" data-bs-toggle="modal"
+                                    data-bs-target="#WITHDRAW">WITHDRAW</button></li>
                             <li><a class="dropdown-item text-center py-3" href="#">Referral</a></li>
                             <li><a class="dropdown-item text-center py-3" href="{{ URL::route('logOut') }}">Log
                                     Out</a></li>
-                            <li class="color"><a
-                                    class="dropdown-item text-center py-3 text-white hov-green"
+                            <li class="color"><a class="dropdown-item text-center py-3 text-white hov-green"
                                     href="http://localhost/admin">Admin Panel</a></li>
                         </ul>
                     </li>

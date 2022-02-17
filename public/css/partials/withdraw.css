@@ -1,10 +1,10 @@
 
-.inventory-wrapper{
+.withdraw-wrapper{
     overflow-y: auto;
     background-color:#1A1D29;
     padding: 1rem;
 }
-.inventory-sell{
+.withdraw-sell{
     display: flex;
     width: 100%;
     padding: 1.5rem 0;
@@ -55,7 +55,7 @@
     background-color: #161820;
     color: white;
 }
-.head-inventory{
+.head-withdraw{
     display: flex;
     justify-content: center;
     font-size: 40px;
@@ -88,7 +88,7 @@
     flex-direction: column;
     height: 100%;
 }
-.inventory-sell form{
+.withdraw-sell form{
     display: flex;
     flex-direction: row;
     width: 100%;

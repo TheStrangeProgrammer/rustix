@@ -56,12 +56,11 @@ Route::post('/withdrawItems', [BotController::class, 'withdrawItems'])->middlewa
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth')->name("logOut");
 
 Route::prefix('deposit')->group(function () {
-    Route::get('/', [UserController::class, 'getInventory'])->middleware('auth')->name("getInventory");
     Route::get('/getItems', [UserController::class, 'getItems'])->middleware('auth')->name("getItems");
 });
 
 Route::prefix('withdraw')->group(function () {
-    Route::get('/withdraw', [BotController::class, 'getDeposit'])->middleware('auth')->name("getDeposit");
+    Route::get('/getItems', [BotController::class, 'getItems'])->middleware('auth')->name("getItems");
 });
 
 Route::prefix('profile')->group(function () {
