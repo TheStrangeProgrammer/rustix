@@ -53,13 +53,7 @@
     -4px -4px #00C74D;
 
 }
-.item.item-selected:hover{
-    box-shadow: 4px 4px #00C74D,
-    4px -4px #00C74D,
-    -4px 4px #00C74D,
-    -4px -4px #00C74D;
 
-}
 .item-quantity-input{
     height: 25%;
 }
@@ -129,7 +123,14 @@
     stroke-miterlimit: 4;
     shape-rendering: auto;
 }
-.modal-title{
-    align-items: center;
-    justify-content: center;
+.modal-header .btn-close {
+    margin: 0 !important;
+
+}
+.modal-header.deposit-h-edit{
+    background-color:rgb(20, 22, 32);
+    border-bottom: 0;
+}
+.item-quantity-overlay{
+    border-radius: 17px;
 }
