@@ -122,4 +122,10 @@
     background-color: #00C74D;
     border-radius: 10px;
     font-weight: bold;
+    stroke: rgba(26,29,41,0.271);
+    stroke-width: 3px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
 }
