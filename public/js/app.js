@@ -5458,6 +5458,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['message', 'user']
 });
@@ -45522,6 +45524,8 @@ var render = function () {
       _c("div", { staticClass: "flex-fill flex-wrap" }, [
         _c("span", { staticClass: "message-user" }, [
           _c("div", { staticClass: "message-photo" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "message-avatar" }),
           _vm._v(" "),
           _c("div", { staticClass: "message-level" }, [_vm._v("43")]),
           _vm._v(" "),

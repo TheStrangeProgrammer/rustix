@@ -25,7 +25,9 @@
     align-items: center;
     margin-bottom: 0;
     border-radius: 10px;
-
+    background-color: #141620;
+    padding: 10px 0;
+    margin: 5px 10px;
 }
 .message-user{
     display: flex;
@@ -36,12 +38,22 @@
     align-items: center;
 }
 
-
-.message-level{
+.message-avatar{
+    width:26px;
+    height:26px;
     word-break: break-word;
     line-height: 1.6rem;
     background-color: rgba(255,255,255,.2);
+    border-radius: 100%;
     padding: 0 4px;
+}
+.message-level{
+    word-break: break-word;
+    background-color: rgba(255,255,255,.2);
+    border-radius: 5px;
+    padding: 2px 4px;
+    margin-left: 4px;
+    text-align: center;
 }
 .message-username{
     margin-left: 5px;
@@ -49,19 +61,22 @@
     font-size: 1rem;
     line-height: 1.2rem;
     margin-bottom: 0;
-    display: block;
 
 }
 .message-text{
     display: block;
     word-break: break-word;
     overflow-wrap: break-word;
-    line-height: 1.6rem;
+    line-height: 1rem;
     margin-right: 10px;
     margin-left: 10px;
     font-size: 1rem;
     margin-bottom: 0;
     border-radius: 10px 10px 10px 0;
+}
+
+p.message-text::first-line {
+    line-height: 1.67rem;
 }
 
 .chat-form{
