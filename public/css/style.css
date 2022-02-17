@@ -94,7 +94,7 @@
 .hov-green:hover{
     background-color: #25c52a !important;
 }
-.balance{
+.balance, #deposit-button{
     background-color: #1A1D29;
     padding: .9rem 1.2rem;
     align-items: center;
@@ -105,7 +105,12 @@
     stroke-miterlimit: 4;
     shape-rendering: auto;
     border-radius: 10px;
+    margin-left: 1rem;
     color:rgba(242,242,242,1);
+}
+
+#deposit-button{
+    background-color: #00C74D;
 }
 
 img.overflow-visible{
@@ -117,6 +122,11 @@ ul.dropdown-menu {
     margin-top:33px !important;
     min-width: 13.7rem !important;
     margin-right: -3.70rem !important;
+    font-size: 18px;
+    color: #10121A;
+}
+.ul.dropdown-menu:hover{
+    background-color: #E6E6E6;
 }
 ul.second-one{
     margin-right: -1rem !important;
