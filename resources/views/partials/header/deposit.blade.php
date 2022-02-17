@@ -13,13 +13,18 @@
                     </div>
                 </div>
                 <div class="d-flex container-fluid  fw-bold deposit-sell p-2" style="background-color: #141620">
-                    <form class="d-inline mx-auto" method="POST" action="{{ URL::route('depositItems') }}">
-                        @csrf
-                        <p class="text-white d-inline me-5">Total: <span id="total">0</span></p>
-                        <input id="item-list" class="d-none" type="text" name="itemList">
-                        <input class="text-white px-4 py-2" style="background-color:#14DB1A " id="submit-item-list"
-                            type="submit" value="SELL">
-                    </form>
+                    <div class="d-flex me-auto ps-5">
+                        <form class="d-inline" method="POST" action="{{ URL::route('depositItems') }}">
+                         @csrf
+                            <span class="first-text">You have selected&nbsp<span class="span-13">13&nbsp</span></span>  
+                      
+                            <span class="first-text">items worth&nbsp<span id="total">$143.66&nbsp</span></span>
+                            <input id="item-list" class="d-none" type="text" name="itemList">
+                    </div>
+                            <input class="text-white px-4 py-2 me-5" style="background-color:#00C74D " id="submit-item-list"
+                            type="submit" value="trade for 143.66 coins">
+                        </form>
+                    
                     </li>
                 </div>
             </div>

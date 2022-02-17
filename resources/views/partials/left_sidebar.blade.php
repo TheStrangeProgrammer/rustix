@@ -6,10 +6,7 @@
 
 <section class="d-flex flex-column left-sidebar h-100 ">
     <div class="d-flex chat-top">
-        <p class="pt-2 ps-2 fw-bold">ENG <span class="green">63 </span>ONLINE</p>
-        <button class="bi bi-discord"></button>
-        <button class="bi bi-twitter"></button>
-        <button class="bi bi-instagram"></button>
+        <span class="free-coins">claim your free coins</span>
     </div>
     @if (Auth::check())
         <chat class="flex-fill {{ Auth::user()->name }}"></chat>
