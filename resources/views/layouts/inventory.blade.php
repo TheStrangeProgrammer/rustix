@@ -9,18 +9,18 @@
                 <div class="d-flex flex-wrap inventory">
 
                     @foreach ($inventory['inventory'] as $item)
-                        <div class="d-flex flex-column align-items-center border border-dark m-2 item">
+                        <div class="d-flex flex-column align-items-center m-2 item ">
                             <p class="d-none item-id">{{ $item['id'] }}</p>
                             <p class="d-none item-quantity">{{ $item['amount'] }}</p>
 
-                            <p class="text-center fw-bold mt-1">{{ $item['name'] }}</p>
-                            <img src="{{ $item['icon_url'] }}" width="100px">
+                            <p class="text-center fw-bold">{{ $item['name'] }}</p>
+                            <img src="{{ $item['icon_url'] }}" >
 
 
 
-                            <div class="d-flex flex-column item-info">
-                                <p class="ms-2">Amount: {{ $item['amount'] }}</p>
-                                <p class="ms-2 me-2 ">Price: <span class="item-price">{{ $item['price'] }}</span></p>
+                            <div class="d-flex flex-row w-100 item-info">
+                                <p class="me-auto px-3">Q: {{ $item['amount'] }}</p>
+                                <p class="px-3">$: <span class="item-price">{{ $item['price'] }}</span></p>
                             </div>
 
                             <div class="d-flex">
