@@ -21,9 +21,9 @@ class BotController extends Controller
     public static $deposit;
     public static $bot = [];
 
-    public function getDeposit()
+    public function getItems()
     {
-        return view("layouts/withdraw",['inventory' => json_decode(Storage::disk('local')->get('depositInventory.json'))->inventory]);
+        return json_decode(Storage::disk('local')->get('depositInventory.json'))->inventory;
     }
     public static function loginDeposit(){
         $settings=config("rustix.depositInfo");

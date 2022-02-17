@@ -1,8 +1,8 @@
 
 $("#deposit-button").click(function (e) {
-    $(".inventory").html("");
+    $(".deposit").html("");
     $.getJSON("deposit/getItems").done(function( data ) {
-        if(data.success==false) $(".inventory").html("<p>You do not have any items or your inventory is private</p>");
+        if(data.success==false) $(".deposit").html("<p>You do not have any items or your deposit is private</p>");
         Object.values(data.inventory).forEach(item => {
             let itemToDisplay=`
             <div class="d-flex flex-column align-items-center m-2 item ">
@@ -24,14 +24,14 @@ $("#deposit-button").click(function (e) {
                 </div>
             </div>
             `
-            $(".inventory").append(itemToDisplay);
+            $(".deposit").append(itemToDisplay);
         });
 
 
     });
 });
 var itemsToSell=[];
-$("body").on('click', 'div .inventory .item',function (e) {
+$("body").on('click', 'div .deposit .item',function (e) {
     e.preventDefault();
 
     var inputDiv = $(this).find(".item-quantity-overlay");
@@ -67,10 +67,10 @@ $("body").on('click', 'div .inventory .item',function (e) {
     $("#total").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price,0));
 
 });
-$("body").on('click',".inventory .item .item-quantity-input",function (e) {
+$("body").on('click',".deposit .item .item-quantity-input",function (e) {
     e.stopPropagation();
 });
-$("body").on('change',".inventory .item-quantity-input .form-control",function (e) {
+$("body").on('change',".deposit .item-quantity-input .form-control",function (e) {
     e.preventDefault();
 
     var itemDiv = $(this).parent().parent();
