@@ -6,11 +6,12 @@
     padding: 1rem;
 }
 .deposit-sell{
-    display: flex !important;
+    display: flex;
     flex-direction: row;
     width: 100%;
-    padding: .75rem 0 !important;
+    padding: .75rem 0;
     background-color: #141620;
+    justify-content: center;
 }
 
 .item{
@@ -112,12 +113,7 @@
     flex-direction: column;
     height: 100%;
 }
-.deposit-sell form{
-    display: flex !important;
-    flex-direction: row;
-    width: 100%;
-    justify-content: center;
-}
+
 .right-span{
     display: flex;
     font-size: 18px !important;

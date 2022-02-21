@@ -18,7 +18,8 @@
 .chat-input{
     border: 1px solid rgba(255,255,255, .15);
     background-color:#1A1D29;
-    color:white
+    color: #999999;
+    padding: 1rem;
 }
 .message{
     display: flex;

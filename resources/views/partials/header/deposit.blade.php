@@ -6,26 +6,21 @@
                 <h5 id="ALT-title" class="modal-title mx-auto">Your deposit.</h5>
                 <button type="button" class="btn-close color-btn" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="flex-fill h-100">
+            <div class="h-100">
                 <div class="flex-fill deposit-wrapper">
                     <div class="d-flex flex-wrap deposit">
 
                     </div>
                 </div>
-                <div class="d-flex container-fluid  fw-bold deposit-sell p-2" style="background-color: #141620">
-                    <div class="d-flex me-auto ps-5">
-                        <form class="d-inline" method="POST" action="{{ URL::route('depositItems') }}">
-                         @csrf
-                            <span class="first-text">You have selected<span id="count"> 13 </span></span>
+                <div class="deposit-sell" style="background-color: #141620">
 
-                            <span class="first-text">items worth<span id="total"> $143.66</span></span>
-                            <input id="item-list" class="d-none" type="text" name="itemList">
-                    </div>
-                            <input class="text-white px-4 py-2 me-5" style="background-color:#00C74D " id="submit-item-list"
-                            type="submit" value="trade for 143.66 coins">
-                        </form>
+                    <span class="first-text">You have selected<span id="count"> 13 </span></span>
+                    <span class="first-text">items worth<span id="total"> $143.66</span></span>
+                    <input id="item-list" class="d-none" type="text" name="itemList">
+                    <input class="text-white px-4 py-2 me-5" style="background-color:#00C74D" id="submit-item-list"
+                        type="submit" value="trade for 143.66 coins">
 
-                    </li>
+
                 </div>
             </div>
         </div>
