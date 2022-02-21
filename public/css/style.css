@@ -7,6 +7,7 @@
 }
 .sidebar{
     border-right: none !important;
+    background: none;
 }
 
 .button-sidebar{
@@ -45,7 +46,6 @@ a.log-in{
 
 }
 .left-sidebar{
-    background-color: rgba(35,38,51,1);
     width: 25%;
 }
 .sidebar{
@@ -200,4 +200,8 @@ ul.second-one{
     width: 75%;
     height: 100%;
 
+  }
+  .control{
+      display: none;
+      padding-top: 10px;
   }

@@ -79,10 +79,7 @@ p.message-text::first-line {
     line-height: 1.67rem;
 }
 
-.chat-form{
-    background-color:#141620;
-    border-top: 1px solid black;
-}
+
 
 .chat-wrapper{
     overflow-y: auto;
