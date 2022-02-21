@@ -45397,7 +45397,7 @@ var render = function () {
     _c(
       "form",
       {
-        staticClass: "chat-form theme-bc-2",
+        staticClass: "chat-form",
         on: {
           submit: function ($event) {
             $event.preventDefault()
