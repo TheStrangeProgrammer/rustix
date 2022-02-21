@@ -1,8 +1,9 @@
 var itemsToSell=[];
 $("#deposit-button").click(function (e) {
     $(".deposit").html("");
-    $("#total").html( "$"+Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price,0));
+    $("#total").html( "$"+Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price/100,0));
     $("#count").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount,0));
+    $("#coins").html( "$"+Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price,0));
     itemsToSell=[];
     $.getJSON("deposit/getItems").done(function( data ) {
 
@@ -18,7 +19,7 @@ $("#deposit-button").click(function (e) {
 
                 <div class="d-flex flex-row justify-content-evenly w-100 item-info">
                     <p>Q: `+item.amount+`</p>
-                    <p>$: <span class="item-price">`+item.price+`</span></p>
+                    <p>$: <span class="item-price">`+item.price/100+`</span></p>
                 </div>
                 <div class="d-none item-quantity-overlay">
                     <div class="input-group input-group-sm item-quantity-input">
@@ -69,7 +70,8 @@ $("body").on('click', 'div .deposit .item',function (e) {
         itemsToSell.push(item)
 
     }
-    $("#total").html( "$"+Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price,0));
+    $("#total").html( "$"+Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price/100,0));
+    $("#coins").html( "$"+Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price,0));
     $("#count").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount,0));
 
 });

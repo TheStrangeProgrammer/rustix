@@ -45376,7 +45376,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "d-flex flex-column" }, [
+  return _c("div", { staticClass: "d-flex flex-column align-items-center" }, [
     _c(
       "div",
       { staticClass: "d-flex flex-fill chat-wrapper" },
@@ -45408,7 +45408,10 @@ var render = function () {
       [
         _c(
           "div",
-          { staticClass: "field has-addons has-addons-fullwidth d-flex p-2" },
+          {
+            staticClass:
+              "d-flex flex-fill field has-addons has-addons-fullwidth p-2",
+          },
           [
             _c(
               "div",

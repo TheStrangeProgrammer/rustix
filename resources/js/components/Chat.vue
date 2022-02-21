@@ -1,5 +1,5 @@
 <template>
-    <div class="d-flex flex-column">
+    <div class="d-flex flex-column align-items-center">
         <div class="d-flex flex-fill chat-wrapper">
             <div v-for="message in messages">
 
@@ -11,7 +11,7 @@
         </div>
 
         <form @submit.prevent="submit" class="chat-form">
-            <div class="field has-addons has-addons-fullwidth d-flex p-2">
+            <div class="d-flex flex-fill field has-addons has-addons-fullwidth p-2">
                 <div class="d-flex flex-fill control is-expanded p-2">
                     <input class="input chat-input flex-fill" type="text" placeholder="Type a message" v-model="newMessage">
                 </div>

@@ -101,7 +101,9 @@
     color: #00C74D;
     font-weight: bold;
 }
-
+#coins{
+    padding: 0 .5rem;
+}
 .first-text{
     display: flex;
     align-items: center;
