@@ -21,6 +21,9 @@
 .theme-tc-1{
     color: white;
 }
+.theme-tc-1:hover{
+    color: white;
+}
 .theme-tc-2{
     color:#00C74D;
 }
@@ -58,16 +61,13 @@ a.log-in{
 
 .main{
     display: flex;
-    background-color: #1A1D29;
     width: 75%;
     height: 100%;
     overflow-y: auto;
 }
 .footer{
-    background-color:#0d0e14;
 }
 .modal-content{
-    background-color: #1A1D29 !important
 
 }
 .left-sidebar{
@@ -115,19 +115,15 @@ a.log-in{
 .container-fluid .green{
     font-size: 50px;
     font-weight: bold;
-    color: rgba(242,242,242,1);
 }
 
 
 .color:hover{
-    background-color: #25c52a;
 }
 
 .hov-green:hover{
-    background-color: #25c52a !important;
 }
 .balance, #deposit-button{
-    background-color: #1A1D29;
     padding: .9rem 1.2rem;
     align-items: center;
     stroke: rgba(26,29,41,0.271);
@@ -138,11 +134,9 @@ a.log-in{
     shape-rendering: auto;
     border-radius: 10px;
     margin-left: 1rem;
-    color:rgba(242,242,242,1);
 }
 
 #deposit-button{
-    background-color: #00C74D;
 }
 
 img.overflow-visible{
@@ -155,7 +149,6 @@ ul.dropdown-menu {
     min-width: 13.7rem !important;
     margin-right: -0.70rem !important;
     font-size: 18px;
-    color: #10121A;
 }
 .ul.dropdown-menu:hover{
     background-color: #E6E6E6;
@@ -191,7 +184,6 @@ ul.second-one{
         font-size: 18px !important;
         margin-left: 0px !important;
         margin-right: 0px !important;
-        background-color:#1A1D29;
     }
 
     #sidebar-and-content {
@@ -221,7 +213,6 @@ ul.second-one{
 }
 #overlay {
     display: none;
-    background-color: #1A1D29;
     border-top: 1px solid black;
     width: 75%;
     height: 100%;
