@@ -1,11 +1,11 @@
-.theme-fw-normal{
-
+.theme-fw-1{
+    font-weight: 400;
 }
-.theme-fw-bold{
-
+.theme-fw-2{
+    font-weight: 600;
 }
-.theme-fw-bolder{
-
+.theme-fw-3{
+    font-weight: 700;
 }
 
 .theme-bc-1{
@@ -24,6 +24,16 @@
 .theme-tc-2{
     background-color:#00C74D;
 }
+
+.body{
+    color: white;
+    font-family: 'Neometric', sans-serif;
+    line-height: 16px;
+    font-size: 16px;
+    word-spacing: 0;
+    text-size-adjust: none;
+}
+
 
 .header{
     padding: .75rem 0;
@@ -48,15 +58,7 @@ a.log-in{
     font-weight: 600;
     font-size: 42px;
 }
-.body{
-    color: #F9F9F9;
-    font-family: 'Neometric', sans-serif;
-    background:#191B28;
-    line-height: 16px;
-    font-size: 16px;
-    word-spacing: 0;
-    text-size-adjust: none;
-}
+
 .main{
     display: flex;
     background-color: #1A1D29;
@@ -115,7 +117,6 @@ a.log-in{
 
 .container-fluid .green{
     font-size: 50px;
-    font-family: 'Neometric', sans-serif;;
     font-weight: bold;
     color: rgba(242,242,242,1);
 }
