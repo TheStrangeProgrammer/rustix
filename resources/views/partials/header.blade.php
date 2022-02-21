@@ -7,7 +7,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark w-100">
         <div class="container-fluid justify-content-evenly">
 
-            <a class="theme-tc-1 theme-fw-3 mb-0 ms-2 me-auto" href="{{ URL::route('home') }}"><span class="site-title">RUSTIX</span>
+            <a class="theme-tc-1 mb-0 ms-2 me-auto" href="{{ URL::route('home') }}"><span class="site-title">RUSTIX</span>
             </a>
 
             @if (Auth::check())

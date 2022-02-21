@@ -1,12 +1,12 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('css/partials/profile.css') }}">
 <div id="PROFILE" class="modal fade" tabindex="-1" aria-labelledby="PROFILE-title" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
+    <div class="modal-dialog modal-xl theme-bc-2">
+        <div class="modal-content theme-bc-2">
+            <div class="modal-header theme-bc-2">
                 <h5 id="ALT-title" class="modal-title">Your profile.</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="box-columns">
+            <div class="box-columns theme-bc-2">
                 <div class="text-edit flex-fill col-div">
                     <span class="first-span-edit">Stats</span>
                     <div class="total-deposited text-edit" style="background-color: rgba(53,59,84,1)">

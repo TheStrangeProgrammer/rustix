@@ -40,23 +40,25 @@ body{
 .header{
     padding: .75rem 0;
 }
+
 .container-fluid a:first-child{
     text-decoration: none;
 }
-.sidebar{
-    border-right: none !important;
-    background: none;
-}
+
 
 .button-sidebar{
     border-radius: 10px;
+    border: 3px solid #F2F2F2;
+    font-size: 11px;
+    padding: 1% 8%;
+
 
 }
 a.log-in{
     color: white;
 }
 .site-title{
-    font-size: 42px;
+   font-size: 2.1875rem;
 }
 
 .main{
@@ -74,9 +76,6 @@ a.log-in{
     display: flex;
     flex-direction: column;
     width: 25%;
-}
-.sidebar{
-    border-right: 1px solid black;
 }
 
 .white{
@@ -164,6 +163,9 @@ ul.second-one{
 }
 #navbarSupportedContent{
     flex-grow: 0.5;
+}
+.navbar{
+    padding: 0 !important;
 }
 
 @media screen and (max-width: 991px) {
