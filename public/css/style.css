@@ -25,6 +25,16 @@
     background-color:#00C74D;
 }
 
+.body{
+    color: white;
+    font-family: 'Neometric', sans-serif;
+    line-height: 16px;
+    font-size: 16px;
+    word-spacing: 0;
+    text-size-adjust: none;
+}
+
+
 .header{
     padding: .75rem 0;
 }
@@ -47,14 +57,7 @@ a.log-in{
     font-weight: 600;
     font-size: 42px;
 }
-.body{
-    color: white;
-    font-family: 'Neometric', sans-serif;
-    line-height: 16px;
-    font-size: 16px;
-    word-spacing: 0;
-    text-size-adjust: none;
-}
+
 .main{
     display: flex;
     background-color: #1A1D29;
