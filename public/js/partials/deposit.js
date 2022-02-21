@@ -3,16 +3,17 @@ $("#deposit-button").click(function (e) {
     $(".deposit").html("");
     $("#total").html( "$"+Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price/100,0));
     $("#count").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount,0));
-    $("#coins").html( "$"+Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price,0));
+    $("#coins").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price,0));
     itemsToSell=[];
     $.getJSON("deposit/getItems").done(function( data ) {
 
         if(data.success==false) $(".deposit").html("<p>You do not have any items or your deposit is private</p>");
         Object.values(data.inventory).forEach(item => {
             let itemToDisplay=`
-            <div class="d-flex flex-column align-items-center m-2 item ">
-                <p class="d-none item-id">`+item.id+`</p>
-                <p class="d-none item-quantity">`+item.amount+`</p>
+            <div class="d-flex flex-column align-items-center m-2 item">
+                <span id="item-id" class="d-none">`+item.id+`</span>
+                <span id="item-quantity" class="d-none">`+item.amount+`</span>
+                <span id="item-price" class="d-none">`+item.price+`</span>
 
                 <p class="text-center fw-bold">`+item.name+`</p>
                 <img src="`+item.icon_url+`" >
@@ -50,7 +51,7 @@ $("body").on('click', 'div .deposit .item',function (e) {
         infoDiv.addClass("flex-row");
 
 
-        var id = itemDiv.find(".item-id").text();
+        var id = itemDiv.find("#item-id").text();
 
         var itemIndex = itemsToSell.findIndex(element => element.id == id);
         itemsToSell.splice(itemIndex,1);
@@ -58,20 +59,20 @@ $("body").on('click', 'div .deposit .item',function (e) {
     } else {
         itemDiv.addClass("item-selected");
         inputDiv.removeClass("d-none");
-        inputDiv.find(".form-control").attr("max",itemDiv.find(".item-quantity").text());
+        inputDiv.find(".form-control").attr("max",itemDiv.find("#item-quantity").text());
         inputDiv.find(".form-control").attr("value",1);
         infoDiv.removeClass("flex-row");
 
-        var id = itemDiv.find(".item-id").text();
+        var id = itemDiv.find("#item-id").text();
         var item = new Object();
         item.id=id;
         item.amount=1;
-        item.price=itemDiv.find(".item-price").text();
+        item.price=itemDiv.find("#item-price").text();
         itemsToSell.push(item)
 
     }
-    $("#total").html( "$"+Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price/100,0));
-    $("#coins").html( "$"+Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price,0));
+    $("#total").html( "$"+Math.round(Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price/100,0)*100)/100);
+    $("#coins").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price,0));
     $("#count").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount,0));
 
 });
@@ -81,13 +82,14 @@ $("body").on('click',".deposit .item .item-quantity-input",function (e) {
 $("body").on('change',".deposit .item-quantity-input .form-control",function (e) {
     e.preventDefault();
 
-    var itemDiv = $(this).parent().parent();
-    var id = itemDiv.find(".item-id").text();
+    var itemDiv = $(this).parent().parent().parent();
+    var id = itemDiv.find("#item-id").text();
     var itemIndex = itemsToSell.findIndex(element => element.id == id);
 
-
-    itemsToSell[itemIndex].amount=itemDiv.find(".form-control").val();
-    $("#total").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price,0));
+    itemsToSell[itemIndex].amount=parseInt(itemDiv.find(".form-control").val());
+    $("#total").html( "$"+Math.round(Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price/100,0)*100)/100);
+    $("#coins").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price,0));
+    $("#count").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount,0));
 });
 $("#submit-item-list").on('click',"#submit-item-list",function (e) {
     $("#item-list").val(JSON.stringify(itemsToSell));
