@@ -4,7 +4,7 @@
 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/partials/chat.css') }}">
 
-<section class="left-sidebar theme-bc-2">
+<section class="left-sidebar">
     <div class="d-flex chat-top">
         <span class="free-coins">claim your free coins</span>
     </div>

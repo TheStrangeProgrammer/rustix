@@ -16,10 +16,21 @@
 }
 
 .chat-input{
-    border: 1px solid rgba(255,255,255, .15);
-    background-color:#1A1D29;
+    border: none;
+    background-color:#141620;
     color: #999999;
-    padding: 1rem;
+    padding: .25rem 0;
+}
+
+.chat-input:focus, input:focus{
+    outline: none;
+}
+
+.control{
+    justify-content: center;
+    margin: 0 4.813rem;
+    border-radius: 10px;
+    background-color: #141620;
 }
 .message{
     display: flex;
