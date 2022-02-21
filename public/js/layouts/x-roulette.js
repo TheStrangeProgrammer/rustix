@@ -5,8 +5,8 @@ var wheel = $('.roulette-wheel');
 var inputBet = $('.input-bet');
 
 
-var cardWidth = 136;
-var cardMargin = 3 * 2;
+var cardWidth = 100;
+var cardMargin = 20 * 2;
 var card = cardWidth + cardMargin;
 
 
@@ -117,10 +117,10 @@ function displayLast10(last10){
 }
 
 function createLastImage(color,value){
-    return "<div class='x-roulette-card-last "+color+"'>x"+value+"</div>";
+    return "<div class='x-roulette-card-last "+color+"'><span style='color:white'>x"+value+"</span></div>";
 }
 function createCard(color,image,value){
-    return "<div class='roulette-card "+color+"'><img  src='../assets/x-roulette/"+image+".svg' width='90' height='90' > <span >x"+value+"</span></div>";
+    return "<div class='roulette-card "+color+"'><img  src='../assets/x-roulette/"+image+".png' width='90' height='90' > <span style='color:white'>x"+value+"</span></div>";
 }
 
 function getPosition(outcome,values){
@@ -130,21 +130,43 @@ function getPosition(outcome,values){
 function valueToColor(value){
     color="";
     if(value<=1)
-        color="x-roulette-red";
-    else if(value<2)
-        color="x-roulette-light-green";
-    else if(value<5)
-        color="x-roulette-green";
-    else if(value<10)
-        color="x-roulette-light-blue";
-    else if(value<50)
-        color="x-roulette-blue";
-    else if(value<100)
-        color="x-roulette-light-purple";
-    else if(value<1000)
-        color="x-roulette-purple";
-    else if(value<100000)
-        color="x-roulette-gold";
+        color="color-1";
+    else if(value<=1.25)
+        color="color-2";
+    else if(value<=1.5)
+        color="color-3";
+    else if(value<=1.8)
+        color="color-4";
+    else if(value<=2)
+        color="color-5";
+    else if(value<=2.25)
+        color="color-6";
+    else if(value<=2.5)
+        color="color-7";
+    else if(value<=3)
+        color="color-8";
+    else if(value<=3.5)
+        color="color-9";
+    else if(value<=4)
+        color="color-10";
+    else if(value<=5)
+        color="color-11";
+    else if(value<=6.5)
+        color="color-12";
+    else if(value<=8)
+        color="color-13";
+    else if(value<=10)
+        color="color-14";
+    else if(value<=15)
+        color="color-15";
+    else if(value<=20)
+        color="color-16";
+    else if(value<=30)
+        color="color-17";
+    else if(value<=50)
+        color="color-18";
+    else if(value<=75)
+        color="color-19";
     else
         color="x-roulette-rainbow";
     return color;
@@ -153,36 +175,46 @@ function valueToImage(value){
     image="";
     if(value<=1)
         image="1";
-    else if(value<1.25)
+    else if(value<=1.25)
         image="2";
-    else if(value<1.50)
+    else if(value<=1.50)
         image="3";
-    else if(value<2)
+    else if(value<=1.8)
         image="4";
-    else if(value<3)
+    else if(value<=2)
         image="5";
-    else if(value<4)
+    else if(value<=2.25)
         image="6";
-    else if(value<5)
+    else if(value<=2.5)
         image="7";
-    else if(value<10)
+    else if(value<=3)
         image="8";
-    else if(value<50)
+    else if(value<=3.5)
         image="9";
-    else if(value<100)
+    else if(value<=4)
         image="10";
-    else if(value<500)
+    else if(value<=5)
         image="11";
-    else if(value<1000)
+    else if(value<=6.5)
         image="12";
-    else if(value<5000)
+    else if(value<=8)
         image="13";
-    else if(value<10000)
+    else if(value<=10)
         image="14";
-    else if(value<100000)
+    else if(value<=15)
         image="15";
-    else
+    else if(value<=20)
         image="16";
+    else if(value<=30)
+        image="17";
+    else if(value<=50)
+        image="18";
+    else if(value<=75)
+        image="19";
+    else if(value<=100)
+        image="20";
+    else
+        image="20";
     return image;
 }
 

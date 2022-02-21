@@ -1,6 +1,6 @@
 <template>
-    <span class="navbar-text">
-        BALANCE:<span id="balance">{{ balance }}</span>
+    <span class="balance">
+        $<span id="balance">{{ balance }}</span>
     </span>
 </template>
 

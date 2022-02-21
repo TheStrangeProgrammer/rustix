@@ -7,20 +7,23 @@
     overflow: hidden;
     width: 100%;
     position:relative;
-    background-color: #161820;
+    background-color: hsla(0, 0%, 0%, 0);
     border-radius: 30px;
     padding: 8px 0;
     margin-top: 30px;
-    box-shadow: 0 2px 1px rgba(0,0,0,0.09),
-    0 4px 2px rgba(0,0,0,0.09),
-    0 8px 4px rgba(0,0,0,0.09),
-    0 16px 8px rgba(0,0,0,0.09),
-    0 32px 16px rgba(0,0,0,0.09);
 }
+.roulette-background{
+    width: 100%;
+    background-color: #0d0e14;
+    top:20%;
+    height:60%;
+    position:absolute;
+    z-index:0;
 
+  }
 .roulette-selector{
-    width:3px;
-    background:grey;
+    width: 1%;
+    background-image: url("../../assets/separator.png");
     left:50%;
     height:100%;
     transform:translate(-50%,0%);
@@ -97,11 +100,10 @@
     padding: 6px 5px;
 }
 .roulette-card{
-    background-image: url('../../assets/ui1.png');
     font-weight: bold;
-    height:180px;
-    width:136px;
-    margin:3px;
+    height:140px;
+    width:100px;
+    margin:20px;
     border-radius:20px;
     border-bottom:3px solid rgba(0,0,0,0.2);
     display:flex;
@@ -110,88 +112,172 @@
     font-size:1em;
     padding: 5px;
     justify-content: space-evenly;
-    box-shadow: 0 2px 1px rgba(0,0,0,0.09),
-    0 4px 2px rgba(0,0,0,0.09),
-    0 8px 4px rgba(0,0,0,0.09),
-    0 16px 8px rgba(0,0,0,0.09),
-    0 32px 16px rgba(0,0,0,0.09);
+    box-shadow: 0px 0px 0px 15px;
 }
-.x-roulette-red{
+.color-1{
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:#641E16   ;
-    
+    background-color:#717171  ;
+    color: #71717144;
+
 
 }
 
-.x-roulette-light-green{
+.color-2{
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:#186A3B  ;
-    
-}
-.x-roulette-green{
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color:#145A32 ;
+    background-color:#657769  ;
+    color: #65776941;
+
 
 }
-.x-roulette-light-blue{
+.color-3{
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:#1B4F72;
+    background-color:#7b9371 ;
+    color: #7b93713b;
+
 
 }
-.x-roulette-blue{
+.color-4{
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:#154360  ;
-}
-.x-roulette-light-purple{
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color:#5B2C6F ;
+    background-color:#7b9371;
+    color: #7b937141;
+
 
 }
-.x-roulette-purple{
+.color-5{
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:#512E5F ;
+    background-color:#79ad62 ;
+    color: #78ad623d;
+
 }
-.x-roulette-gold{
+.color-6{
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:#7D6608 ;
+    background-color:#77be56 ;
+    color: #77be563b;
+
+
+}
+.color-7{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:#46c957 ;
+    color: #46c9573b ;
+
+}
+.color-8{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:#32da47;
+    color: #32da4834;
+
+}
+
+.color-9{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:#18d231;
+    color: #18d23136;
+
+}
+.color-10{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:#25dc32;
+    color: #25dc313a;
+
+}
+.color-11{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:#30ff01;
+    color: #30ff0134;
+}
+.color-12{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:#6c43ff;
+    color: #6c43ff34;
+}
+.color-13{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:#8923ff;
+    color: #8a23ff33;
+}
+.color-14{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:#cc00ff;
+    color: #cc00ff3a;
+}
+.color-15{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:#ff00e0;
+    color: #ff00e134;
+}
+.color-16{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:#fe00ae;
+    color: #fe00ae36;
+}
+.color-17{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:#fe007a;
+    color: #fe007b34;
+}
+.color-18{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:#fe2200;
+    color: #fe220038;
+}
+.color-19{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:#ff5100;
+    color: #ff51002f;
 }
 .x-roulette-rainbow{
-    background-size: cover;
-    background-image: repeating-linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red, violet);
-    -webkit-animation: rainbow 18s linear infinite;
-    -z-animation: rainbow 8s linear infinite;
-    -o-animation: rainbow 8s linear infinite;
-    animation: rainbow 8s linear infinite;
-    background-size: 800% 800%;
+    background: -webkit-linear-gradient(left, red,orange,yellow,green,blue,indigo,violet,red);
+    background: -moz-linear-gradient(left, red,orange,yellow,green,blue,indigo,violet,red);
+    background: -o-linear-gradient(left, red,orange,yellow,green,blue,indigo,violet,red);
+    background: -ms-linear-gradient(left, red,orange,yellow,green,blue,indigo,violet,red);
+    background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet,red);
+    background-repeat:repeat-x;
+
+    -webkit-animation:rainbow 8s linear infinite;
+    -moz-animation:rainbow 8s linear infinite;
+    -o-animation:rainbow 8s linear infinite;
+    -ms-animation:rainbow 8s linear infinite;
+    animation:rainbow 8s linear infinite;
+    background-size: 2500% 2500%;
 
 }
 @-webkit-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
+    0%{background-position:0% 0}
+    100%{background-position:100% 0}
+
 }
 @-moz-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
+    0%{background-position:0% 0}
+    100%{background-position:100% 0}
+
 }
 @-o-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
+    0%{background-position:0% 0}
+    100%{background-position:100% 0}
 }
 @keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
+    0%{background-position:0% 0}
+    100%{background-position:100% 0}
 }
 
 .timer-custom{
@@ -222,7 +308,8 @@
     justify-content: start;
     border-radius: .3rem;
     padding: 1rem 0;
-    
+    box-shadow: 0 !important;
+
 }
 
 .score-bet{

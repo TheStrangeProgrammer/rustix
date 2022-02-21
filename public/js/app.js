@@ -5456,6 +5456,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['message', 'user']
 });
@@ -45352,8 +45356,8 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("span", { staticClass: "navbar-text" }, [
-    _vm._v("\n    BALANCE:"),
+  return _c("span", { staticClass: "balance" }, [
+    _vm._v("\n    $"),
     _c("span", { attrs: { id: "balance" } }, [_vm._v(_vm._s(_vm.balance))]),
   ])
 }
@@ -45380,7 +45384,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "d-flex flex-column" }, [
+  return _c("div", { staticClass: "d-flex flex-column align-items-center" }, [
     _c(
       "div",
       { staticClass: "d-flex flex-fill chat-wrapper" },
@@ -45412,7 +45416,10 @@ var render = function () {
       [
         _c(
           "div",
-          { staticClass: "field has-addons has-addons-fullwidth d-flex p-2" },
+          {
+            staticClass:
+              "d-flex flex-fill field has-addons has-addons-fullwidth p-2",
+          },
           [
             _c(
               "div",
@@ -45528,6 +45535,8 @@ var render = function () {
       _c("div", { staticClass: "flex-fill flex-wrap" }, [
         _c("span", { staticClass: "message-user" }, [
           _c("div", { staticClass: "message-photo" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "message-avatar" }),
           _vm._v(" "),
           _c("div", { staticClass: "message-level" }, [_vm._v("43")]),
           _vm._v(" "),

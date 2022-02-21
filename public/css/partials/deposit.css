@@ -1,0 +1,149 @@
+
+.deposit-wrapper{
+    display: flex;
+    overflow-y: auto;
+    background-color:#1A1D29;
+    padding: 1rem;
+}
+.deposit-sell{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: .75rem 0;
+    background-color: #141620;
+    justify-content: center;
+}
+
+.item{
+    position: relative;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    margin: .5rem;
+    padding: .5rem .5rem;
+    justify-content: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(16,18,26,1);
+    border-radius: 15px ;
+    width: 130px;
+    height: 130px;
+    box-shadow: 0 2px 1px rgba(0,0,0,0.09),
+     0 4px 2px rgba(0,0,0,0.09),
+     0 8px 4px rgba(0,0,0,0.09),
+     0 16px 8px rgba(0,0,0,0.09),
+     0 32px 16px rgba(0,0,0,0.09);
+
+}
+.item-quantity-overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #171922be;
+    display: flex;
+    align-items: center;
+}
+.item:hover{
+    background-color: #191b26;
+    transition: .25s;
+
+}
+.item.item-selected{
+    box-shadow: 4px 4px #00C74D,
+    -4px 4px #00C74D,
+    4px -4px #00C74D,
+    -4px -4px #00C74D;
+
+}
+
+.item-quantity-input{
+    height: 25%;
+}
+.item-quantity-input span{
+    background-color: #171922;
+    color: white;
+}
+.item-quantity-input input{
+    background-color: #161820;
+    color: white;
+}
+.head-deposit{
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    width: 100%;
+    padding: 2rem 0;
+    background-color: rgba(24,27,38,1);
+
+}
+.item img{
+    width: 70px;
+    height: 70px;
+}
+.item p{
+    margin-bottom: 0 ;
+    font-size: 14px;
+}
+.item-info{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    font-size: 12px;
+
+}
+
+#total, #count{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 .5rem;
+    color: #00C74D;
+    font-weight: bold;
+}
+#coins{
+    padding: 0 .5rem;
+}
+.first-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.principal-div{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.right-span{
+    display: flex;
+    font-size: 18px !important;
+}
+#submit-item-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .75rem 1.5rem;
+    background-color: #00C74D;
+    border-radius: 10px;
+    font-weight: bold;
+    stroke: rgba(26,29,41,0.271);
+    stroke-width: 3px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+
+.modal-header .btn-close {
+    margin: 0 !important;
+
+}
+.modal-header.deposit-h-edit{
+    background-color:rgb(20, 22, 32);
+    border-bottom: 0;
+}
+.item-quantity-overlay{
+    border-radius: 17px;
+}

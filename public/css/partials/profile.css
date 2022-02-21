@@ -1,0 +1,106 @@
+.box-div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+}
+.head-profile{
+    padding:2rem 0;
+    font-size: 40px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    background-color: #0d0e14;
+}
+.text-edit{
+    color: rgba(242,242,242,1);
+    font-family: Neometric;
+    text-decoration: none;
+}
+.box-columns{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+
+}
+.col-div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+
+}
+.first-span-edit{
+    font-size: 25px;
+    padding: 2.156rem 0;
+}
+.total-deposited{
+    display: flex;
+    padding: .563rem 0;
+    font-size: 18px;
+
+}
+.scroll .total-deposited{
+    border-bottom: 1px solid #707070;
+}
+.total-deposited a:hover{
+    color: inherit;
+    text-decoration: none;
+}
+.total-deposited input{
+    background-color: #161820;
+    color: white;
+    line-height: 10;
+    height:32px;
+    width:auto;
+}
+.profile-button {
+    background-color:#00C74D;
+    font-size: 15px;
+    padding: .5rem 1rem;
+    border-radius: .8rem;
+    margin-right: 5px ;
+    text-decoration: none;
+    width:109px;
+}
+.avatar-edit img{
+    border-radius: 50%;
+
+
+}
+.avatar-edit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.avatar-edit .text-edit{
+    font-size: 19px;
+    font-weight: bold;
+    background-color: #7F00C7;
+    padding: .594rem 0.424rem;
+    border-radius: 8px;
+    margin: 0 10px;
+}
+.avatar-edit span:last-child{
+    font-size: 25px;
+}
+div.scroll
+{
+max-height: 500px;
+overflow-y:scroll;
+}
+.scroll .total-deposited{
+    display: flex;
+    justify-content: space-between;
+    padding: .5315rem 0;
+
+}
+@media screen and (max-width: 991px) {
+    .box-columns{
+        flex-wrap: wrap;
+    }
+
+    }

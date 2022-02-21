@@ -1,0 +1,79 @@
+.card-game{
+    display:flex;
+    flex-direction: column;
+    width:25%;
+    height:25%;
+    margin:10px;
+    background-color: #141620 !important;
+    box-shadow: #2f7e32 0px 5px 15px;
+    border: 0 !important;
+    border-radius: 0.40rem 0.40rem 0.25rem 0.25rem !important ;
+    min-height: 250px;
+}
+.card-img-top-wrapper{
+    position: relative;
+    width: 100%;
+    height: 75%;
+    border-radius: 0.25rem 0.25rem 0 0 ;
+    background-color:#1A1D29 ;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position:center;
+  }
+.card-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: .5s ease;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0.25rem 0.25rem 0 0 ;
+}
+.play-button {
+    opacity: 0;
+    align-items: center;
+    transition: opacity .35s ease;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    width: 90px;
+    height: 45px;
+    background-color:#14DB1A ;
+    text-decoration: none;
+    border-radius: .5rem;
+    box-shadow: 0 2px 1px rgba(0,0,0,0.09),
+     0 4px 2px rgba(0,0,0,0.09),
+     0 8px 4px rgba(0,0,0,0.09),
+     0 16px 8px rgba(0,0,0,0.09),
+     0 32px 16px rgba(0,0,0,0.09);
+  }
+
+
+
+
+
+.card-game:hover .card-overlay {
+    opacity: 1;
+}
+.card-game:hover .play-button {
+    opacity: 1;
+    transition: 0.5s;
+}
+.game-text{
+    color: rgb(255, 255, 255);
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    font-weight: bold;
+}
+@media screen and (max-width: 991px) {
+    .card-game{
+
+        width:100%;
+        height:25%;
+
+    }
+    .card-img-top-wrapper{
+        height: 80%;
+      }
+}

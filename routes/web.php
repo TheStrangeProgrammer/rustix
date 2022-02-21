@@ -21,9 +21,7 @@ use Laravel\Socialite\Facades\Socialite;
 
 Route::get('/', function () {
     return view('layouts.home');
-
-
-});
+})->name('home');
 
 Route::get('/contact', function () {
     return view('layouts.contact');
@@ -49,14 +47,25 @@ Route::get('/auth/redirect', function () {
 
 Route::get('/auth/callback', [AuthController::class, 'callback']);
 Route::get('/inventory', [UserController::class, 'getUserInventory'])->middleware('auth')->name("getUserInventory");
-Route::get('/profile', [UserController::class, 'getProfile'])->middleware('auth')->name("getProfile");
+
 Route::post('/setReferral', [UserController::class, 'setReferral'])->middleware('auth')->name("setReferral");
 Route::post('/setTradeToken', [UserController::class, 'setTradeToken'])->middleware('auth')->name("setTradeToken");
 Route::post('/depositItems', [BotController::class, 'depositItems'])->middleware('auth')->name("depositItems");
 Route::post('/depositContinue', [BotController::class, 'depositContinue'])->middleware('auth')->name("depositContinue");
 Route::post('/withdrawItems', [BotController::class, 'withdrawItems'])->middleware('auth')->name("withdrawItems");
-Route::get('/withdraw', [BotController::class, 'getDeposit'])->middleware('auth')->name("getDeposit");
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth')->name("logOut");
+
+Route::prefix('deposit')->group(function () {
+    Route::get('/getItems', [UserController::class, 'getItems'])->middleware('auth')->name("getItems");
+});
+
+Route::prefix('withdraw')->group(function () {
+    Route::get('/getItems', [BotController::class, 'getItems'])->middleware('auth')->name("getItems");
+});
+
+Route::prefix('profile')->group(function () {
+    Route::get('/getProfile', [UserController::class, 'getProfile'])->middleware('auth')->name("getProfile");
+});
 
 Route::prefix('roulette')->group(function () {
     Route::get('/', [RouletteController::class, 'roulette'])->name('roulette');

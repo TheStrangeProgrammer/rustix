@@ -3,10 +3,14 @@
         <div class="message is-info is-pulled-left">
             <div class="flex-fill flex-wrap">
                 <span class="message-user">
-                    <div class="message-photo"></div>
-                    <div class="message-level">43</div>
+                    <div class="message-photo">
+                    </div>
+                    <div class="message-avatar"></div>
+                     <div class="message-level">43</div>
+
                     <p class="message-username">{{ user }}:</p>
                 </span>
+
                 <p class="message-text">{{ message }}</p>
             </div>
         </div>

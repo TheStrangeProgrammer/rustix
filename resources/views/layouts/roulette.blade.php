@@ -5,15 +5,15 @@
         <div class="last-percent style-top-circles">
             <div>Last 100</div>
             <div class="style-top-circles">
-                <div class=" circle-score" style="background-color: #F95146" ></div>
+                <img class=" last-circle roulette-red" src="../assets/roulette/red.svg">
                 <span class="score-bet last-100-red">45</span>
             </div>
             <div class="style-top-circles">
-                <span class=" circle-score"  style="background-color: #00C74D"></span>
+                <img class=" last-circle roulette-house" src="../assets/roulette/house.svg">
                 <span class="score-bet last-100-green">5</span>
             </div>
             <div class="style-top-circles">
-                <span class=" circle-score " style="background-color: #2D3035"></span>
+                <img class=" last-circle roulette-black" src="../assets/roulette/black.svg">
                 <span class="score-bet last-100-black">47</span>
             </div>
             <div class="style-top-circles">
@@ -170,9 +170,9 @@
 @endsection
 @section('title', 'Roulette')
 
-@section('css')
+@push('css')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/layouts/roulette.css') }}">
-@endsection
-@section('js')
+@endpush
+@push('js')
     <script src="{{ asset('js/layouts/roulette.js') }}"></script>
-@endsection
+@endpush
