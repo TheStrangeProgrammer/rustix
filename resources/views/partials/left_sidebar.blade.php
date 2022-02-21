@@ -13,11 +13,10 @@
     @else
         <guestchat class="flex-fill"></guestchat>
     @endif
-    <div class="d-flex sidebar display-media">
-        <button class="p-1 mt-3" data-bs-toggle="modal" data-bs-target="#TOS">TOS</button>
-        <button class="p-1 mt-3" data-bs-toggle="modal" data-bs-target="#FAQ">FAQ</button>
-        <button class="p-1 mt-3" data-bs-toggle="modal" data-bs-target="#ALT">ALT</button>
-        <button class="mt-auto p-1"><i class="fas fa-arrow-left mb15"></i></button>
+    <div class="d-flex w-100 justify-content-evenly sidebar display-media">
+        <button class="button-sidebar p-1" data-bs-toggle="modal" data-bs-target="#TOS">TOS</button>
+        <button class="button-sidebar p-1" data-bs-toggle="modal" data-bs-target="#FAQ">FAQ</button>
+        <button class="button-sidebar p-1" data-bs-toggle="modal" data-bs-target="#ALT">ALT</button>
     </div>
 </section>
 

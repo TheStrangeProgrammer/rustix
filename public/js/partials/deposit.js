@@ -64,7 +64,8 @@ $("body").on('click', 'div .deposit .item',function (e) {
         itemsToSell.push(item)
 
     }
-    $("#total").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price,0));
+    $("#total").html( "$"+Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price,0));
+    $("#count").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount,0));
 
 });
 $("body").on('click',".deposit .item .item-quantity-input",function (e) {

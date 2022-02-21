@@ -24,19 +24,22 @@
                         </span>
                     </div>
                     <span class="first-span-edit" style="padding: 2.625rem 0">Setting</span>
-                    <div class="total-deposited text-edit" style="background-color: rgba(53,59,84,1)">
+                    <div class="d-flex justify-content-stretch align-items-center total-deposited text-edit" style="background-color: rgba(53,59,84,1)">
                         <span class="p-2">Trade URL:</span>
-                        <input id="trade-url">
+                        <input id="trade-token" class="form-control flex-fill me-1">
+                        <button class="profile-button ms-auto text-edit">Update</button>
                     </div>
-                    <div class="total-deposited">
-                        <a class="p-2 text-edit" style="opacity: 0.24"
-                            href="https://steamcommunity.com/profiles/76561198141872103/tradeoffers">https://steamcommunity.com/profiles/76561198141872103/tradeoffers</a>
-                    </div>
-                    <div class="total-deposited text-edit" style="background-color: rgba(53,59,84,1)">
+                    <div class="total-deposited text-edit" >
                         <span class="p-2">Help me find my steam trade link</span>
-                        <a class="btn-bet ms-auto text-edit"
-                            href="https://steamcommunity.com/profiles/76561198141872103/tradeoffers">Update</a>
+                        <a class="profile-button ms-auto text-edit" target="_blank"
+                            href="http://steamcommunity.com/id/me/tradeoffers/privacy#trade_offer_access_url">Click Here</a>
                     </div>
+                    <div class="total-deposited" style="background-color: rgba(53,59,84,1)">
+                        <span class="p-2">My steam trade offers</span>
+                        <a class="profile-button ms-auto text-edit" target="_blank"
+                            href="https://steamcommunity.com/id/me/tradeoffers">Trade Offers</a>
+                    </div>
+
                     <div class="flex-fill py-3 avatar-edit">
                         <img src="{{ Auth::user()->avatar }}">
                         <span class="text-edit">MOD</span>

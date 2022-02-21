@@ -16,6 +16,7 @@ $("#profile-button").click(function (e) {
         if(profit<0) $("#profit").css("color","red");
         else $("#profit").css("color","green");
         $("#profit").html(profit);
-        $("#trade-url").html(data.tradeToken);
+        $("#trade-token").val(data.tradeToken);
+
     });
 });

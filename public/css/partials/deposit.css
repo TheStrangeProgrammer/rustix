@@ -91,11 +91,12 @@
     font-size: 12px;
 
 }
-#total, .span-13{
+
+#total, #count{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: .75rem 0;
+    padding: 0 .5rem;
     color: #00C74D;
     font-weight: bold;
 }

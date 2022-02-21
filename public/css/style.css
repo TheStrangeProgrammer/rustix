@@ -9,14 +9,21 @@
     border-right: none !important;
 }
 
+.button-sidebar{
+    border-radius: 10px;
 
-.green{
-	color:#14DB1A;
+}
+a.log-in{
+    color: white;
+}
+.site-title{
+	color:white;
     font-weight: 600;
+    font-size: 42px;
 }
 .body{
     color: #F9F9F9;
-    font-family: Neometric;
+    font-family: 'Neometric', sans-serif;
     background:#191B28;
     line-height: 16px;
     font-size: 16px;
@@ -42,7 +49,6 @@
     width: 25%;
 }
 .sidebar{
-    width: 50px;
     border-right: 1px solid black;
 }
 
@@ -81,7 +87,7 @@
 
 .container-fluid .green{
     font-size: 50px;
-    font-family: Neometric;
+    font-family: 'Neometric', sans-serif;;
     font-weight: bold;
     color: rgba(242,242,242,1);
 }
@@ -121,7 +127,7 @@ img.overflow-visible{
 ul.dropdown-menu {
     margin-top:33px !important;
     min-width: 13.7rem !important;
-    margin-right: -3.70rem !important;
+    margin-right: -0.70rem !important;
     font-size: 18px;
     color: #10121A;
 }
@@ -137,19 +143,21 @@ ul.second-one{
 .navbar-text{
     align-items: center;
 }
-
+#navbarSupportedContent{
+    flex-grow: 0.5;
+}
 
 @media screen and (max-width: 991px) {
     .navbar-nav {
       background-color: #ffffff;
       width: 100% !important;
-      margin-top: 50px !important;
+      margin-top: 15px;
 
     }
 
     ul.dropdown-menu{
         border: none !important;
-        margin: 0px !important;
+
         width: 100% !important;
     }
 
@@ -157,8 +165,9 @@ ul.second-one{
         font-size: 18px !important;
         margin-left: 0px !important;
         margin-right: 0px !important;
-
+        background-color:#1A1D29;
     }
+
     #sidebar-and-content {
         flex-direction: column-reverse;
     }
@@ -174,7 +183,15 @@ ul.second-one{
     .left-sidebar{
         flex-direction: column;
     }
-
+    .site-title{
+        font-size: 32px;
+    }
+    #deposit-button{
+        margin-top:15px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 #overlay {
     display: none;
@@ -182,4 +199,5 @@ ul.second-one{
     border-top: 1px solid black;
     width: 75%;
     height: 100%;
+
   }
