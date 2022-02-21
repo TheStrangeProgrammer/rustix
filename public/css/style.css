@@ -1,5 +1,32 @@
-.header{
+.theme-fw-normal{
+
+}
+.theme-fw-bold{
+
+}
+.theme-fw-bolder{
+
+}
+
+.theme-bc-1{
     background-color: rgba(16,18,26,1);
+}
+.theme-bc-2{
+    background-color: #1A1D29;
+}
+.theme-bc-3{
+    background-color:#00C74D;
+}
+
+.theme-tc-1{
+    background-color: white;
+}
+.theme-tc-2{
+    background-color:#00C74D;
+}
+
+.header{
+
     padding: .75rem 0;
 }
 .container-fluid a:first-child{
@@ -45,6 +72,8 @@ a.log-in{
 
 }
 .left-sidebar{
+    display: flex;
+    flex-direction: column;
     background-color: rgba(35,38,51,1);
     width: 25%;
 }
@@ -173,16 +202,16 @@ ul.second-one{
     }
     .main{
         width: 100%;
+
     }
     .left-sidebar{
         width: 100%;
+        display: none;
     }
     #overlay {
         width: 100%;
     }
-    .left-sidebar{
-        flex-direction: column;
-    }
+
     .site-title{
         font-size: 32px;
     }
