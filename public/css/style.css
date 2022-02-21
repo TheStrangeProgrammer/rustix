@@ -9,7 +9,7 @@
 }
 
 .theme-bc-1{
-    background-color: rgba(16,18,26,1);
+    background-color: #141620;
 }
 .theme-bc-2{
     background-color: #1A1D29;
@@ -26,7 +26,6 @@
 }
 
 .header{
-
     padding: .75rem 0;
 }
 .container-fluid a:first-child{
