@@ -9,10 +9,10 @@
 }
 
 .theme-bc-1{
-    background-color: #141620;
+    background-color: #1A1D29;
 }
 .theme-bc-2{
-    background-color: #1A1D29;
+    background-color: #141620;
 }
 .theme-bc-3{
     background-color:#00C74D;
@@ -26,7 +26,6 @@
 }
 
 .body{
-    color: white;
     font-family: 'Neometric', sans-serif;
     line-height: 16px;
     font-size: 16px;
@@ -53,8 +52,6 @@ a.log-in{
     color: white;
 }
 .site-title{
-	color:white;
-    font-weight: 600;
     font-size: 42px;
 }
 
