@@ -1,7 +1,11 @@
-
+var itemsToSell=[];
 $("#deposit-button").click(function (e) {
     $(".deposit").html("");
+    $("#total").html( "$"+Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price,0));
+    $("#count").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount,0));
+    itemsToSell=[];
     $.getJSON("deposit/getItems").done(function( data ) {
+
         if(data.success==false) $(".deposit").html("<p>You do not have any items or your deposit is private</p>");
         Object.values(data.inventory).forEach(item => {
             let itemToDisplay=`
@@ -29,8 +33,9 @@ $("#deposit-button").click(function (e) {
 
 
     });
+
 });
-var itemsToSell=[];
+
 $("body").on('click', 'div .deposit .item',function (e) {
     e.preventDefault();
 
