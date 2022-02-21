@@ -10,7 +10,7 @@
             </div>
         </div>
 
-        <form @submit.prevent="submit" class="chat-form">
+        <form @submit.prevent="submit" class="chat-form theme-bc-2">
             <div class="field has-addons has-addons-fullwidth d-flex p-2">
                 <div class="d-flex flex-fill control is-expanded p-2">
                     <input class="input chat-input flex-fill" type="text" placeholder="Type a message" v-model="newMessage">

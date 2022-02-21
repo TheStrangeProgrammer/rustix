@@ -3,7 +3,7 @@
     @include('partials.header.withdraw')
     @include('partials.header.profile')
 @endif
-<header class="d-flex header">
+<header class="d-flex header theme-bc-2">
     <nav class="navbar navbar-expand-lg navbar-dark bg-black w-100">
         <div class="container-fluid justify-content-evenly">
             <a class="h2 mb-0 ms-2 me-auto" href="{{ URL::route('home') }}"><span class="site-title">RUSTIX</span>
