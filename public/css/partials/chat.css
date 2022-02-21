@@ -20,6 +20,7 @@
     background-color:#141620;
     color: #999999;
     padding: .25rem 0;
+    width: 77.5%;
 }
 
 .chat-input:focus, input:focus{
@@ -28,10 +29,10 @@
 
 .control{
     justify-content: center;
-    margin: 0 4.813rem;
     border-radius: 10px;
     background-color: #141620;
 }
+
 .message{
     display: flex;
     align-items: center;
@@ -113,7 +114,6 @@ p.message-text::first-line {
 .chat-top a{
     text-decoration: none;
     color: rgba(242,242,242,1);
-    font-family: Neometric;
     font-size: 14px;
 }
 .chat-top a:hover{
@@ -125,4 +125,8 @@ p.message-text::first-line {
     flex-direction: column !important;
     width: auto;
     max-height: 100%;
+}
+.chat-form{
+    display: flex;
+    justify-content: center;
 }
