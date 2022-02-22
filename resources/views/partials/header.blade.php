@@ -5,7 +5,7 @@
 @endif
 <header class="d-flex header theme-bc-2">
     <nav class="navbar navbar-expand-lg navbar-dark w-100">
-        <div class="container-fluid justify-content-evenly">
+        <div class="container-fluid justify-content-evenly h-100">
 
             <a class="theme-tc-1 mb-0 ms-2 me-auto" href="{{ URL::route('home') }}"><span class="site-title">RUSTIX</span>
             </a>

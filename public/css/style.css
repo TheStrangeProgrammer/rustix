@@ -38,7 +38,8 @@ body{
 
 
 .header{
-    padding: .75rem 0;
+    min-height: 90px;
+    height: 9.26%;
 }
 
 .container-fluid a:first-child{
@@ -117,13 +118,8 @@ a.log-in{
 }
 
 
-.color:hover{
-}
 
-.hov-green:hover{
-}
 .balance, #deposit-button{
-    padding: .9rem 1.2rem;
     align-items: center;
     stroke: rgba(26,29,41,0.271);
     stroke-width: 3px;
@@ -133,9 +129,14 @@ a.log-in{
     shape-rendering: auto;
     border-radius: 10px;
     margin-left: 1rem;
+    font-size: 14px;
+    height: 57%;
+    width: calc(6.5625vw);
 }
-
-#deposit-button{
+span .balance{
+    display: flex;
+    margin: auto 0;
+    align-items: center;
 }
 
 img.overflow-visible{
@@ -157,6 +158,7 @@ ul.second-one{
 }
 .navbar-collapse{
     align-items: center;
+    height: 100%;
 }
 .navbar-text{
     align-items: center;
