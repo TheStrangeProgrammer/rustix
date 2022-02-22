@@ -6,7 +6,7 @@
 
 <section class="left-sidebar">
     <div class="d-flex chat-top">
-        <span class="free-coins">claim your free coins</span>
+        <span class="free-coins">Claim your free coins</span>
     </div>
     @if (Auth::check())
         <chat class="flex-fill {{ Auth::user()->name }}"></chat>

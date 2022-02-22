@@ -31,9 +31,9 @@
 
 .control{
     justify-content: center;
-    border-radius: 10px;
     background-color: #141620;
 }
+
 .sidebar{
     margin: 0 auto;
     width: 64.75%;
@@ -45,8 +45,10 @@
     border-radius: 10px;
     background-color: #141620;
     padding: 10px 0;
-    margin: 5px 10px;
+    margin: 5px 0;
     font-size: 14px;
+    width: 94.5%;
+
 }
 .message-user{
     display: flex;
@@ -82,25 +84,34 @@
     font-size: 14px;
     line-height: 1.2rem;
     margin-bottom: 0;
+    color: #F2F2F2;
 
 }
 .message-text{
     display: block;
     word-break: break-word;
     overflow-wrap: break-word;
-    line-height: 1.1rem;
     margin-right: 10px;
     margin-left: 10px;
     font-size: 14px;
     margin-bottom: 0;
     border-radius: 10px 10px 10px 0;
+    color: #999999;
 }
 
 p.message-text::first-line {
     line-height: 1.44rem;
 }
+.chat-form div:first-child field{
+    border-radius: 10px;
+}
 
-
+.is-clearfix{
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: center;
+}
 
 .chat-wrapper{
     overflow-y: auto;
@@ -113,11 +124,9 @@ p.message-text::first-line {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-top: 1px solid black;
     padding: 1.031rem 0;
     background-color: #00C74D;
     font-size: 14px;
-    font-weight: bold;
 }
 .chat-top a{
     text-decoration: none;
