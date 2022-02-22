@@ -52,6 +52,7 @@ body{
     border: 3px solid #F2F2F2;
     font-size: 11px;
     padding: 1% 8%;
+    margin: 0 5px;
 
 
 }
@@ -183,6 +184,7 @@ ul.second-one{
       margin-top: 15px;
 
     }
+    
     .balance-div{
         height: 53.35% !important;
     }

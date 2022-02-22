@@ -30,8 +30,18 @@
 }
 
 .control{
+    display: flex;
     justify-content: center;
     background-color: #141620;
+}
+.chat-send-button{
+    background-color: #00C74D;
+    margin: auto 0;
+    width: 60px;
+    height: 26.67px;
+    border-radius: 10px;
+    font-size: 14px;
+
 }
 
 .sidebar{
