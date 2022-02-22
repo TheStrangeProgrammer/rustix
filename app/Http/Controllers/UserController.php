@@ -19,11 +19,17 @@ class UserController extends Controller
     public static function resetFaucet(){
         User::query()->update(['faucet' => false]);
     }
-    public static function getFaucet(){
-        User::query()->update(['faucet' => false]);
+    public function getFaucet(){
+        return response()->json(['claimed'=>Auth::user()->faucet,'serverTime'=>Carbon::parse("24:0:0")->diffInSeconds(Carbon::parse(Carbon::now()->toTimeString()))]);
     }
-    public static function postFaucet(){
-        User::query()->update(['faucet' => false]);
+    public function postFaucet(){
+        if(Auth::user()->faucet==false){
+            $user = User::where('id', Auth::user()->id)->first();
+            $user->faucet=true;
+            $user->balance+=100;
+            $user->save();
+        }
+
     }
     public function getItems(){
         $lastInventroyAccess=session('lastInventroyAccess');
