@@ -6,7 +6,7 @@
 
 <section class="left-sidebar">
     <div class="d-flex chat-top">
-        <span class="free-coins">claim your free coins</span>
+        <button id="free-coins" class="free-coins">claim your free coins</button>
     </div>
     @if (Auth::check())
         <chat class="flex-fill {{ Auth::user()->name }}"></chat>
@@ -21,3 +21,6 @@
 </section>
 
 
+@push('js')
+    <script src="{{ asset('js/partials/left_sidebar.js') }}"></script>
+@endpush

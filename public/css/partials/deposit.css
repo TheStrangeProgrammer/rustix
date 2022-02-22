@@ -93,7 +93,7 @@
 
 }
 
-#total, #count{
+#deposit-total, #deposit-count{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,7 +101,7 @@
     color: #00C74D;
     font-weight: bold;
 }
-#coins{
+#deposit-coins{
     padding: 0 .5rem;
 }
 .first-text{

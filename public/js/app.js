@@ -45441,11 +45441,11 @@ var render = function () {
               ]
             ),
             _vm._v(" "),
-            _c("div", { staticClass: "control p-2" }, [
+            _c("div", { staticClass: "chat-send-div control p-2" }, [
               _c(
                 "button",
                 {
-                  staticClass: "button is-danger",
+                  staticClass: "chat-send-button button is-danger",
                   attrs: { type: "submit", disabled: !_vm.newMessage },
                 },
                 [_vm._v("\n                    Send\n                ")]

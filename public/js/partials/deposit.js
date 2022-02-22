@@ -1,9 +1,9 @@
 var itemsToSell=[];
 $("#deposit-button").click(function (e) {
     $(".deposit").html("");
-    $("#total").html( "$"+Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price/100,0));
-    $("#count").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount,0));
-    $("#coins").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price,0));
+    $("#deposit-total").html( "$"+Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price/100,0));
+    $("#deposit-count").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount,0));
+    $("#deposit-coins").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price,0));
     itemsToSell=[];
     $.getJSON("deposit/getItems").done(function( data ) {
 
@@ -71,9 +71,9 @@ $("body").on('click', 'div .deposit .item',function (e) {
         itemsToSell.push(item)
 
     }
-    $("#total").html( "$"+Math.round(Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price/100,0)*100)/100);
-    $("#coins").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price,0));
-    $("#count").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount,0));
+    $("#deposit-total").html( "$"+Math.round(Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price/100,0)*100)/100);
+    $("#deposit-coins").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price,0));
+    $("#deposit-count").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount,0));
 
 });
 $("body").on('click',".deposit .item .item-quantity-input",function (e) {
@@ -87,10 +87,23 @@ $("body").on('change',".deposit .item-quantity-input .form-control",function (e)
     var itemIndex = itemsToSell.findIndex(element => element.id == id);
 
     itemsToSell[itemIndex].amount=parseInt(itemDiv.find(".form-control").val());
-    $("#total").html( "$"+Math.round(Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price/100,0)*100)/100);
-    $("#coins").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price,0));
-    $("#count").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount,0));
+    $("#deposit-total").html( "$"+Math.round(Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price/100,0)*100)/100);
+    $("#deposit-coins").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price,0));
+    $("#deposit-count").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount,0));
 });
-$("#submit-item-list").on('click',"#submit-item-list",function (e) {
-    $("#item-list").val(JSON.stringify(itemsToSell));
+$("body").on('click',"#submit-deposit-item-list",function (e) {
+    $.ajax({
+        type:'POST',
+        url:'deposit/depositItems',
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+        data: JSON.stringify(itemsToSell)
+     }).done(function(data){
+         if(data.success==1){
+
+         }else{
+
+         }
+     });
 });

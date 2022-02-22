@@ -27,7 +27,9 @@ class User extends Authenticatable
         'totalDeposit',
         'totalWithdraw',
         'totalSpent',
-        'tradeToken'
+        'tradeToken',
+        'faucet'
+
     ];
 
     /**

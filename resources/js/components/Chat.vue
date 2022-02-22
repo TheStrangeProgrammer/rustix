@@ -15,8 +15,8 @@
                 <div class="d-flex flex-fill control is-expanded p-2">
                     <input class="input chat-input flex-fill" type="text" placeholder="Type a message" v-model="newMessage">
                 </div>
-                <div class="control p-2">
-                    <button type="submit" class="button is-danger" :disabled="!newMessage">
+                <div class="chat-send-div control p-2">
+                    <button type="submit" class="chat-send-button button is-danger" :disabled="!newMessage">
                         Send
                     </button>
                 </div>

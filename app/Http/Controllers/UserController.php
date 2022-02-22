@@ -16,6 +16,15 @@ class UserController extends Controller
     {
         return view("layouts/inventory");
     }
+    public static function resetFaucet(){
+        User::query()->update(['faucet' => false]);
+    }
+    public static function getFaucet(){
+        User::query()->update(['faucet' => false]);
+    }
+    public static function postFaucet(){
+        User::query()->update(['faucet' => false]);
+    }
     public function getItems(){
         $lastInventroyAccess=session('lastInventroyAccess');
 
@@ -44,12 +53,8 @@ class UserController extends Controller
     public function addbalance() {
 
     }
-    public function getProfile(){
+    public function getReferrals(){
         $user = User::where('id', Auth::user()->id)->first();
-
-        $data['totalDeposited'] = $user->totalDeposit;
-        $data['totalGambled'] = $user->totalWithdraw;
-        $data['tradeToken'] = $user->tradeToken;
 
         $data['referralCode'] = $user->referralCode;
         $referrer = User::where('id', Auth::user()->referredBy)->first();
@@ -64,6 +69,15 @@ class UserController extends Controller
 
             $data['referrals'][$userReferred->id]['name'] = $userReferred->name;
         }
+
+        return $data;
+    }
+    public function getProfile(){
+        $user = User::where('id', Auth::user()->id)->first();
+
+        $data['totalDeposited'] = $user->totalDeposit;
+        $data['totalGambled'] = $user->totalWithdraw;
+        $data['tradeToken'] = $user->tradeToken;
 
         return $data;
     }
