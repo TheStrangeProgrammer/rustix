@@ -118,12 +118,16 @@ a.log-in{
 }
 
 
-.cola{
-    display: inline;
-    vertical-align: middle;
+
+ #deposit-button{
+    border-radius: 10px;
+    height: 57%;
+    width: calc(6.5625vw);
 }
-.balance, #deposit-button{
+.balance-div{
+    display: flex;
     align-items: center;
+    justify-content: center;
     stroke: rgba(26,29,41,0.271);
     stroke-width: 3px;
     stroke-linejoin: miter;
@@ -135,12 +139,9 @@ a.log-in{
     font-size: 14px;
     height: 57%;
     width: calc(6.5625vw);
+    vertical-align: middle;
 }
-span .balance{
-    display: flex;
-    margin: auto 0;
-    align-items: center;
-}
+
 
 img.overflow-visible{
     width: 32px;
