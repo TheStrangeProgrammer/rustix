@@ -11,7 +11,7 @@
             </a>
 
             @if (Auth::check())
-                <balance class="theme-bc-1 text-center ms-auto me-3" style="align-items: center" user="{{ Auth::user()->id }}">
+                <balance class="theme-bc-1 text-center ms-auto me-3 cola" style="align-items: center" user="{{ Auth::user()->id }}">
                 </balance>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

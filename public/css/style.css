@@ -118,7 +118,10 @@ a.log-in{
 }
 
 
-
+.cola{
+    display: inline;
+    vertical-align: middle;
+}
 .balance, #deposit-button{
     align-items: center;
     stroke: rgba(26,29,41,0.271);
