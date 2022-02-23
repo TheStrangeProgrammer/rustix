@@ -2,8 +2,8 @@
 <div id="WITHDRAW" class="modal fade" tabindex="-1" aria-labelledby="WITHDRAW-title" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
-            <div class="modal-header withdraw-h-edit">
-                <h5 id="ALT-title" class="modal-title mx-auto">Your withdraw.</h5>
+            <div class="modal-header">
+                <h5 id="ALT-title" class="modal-title">Your withdraw.</h5>
                 <button type="button" class="btn-close color-btn" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="h-100">
