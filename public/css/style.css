@@ -23,7 +23,7 @@
 .theme-bc-5{
     background-color: #353B54;
 }
-    
+
 
 .theme-tc-1{
     color: #F2F2F2;
@@ -42,22 +42,26 @@ div .modal-dialog{
 }
 
 div .modal-content{
-    
+
     background-color: rgba(0, 0, 0, 0);
     border: 0;
     height: 100%;
 }
 div .modal-header{
+    background-color: #141620;
     border: 0;
     height: 80px;
+}
+div .modal-body{
+    background-color: #1A1D29;
 }
 div .modal-header .modal-title{
     margin:0 auto;
     font-size: 40px;
 }
 div .fade{
-    
-} 
+
+}
 body{
     font-family: 'Neometric', sans-serif;
     line-height: 16px;
@@ -212,7 +216,7 @@ ul.second-one{
       margin-top: 15px;
 
     }
-    
+
     .balance-div{
         height: 53.35% !important;
     }
@@ -236,7 +240,7 @@ ul.second-one{
         width: 100%;
 
     }
-    
+
     #overlay {
         width: 100%;
     }

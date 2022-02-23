@@ -6,7 +6,7 @@
                 <h5 id="ALT-title" class="modal-title">Your profile.</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="box-columns theme-bc-2">
+            <div class="modal-body box-columns theme-bc-2">
                 <div class="text-edit flex-fill col-div">
                     <div class="first-span-edit mx-auto">
                         <span class="my-auto">Stats</span>
@@ -28,7 +28,7 @@
                     </div>
                     <div class="total-deposited-settings text-edit">
                         <span class="edit-setting my-auto">Setting</span>
-                    </div>         
+                    </div>
                     <div class="d-flex justify-content-stretch align-items-center total-deposited text-edit" style="background-color: rgba(53,59,84,1)">
                         <span class="py-2 my-auto">Trade URL:</span>
                     </div>
@@ -49,7 +49,7 @@
                 </div>
                 </div>
                 <div class="text-edit flex-fill col-div" style="background-color: #0d0e14">
-                    
+
                     <div class="first-span-edit mx-auto">
                         <span class="my-auto">Betting History</span>
                     </div>
@@ -59,7 +59,7 @@
                             <span class="ms-auto ">x-roulette</span>
                             <span class="ms-auto ">02:44am</span>
                         </div>
-                        
+
 
                             <div class="total-deposited2  text-edit" style="background-color: #00C74D">
                                 <span >Won 1337 coins:</span>

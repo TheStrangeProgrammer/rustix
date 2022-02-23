@@ -6,7 +6,7 @@
                 <h5 id="ALT-title" class="modal-title">Your withdraw.</h5>
                 <button type="button" class="btn-close color-btn" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="h-100">
+            <div class="modal-body">
                 <div class="flex-fill withdraw-wrapper">
                     <div class="d-flex flex-wrap withdraw">
 
