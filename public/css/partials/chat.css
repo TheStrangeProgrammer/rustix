@@ -46,7 +46,7 @@
 
 .sidebar{
     margin: 0 auto;
-    width: 64.75%;
+    width: 74.75%;
 }
 .message{
     display: flex;
@@ -156,5 +156,6 @@ p.message-text::first-line {
 .chat-form{
     display: flex;
     justify-content: center;
-    width: 77.5%;
+    width: 87.5%;
+    min-width: 195.3px;
 }
