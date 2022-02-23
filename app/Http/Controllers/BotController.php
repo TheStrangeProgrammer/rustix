@@ -68,7 +68,7 @@ class BotController extends Controller
         return null;*/
     }
     public static function splitTradeToken($token){
-       // return
+        return explode("token=",$token)[1];
     }
     public static function sendTakeTradeOffer($toSteamId,$token,$tradeOffers,$selectedItems){
         $trade = $tradeOffers->createTrade($toSteamId);
@@ -97,7 +97,8 @@ class BotController extends Controller
     }
     public static function depositItems(Request $request)
     {
-        if(Auth::user()->tradeToken=="") return response()->json(['success' => 0,'error' => "Please set trade token in profile"]);
+        $token = BotController::splitTradeToken(Auth::user()->tradeToken);
+        if($token=="") return response()->json(['success' => 0,'error' => "Please set trade token in profile"]);
 
 
 
@@ -120,7 +121,7 @@ class BotController extends Controller
         $botToUserId=0;
 
 
-        $botToUserId=BotController::sendTakeTradeOffer(Auth::user()->steamid,Auth::user()->tradeToken,$tradeOffers,$selectedItems);
+        $botToUserId=BotController::sendTakeTradeOffer(Auth::user()->steamid,$token,$tradeOffers,$selectedItems);
         if($botToUserId==0) response()->json(['success' => 0,'error' => "Unexpected Error please try again"]);
         session(['selectedItems' => json_encode($selectedItems)]);
         session(['tradeId' => $botToUserId]);
@@ -168,7 +169,8 @@ class BotController extends Controller
 
     public static function withdrawItems(Request $request)
     {
-        if(Auth::user()->tradeToken=="") return response()->json(['success' => 0,'error' => "Please set trade token in profile"]);
+        $token = BotController::splitTradeToken(Auth::user()->tradeToken);
+        if($token=="") return response()->json(['success' => 0,'error' => "Please set trade token in profile"]);
 
         $selectedItems = json_decode(json_encode($request->json()->all()));
 
@@ -178,7 +180,7 @@ class BotController extends Controller
 
         if(count($selectedItems)<1) return response()->json(['success' => 0,'error' => "At least 1 selected Item"]);
 
-        ProcessWithdraw::dispatch(Auth::user()->steamid,Auth::user()->tradeToken,$selectedItems,$price)->onQueue('withdraw');
+        ProcessWithdraw::dispatch(Auth::user()->steamid,$token,$selectedItems,$price)->onQueue('withdraw');
         return response()->json(['success' => 1]);
 
     }

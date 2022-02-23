@@ -13,7 +13,7 @@
     @else
         <guestchat class="flex-fill"></guestchat>
     @endif
-    <div class="d-flex justify-content-between sidebar display-media">
+    <div class="d-flex justify-content-evenly sidebar display-media">
         <button class="button-sidebar" data-bs-toggle="modal" data-bs-target="#TOS">TOS</button>
         <button class="button-sidebar" data-bs-toggle="modal" data-bs-target="#FAQ">FAQ</button>
         <button class="button-sidebar" data-bs-toggle="modal" data-bs-target="#ALT">ALT</button>
