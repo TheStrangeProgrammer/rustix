@@ -11,7 +11,7 @@
                     <div class="first-span-edit mx-auto">
                         <span class="my-auto">Stats</span>
                     </div>
-                    <div class="h-100">
+
                     <div class="total-deposited text-edit" style="background-color: #353B54">
                         <span class="py-2 my-auto">Total Deposited:</span>
                         <span class="ms-auto p-2 my-auto">$<span id="total-deposited">653.44</span></span>
@@ -46,7 +46,7 @@
                         <span class="text-edit">MOD</span>
                         <span>{{ Auth::user()->name }}</span>
                     </div>
-                </div>
+
                 </div>
                 <div class="text-edit flex-fill col-div" style="background-color: #0d0e14">
 

@@ -45,7 +45,6 @@ div .modal-content{
 
     background-color: rgba(0, 0, 0, 0);
     border: 0;
-    height: 100%;
 }
 div .modal-header{
     background-color: #141620;
@@ -54,6 +53,7 @@ div .modal-header{
 }
 div .modal-body{
     background-color: #1A1D29;
+    padding: 0;
 }
 div .modal-header .modal-title{
     margin:0 auto;

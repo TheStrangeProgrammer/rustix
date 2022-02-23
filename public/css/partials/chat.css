@@ -150,7 +150,7 @@ p.message-text::first-line {
 
 .chat-wrapper{
     flex-direction: column !important;
-    width: auto;
+    width: 100%;
     max-height: 100%;
 }
 .chat-form{

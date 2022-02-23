@@ -20,7 +20,6 @@
 .box-columns{
     display: flex;
     flex-direction: row;
-    height: 100%;
 
 }
 .col-div{
@@ -33,21 +32,22 @@
 .first-span-edit{
     display: flex;
     font-size: 25px;
-    height: 13.15789474%;
+    height: 9vh;
 }
 .edit-setting{
     display: flex;
     font-size: 25px;
     height: 86px;
     margin: 0 auto;
-    
-    
+
+
 
 }
 .total-deposited-settings{
     display: flex;
     padding:0 1%;
     font-size: 18px;
+    height: 9.8vh;
 }
 
 .total-deposited{
@@ -55,7 +55,7 @@
     padding: 0 1%;
     font-size: 18px;
     min-height: 40px;
-    height: 12.25490196%;
+    height: 4.9vh;
 
 }
 .total-deposited-update{
@@ -65,7 +65,7 @@
 .form-inp{
     border: none;
     text-decoration: none;
-    
+
 }
 .form-control{
     border: none;
@@ -74,7 +74,7 @@
     font-size: 18px;
     padding: 0;
     height: 43px;
-    
+
 
 }
 
@@ -85,7 +85,7 @@ outline: none;
   background-color:transparent;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
-  box-shadow: none; 
+  box-shadow: none;
   color: rgba(242,242,242,1);
 }
 
@@ -94,6 +94,7 @@ outline: none;
     padding: 0 1%;
     font-size: 18px;
     border-bottom: 1px solid #707070;
+
 }
 .total-deposited a:hover{
     color: inherit;
@@ -120,7 +121,7 @@ outline: none;
 }
 .avatar-edit img{
     border-radius: 50%;
-    
+
 
 
 }
@@ -141,8 +142,8 @@ outline: none;
     font-size: 25px;
 }
 div.scroll
-{   
-    height: 86.84210526%;
+{
+    height: 50vh;
     overflow-y:scroll;
 }
 .total-deposited2{
@@ -150,8 +151,8 @@ div.scroll
     align-items: center;
     padding: 0 1%;
     font-size: 18px;
-    border-bottom: 1px solid #707070;
-    height: calc(12.25490196% - 1px);
+    border-top: 1px solid #707070;
+    height: 4.9vh;
 
 }
 @media screen and (max-width: 991px) {
