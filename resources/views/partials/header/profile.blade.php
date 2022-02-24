@@ -14,15 +14,15 @@
 
                     <div class="total-deposited text-edit" style="background-color: #353B54">
                         <span class="py-2 my-auto">Total Deposited:</span>
-                        <span class="ms-auto p-2 my-auto">$<span id="total-deposited">653.44</span></span>
+                        <span class="ms-auto py-2 my-auto">$<span id="total-deposited">653.44</span></span>
                     </div>
                     <div class="total-deposited text-edit">
                         <span class="py-2 my-auto">Total Gambled:</span>
-                        <span id="total-gambled" class="ms-auto p-2 my-auto">$<span id="total-gambled">953.66</span></span>
+                        <span id="total-gambled" class="ms-auto py-2 my-auto">$<span id="total-gambled">953.66</span></span>
                     </div>
                     <div class="total-deposited text-edit p0" style="background-color: rgba(53,59,84,1)">
                         <span class="py-2 my-auto">Profit:</span>
-                        <span id="profit" class="ms-auto p-2 my-auto">
+                        <span id="profit" class="ms-auto py-2 my-auto">
                             -321,88
                         </span>
                     </div>
@@ -33,18 +33,22 @@
                         <span class="py-2 my-auto">Trade URL:</span>
                     </div>
                     <div class="total-deposited text-edit form-inp">
-                        <input id="trade-token" class="form-control flex-fill px-2 my-auto" placeholder="https://steamcommunity.com/tradeoffer/new/?a">
+                        <input id="trade-token" class="form-control flex-fill my-auto" placeholder="https://steamcommunity.com/tradeoffer/new/?a">
                     </div>
                     <div class="total-deposited text-edit " style="background-color: rgba(53,59,84,1)" >
-                        <span class="p-2 span-help my-auto">Help me find my steam trade link</span>
+                        <span class="py-2 span-help my-auto">Help me find my steam trade link</span>
                         <a class="profile-button ms-auto text-edit my-auto" style="margin: 6px 0" target="_blank"
                             href="http://steamcommunity.com/id/me/tradeoffers/privacy#trade_offer_access_url">Update</a>
                     </div>
 
-                    <div class="flex-fill avatar-edit">
+                    <div class="d-flex flex-fill avatar-edit">
                         <img src="{{ Auth::user()->avatar }}">
-                        <span class="text-edit">MOD</span>
-                        <span>{{ Auth::user()->name }}</span>
+                        <div class="d-flex text-edit justify-content-center align-items-center">
+                            <span>MOD</span>
+                        </div>
+                        <div class="d-flex justify-content-center">  
+                            <span class="my-auto align-self-center" style="font-size: 25px">{{ Auth::user()->name }}</span>
+                        </div>  
                     </div>
 
                 </div>
@@ -81,6 +85,55 @@
                                 <span class="ms-auto">x-roulette</span>
                                 <span class="ms-auto">02:44am</span>
                             </div>
+                            <div class="total-deposited2 text-edit" style="background-color: #AF2929">
+                                <span >Lost 1337 coins:</span>
+                                <span class="ms-auto">x-roulette</span>
+                                <span class="ms-auto">02:44am</span>
+                            </div>
+                            <div class="total-deposited2 text-edit" style="background-color: #AF2929">
+                                <span >Lost 1337 coins:</span>
+                                <span class="ms-auto">x-roulette</span>
+                                <span class="ms-auto">02:44am</span>
+                            </div>
+                            <div class="total-deposited2 text-edit" style="background-color: #AF2929">
+                                <span >Lost 1337 coins:</span>
+                                <span class="ms-auto">x-roulette</span>
+                                <span class="ms-auto">02:44am</span>
+                            </div>
+                            <div class="total-deposited2 text-edit" style="background-color: #AF2929">
+                                <span >Lost 1337 coins:</span>
+                                <span class="ms-auto">x-roulette</span>
+                                <span class="ms-auto">02:44am</span>
+                            </div>
+                            <div class="total-deposited2 text-edit" style="background-color: #AF2929">
+                                <span >Lost 1337 coins:</span>
+                                <span class="ms-auto">x-roulette</span>
+                                <span class="ms-auto">02:44am</span>
+                            </div>
+                            
+                            <div class="total-deposited2 text-edit" style="background-color: #AF2929">
+                                <span >Lost 1337 coins:</span>
+                                <span class="ms-auto">x-roulette</span>
+                                <span class="ms-auto">02:44am</span>
+                            </div>
+                            <div class="total-deposited2 text-edit" style="background-color: #AF2929">
+                                <span >Lost 1337 coins:</span>
+                                <span class="ms-auto">x-roulette</span>
+                                <span class="ms-auto">02:44am</span>
+                            </div>
+                            
+                            <div class="total-deposited2 text-edit" style="background-color: #AF2929">
+                                <span >Lost 1337 coins:</span>
+                                <span class="ms-auto">x-roulette</span>
+                                <span class="ms-auto">02:44am</span>
+                            </div>
+                            <div class="total-deposited2 text-edit" style="background-color: #AF2929">
+                                <span >Lost 1337 coins:</span>
+                                <span class="ms-auto">x-roulette</span>
+                                <span class="ms-auto">02:44am</span>
+                            </div>
+                            
+                            
                     </div>
 
 

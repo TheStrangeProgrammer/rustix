@@ -13,6 +13,16 @@
     text-align: center;
     background-color: #0d0e14;
 }
+.modal-header .btn-close{
+    color: #fff; 
+    opacity: 1;
+    width: .5em;
+    height: .5em;
+    border: none;
+    filter: brightness(0) invert(1);
+}
+
+
 .text-edit{
     color: rgba(242,242,242,1);
     text-decoration: none;
@@ -32,30 +42,30 @@
 .first-span-edit{
     display: flex;
     font-size: 25px;
-    height: 9vh;
+    height: 8.334vh;
+    min-height: 70px;
 }
 .edit-setting{
     display: flex;
     font-size: 25px;
     margin: 0 auto;
-
-
+    
 
 }
 .total-deposited-settings{
     display: flex;
-    padding:0 1%;
     font-size: 18px;
-    height: 9.8vh;
+    height: 9.26vh;
     align-items: center;
+    min-height: 80px;
 }
 
 .total-deposited{
     display: flex;
-    padding: 0 1%;
+    padding: 0 5%;
     font-size: 18px;
     min-height: 40px;
-    height: 4.9vh;
+    height: 4.63vh;
 
 }
 .total-deposited-update{
@@ -73,7 +83,6 @@
     box-sizing:unset;
     font-size: 18px;
     padding: 0;
-    height: 43px;
 
 
 }
@@ -101,15 +110,12 @@ outline: none;
     text-decoration: none;
 }
 .total-deposited input{
-    background-color: #161820;
+    background-color: transparent;
     color: white;
-    line-height: 10;
-    height:43px;
     width:auto;
 }
 .span-help{
     font-size: 14px;
-    height: 43px;
 }
 .profile-button {
     background-color:#00C74D;
@@ -117,7 +123,7 @@ outline: none;
     border-radius: .8rem;
     margin-right: 5px ;
     text-decoration: none;
-    width:88px;
+    padding: .5% 3%;
 }
 .avatar-edit img{
     border-radius: 50%;
@@ -130,29 +136,50 @@ outline: none;
     align-items: center;
     justify-content: center;
     width: 100%;
+    min-height: 160px;
+    max-height: calc(4.63vh * 4);
 }
 .avatar-edit .text-edit{
-    font-size: 19px;
-    font-weight: bold;
+    font-size: 1.188rem ;
     background-color: #7F00C7;
     border-radius: 8px;
-    margin: 0 10px;
+    margin: 0 13px;
+    padding: 3px 7px;
 }
-.avatar-edit span:last-child{
-    font-size: 25px;
-}
+
 div.scroll
 {
-    height: 50vh;
+    max-height: 55.55555556vh;
+    min-height: 480px;
     overflow-y:scroll;
 }
+.scroll::-webkit-scrollbar {
+    width: .5em;
+}
+
+.scroll::-webkit-scrollbar-track {
+    scrollbar-color: rgb(45, 48, 53) #141620;
+    scrollbar-width: thin;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    scrollbar-color: rgb(45, 48, 53) #141620;
+    scrollbar-width: thin;
+}
+
+.scroll {
+  scrollbar-color: rgb(45, 48, 53) #141620;
+  scrollbar-width: thin;
+}
+
 .total-deposited2{
     display: flex;
     align-items: center;
-    padding: 0 1%;
+    padding: 0 5% 0 2.5%;
     font-size: 18px;
     border-top: 1px solid #707070;
-    height: 4.9vh;
+    min-height: 40px;
+    height: 4.63vh
 
 }
 @media screen and (max-width: 991px) {
