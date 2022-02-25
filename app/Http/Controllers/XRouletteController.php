@@ -8,6 +8,7 @@ use Illuminate\Http\Client\Response;
 use App\Events\NewBalance;
 use App\Models\User;
 use App\Http\Requests\InventoryRequest;
+use App\Models\BettingHistory;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
@@ -123,14 +124,24 @@ class XRouletteController extends Controller
 
     public static function processWins($outcome,$bets){
         foreach($bets as $key=>$value){
+
+            $history=new BettingHistory;
+            $history->amount=round($value->amount);
+            $history->user_id=$value->id;
+            $history->game="x-roulette";
+            $history->won=false;
+
+
             if($outcome>$value->bet){
                 $value->amount*=$value->bet;
                 $user = User::where('id',$value->id)->first();
+                $history->amount=round($value->amount);
+                $history->won=true;
                 $user->balance+=round($value->amount);
                 $user->save();
                 event(new NewBalance($value->id,$user->balance));
             }
-
+            $history->save();
         }
     }
 

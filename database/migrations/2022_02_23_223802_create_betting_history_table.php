@@ -17,6 +17,7 @@ class CreateBettingHistoryTable extends Migration
             $table->id();
             $table->bigInteger("amount");
             $table->string("game");
+            $table->boolean("won");
             $table->foreignIdFor(User::class);
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
