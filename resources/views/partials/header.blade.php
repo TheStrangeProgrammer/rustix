@@ -2,6 +2,7 @@
     @include('partials.header.deposit')
     @include('partials.header.withdraw')
     @include('partials.header.profile')
+    @include('partials.header.referrals')
 @endif
 <header class="d-flex header theme-bc-2">
     <nav class="navbar navbar-expand-lg navbar-dark w-100">
@@ -41,7 +42,8 @@
 
                                 <li><button id="withdraw-button" class="dropdown-item text-center py-3"
                                         data-bs-toggle="modal" data-bs-target="#WITHDRAW">Withdraw</button></li>
-                                <li><a class="dropdown-item text-center py-3" href="#">Referral</a></li>
+                                <li><button id="referrals-button" class="dropdown-item text-center py-3"
+                                    data-bs-toggle="modal" data-bs-target="#REFERRALS">Referrals</button></li>
                                 <li><a class="dropdown-item text-center py-3" href="{{ URL::route('logOut') }}">Log
                                         Out</a></li>
                                 <li><a class="dropdown-item text-center py-3" href="http://localhost/admin">Admin

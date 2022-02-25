@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 id="ALT-title" class="modal-title">Your deposit.</h5>
+                <h5 id="DEPOSIT-title" class="modal-title">Your deposit.</h5>
                 <button type="button" class="btn-close color-btn" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">

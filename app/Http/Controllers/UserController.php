@@ -29,6 +29,7 @@ class UserController extends Controller
             $user->faucet=true;
             $user->balance+=100;
             $user->save();
+            event(new NewBalance($user->id,$user->balance));
         }
 
     }
