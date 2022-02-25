@@ -6,7 +6,7 @@
                 <h5 id="REFERRALS-title" class="modal-title">Your referrals.</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body box-columns theme-bc-2">
+            <div class="modal-body theme-bc-2">
             </div>
         </div>
     </div>
