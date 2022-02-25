@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Client\Response;
 use App\Events\NewBalance;
 use App\Models\User;
+use App\Models\BettingHistory;
 use App\Http\Requests\InventoryRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -141,28 +142,61 @@ class RouletteController extends Controller
 
         Storage::disk('local')->put('rouletteData.json', json_encode($roulette));
     }
-
+    public static function createNotWonHistory($bets){
+        foreach($bets as $key=>$value){
+            $history=new BettingHistory;
+            $history->amount=round($value->amount);
+            $history->user_id=$key;
+            $history->game="roulette";
+            $history->won=false;
+            $history->save();
+        }
+    }
     public static function processWins($outcome,$bets){
+
+
         if($outcome<=6){
             if($outcome%2==0) {
                 RouletteController::updateBalance($bets->black,2);
+                RouletteController::createNotWonHistory($bets->red);
+                RouletteController::createNotWonHistory($bets->bait);
+                RouletteController::createNotWonHistory($bets->green);
             } else {
                 RouletteController::updateBalance($bets->red,2);
+                RouletteController::createNotWonHistory($bets->black);
+                RouletteController::createNotWonHistory($bets->bait);
+                RouletteController::createNotWonHistory($bets->green);
             }
             if($outcome==6){
                 RouletteController::updateBalance($bets->bait,7);
+                RouletteController::createNotWonHistory($bets->red);
+                RouletteController::createNotWonHistory($bets->black);
+                RouletteController::createNotWonHistory($bets->green);
+
             }
         } else if($outcome==7){
             RouletteController::updateBalance($bets->green,14);
+            RouletteController::createNotWonHistory($bets->red);
+            RouletteController::createNotWonHistory($bets->black);
+                RouletteController::createNotWonHistory($bets->bait);
         } else if($outcome>=8){
             if($outcome%2==1){
                 RouletteController::updateBalance($bets->black,2);
+                RouletteController::createNotWonHistory($bets->red);
+                RouletteController::createNotWonHistory($bets->bait);
+                RouletteController::createNotWonHistory($bets->green);
             }
             else{
                 RouletteController::updateBalance($bets->red,2);
+                RouletteController::createNotWonHistory($bets->black);
+                RouletteController::createNotWonHistory($bets->bait);
+                RouletteController::createNotWonHistory($bets->green);
             }
             if($outcome==8){
                 RouletteController::updateBalance($bets->bait,7);
+                RouletteController::createNotWonHistory($bets->red);
+                RouletteController::createNotWonHistory($bets->black);
+                RouletteController::createNotWonHistory($bets->green);
             }
         }
     }
@@ -173,6 +207,12 @@ class RouletteController extends Controller
             $value->amount*=$multiplier;
             $user = User::where('id',$key)->first();
             $user->balance+=$value->amount;
+            $history=new BettingHistory;
+            $history->amount=round($value->amount);
+            $history->user_id=$key;
+            $history->game="roulette";
+            $history->won=true;
+            $history->save();
             $user->save();
             event(new NewBalance($key,$user->balance));
         }

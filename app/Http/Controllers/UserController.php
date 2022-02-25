@@ -92,6 +92,7 @@ class UserController extends Controller
             $data['betHistory'][$history->id]["amount"] = $history->amount;
             $data['betHistory'][$history->id]["game"] = $history->game;
             $data['betHistory'][$history->id]["time"] = $history->created_at;
+            $data['betHistory'][$history->id]["won"] = $history->won;
         }
         return $data;
     }

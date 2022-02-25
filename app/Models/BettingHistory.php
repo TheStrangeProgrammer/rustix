@@ -21,7 +21,7 @@ class BettingHistory extends Model
         'amount',
         'game',
         'user_id',
-        'won',
+        'won'
     ];
 
 
