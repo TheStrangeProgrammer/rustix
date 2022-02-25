@@ -146,8 +146,7 @@ class RouletteController extends Controller
         if($outcome<=6){
             if($outcome%2==0) {
                 RouletteController::updateBalance($bets->black,2);
-            }
-            else {
+            } else {
                 RouletteController::updateBalance($bets->red,2);
             }
             if($outcome==6){

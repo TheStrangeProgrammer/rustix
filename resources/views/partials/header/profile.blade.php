@@ -53,7 +53,7 @@
                     <div class="first-span-edit mx-auto">
                         <span class="my-auto">Betting History</span>
                     </div>
-                    <div class="scroll">
+                    <div id="bet-history" class="scroll">
                         <div class="total-deposited2 text-edit" style="background-color: #00C74D">
                             <span >Won 1337 coins:</span>
                             <span class="ms-auto ">x-roulette</span>

@@ -9,6 +9,7 @@ $(document).ready(function() {
     }
 });
 $("#profile-button").click(function (e) {
+    $("#bet-history").html("");
     $.getJSON("profile/getProfile").done(function( data ) {
         $("#total-deposited").html(data.totalDeposited);
         $("#total-gambled").html(data.totalGambled);
@@ -17,6 +18,15 @@ $("#profile-button").click(function (e) {
         else $("#profit").css("color","green");
         $("#profit").html(profit);
         $("#trade-token").val(data.tradeToken);
+        data.betHistory.forEach(element => {
+            $("#bet-history").append(`
+                        <div class="total-deposited2 text-edit" style="background-color: #00C74D">
+                            <span >Won `+element.amount+` coins:</span>
+                            <span class="ms-auto ">`+element.game+`</span>
+                            <span class="ms-auto ">`+element.time+`</span>
+                        </div>
+            `);
+        });
 
     });
 });
