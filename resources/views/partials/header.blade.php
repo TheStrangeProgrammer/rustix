@@ -35,18 +35,18 @@
                                 <img class="overflow-visible mx-2" src="{{ Auth::user()->avatar }}">
                                 <span class="theme-tc-1" id="user-name">{{ Auth::user()->name }}</span>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-white dropdown-menu-end py-0 rounded-0"
+                            <ul class="dropdown-menu dropdown-menu-end py-0 rounded-0"
                                 aria-labelledby="navbarDropdown">
-                                <li><button id="profile-button" class="dropdown-item text-center py-3"
+                                <li><button id="profile-button" class="dropdown-item text-center "
                                         data-bs-toggle="modal" data-bs-target="#PROFILE">Profile</button></li>
 
-                                <li><button id="withdraw-button" class="dropdown-item text-center py-3"
+                                <li><button id="withdraw-button" class="dropdown-item text-center "
                                         data-bs-toggle="modal" data-bs-target="#WITHDRAW">Withdraw</button></li>
-                                <li><button id="referrals-button" class="dropdown-item text-center py-3"
+                                <li><button id="referrals-button" class="dropdown-item text-center "
                                     data-bs-toggle="modal" data-bs-target="#REFERRALS">Referrals</button></li>
-                                <li><a class="dropdown-item text-center py-3" href="{{ URL::route('logOut') }}">Log
+                                <li><a class="dropdown-item text-center " href="{{ URL::route('logOut') }}">Log
                                         Out</a></li>
-                                <li><a class="dropdown-item text-center py-3" href="http://localhost/admin">Admin
+                                <li><a class="dropdown-item text-center " href="http://localhost/admin">Admin
                                         Panel</a></li>
                             </ul>
                         </li>

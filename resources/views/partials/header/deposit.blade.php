@@ -12,7 +12,7 @@
 
                     </div>
                 </div>
-                <div class="deposit-sell justify-content-between flex-wrap align-items-center px-5" style="background-color: #141620">
+                <div class="deposit-sell justify-content-between flex-wrap align-items-center" style="background-color: #141620">
                     <div class="d-flex ">
                         <span class="first-text">You have selected<span id="deposit-count">13</span></span>
                         <span class="first-text">items worth<span id="deposit-total"> $143.66</span></span>

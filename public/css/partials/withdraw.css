@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    padding: .75rem 0;
+    padding: .75rem 3rem;
     background-color: #141620;
     justify-content: center;
 }
@@ -97,13 +97,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 .5rem;
+    padding: 0 .25rem;
     color: #00C74D;
     font-weight: bold;
 }
-#withdraw-coins{
-    padding: 0 .5rem;
-}
+
 .first-text{
     display: flex;
     align-items: center;
@@ -147,3 +145,19 @@
 .item-quantity-overlay{
     border-radius: 17px;
 }
+.submit-btn{
+    display: flex;
+    align-items: center;
+    padding: .3rem .8rem;
+    border-radius: 10px;
+    background-color: #00C74D;
+}
+@media screen and (max-width: 510px) {
+    .withdraw-sell{
+        padding: .75rem 0;
+        justify-content: center !important;
+    }
+    .submit-btn{
+        margin-top: 5px;
+    }
+    }
