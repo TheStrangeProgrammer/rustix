@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-xl theme-bc-2">
         <div class="modal-content theme-bc-2">
             <div class="modal-header theme-bc-4">
-                <h5 id="ALT-title" class="modal-title">Your profile.</h5>
+                <h5 id="PROFILE-title" class="modal-title">Your profile.</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body box-columns theme-bc-2">
@@ -46,9 +46,9 @@
                         <div class="d-flex text-edit justify-content-center align-items-center">
                             <span>MOD</span>
                         </div>
-                        <div class="d-flex justify-content-center">  
+                        <div class="d-flex justify-content-center">
                             <span class="my-auto align-self-center" style="font-size: 25px">{{ Auth::user()->name }}</span>
-                        </div>  
+                        </div>
                     </div>
 
                 </div>
@@ -57,7 +57,7 @@
                     <div class="first-span-edit mx-auto">
                         <span class="my-auto">Betting History</span>
                     </div>
-                    <div class="scroll">
+                    <div id="bet-history" class="scroll">
                         <div class="total-deposited2 text-edit" style="background-color: #00C74D">
                             <span >Won 1337 coins:</span>
                             <span class="ms-auto ">x-roulette</span>
@@ -110,7 +110,7 @@
                                 <span class="ms-auto">x-roulette</span>
                                 <span class="ms-auto">02:44am</span>
                             </div>
-                            
+
                             <div class="total-deposited2 text-edit" style="background-color: #AF2929">
                                 <span >Lost 1337 coins:</span>
                                 <span class="ms-auto">x-roulette</span>
@@ -121,7 +121,7 @@
                                 <span class="ms-auto">x-roulette</span>
                                 <span class="ms-auto">02:44am</span>
                             </div>
-                            
+
                             <div class="total-deposited2 text-edit" style="background-color: #AF2929">
                                 <span >Lost 1337 coins:</span>
                                 <span class="ms-auto">x-roulette</span>
@@ -132,8 +132,8 @@
                                 <span class="ms-auto">x-roulette</span>
                                 <span class="ms-auto">02:44am</span>
                             </div>
-                            
-                            
+
+
                     </div>
 
 

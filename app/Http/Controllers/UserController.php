@@ -8,6 +8,7 @@ use Illuminate\Http\Client\Response;
 use App\Events\NewBalance;
 use App\Models\User;
 use App\Http\Requests\InventoryRequest;
+use App\Models\BettingHistory;
 use Illuminate\Support\Facades\Storage;
 class UserController extends Controller
 {
@@ -28,6 +29,7 @@ class UserController extends Controller
             $user->faucet=true;
             $user->balance+=100;
             $user->save();
+            event(new NewBalance($user->id,$user->balance));
         }
 
     }
@@ -84,7 +86,16 @@ class UserController extends Controller
         $data['totalDeposited'] = $user->totalDeposit;
         $data['totalGambled'] = $user->totalWithdraw;
         $data['tradeToken'] = $user->tradeToken;
+        $histories = BettingHistory::where('user_id', Auth::user()->id)->latest()->take(100)->get();
+        $betHistory=[];
+        foreach($histories as $history){
 
+            $betHistory[$history->id]["amount"] = $history->amount;
+            $betHistory[$history->id]["game"] = $history->game;
+            $betHistory[$history->id]["time"] = $history->created_at;
+            $betHistory[$history->id]["won"] = $history->won;
+        }
+        $data['betHistory']=$betHistory;
         return $data;
     }
     public function setReferral(Request $request){
