@@ -17,6 +17,8 @@ $("#profile-button").click(function (e) {
         else $("#profit").css("color","green");
         $("#profit").html(profit);
         $("#trade-token").val(data.tradeToken);
+        $('#myModal').modal({backdrop: 'static', keyboard: false})  
+        modal.className = "Modal is-visuallyHidden";
 
     });
 });

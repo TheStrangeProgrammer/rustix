@@ -6,7 +6,7 @@
     @include('head')
 </head>
 
-<body class="h-100 body theme-tc-1 theme-bc-1 theme-fw-1">
+<body class="h-100 body is-blurred theme-tc-1 theme-bc-1 theme-fw-1">
     <div id="app" class="d-flex flex-column h-100">
         @include('partials.header')
 
