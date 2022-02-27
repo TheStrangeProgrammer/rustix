@@ -58,8 +58,6 @@
     0 8px 4px rgba(0,0,0,0.09),
     0 16px 8px rgba(0,0,0,0.09),
     0 32px 16px rgba(0,0,0,0.09);
-
-
 }
 .bet-amount{
     display: flex;
@@ -261,8 +259,8 @@
     -ms-animation:rainbow 8s linear infinite;
     animation:rainbow 8s linear infinite;
     background-size: 2500% 2500%;
-    
-    
+
+
 }
 @-webkit-keyframes rainbow {
     0%{background-position:0% 0}
@@ -370,11 +368,17 @@
 
 @media screen and (max-width: 991px) {
 
-    .bet-roulette{
+    .bet-section{
         flex-direction: column;
     }
     .roulette{
         flex-direction: column;
+    }
+    main.main{
+        flex-direction: column;
+    }
+    .bet-list{
+        width: auto;
     }
     .bet-amount{
         flex-direction: column;
@@ -391,7 +395,7 @@
     display: flex;
     flex-direction: column;
 }
-#overlay {
+#overlay-loading {
     display: flex;
 
   }

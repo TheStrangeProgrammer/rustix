@@ -106,14 +106,13 @@ class UserController extends Controller
         $user->referredBy=$referringUser->id;
         $user->save();
         return redirect("profile");
-
     }
-    public function setTradeToken(Request $request){
-        $user = User::where('id', Auth::user()->id)->first();
-        $user->tradeToken=$request->tradeToken;
-        $user->save();
-        return redirect("profile");
 
+    public function setTradeToken(Request $request){
+        $tradeToken=$request->json()->all()["tradeUrl"];
+        $user = User::where('id', Auth::user()->id)->first();
+        $user->tradeToken=$tradeToken;
+        $user->save();
     }
     public function roulette(){
         return view("layouts/roulette");

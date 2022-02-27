@@ -49,7 +49,7 @@ Route::get('/auth/callback', [AuthController::class, 'callback']);
 Route::get('/inventory', [UserController::class, 'getUserInventory'])->middleware('auth')->name("getUserInventory");
 
 Route::post('/setReferral', [UserController::class, 'setReferral'])->middleware('auth')->name("setReferral");
-Route::post('/setTradeToken', [UserController::class, 'setTradeToken'])->middleware('auth')->name("setTradeToken");
+
 Route::post('/depositContinue', [BotController::class, 'depositContinue'])->middleware('auth')->name("depositContinue");
 
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth')->name("logOut");
@@ -67,6 +67,7 @@ Route::prefix('withdraw')->group(function () {
 
 Route::prefix('profile')->group(function () {
     Route::get('/getProfile', [UserController::class, 'getProfile'])->middleware('auth')->name("getProfile");
+    Route::post('/setTradeToken', [UserController::class, 'setTradeToken'])->middleware('auth')->name("setTradeToken");
 });
 
 Route::prefix('roulette')->group(function () {

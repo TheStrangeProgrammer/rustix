@@ -1,5 +1,6 @@
 var itemsToSell=[];
 $("#withdraw-button").click(function (e) {
+    e.stopImmediatePropagation();
     $(".withdraw").html("");
     $("#withdraw-total").html( "$"+Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price/100,0));
     $("#withdraw-count").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount,0));
@@ -40,7 +41,7 @@ $("#withdraw-button").click(function (e) {
 });
 
 $("body").on('click', 'div .withdraw .item',function (e) {
-    e.preventDefault();
+    e.stopImmediatePropagation();
 
     var itemDiv =  $(this);
 
@@ -83,7 +84,7 @@ $("body").on('click', 'div .withdraw .item',function (e) {
 });
 
 $("body").on('change',".withdraw .item-quantity-input .form-control",function (e) {
-    e.preventDefault();
+    e.stopImmediatePropagation();
 
     var itemDiv = $(this).parent().parent().parent();
     var id = itemDiv.find("#item-id").text();
@@ -95,6 +96,7 @@ $("body").on('change',".withdraw .item-quantity-input .form-control",function (e
     $("#withdraw-count").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount,0));
 });
 $("body").on('click',"#submit-withdraw-item-list",function (e) {
+    e.stopImmediatePropagation();
     $.ajax({
         type:'POST',
         url:'withdraw/withdrawItems',
