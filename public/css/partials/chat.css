@@ -45,6 +45,9 @@
     font-size: 14px;
 
 }
+.chat-send-div{
+    border-radius: 0 10px 10px 0;
+}
 
 .sidebar{
     margin: 0 auto;
@@ -114,10 +117,9 @@
 p.message-text::first-line {
     line-height: 1.44rem;
 }
-.chat-form div:first-child field{
-    border-radius: 10px;
+.field div:first-child{
+    border-radius:10px 0 0 10px;
 }
-
 .is-clearfix{
     display: flex;
     align-items: center;
