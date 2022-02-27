@@ -80,6 +80,17 @@
     margin: .5rem;
     width: 25%;
 }
+.group-bet-list{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    margin-top: .5rem;
+    margin-left: .5rem;
+}
+.dif{
+    display: flex;
+    flex-direction: column;
+}
 
 .roulette-black{
     background-color:#2D3035;
@@ -186,6 +197,7 @@
  .bet-list-bet{
     display: flex;
     flex:1 1;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
  }
@@ -321,8 +333,9 @@
     }
     .bet-roulette{
         flex-direction: column;
+
     }
-    .bet-list{
+    .group-bet-list{
         width: 100%;
     }
     .bet-list-bets{

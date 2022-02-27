@@ -312,6 +312,8 @@
     border-radius: .3rem;
     padding: 1rem 0;
     box-shadow: 0 !important;
+    overflow: auto hidden;
+    scrollbar-width: none;
 
 }
 

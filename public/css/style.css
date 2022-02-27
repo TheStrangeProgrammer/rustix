@@ -86,8 +86,16 @@ body{
 
 
 }
-a.log-in{
-    color: white;
+a.core{
+    color: #F2F2F2;
+    padding: .5rem 1.8rem;
+    background-color: #00C74D;
+    text-decoration: none;
+    border-radius: 10px;
+    border: 3px solid #261d1d36;
+}
+a.core:hover{
+    color: #F2F2F2;
 }
 .site-title{
    font-size: 2.1875rem;
@@ -265,7 +273,9 @@ ul.second-one{
         margin-left: 0px !important;
         margin-right: 0px !important;
     }
-  
+    a.nav-link{
+        padding: .35rem .6rem;
+    }
     #sidebar-and-content {
         flex-direction: column-reverse;
     }

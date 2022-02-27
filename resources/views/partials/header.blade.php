@@ -53,7 +53,7 @@
                     </ul>
                 </div>
             @else
-            <a class="theme-tc-1 nav-link me-2" href="{{ URL::route('login') }}">Log In</a>
+            <a class="theme-tc-1 nav-link core" href="{{ URL::route('login') }}">Log In</a>
             @endif
         </div>
     </nav>

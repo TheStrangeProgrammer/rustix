@@ -65,7 +65,8 @@
 
     <div class="p-3 mt-4">
         <div class="bet-roulette">
-            <div id="bet-list-red" class="bet-list">
+            <div class="group-bet-list" >
+            <div id="bet-list-red" class="dif w-100">
                 <div class="bet">
                     <div class="text-bet">
                         <img class=" image-circle" src='../assets/roulette/red.svg'>
@@ -89,7 +90,7 @@
                 </div>
             </div>
 
-            <div id="bet-list-green" class="bet-list" >
+            <div id="bet-list-green" class="dif w-100" style="margin-left: .5rem">
                 <div class="bet">
                     <div class="text-bet">
                         <img class=" image-circle" src='../assets/roulette/house.svg'>
@@ -111,9 +112,12 @@
 
                 </div>
             </div>
+        </div>
 
+            <div class="group-bet-list">
 
-            <div id="bet-list-black" class="bet-list">
+            
+            <div id="bet-list-black" class="dif w-100">
                 <div class="bet">
                     <div class="text-bet">
                         <img class=" image-circle " src='../assets/roulette/black.svg'>
@@ -137,7 +141,7 @@
                 </div>
             </div>
 
-            <div id="bet-list-bait" class="bet-list">
+            <div id="bet-list-bait" class="dif w-100" style="margin-left: .5rem">
                 <div class="bet">
                     <div class="text-bet">
                         <img class=" image-circle " style="background-color:#F95146" src='../assets/roulette/hook.svg'>
@@ -161,6 +165,7 @@
 
                 </div>
             </div>
+        </div>
 
         </div>
 
