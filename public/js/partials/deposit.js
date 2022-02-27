@@ -1,5 +1,6 @@
 var itemsToSell=[];
 $("#deposit-button").click(function (e) {
+    e.stopImmediatePropagation();
     $(".deposit").html("");
     $("#deposit-total").html( "$"+Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price/100,0));
     $("#deposit-count").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount,0));
@@ -40,7 +41,7 @@ $("#deposit-button").click(function (e) {
 });
 
 $("body").on('click', 'div .deposit .item',function (e) {
-    e.preventDefault();
+    e.stopImmediatePropagation();
 
     var itemDiv =  $(this);
 
@@ -74,7 +75,6 @@ $("body").on('click', 'div .deposit .item',function (e) {
 
     }
 
-    console.log(itemsToSell);
 
     $("#deposit-total").html("$"+Math.round(Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price/100,0)*100)/100);
     $("#deposit-coins").html(Object.values(itemsToSell).reduce((p,c)=>p+c.amount*c.price,0));
@@ -83,7 +83,7 @@ $("body").on('click', 'div .deposit .item',function (e) {
 });
 
 $("body").on('change',".deposit .item-quantity-input .form-control",function (e) {
-    e.preventDefault();
+    e.stopImmediatePropagation();
 
     var itemDiv = $(this).parent().parent().parent();
     var id = itemDiv.find("#item-id").text();
@@ -95,6 +95,7 @@ $("body").on('change',".deposit .item-quantity-input .form-control",function (e)
     $("#deposit-count").html( Object.values(itemsToSell).reduce((p,c)=>p+c.amount,0));
 });
 $("body").on('click',"#submit-deposit-item-list",function (e) {
+    e.stopImmediatePropagation();
     $.ajax({
         type:'POST',
         url:'deposit/depositItems',

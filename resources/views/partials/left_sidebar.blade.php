@@ -1,6 +1,4 @@
-@include('partials.left_sidebar.alt')
-@include('partials.left_sidebar.faq')
-@include('partials.left_sidebar.tos')
+
 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/partials/chat.css') }}">
 

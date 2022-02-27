@@ -14,7 +14,7 @@ var card = cardWidth + cardMargin;
 
 $.getJSON("api/x-roulette/spin").done(function( data ) {
     let main = $('.main');
-    let overlay = $('#overlay');
+    let overlay = $('#overlay-loading');
 
     var timer=$(".roulette-timer");
     var progress=$(".round-time-bar div");
