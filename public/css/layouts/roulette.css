@@ -342,7 +342,23 @@
         display: none;
        }
 }
-
+@media screen and (max-width: 500px) {
+    .last-100{
+        padding: 0;
+    }
+    .group-bet-list{
+        margin-left: 0;
+    }
+    .bet-roulette{
+        margin-left: 0;
+    }
+    .main{
+        padding: 0 10px;
+    }
+    .last-100 div:last-child{
+        padding: 0 !important;
+    }
+}
   .main{
       display: none;
     flex-direction: column;

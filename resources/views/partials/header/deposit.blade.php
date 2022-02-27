@@ -6,13 +6,13 @@
                 <h5 id="DEPOSIT-title" class="modal-title">Your deposit.</h5>
                 <button type="button" class="btn-close color-btn" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <div class="flex-fill deposit-wrapper">
-                    <div class="d-flex flex-wrap deposit">
+            <div class="modal-body justify-content-center">
+                <div class="flex-fill deposit-wrapper ">
+                    <div class="d-flex flex-wrap deposit ">
 
                     </div>
                 </div>
-                <div class="deposit-sell justify-content-between flex-wrap align-items-center" style="background-color: #141620">
+                <div class="deposit-sell justify-content-between flex-wrap" style="background-color: #141620">
                     <div class="d-flex ">
                         <span class="first-text">You have selected<span id="deposit-count">13</span></span>
                         <span class="first-text">items worth<span id="deposit-total"> $143.66</span></span>
