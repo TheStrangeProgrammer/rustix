@@ -1,3 +1,7 @@
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 .theme-fw-1{
     font-weight: 400;
 }
@@ -270,12 +274,17 @@ nav.navbar{
 .modal-open #app{
     filter:blur(4px);
 }
+
+
 @media screen and (max-width: 991px) {
     .navbar-nav {
       background-color: #ffffff;
       width: 100% !important;
       margin-top: 15px;
 
+    }
+    .navbar-toggler{
+        border: none !important ;
     }
     .balance-div{
         height: 5.7vh;
@@ -343,5 +352,69 @@ nav.navbar{
         height: auto;
         padding-top:20px;
     }
+    
+
+#menu__toggle {
+  opacity: 0;
+}
+#menu__toggle:checked + .menu__btn> div {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked + .menu__btn > div::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+#menu__toggle:checked + .menu__btn > div::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  left: 0 !important;
+}
+.menu__btn {
+  position: fixed;
+  width: 26px !important;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px 0;
+  margin-left: -21px;
+  border: none !important;
+}
+.navbar-toggler:focus{
+    border: none !important;
+    box-shadow: none !important;
+}
+.menu__btn > div,
+.menu__btn > div::before,
+.menu__btn > div::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #616161;
+  transition-duration: .25s;
+}
+.menu__btn > div::before {
+  content: '';
+  top: -8px;
+}
+.menu__btn > div::after {
+  content: '';
+  top: 8px;
+}
+.navbar-dark .navbar-toggler-icon{
+    background-image: none !important;
+}
+.navbar-toggler{
+    padding: 0 !important;
+    width: 26px;
+    margin-right: 10px;
+}
+.navbar-toggler-icon{
+    padding-right: 26px !important;
+}
+
+
     
 }

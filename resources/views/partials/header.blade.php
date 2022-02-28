@@ -12,11 +12,20 @@
                 </balance>
             </div>
 
-                <button class="navbar-toggler btn1" type="button" data-bs-toggle="collapse"
+                <button class="navbar-toggler hamburger-menu " type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <input id="menu__toggle" type="checkbox" />
+                        <label class="menu__btn" for="menu__toggle">                   
+                    <div class="navbar-toggler-icon"></div>
+                    
                 </button>
+
+                
+
+
+
+
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <button id="deposit-button" class="theme-bc-3 me-auto" data-bs-toggle="modal"
