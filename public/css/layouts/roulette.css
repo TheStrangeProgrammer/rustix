@@ -68,7 +68,7 @@
     background-color: #de4c41 ;
     background-repeat: no-repeat;
     background-size: cover;
-    
+
 }
 .roulette-row .roulette-red{
     box-shadow: 0 10px 27px #fa010133,inset 0 2px #e5564b,inset 0 -2px #ad362d;
@@ -79,6 +79,17 @@
     flex-direction: column;
     margin: .5rem;
     width: 25%;
+}
+.group-bet-list{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    margin-top: .5rem;
+    margin-left: .5rem;
+}
+.dif{
+    display: flex;
+    flex-direction: column;
 }
 
 .roulette-black{
@@ -186,6 +197,7 @@
  .bet-list-bet{
     display: flex;
     flex:1 1;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
  }
@@ -321,21 +333,38 @@
     }
     .bet-roulette{
         flex-direction: column;
+
     }
-    .bet-list{
+    .group-bet-list{
         width: 100%;
     }
     .bet-list-bets{
         display: none;
        }
 }
-
+@media screen and (max-width: 500px) {
+    .last-100{
+        padding: 0;
+    }
+    .group-bet-list{
+        margin-left: 0;
+    }
+    .bet-roulette{
+        margin-left: 0;
+    }
+    .main{
+        padding: 0 10px;
+    }
+    .last-100 div:last-child{
+        padding: 0 !important;
+    }
+}
   .main{
       display: none;
     flex-direction: column;
     padding: 0 30px;
 }
-#overlay {
+#overlay-loading {
     display: flex;
 
   }

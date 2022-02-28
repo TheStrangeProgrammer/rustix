@@ -18,7 +18,8 @@
                     </div>
                     <div class="total-deposited text-edit">
                         <span class="py-2 my-auto">Total Gambled:</span>
-                        <span id="total-gambled" class="ms-auto py-2 my-auto">$<span id="total-gambled">953.66</span></span>
+                        <span id="total-gambled" class="ms-auto py-2 my-auto">$<span
+                                id="total-gambled">953.66</span></span>
                     </div>
                     <div class="total-deposited text-edit p0" style="background-color: rgba(53,59,84,1)">
                         <span class="py-2 my-auto">Profit:</span>
@@ -29,16 +30,22 @@
                     <div class="total-deposited-settings text-edit">
                         <span class="edit-setting my-auto">Setting</span>
                     </div>
-                    <div class="d-flex justify-content-stretch align-items-center total-deposited text-edit" style="background-color: rgba(53,59,84,1)">
+                    <div class="d-flex justify-content-stretch align-items-center total-deposited text-edit"
+                        style="background-color: rgba(53,59,84,1)">
                         <span class="py-2 my-auto">Trade URL:</span>
                     </div>
                     <div class="total-deposited text-edit form-inp">
-                        <input id="trade-token" class="form-control flex-fill my-auto" placeholder="https://steamcommunity.com/tradeoffer/new/?a">
+                        <input id="trade-token" class="form-control flex-fill my-auto"
+                            placeholder="https://steamcommunity.com/tradeoffer/new/?a">
                     </div>
-                    <div class="total-deposited text-edit " style="background-color: rgba(53,59,84,1)" >
-                        <span class="py-2 span-help my-auto">Help me find my steam trade link</span>
-                        <a class="profile-button ms-auto text-edit my-auto" style="margin: 6px 0" target="_blank"
-                            href="http://steamcommunity.com/id/me/tradeoffers/privacy#trade_offer_access_url">Update</a>
+                    <div class="total-deposited text-edit " style="background-color: rgba(53,59,84,1)">
+                        <span class="py-2 span-help my-auto">Help me find my steam <a class="text-edit"
+                                style="margin: 6px 0;font-weight:bolder" target="_blank"
+                                href="http://steamcommunity.com/id/me/tradeoffers/privacy#trade_offer_access_url">trade
+                                link</a></span>
+                        <button id="update-trade-url" class="profile-button ms-auto text-edit my-auto"
+                            style="margin: 6px 0">Update</button>
+
                     </div>
 
                     <div class="d-flex flex-fill avatar-edit">
@@ -47,7 +54,8 @@
                             <span>MOD</span>
                         </div>
                         <div class="d-flex justify-content-center">
-                            <span class="my-auto align-self-center" style="font-size: 25px">{{ Auth::user()->name }}</span>
+                            <span class="my-auto align-self-center"
+                                style="font-size: 25px">{{ Auth::user()->name }}</span>
                         </div>
                     </div>
 
@@ -59,79 +67,79 @@
                     </div>
                     <div id="bet-history" class="scroll">
                         <div class="total-deposited2 text-edit" style="background-color: #00C74D">
-                            <span >Won 1337 coins:</span>
+                            <span>Won 1337 coins:</span>
                             <span class="ms-auto ">x-roulette</span>
                             <span class="ms-auto ">02:44am</span>
                         </div>
 
 
-                            <div class="total-deposited2  text-edit" style="background-color: #00C74D">
-                                <span >Won 1337 coins:</span>
-                                <span class="ms-auto">roulette</span>
-                                <span class="ms-auto">03:14pm</span>
-                            </div>
-                            <div class="total-deposited2 text-edit" style="background-color: #AF2929">
-                                <span >Lost 1337 coins:</span>
-                                <span class="ms-auto">crazytime</span>
-                                <span class="ms-auto">10-03-22</span>
-                            </div>
-                            <div class="total-deposited2 text-edit" style="background-color: #00C74D">
-                                <span >Won 1337 coins:</span>
-                                <span class="ms-auto">x-roulette</span>
-                                <span class="ms-auto">02:44am</span>
-                            </div>
-                            <div class="total-deposited2 text-edit" style="background-color: #AF2929">
-                                <span >Lost 1337 coins:</span>
-                                <span class="ms-auto">x-roulette</span>
-                                <span class="ms-auto">02:44am</span>
-                            </div>
-                            <div class="total-deposited2 text-edit" style="background-color: #AF2929">
-                                <span >Lost 1337 coins:</span>
-                                <span class="ms-auto">x-roulette</span>
-                                <span class="ms-auto">02:44am</span>
-                            </div>
-                            <div class="total-deposited2 text-edit" style="background-color: #AF2929">
-                                <span >Lost 1337 coins:</span>
-                                <span class="ms-auto">x-roulette</span>
-                                <span class="ms-auto">02:44am</span>
-                            </div>
-                            <div class="total-deposited2 text-edit" style="background-color: #AF2929">
-                                <span >Lost 1337 coins:</span>
-                                <span class="ms-auto">x-roulette</span>
-                                <span class="ms-auto">02:44am</span>
-                            </div>
-                            <div class="total-deposited2 text-edit" style="background-color: #AF2929">
-                                <span >Lost 1337 coins:</span>
-                                <span class="ms-auto">x-roulette</span>
-                                <span class="ms-auto">02:44am</span>
-                            </div>
-                            <div class="total-deposited2 text-edit" style="background-color: #AF2929">
-                                <span >Lost 1337 coins:</span>
-                                <span class="ms-auto">x-roulette</span>
-                                <span class="ms-auto">02:44am</span>
-                            </div>
+                        <div class="total-deposited2  text-edit" style="background-color: #00C74D">
+                            <span>Won 1337 coins:</span>
+                            <span class="ms-auto">roulette</span>
+                            <span class="ms-auto">03:14pm</span>
+                        </div>
+                        <div class="total-deposited2 text-edit" style="background-color: #AF2929">
+                            <span>Lost 1337 coins:</span>
+                            <span class="ms-auto">crazytime</span>
+                            <span class="ms-auto">10-03-22</span>
+                        </div>
+                        <div class="total-deposited2 text-edit" style="background-color: #00C74D">
+                            <span>Won 1337 coins:</span>
+                            <span class="ms-auto">x-roulette</span>
+                            <span class="ms-auto">02:44am</span>
+                        </div>
+                        <div class="total-deposited2 text-edit" style="background-color: #AF2929">
+                            <span>Lost 1337 coins:</span>
+                            <span class="ms-auto">x-roulette</span>
+                            <span class="ms-auto">02:44am</span>
+                        </div>
+                        <div class="total-deposited2 text-edit" style="background-color: #AF2929">
+                            <span>Lost 1337 coins:</span>
+                            <span class="ms-auto">x-roulette</span>
+                            <span class="ms-auto">02:44am</span>
+                        </div>
+                        <div class="total-deposited2 text-edit" style="background-color: #AF2929">
+                            <span>Lost 1337 coins:</span>
+                            <span class="ms-auto">x-roulette</span>
+                            <span class="ms-auto">02:44am</span>
+                        </div>
+                        <div class="total-deposited2 text-edit" style="background-color: #AF2929">
+                            <span>Lost 1337 coins:</span>
+                            <span class="ms-auto">x-roulette</span>
+                            <span class="ms-auto">02:44am</span>
+                        </div>
+                        <div class="total-deposited2 text-edit" style="background-color: #AF2929">
+                            <span>Lost 1337 coins:</span>
+                            <span class="ms-auto">x-roulette</span>
+                            <span class="ms-auto">02:44am</span>
+                        </div>
+                        <div class="total-deposited2 text-edit" style="background-color: #AF2929">
+                            <span>Lost 1337 coins:</span>
+                            <span class="ms-auto">x-roulette</span>
+                            <span class="ms-auto">02:44am</span>
+                        </div>
 
-                            <div class="total-deposited2 text-edit" style="background-color: #AF2929">
-                                <span >Lost 1337 coins:</span>
-                                <span class="ms-auto">x-roulette</span>
-                                <span class="ms-auto">02:44am</span>
-                            </div>
-                            <div class="total-deposited2 text-edit" style="background-color: #AF2929">
-                                <span >Lost 1337 coins:</span>
-                                <span class="ms-auto">x-roulette</span>
-                                <span class="ms-auto">02:44am</span>
-                            </div>
+                        <div class="total-deposited2 text-edit" style="background-color: #AF2929">
+                            <span>Lost 1337 coins:</span>
+                            <span class="ms-auto">x-roulette</span>
+                            <span class="ms-auto">02:44am</span>
+                        </div>
+                        <div class="total-deposited2 text-edit" style="background-color: #AF2929">
+                            <span>Lost 1337 coins:</span>
+                            <span class="ms-auto">x-roulette</span>
+                            <span class="ms-auto">02:44am</span>
+                        </div>
 
-                            <div class="total-deposited2 text-edit" style="background-color: #AF2929">
-                                <span >Lost 1337 coins:</span>
-                                <span class="ms-auto">x-roulette</span>
-                                <span class="ms-auto">02:44am</span>
-                            </div>
-                            <div class="total-deposited2 text-edit" style="background-color: #AF2929">
-                                <span >Lost 1337 coins:</span>
-                                <span class="ms-auto">x-roulette</span>
-                                <span class="ms-auto">02:44am</span>
-                            </div>
+                        <div class="total-deposited2 text-edit" style="background-color: #AF2929">
+                            <span>Lost 1337 coins:</span>
+                            <span class="ms-auto">x-roulette</span>
+                            <span class="ms-auto">02:44am</span>
+                        </div>
+                        <div class="total-deposited2 text-edit" style="background-color: #AF2929">
+                            <span>Lost 1337 coins:</span>
+                            <span class="ms-auto">x-roulette</span>
+                            <span class="ms-auto">02:44am</span>
+                        </div>
 
 
                     </div>
