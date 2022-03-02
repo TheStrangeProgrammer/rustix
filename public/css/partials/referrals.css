@@ -1,66 +1,84 @@
-.ref-title{
-    max-width: 50%;
-    min-width: 50%;
-    margin: auto;
-}
-.ref-columns {
-    max-width: 50%;
-    margin: auto;
-}
-.Name{
-    margin: auto;
-}
-.Time{
-    margin: auto;
-}
-.flex-container{
+.container{
     display: flex;
-    margin: 1%;
-    padding-bottom: 2%;
-    max-width: 100%;
-    max-height: 100%;
+
+}
+.col-cont{
+    display: flex;
+    flex-direction: column;
+}
+.title{
+    display: flex;
+    background-color: #1A1D29;
+}
+.row-col-list{
+    display: flex;
+    flex-direction: row;
+}
+.col-list-1{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    
+
+}
+.title-2{
+    display: flex;
+    justify-content: center;
+    background-color: #141620;
 }
 .col-set{
-    align-self: auto;
-    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
-.col-ins{
-    align-self:auto;
+.set-ref{
+    margin-top: 2%;
+
 }
 .set-code{
+    display: flex;
+    max-width: 50%;
     margin-top: 2%;
-    margin-bottom:2%;
-    background-color: #1A1D29;
-}
-.ins-code{
-    margin-top: 2%;
-    margin-bottom:2%;
-    background-color: #1A1D29;
+    margin-bottom: 2%;
+
 }
 .set-codeb{
-    position:inherit;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    background-color: #353B54; 
-    color: rgba(242,242,242,1); 
-    padding: 2px solid #353B54;
+    margin-bottom: 2%;
+    background-color:#00C74D;
+    
+}
+
+.col-ins{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.ins-ref{
+
+}
+.ins-code{
+    display: flex;
+    max-width: 50%;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 .ins-codeb{
-    transition-duration: 0.4s;
-    cursor: pointer;
-    background-color: #353B54; 
-    color: rgba(242,242,242,1); 
-    padding: 2px solid #353B54;
+    background-color:#00C74D;
 }
-.set-codeb:hover{
-    background-color: #1A1D29;
-    padding: 5px solid #1A1D29;
-    color: white;
-    
+.col-list-2{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+
 }
-.ins-codeb:hover{
-    background-color: #1A1D29;
-    padding: 5px solid #1A1D29;
-    color: white;
-    
+.title-3{
+    display: flex;
+}
+.column-scroll{
+    display: flex;
+    flex-direction: column;
+}
+.ref-list{
+    display: flex;
+    flex-direction: row;
 }
