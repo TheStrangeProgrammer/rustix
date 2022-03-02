@@ -1,5 +1,6 @@
-.container{
+div input.big{
     display: flex;
+    padding: none;
 
 }
 .col-cont{
@@ -8,7 +9,7 @@
 }
 .title{
     display: flex;
-    background-color: #1A1D29;
+    background-color: #261d1d36;
 }
 .row-col-list{
     display: flex;
@@ -31,39 +32,96 @@
     flex-direction: column;
     align-items: flex-start;
 }
+.set-ref-box{
+    width: 100%;
+    background-color: #181B26;
+    padding: 1%
+}
+.set-code-box{
+    width: 100%;
+    background-color: #141620;
+}
+.set-codeb-box{
+    width: 100%;
+    background-color: #181B26;
+    padding: 2%
+}
 .set-ref{
     margin-top: 2%;
+    margin-bottom: 2%;
 
 }
 .set-code{
     display: flex;
-    max-width: 50%;
+    min-width: 100%;
     margin-top: 2%;
     margin-bottom: 2%;
+    background-color: #141620;
+    color: #141620;
+    border: none;
+    outline: none;
+    box-sizing:unset;
+    font-size: 18px;
+    padding: 0;
 
 }
-.set-codeb{
+.set-code:active{
+    background-color: #141620;
+    color: #141620;
+}
+div input.set-codeb{
+    margin-top: 2%;
     margin-bottom: 2%;
     background-color:#00C74D;
-    
-}
+    border-radius: .8rem;
+    min-width: 13%;
 
+}
 .col-ins{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
-.ins-ref{
 
+.ins-ref-box{
+    width: 100%;
+    background-color: #141620;
+    padding: 1%
 }
-.ins-code{
-    display: flex;
-    max-width: 50%;
+.ins-code-box{
+    width: 100%;    
+    background-color: #181B26;
+} 
+.ins-codeb-box{
+    width: 100%;
+    background-color: #141620;
+    padding: 2%
+}
+.ins-ref{
     margin-top: 2%;
     margin-bottom: 2%;
 }
-.ins-codeb{
+.ins-code{
+    display: flex;
+    min-width: 100%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color: #181B26;
+    color: #181B26;
+    border: none;
+    outline: none;
+    box-sizing:unset;
+    font-size: 18px;
+    padding: 0;
+}
+div input.ins-codeb{
+    margin-top: 2%;
+    margin-bottom: 2%;
     background-color:#00C74D;
+    border-radius: .8rem;
+    min-width: 13%;
+
+
 }
 .col-list-2{
     display: flex;
@@ -81,4 +139,20 @@
 .ref-list{
     display: flex;
     flex-direction: row;
+    background-color: #00C74D;
+    min-height: 7%;
+}
+.Name{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    min-width: 50%;
+    padding-left: 2%;
+}
+.Coins{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    min-width: 50%;
+    padding-right: 2%;
 }
