@@ -1,8 +1,4 @@
-div input.big{
-    display: flex;
-    padding: none;
 
-}
 .col-cont{
     display: flex;
     flex-direction: column;
@@ -28,76 +24,27 @@ div input.big{
     justify-content: center;
     background-color: #141620;
 }
-.col-set{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-.set-ref-box{
-    width: 100%;
-    background-color: #181B26;
-    padding: 1%
-}
-.set-code-box{
-    width: 100%;
-    background-color: #141620;
-}
-.set-codeb-box{
-    width: 100%;
-    background-color: #181B26;
-    padding: 2%
-}
-.set-ref{
-    margin-top: auto;
-    margin-bottom: auto;
 
-}
 .set-code{
     display: flex;
     min-width: 100%;
     margin-top: 2%;
     margin-bottom: 2%;
     background-color:  #1A1D29;
-    color: #141620;
+    color: rgba(242,242,242,1);
     border: none;
     outline: none;
     box-sizing:unset;
     font-size: 18px;
     padding: 0;
+    font-weight: bold;
 
 }
 .set-code:active{
     background-color: #1A1D29;
-    color: #141620;
-}
-div input.set-codeb{
-    margin-top: 2%;
-    margin-bottom: 2%;
-    background-color:#00C74D;
-    border-radius: .8rem;
-    min-width: 13%;
-
-}
-.col-ins{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    color: rgba(242,242,242,1);
 }
 
-.ins-ref-box{
-    width: 100%;
-    background-color: #141620;
-    padding: 1%
-}
-.ins-code-box{
-    width: 100%;    
-    background-color: #181B26;
-} 
-.ins-codeb-box{
-    width: 100%;
-    background-color: #141620;
-    padding: 2%
-}
 .ins-ref{
     margin-top: auto;
     margin-bottom: auto;
@@ -108,22 +55,15 @@ div input.set-codeb{
     margin-top: 2%;
     margin-bottom: 2%;
     background-color: #353B54;
-    color: #181B26;
+    color: rgba(242,242,242,1);
     border: none;
     outline: none;
     box-sizing:unset;
     font-size: 18px;
     padding: 0;
+    font-weight: bold;
 }
-div input.ins-codeb{
-    margin-top: 2%;
-    margin-bottom: 2%;
-    background-color:#00C74D;
-    border-radius: .8rem;
-    min-width: 13%;
 
-
-}
 .col-list-2{
     display: flex;
     flex-direction: column;
@@ -194,6 +134,10 @@ div input.claim-button {
     min-height: 27px;
     min-width: 80px;
 }
+.set-code, .ins-code::placeholder{
+    font-weight: bold;
+}
+
 
 @media screen and (max-width: 991px) {
     div.row-col-list{
@@ -206,6 +150,7 @@ div input.claim-button {
     }
     div.ref-list{
         min-height: auto;
+        font-size: 16px;
     }
 
     }

@@ -14,13 +14,13 @@
                     </div>
 
                         <div class="total-referral text-edit" style="background-color: #353B54">
-                            <label class="set-ref" for="fname">Your referral code:</label>
+                            <label class="set-ref my-auto" for="fname">Your referral code:</label>
                         </div>
                         <div class="total-referral text-edit" >
-                            <input class="set-code" type="text" id="fname" name="fname">
+                            <input class="set-code" type="text" id="fname" name="fname" placeholder="DFH#HH">
                         </div>
-                        <div class="total-referral text-edit justify-content-between" style="background-color: #353B54">
-                            <input class="ref-button text-edit my-auto" type="submit" value="Update">
+                        <div class="total-referral text-edit" style="background-color: #353B54">
+                            <input class="ref-button text-edit my-auto" type="submit" value="Update" id="claim">
                             <label class="ins-ref" for="lname" style="font-size: 14px">you can only change it once:</label>
                         </div>
 
@@ -29,9 +29,9 @@
                             <label class="ins-ref" for="lname">Claim a referral code:</label>
                         </div>
                         <div class="total-referral" style="background-color: #353B54">
-                            <input class="ins-code" type="text" id="lname" name="lname">
+                            <input class="ins-code" type="text" id="lname" placeholder="DFH#HH">
                         </div>
-                        <div class="total-referral justify-content-between">
+                        <div class="total-referral">
                             <input class="claim-button text-edit my-auto" type="submit" value="Claim">
                             <label class="ins-ref" for="lname" style="font-size: 14px">you can only change it once:</label>
                         </div>
