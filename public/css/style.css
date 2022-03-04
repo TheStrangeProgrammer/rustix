@@ -39,7 +39,7 @@
     color:#00C74D;
 }
 div .modal-dialog{
-
+    font-weight: bold;
 }
 
 div .modal-content{
@@ -59,6 +59,7 @@ div .modal-body{
 div .modal-header .modal-title{
     margin:0 auto;
     font-size: 40px;
+    font-weight: bold;
 }
 div .fade{
 
