@@ -66,20 +66,23 @@ class UserController extends Controller
 
         $data['referralCode'] = $user->referralCode;
         $referrer = User::where('id', Auth::user()->referredBy)->first();
+
         if($referrer!=null){
             $data['referrerName'] = $referrer->name;
         }else{
             $data['referrerName'] = null;
         }
+
         $data['referrals']=[];
+
         $users = User::where('referredBy', Auth::user()->id)->get();
         foreach($users as $userReferred){
-
             $data['referrals'][$userReferred->id]['name'] = $userReferred->name;
         }
 
         return $data;
     }
+
     public function getProfile(){
         $user = User::where('id', Auth::user()->id)->first();
 
