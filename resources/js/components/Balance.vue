@@ -18,6 +18,18 @@
             this.fetchBalance();
             Echo.private(`balance.${this.user}`)
                 .listen('NewBalance', (e) => {
+                    if(e.balance<this.balance){
+                        document.getElementsByClassName("balance")[0].style.color="red";
+                        setTimeout(
+                            function() {
+                                document.getElementsByClassName("balance")[0].style.color="white";
+                        }, 2000);
+                    }else if(e.balance>this.balance){
+                         document.getElementsByClassName("balance")[0].style.color="green";
+                        setTimeout( function() {
+                             document.getElementsByClassName("balance")[0].style.color="white";
+                            }, 2000);
+                    }
                     this.balance = e.balance;
                 });
 

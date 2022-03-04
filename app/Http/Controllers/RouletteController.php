@@ -61,8 +61,9 @@ class RouletteController extends Controller
         }
 
         $user->balance-=$betAmount;
-        $user->save();
         event(new NewBalance(Auth::user()->id,$user->balance));
+        $user->save();
+
         RouletteController::addBet(Auth::user()->id,Auth::user()->name,Auth::user()->avatar,$data["bet"],$betAmount);
 
         $response["success"]=true;

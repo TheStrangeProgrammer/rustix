@@ -8,7 +8,7 @@
             </div>
             <div class="modal-body">
                 <div class="flex-fill withdraw-wrapper">
-                    <div class="d-flex flex-wrap withdraw">
+                    <div class="d-flex flex-wrap withdraw justify-content-between">
 
                     </div>
                 </div>

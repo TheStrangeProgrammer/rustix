@@ -8,29 +8,24 @@
         </div>
             <span class="gamemodes-text">GAMEMODES:</span>
     <div class="games-div">
-        <div class="card-game">
+        <a href="{{ URL::route('roulette') }}" class="card-game">
             <div class="d-flex p-3">
                 <h5 class="game-text">ROULETTE</h5>
             </div>
             <div class="card-img-top-wrapper" style="background-image: url('../assets/roulette-game.svg'">
-                <div class="d-flex card-overlay">
-                    <a href="{{ URL::route('roulette') }}" class="play-button m-auto" style="color: white;">PLAY</a>
-                </div>
-            </div>
-        </div>
 
-        <div class="card-game">
+            </div>
+        </a>
+
+        <a href="{{ URL::route('roulette') }}" class="card-game">
             <div class="d-flex p-3">
                 <h5 class="game-text">X-ROULETTE</h5>
             </div>
             <div class=" card-img-top-wrapper" style="background-image: url('../assets/x-roulette2.svg'">
-                <div class="d-flex card-overlay">
-                    <a href="{{ URL::route('x-roulette') }}" class="play-button m-auto"
-                        style="color: white;">PLAY</a>
-                </div>
+
             </div>
-            
-        </div>
+
+        </a>
     </div>
     </div>
 @endsection
