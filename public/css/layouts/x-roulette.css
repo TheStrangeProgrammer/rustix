@@ -384,6 +384,9 @@
     .bet-amount{
         flex-direction: column;
     }
+    .x-roulette{
+        width: 100%;
+    }
 }
 
 .main{

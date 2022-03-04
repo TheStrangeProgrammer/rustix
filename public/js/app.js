@@ -5378,17 +5378,18 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.post("".concat("https://rustix.testupper.biz", "/message"), {
         user: this.user,
-        message: this.newMessage,
-        avatar: this.avatar
+        message: this.newMessage
       }).then(function (response) {
         if (document.getElementsByClassName("chat-wrapper")[0].scrollTop + document.getElementsByClassName("chat-wrapper")[0].clientHeight == document.getElementsByClassName("chat-wrapper")[0].scrollHeight) {
           _this3.scroll = true;
         }
 
+        console.log(response);
+
         _this3.messages.push({
           text: _this3.newMessage,
           user: _this3.user,
-          avatar: _this3.avatar
+          avatar: response.data.avatar
         });
 
         _this3.newMessage = '';
