@@ -90,8 +90,16 @@ body{
     border: 3px solid #F2F2F2;
     font-size: 11px;
     padding: 1% 8%;
+}
+.button-sidebar:hover{
+    background-color: #F2F2F2;
+    color: #141620;
+    transition: .5s;
+}
 
-
+div ul.dropdown-menu li:last-child{
+    background-color: #00C74D;
+    color: #F2F2F2 !important;
 }
 a.core{
     color: #F2F2F2;
@@ -244,6 +252,10 @@ li .dropdown-item{
 }
 .ul.dropdown-menu:hover{
     background-color: #E6E6E6;
+}
+li #admin-button:hover{
+    background-color: #0aaf4a;
+
 }
 ul.second-one{
     margin-right: -1rem !important;
