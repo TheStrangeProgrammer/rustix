@@ -41,14 +41,11 @@
             Echo.channel('chat')
                 .listen('NewChatMessage', (e) => {
                     if(e.user != this.user) {
-
                         this.messages.push({
                             text: e.message,
                             user: e.user,
                             avatar: e.avatar,
                         });
-
-
                     }
                     if(document.getElementsByClassName("chat-wrapper")[0].scrollTop +document.getElementsByClassName("chat-wrapper")[0].clientHeight== document.getElementsByClassName("chat-wrapper")[0].scrollHeight){
                         this.scroll=true;
@@ -77,16 +74,16 @@
             submit() {
                 axios.post(`${process.env.MIX_WEBSOCKET_SERVER_BASE_URL}/message`, {
                     user: this.user,
-                    message: this.newMessage,
-                    avatar:this.avatar
+                    message: this.newMessage
                 }).then((response) => {
                     if(document.getElementsByClassName("chat-wrapper")[0].scrollTop +document.getElementsByClassName("chat-wrapper")[0].clientHeight== document.getElementsByClassName("chat-wrapper")[0].scrollHeight){
                         this.scroll=true;
                     }
+
                     this.messages.push({
                         text: this.newMessage,
                         user: this.user,
-                        avatar:this.avatar
+                        avatar:response.data.avatar
                     });
 
                     this.newMessage = '';

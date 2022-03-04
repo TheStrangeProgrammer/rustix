@@ -22,7 +22,7 @@ class MessageController extends Controller
         $message->save();
         event(new NewChatMessage($request->message, $request->user,Auth::user()->avatar));
 
-        return response()->json([], 200);
+        return response()->json(["avatar"=>Auth::user()->avatar], 200);
 
     }
     public function getMessages()
