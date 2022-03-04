@@ -345,7 +345,10 @@ nav.navbar{
     background-color: #0aaf4a;
     transition: .25s;
 }
+li .edit-admin{
+    background-color: #00C74D;
 
+}
 
 @media screen and (max-width: 991px) {
     .navbar-nav {
