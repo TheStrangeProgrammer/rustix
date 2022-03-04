@@ -1,8 +1,8 @@
 .card-game{
     display:flex;
     flex-direction: column;
-    width:17%;
-    height:70%;
+    width:25%;
+    height:25%;
     margin:10px;
     background-color: #141620;
     border: 0 ;
@@ -29,11 +29,14 @@
     border-radius: 0 0 10px 10px ;
 }
 .play-button {
+    display: flex;
     opacity: 0;
     align-items: center;
     transition: opacity .35s ease;
     text-align: center;
     color: white;
+    padding: auto;
+    margin: 0 auto;
     font-weight: bold;
     width: 90px;
     height: 45px;

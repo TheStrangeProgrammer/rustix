@@ -14,7 +14,7 @@
             </div>
             <div class="card-img-top-wrapper" style="background-image: url('../assets/roulette-game.svg'">
                 <div class="d-flex card-overlay">
-                    <a href="{{ URL::route('roulette') }}" class="play-button m-auto py-3" style="color: white;">PLAY</a>
+                    <a href="{{ URL::route('roulette') }}" class="play-button m-auto" style="color: white;">PLAY</a>
                 </div>
             </div>
         </div>
@@ -25,7 +25,7 @@
             </div>
             <div class=" card-img-top-wrapper" style="background-image: url('../assets/x-roulette2.svg'">
                 <div class="d-flex card-overlay">
-                    <a href="{{ URL::route('x-roulette') }}" class="play-button m-auto py-3"
+                    <a href="{{ URL::route('x-roulette') }}" class="play-button m-auto"
                         style="color: white;">PLAY</a>
                 </div>
             </div>
