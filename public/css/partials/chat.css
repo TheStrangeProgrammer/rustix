@@ -84,6 +84,7 @@
     background-color: rgba(255,255,255,.2);
     border-radius: 100%;
     padding: 0 4px;
+    background-size: cover;
 }
 .message-level{
     word-break: break-word;
@@ -167,16 +168,23 @@ p.message-text::first-line {
 .chat-button{
     display: none;
     position: fixed;
-    left:0;
-    bottom:24px;
+    left: 5px;
+    bottom: 35px;
     width:40px;
     height:40px;
+    background-color: rgba(255,255,255,.08);
+    border-radius: 35px;
+    font-weight: 600;
 }
 .chat{
     align-items: center;
     flex-direction: column;
     flex: 1 1 auto;
     display: flex;
+}
+.chat-send-button:hover{
+    background-color: #0aaf4a;
+    transition: .25s;
 }
 @media screen and (max-width: 991px) {
     .chat-button{

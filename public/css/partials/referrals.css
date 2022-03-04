@@ -16,7 +16,7 @@
     flex-direction: column;
     flex-basis: 50%;
     background-color: #1A1D29;
-    
+
 
 }
 .title-2{
@@ -116,7 +116,7 @@
     color: rgba(242,242,242,1);
     text-decoration: none;
 }
-div input.ref-button {
+div button.ref-button {
     background-color:#00C74D;
     font-size: 15px;
     border-radius: .8rem;
@@ -125,7 +125,7 @@ div input.ref-button {
     min-height: 27px;
     min-width: 80px;
 }
-div input.claim-button {
+div button.claim-button {
     background-color:#00C74D;
     font-size: 15px;
     border-radius: .8rem;

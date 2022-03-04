@@ -40,6 +40,7 @@
 }
 div .modal-dialog{
     font-weight: bold;
+    margin-top: 120px;
 }
 
 div .modal-content{
@@ -89,8 +90,16 @@ body{
     border: 3px solid #F2F2F2;
     font-size: 11px;
     padding: 1% 8%;
+}
+.button-sidebar:hover{
+    background-color: #F2F2F2;
+    color: #141620;
+    transition: .5s;
+}
 
-
+div ul.dropdown-menu li:last-child{
+    background-color: #00C74D;
+    color: #F2F2F2 !important;
 }
 a.core{
     color: #F2F2F2;
@@ -99,18 +108,56 @@ a.core{
     text-decoration: none;
     border-radius: 10px;
     border: 3px solid #261d1d36;
+    text-decoration: none;
 }
 a.core:hover{
     color: #F2F2F2;
-}
-.site-title{
-   font-size: 2.1875rem;
+    background-color: #0aaf4a;
+    transition: .25s;
 }
 
+.modal-header .btn-close {
+    margin: 0 !important;
+
+}
+.modal-header .btn-close{
+    color: #fff;
+    opacity: 1;
+    width: .5em;
+    height: .5em;
+    border: none;
+    filter: brightness(0) invert(1);
+}
+a.core:focus {
+    color: #F2F2F2;
+    background-color: #0aaf4a;
+    transition: .25s;
+}
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:rgba(255,255,255,0.5);
+    padding: 3px 0;
+}
+
+.site-title{
+   font-size: 2.1875rem;
+   font-weight: 800;
+}
+.free-coins-mobile{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1.031rem 0;
+    background-color: #00C74D;
+    font-size: 14px;
+}
 .main{
     display: flex;
     width: 80%;
     overflow-y: auto;
+    flex:1 1 auto;
 }
 .footer{
 }
@@ -171,10 +218,15 @@ a.core:hover{
     min-width: 100px;
     width: 6.5625vw;
     border: 3px solid #261d1d36;
+    font-weight: 800;
 
 }
-
-
+.balance{
+    font-weight: 800;
+}
+#user-name{
+    font-weight: 600;
+}
 .balance-div{
     display: flex;
     align-items: center;
@@ -193,6 +245,7 @@ a.core:hover{
     width: 6.5625vw;
     min-width: 100px;
     vertical-align: middle;
+
 }
 
 
@@ -225,6 +278,17 @@ li .dropdown-item{
 }
 .ul.dropdown-menu:hover{
     background-color: #E6E6E6;
+}
+li #admin-button:hover{
+    background-color: #0aaf4a;
+
+}
+div .tos-faq-body{
+    padding: 50px;
+    font-weight: bold;
+}
+bold{
+    font-weight: bold;
 }
 ul.second-one{
     margin-right: -1rem !important;
@@ -277,7 +341,14 @@ nav.navbar{
 .modal-open #app{
     filter:blur(4px);
 }
+#deposit-button:hover, .submit-btn:hover{
+    background-color: #0aaf4a;
+    transition: .25s;
+}
+li .edit-admin{
+    background-color: #00C74D;
 
+}
 
 @media screen and (max-width: 991px) {
     .navbar-nav {
@@ -361,11 +432,9 @@ nav.navbar{
         opacity: 1;
         background: none;
     }
-    a.play-button{
-        opacity: 1;
+    .free-coins-mobile{
+        display:flex;
     }
-
-
     #menu__toggle {
         opacity: 0;
     }

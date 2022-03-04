@@ -6,6 +6,7 @@
                 <message
                     :message="message.text"
                     :user="message.user"
+                    :avatar="message.avatar"
                 ></message>
             </div>
         </div>
@@ -43,7 +44,8 @@
 
                         this.messages.push({
                             text: e.message,
-                            user: e.user
+                            user: e.user,
+                            avatar: e.avatar,
                         });
 
 
@@ -75,14 +77,16 @@
             submit() {
                 axios.post(`${process.env.MIX_WEBSOCKET_SERVER_BASE_URL}/message`, {
                     user: this.user,
-                    message: this.newMessage
+                    message: this.newMessage,
+                    avatar:this.avatar
                 }).then((response) => {
                     if(document.getElementsByClassName("chat-wrapper")[0].scrollTop +document.getElementsByClassName("chat-wrapper")[0].clientHeight== document.getElementsByClassName("chat-wrapper")[0].scrollHeight){
                         this.scroll=true;
                     }
                     this.messages.push({
                         text: this.newMessage,
-                        user: this.user
+                        user: this.user,
+                        avatar:this.avatar
                     });
 
                     this.newMessage = '';

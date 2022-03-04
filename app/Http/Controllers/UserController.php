@@ -55,31 +55,49 @@ class UserController extends Controller
 
         return response($response,200);
     }
-    public function depositItems(){
-
+    public function setReferral(Request $request){
+        $user = User::where('id', Auth::user()->id)->first();
+        if($user->referralCode==null){
+            $exists = User::where('referralCode', $request->json()->all()["referralCode"])->first();
+            if($exists==null){
+                $user->referralCode=$request->all()["referralCode"];
+                return response()->json(['success' => 1]);
+            }
+            return response()->json(['success' => 0,'error' => "Code exists"]);
+        }
     }
-    public function addbalance() {
-
+    public function claimReferral(Request $request) {
+        $user = User::where('id', Auth::user()->id)->first();
+        if($user->referredBy==null){
+            $referringUser = User::where('referralCode',$request->json()->all()["referrerCode"] )->first();
+            if($referringUser==null) return response()->json(['success' => 0,'error' => "Code does not exist"]);
+            if($referringUser->id==$user->id) return response()->json(['success' => 0,'error' => "You cannot refer yourself"]);
+            $user->referredBy=$referringUser->id;
+            $user->balance+=10;
+            $user->save();
+            event(new NewBalance($user->id,$user->balance));
+            $referringUser->balance+=100;
+            $referringUser->save();
+            event(new NewBalance($referringUser->id,$referringUser->balance));
+            return response()->json(['success' => 1]);
+        }
     }
     public function getReferrals(){
         $user = User::where('id', Auth::user()->id)->first();
 
         $data['referralCode'] = $user->referralCode;
-        $referrer = User::where('id', Auth::user()->referredBy)->first();
-        if($referrer!=null){
-            $data['referrerName'] = $referrer->name;
-        }else{
-            $data['referrerName'] = null;
-        }
+        $data['referredBy'] = Auth::user()->referredBy;
+
         $data['referrals']=[];
+
         $users = User::where('referredBy', Auth::user()->id)->get();
         foreach($users as $userReferred){
-
             $data['referrals'][$userReferred->id]['name'] = $userReferred->name;
         }
 
         return $data;
     }
+
     public function getProfile(){
         $user = User::where('id', Auth::user()->id)->first();
 
@@ -98,15 +116,7 @@ class UserController extends Controller
         $data['betHistory']=$betHistory;
         return $data;
     }
-    public function setReferral(Request $request){
-        $user = User::where('id', Auth::user()->id)->first();
-        $referringUser = User::where('referralCode',$request->referrerCode )->first();
-        if($referringUser==null) return view("layouts/error",['error' => "code does not exist"]);
-        if($referringUser->id==$user->id) return view("layouts/error",['error' => "you cannot refer yourself"]);
-        $user->referredBy=$referringUser->id;
-        $user->save();
-        return redirect("profile");
-    }
+
 
     public function setTradeToken(Request $request){
         $tradeToken=$request->json()->all()["tradeUrl"];

@@ -5262,14 +5262,14 @@ __webpack_require__.r(__webpack_exports__);
     this.fetchBalance();
     Echo["private"]("balance.".concat(this.user)).listen('NewBalance', function (e) {
       if (e.balance < _this.balance) {
-        document.getElementById("balance").style.color = "red";
+        document.getElementsByClassName("balance")[0].style.color = "red";
         setTimeout(function () {
-          document.getElementById("balance").style.color = "white";
+          document.getElementsByClassName("balance")[0].style.color = "white";
         }, 2000);
       } else if (e.balance > _this.balance) {
-        document.getElementById("balance").style.color = "green";
+        document.getElementsByClassName("balance")[0].style.color = "green";
         setTimeout(function () {
-          document.getElementById("balance").style.color = "white";
+          document.getElementsByClassName("balance")[0].style.color = "white";
         }, 2000);
       }
 
@@ -5329,6 +5329,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['user'],
   data: function data() {
@@ -5346,7 +5347,8 @@ __webpack_require__.r(__webpack_exports__);
       if (e.user != _this.user) {
         _this.messages.push({
           text: e.message,
-          user: e.user
+          user: e.user,
+          avatar: e.avatar
         });
       }
 
@@ -5376,7 +5378,8 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.post("".concat("https://rustix.testupper.biz", "/message"), {
         user: this.user,
-        message: this.newMessage
+        message: this.newMessage,
+        avatar: this.avatar
       }).then(function (response) {
         if (document.getElementsByClassName("chat-wrapper")[0].scrollTop + document.getElementsByClassName("chat-wrapper")[0].clientHeight == document.getElementsByClassName("chat-wrapper")[0].scrollHeight) {
           _this3.scroll = true;
@@ -5384,7 +5387,8 @@ __webpack_require__.r(__webpack_exports__);
 
         _this3.messages.push({
           text: _this3.newMessage,
-          user: _this3.user
+          user: _this3.user,
+          avatar: _this3.avatar
         });
 
         _this3.newMessage = '';
@@ -5424,6 +5428,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -5440,7 +5445,8 @@ __webpack_require__.r(__webpack_exports__);
       if (e.user != _this.user) {
         _this.messages.push({
           text: e.message,
-          user: e.user
+          user: e.user,
+          avatar: _this.avatar
         });
       }
 
@@ -5501,7 +5507,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['message', 'user']
+  props: ['message', 'user', 'avatar']
 });
 
 /***/ }),
@@ -45433,7 +45439,11 @@ var render = function () {
           "div",
           [
             _c("message", {
-              attrs: { message: message.text, user: message.user },
+              attrs: {
+                message: message.text,
+                user: message.user,
+                avatar: message.avatar,
+              },
             }),
           ],
           1
@@ -45537,7 +45547,11 @@ var render = function () {
           "div",
           [
             _c("message", {
-              attrs: { message: message.text, user: message.user },
+              attrs: {
+                message: message.text,
+                user: message.user,
+                avatar: message.avatar,
+              },
             }),
           ],
           1
@@ -45576,7 +45590,10 @@ var render = function () {
         _c("span", { staticClass: "message-user" }, [
           _c("div", { staticClass: "message-photo" }),
           _vm._v(" "),
-          _c("div", { staticClass: "message-avatar" }),
+          _c("div", {
+            staticClass: "message-avatar",
+            style: { "background-image": "url(" + _vm.avatar + ")" },
+          }),
           _vm._v(" "),
           _c("div", { staticClass: "message-level" }, [_vm._v("43")]),
           _vm._v(" "),
