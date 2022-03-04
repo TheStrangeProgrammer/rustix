@@ -10,7 +10,7 @@
     </div>
         <chat id="chat" user="{{ Auth::user()->name }}"></chat>
     @else
-    <div class="chat-top" style="background-color:red">
+    <div class="chat-top" style="background-color:#F95146">
         <a class="free-coins"  href="{{ URL::route('login') }}" >Please Log In to claim your free coins</a>
     </div>
         <guestchat id="chat"></guestchat>

@@ -13,7 +13,7 @@
                         <span class="my-auto">Player look-up</span>
                     </div>
 
-                    <div class="total-deposited small-div text-edit " style="background-color: rgba(53,59,84,1)">
+                    <div class="total-admin small-div text-edit " style="background-color: rgba(53,59,84,1)">
                         <input id="claim-referral" class="insert-code" type="text"  placeholder="DFH#HH">
                         <button id="update-trade-url" class="admin-button ms-auto text-edit my-auto"
                             style="margin: 6px 0">Search</button>
@@ -29,7 +29,7 @@
                                 style="font-size: 25px">{{ Auth::user()->name }}</span>
                         </div>
                     </div>
-                    <div class="total-deposited text-edit justify-content-around" style="background-color: rgba(53,59,84,1)">
+                    <div class="total-admin text-edit justify-content-around" style="background-color: rgba(53,59,84,1)">
                         <button id="update-trade-url" class="admin-button text-edit my-auto"
                             style="margin: 6px 0">profile</button>
                         <button id="update-trade-url" class="admin-button text-edit my-auto"
@@ -37,7 +37,7 @@
                         <button id="update-trade-url" class="admin-button text-edit my-auto"
                             style="margin: 6px 0">history</button>
                     </div>
-                    <div class="total-deposited text-edit justify-content-around">
+                    <div class="total-admin text-edit justify-content-around">
                         <button id="update-trade-url" class="admin-button text-edit my-auto"
                             style="margin: 6px 0">mute</button>
                         <button id="update-trade-url" class="admin-button text-edit my-auto"
@@ -54,7 +54,7 @@
                     <div class="first-span-edit dif-hight mx-auto">
                         <span class="my-auto">Website actionns</span>
                     </div>
-                    <div class="total-deposited text-edit justify-content-around" style="background-color: rgba(53,59,84,1)">
+                    <div class="total-admin text-edit justify-content-around" style="background-color: rgba(53,59,84,1)">
                         <button id="update-trade-url" class="admin-button text-edit my-auto"
                             style="margin: 6px 0">chat</button>
                         <button id="update-trade-url" class="admin-button text-edit my-auto"
@@ -62,7 +62,7 @@
                         <button id="update-trade-url" class="admin-button text-edit my-auto"
                             style="margin: 6px 0">roul.</button>
                     </div>
-                    <div class="total-deposited text-edit justify-content-around">
+                    <div class="total-admin text-edit justify-content-around">
                         <button id="update-trade-url" class="admin-button text-edit my-auto"
                             style="margin: 6px 0">craz.</button>
                         <button id="update-trade-url" class="admin-button text-edit my-auto"
@@ -70,7 +70,7 @@
                         <button id="update-trade-url" class="admin-button text-edit my-auto"
                             style="margin: 6px 0">ceva</button>
                     </div>
-                    <div class="total-deposited text-edit justify-content-around" style="background-color: rgba(53,59,84,1)">
+                    <div class="total-admin text-edit justify-content-around" style="background-color: rgba(53,59,84,1)">
                     </div>
 
 
