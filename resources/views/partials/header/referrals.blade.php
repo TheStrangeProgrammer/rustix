@@ -6,7 +6,7 @@
                 <h5 id="PROFILE-title" class="modal-title">Refferals</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-    
+
             <div class="row-col-list modal-body theme-bc-2">
                 <div class="col-list-1 text-edit">
                     <div class="first-span-edit title-2">
@@ -24,7 +24,7 @@
                             <label class="ins-ref" for="lname" style="font-size: 14px">you can only change it once:</label>
                         </div>
 
-                   
+
                         <div class="total-referral">
                             <label class="ins-ref" for="lname">Claim a referral code:</label>
                         </div>
@@ -35,90 +35,26 @@
                             <input class="claim-button text-edit my-auto" type="submit" value="Claim">
                             <label class="ins-ref" for="lname" style="font-size: 14px">you can only change it once:</label>
                         </div>
-                    
+
                 </div>
                 <div class="col-list-2 text-edit ">
                     <div class="row first-span-edit mx-auto">
                         <span class="title-3 my-auto">Your earnings</span>
                     </div>
-                    <div class="column-scroll scroll">
+                    <div id="referrals-history" class="column-scroll scroll">
                         <div class="ref-list text-edit  " >
                             <span class="Name">Nume Referral</span>
                             <span class="Name">used your code</span>
                             <span class="Coins ">100 Coins</span>
                         </div>
-                        <div class="ref-list text-edit  " >
-                            <span class="Name">Nume Referral</span>
-                            <span class="Name">used your code</span>
-                            <span class="Coins ">100 Coins</span>
-                        </div>
-                        <div class="ref-list text-edit  " >
-                            <span class="Name">Nume Referral</span>
-                            <span class="Name">used your code</span>
-                            <span class="Coins ">100 Coins</span>
-                        </div>
-                        <div class="ref-list text-edit  " >
-                            <span class="Name">Nume Referral</span>
-                            <span class="Name">used your code</span>
-                            <span class="Coins ">100 Coins</span>
-                        </div>
-                        <div class="ref-list text-edit  " >
-                            <span class="Name">Nume Referral</span>
-                            <span class="Name">used your code</span>
-                            <span class="Coins ">100 Coins</span>
-                        </div>
-                        <div class="ref-list text-edit  " >
-                            <span class="Name">Nume Referral</span>
-                            <span class="Name">used your code</span>
-                            <span class="Coins ">100 Coins</span>
-                        </div>
-                        <div class="ref-list text-edit  " >
-                            <span class="Name">Nume Referral</span>
-                            <span class="Name">used your code</span>
-                            <span class="Coins ">100 Coins</span>
-                        </div>
-                        <div class="ref-list text-edit  " >
-                            <span class="Name">Nume Referral</span>
-                            <span class="Name">used your code</span>
-                            <span class="Coins ">100 Coins</span>
-                        </div>
-                        <div class="ref-list text-edit  " >
-                            <span class="Name">Nume Referral</span>
-                            <span class="Name">used your code</span>
-                            <span class="Coins ">100 Coins</span>
-                        </div>
-                        <div class="ref-list text-edit  " >
-                            <span class="Name">Nume Referral</span>
-                            <span class="Name">used your code</span>
-                            <span class="Coins ">100 Coins</span>
-                        </div>
-                        <div class="ref-list text-edit  " >
-                            <span class="Name">Nume Referral</span>
-                            <span class="Name">used your code</span>
-                            <span class="Coins ">100 Coins</span>
-                        </div>
-                        <div class="ref-list text-edit  " >
-                            <span class="Name">Nume Referral</span>
-                            <span class="Name">used your code</span>
-                            <span class="Coins ">100 Coins</span>
-                        </div>
-                        <div class="ref-list text-edit  " >
-                            <span class="Name">Nume Referral</span>
-                            <span class="Name">used your code</span>
-                            <span class="Coins ">100 Coins</span>
-                        </div>
-                        <div class="ref-list text-edit  " >
-                            <span class="Name">Nume Referral</span>
-                            <span class="Name">used your code</span>
-                            <span class="Coins ">100 Coins</span>
-                        </div>
-                        
+
+
                     </div>
 
 
                 </div>
             </div>
-            
+
         </div>
     </div>
 </div>
