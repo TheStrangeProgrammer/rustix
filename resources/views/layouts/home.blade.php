@@ -20,6 +20,7 @@
                     <a href="{{ URL::route('roulette') }}" class="play-button m-auto" style="color: white;">PLAY</a>
                 </div>
             </div>
+        </div>
         </a>
 
         <div class="card-game">
