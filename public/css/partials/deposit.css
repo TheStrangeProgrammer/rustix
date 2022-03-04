@@ -141,10 +141,6 @@
     shape-rendering: auto;
 }
 
-.modal-header .btn-close {
-    margin: 0 !important;
-
-}
 .modal-header.deposit-h-edit{
     background-color:rgb(20, 22, 32);
     border-bottom: 0;

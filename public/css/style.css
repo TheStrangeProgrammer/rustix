@@ -107,6 +107,24 @@ a.core:hover{
     background-color: #0aaf4a;
     transition: .25s;
 }
+
+.modal-header .btn-close {
+    margin: 0 !important;
+
+}
+.modal-header .btn-close{
+    color: #fff;
+    opacity: 1;
+    width: .5em;
+    height: .5em;
+    border: none;
+    filter: brightness(0) invert(1);
+}
+a.core:focus {
+    color: #F2F2F2;
+    background-color: #0aaf4a;
+    transition: .25s;
+}
 .footer{
     display: flex;
     align-items: center;
@@ -209,7 +227,7 @@ a.core:hover{
     width: 6.5625vw;
     min-width: 100px;
     vertical-align: middle;
-    
+
 }
 
 
