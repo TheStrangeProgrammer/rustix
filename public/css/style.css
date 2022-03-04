@@ -71,6 +71,13 @@ body{
     font-size: 16px;
     word-spacing: 0;
     text-size-adjust: none;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
 
 
@@ -100,6 +107,7 @@ body{
 div ul.dropdown-menu li:last-child{
     background-color: #00C74D;
     color: #F2F2F2 !important;
+    margin-top: 10px;
 }
 a.core{
     color: #F2F2F2;
