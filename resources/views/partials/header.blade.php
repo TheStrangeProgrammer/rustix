@@ -46,7 +46,7 @@
                                         Out</a></li>
                                 <li><button id="admin-button" class="dropdown-item text-center edit-admin" style="color: #E6E6E6"
                                     data-bs-toggle="modal" data-bs-target="#ADMIN">Admin Panel</button></li>
-                                <li><button id="free-coins" class="free-coins">Claim your free coins</button></li>
+                                <li class="free-coins-mobile"><button id="free-coins" class="free-coins">Claim your free coins</button></li>
                             </ul>
                         </li>
                     </ul>

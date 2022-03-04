@@ -145,7 +145,14 @@ a.core:focus {
    font-size: 2.1875rem;
    font-weight: 800;
 }
-
+.free-coins-mobile{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1.031rem 0;
+    background-color: #00C74D;
+    font-size: 14px;
+}
 .main{
     display: flex;
     width: 80%;
@@ -415,7 +422,9 @@ nav.navbar{
         opacity: 1;
         background: none;
     }
-
+    .free-coins-mobile{
+        display:flex;
+    }
     #menu__toggle {
         opacity: 0;
     }
