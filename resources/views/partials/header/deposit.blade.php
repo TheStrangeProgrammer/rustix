@@ -8,7 +8,7 @@
             </div>
             <div class="modal-body justify-content-center">
                 <div class="flex-fill deposit-wrapper ">
-                    <div class="d-flex flex-wrap deposit ">
+                    <div class="d-flex flex-wrap deposit justify-content-between">
 
                     </div>
                 </div>
@@ -20,8 +20,8 @@
                     <div class="submit-btn">
                         <button id="submit-deposit-item-list" class="text-white" id="submit-item-list"
                         type="submit">trade for <span id="deposit-coins"> $143.66</span> coins</button>
-                    </div>                        
-                    
+                    </div>
+
 
 
                 </div>

@@ -5261,6 +5261,18 @@ __webpack_require__.r(__webpack_exports__);
 
     this.fetchBalance();
     Echo["private"]("balance.".concat(this.user)).listen('NewBalance', function (e) {
+      if (e.balance < _this.balance) {
+        document.getElementById("balance").style.color = "red";
+        setTimeout(function () {
+          document.getElementById("balance").style.color = "white";
+        }, 2000);
+      } else if (e.balance > _this.balance) {
+        document.getElementById("balance").style.color = "green";
+        setTimeout(function () {
+          document.getElementById("balance").style.color = "white";
+        }, 2000);
+      }
+
       _this.balance = e.balance;
     });
   },

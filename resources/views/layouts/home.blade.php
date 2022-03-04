@@ -1,11 +1,13 @@
 @extends('main')
 @section('content')
-    <div class="d-flex w-100 flex-column">
+    <div class="d-flex flex-fill flex-column">
+        @if(Auth::check())
         <div class="head-text">
             <span class="welcome-text">Welcome back, <span class="my-auto align-self-center">{{ Auth::user()->name }}</span>
             </span>
             <span class="small-text">have a great day</span>
         </div>
+        @endif
             <span class="gamemodes-text">GAMEMODES:</span>
     <a class="cola" href="{{ URL::route('roulette') }}">
     <div class="games-div">
@@ -18,7 +20,7 @@
                     <a href="{{ URL::route('roulette') }}" class="play-button m-auto" style="color: white;">PLAY</a>
                 </div>
             </div>
-        </div>
+        </a>
 
         <div class="card-game">
             <div class="top-card">
@@ -30,8 +32,8 @@
                         style="color: white;">PLAY</a>
                 </div>
             </div>
-            
-        </div>
+
+        </a>
     </div>
 </a>
     </div>
