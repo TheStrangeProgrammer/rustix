@@ -11,6 +11,7 @@
             <span class="gamemodes-text">GAMEMODES:</span>
 
     <div class="games-div">
+        <a class="link-games" href="{{ URL::route('roulette') }}">
         <div class="card-game">
             <div class="top-card">
                 <h5 class="game-text">ROULETTE</h5>
@@ -21,11 +22,13 @@
                 </div>
             </div>
         </div>
-
-        <div class="card-game">
-            <div class="top-card">
-                <h5 class="game-text">X-ROULETTE</h5>
-            </div>
+        </a>
+        <a class="link-games" href="{{ URL::route('x-roulette') }}">
+            <div class="card-game">
+                <a class="link-games" href="{{ URL::route('roulette') }}">
+                    <div class="top-card">
+                        <h5 class="game-text">X-ROULETTE</h5>
+                    </div>
             <div class=" card-img-top-wrapper" style="background-image: url('../assets/Capture2.svg'">
                 <div class="d-flex card-overlay">
                     <a href="{{ URL::route('x-roulette') }}" class="play-button m-auto"
@@ -34,6 +37,7 @@
             </div>
 
         </div>
+        </a>
     </div>
 
     </div>
