@@ -288,6 +288,12 @@ function setWheelLocation(position,randomize=-cardWidth/2){
 }
 
 var last=0;
+$("#input-bet").change(function(){
+    let input = $(".input-bet").val();
+    if(input > parseInt($("#balance").html())){
+        $(".input-bet").val(input);
+    }
+});
 
 $("#button-amount-clear").click(function(){
     last=0;
