@@ -2,24 +2,24 @@ var endTime;
 $.getJSON("faucet").done(function(data) {
     endTime = new Date(new Date().getTime() + data.serverTime*1000);
     if(data.claimed==true){
-        $('#free-coins').parent().css('background-color','gray');
+        $('.free-coins').parent().css('background-color','gray');
 
         setInterval(function() {
             var currentSecond = (endTime.getTime() - new Date().getTime()) / 1000;
-            $("#free-coins").html(secondsToHms(currentSecond));
+            $(".free-coins").html(secondsToHms(currentSecond));
         },1000);
     }
 });
-$("#free-coins").click(function() {
+$(".free-coins").click(function() {
     $.ajax({
         type:'POST',
         url:'faucet',
         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
      }).done(function() {
-        $('#free-coins').parent().css('background-color','gray');
+        $('.free-coins').parent().css('background-color','gray');
         setInterval(function() {
             var currentSecond = (endTime.getTime() - new Date().getTime()) / 1000;
-            $("#free-coins").html(secondsToHms(currentSecond));
+            $(".free-coins").html(secondsToHms(currentSecond));
         },1000);
      });
 
