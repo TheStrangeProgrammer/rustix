@@ -1,7 +1,7 @@
 @extends('main')
 @section('content')
 
-    <div class="roulette">
+    <div class="x-roulette">
         <div class="last-10"></div>
         <div class="roulette-wrapper">
             <div class='roulette-selector'></div>
