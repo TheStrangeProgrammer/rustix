@@ -1,11 +1,13 @@
 @extends('main')
 @section('content')
     <div class="d-flex flex-fill flex-column">
+        @if(Auth::check())
         <div class="head-text">
             <span class="welcome-text">Welcome back, <span class="my-auto align-self-center">{{ Auth::user()->name }}</span>
             </span>
             <span class="small-text">have a great day</span>
         </div>
+        @endif
             <span class="gamemodes-text">GAMEMODES:</span>
     <div class="games-div">
         <a href="{{ URL::route('roulette') }}" class="card-game">
