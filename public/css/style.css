@@ -206,9 +206,11 @@ a.core:focus {
 
 }
 .balance{
+    font-weight: 800;
+}
+#user-name{
     font-weight: 600;
 }
-
 .balance-div{
     display: flex;
     align-items: center;
