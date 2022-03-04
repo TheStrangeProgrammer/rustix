@@ -9,7 +9,7 @@
         </div>
         @endif
             <span class="gamemodes-text">GAMEMODES:</span>
-    <a class="cola" href="{{ URL::route('roulette') }}">
+
     <div class="games-div">
         <div class="card-game">
             <div class="top-card">
@@ -20,7 +20,7 @@
                     <a href="{{ URL::route('roulette') }}" class="play-button m-auto" style="color: white;">PLAY</a>
                 </div>
             </div>
-        </a>
+        </div>
 
         <div class="card-game">
             <div class="top-card">
@@ -33,9 +33,9 @@
                 </div>
             </div>
 
-        </a>
+        </div>
     </div>
-</a>
+
     </div>
 @endsection
 @section('title', 'Home')
