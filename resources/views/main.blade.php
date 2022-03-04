@@ -20,7 +20,7 @@
 
         @include('partials.header')
 
-        <div id="sidebar-and-content" class="d-flex flex-fill">
+        <div id="sidebar-and-content" class="d-flex h-100">
 
             @include('partials.left_sidebar')
             <button id="chat-button" class="chat-button">></button>

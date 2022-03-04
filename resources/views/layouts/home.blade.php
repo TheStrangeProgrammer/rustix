@@ -9,26 +9,33 @@
         </div>
         @endif
             <span class="gamemodes-text">GAMEMODES:</span>
+    <a class="cola" href="{{ URL::route('roulette') }}">
     <div class="games-div">
-        <a href="{{ URL::route('roulette') }}" class="card-game">
-            <div class="d-flex p-3">
+        <div class="card-game">
+            <div class="top-card">
                 <h5 class="game-text">ROULETTE</h5>
             </div>
-            <div class="card-img-top-wrapper" style="background-image: url('../assets/roulette-game.svg'">
-
+            <div class="card-img-top-wrapper" style="background-image: url('../assets/Capture.svg'">
+                <div class="d-flex card-overlay">
+                    <a href="{{ URL::route('roulette') }}" class="play-button m-auto" style="color: white;">PLAY</a>
+                </div>
             </div>
         </a>
 
-        <a href="{{ URL::route('roulette') }}" class="card-game">
-            <div class="d-flex p-3">
+        <div class="card-game">
+            <div class="top-card">
                 <h5 class="game-text">X-ROULETTE</h5>
             </div>
-            <div class=" card-img-top-wrapper" style="background-image: url('../assets/x-roulette2.svg'">
-
+            <div class=" card-img-top-wrapper" style="background-image: url('../assets/Capture2.svg'">
+                <div class="d-flex card-overlay">
+                    <a href="{{ URL::route('x-roulette') }}" class="play-button m-auto"
+                        style="color: white;">PLAY</a>
+                </div>
             </div>
 
         </a>
     </div>
+</a>
     </div>
 @endsection
 @section('title', 'Home')

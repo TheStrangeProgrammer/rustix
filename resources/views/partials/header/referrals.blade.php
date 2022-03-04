@@ -33,7 +33,6 @@
                         </div>
                         <div class="total-referral">
                             <input class="claim-button text-edit my-auto" type="submit" value="Claim">
-                            <label class="ins-ref" for="lname" style="font-size: 14px">you can only change it once:</label>
                         </div>
 
                 </div>
