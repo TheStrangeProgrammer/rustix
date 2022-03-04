@@ -23,7 +23,7 @@
         <div id="sidebar-and-content" class="d-flex flex-fill">
 
             @include('partials.left_sidebar')
-
+            <button id="chat-button" class="chat-button">></button>
             <div id="overlay-loading" class="justify-content-center align-items-center">
                 <div class="spinner-border text-light" style="width: 10rem; height: 10rem;" role="status">
                 </div>

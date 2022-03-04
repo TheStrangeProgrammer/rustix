@@ -35,3 +35,18 @@ function secondsToHms(d) {
     var sDisplay = s > 0 ? s + (s == 1 ? " second" : " seconds") : "";
     return hDisplay + mDisplay + sDisplay;
 }
+$("#chat-button").click(function(e){
+    e.stopImmediatePropagation();
+    if($(".left-sidebar").css("display")=="none"){
+        $(".left-sidebar").css("display","flex");
+        $(".main").css("display","none");
+        document.getElementsByClassName("chat-wrapper")[0].scrollTop = document.getElementsByClassName("chat-wrapper")[0].scrollHeight;
+        $("#chat-button").html("<");
+    }
+    else{
+        $(".left-sidebar").css("display","none");
+        $(".main").css("display","flex");
+        $("#chat-button").html(">");
+    }
+
+});

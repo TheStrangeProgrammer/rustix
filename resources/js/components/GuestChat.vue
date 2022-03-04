@@ -1,5 +1,5 @@
 <template>
-    <div class="d-flex flex-column">
+    <div class="chat">
         <div class="d-flex flex-fill chat-wrapper">
             <div v-for="message in messages">
 
@@ -18,6 +18,7 @@
     export default {
         data () {
             return {
+                scroll:true,
                 messages: [],
                 newMessage: ''
             }
@@ -31,8 +32,21 @@
                             text: e.message,
                             user: e.user
                         });
+
+                    }
+                    if(document.getElementsByClassName("chat-wrapper")[0].scrollTop +document.getElementsByClassName("chat-wrapper")[0].clientHeight== document.getElementsByClassName("chat-wrapper")[0].scrollHeight){
+                        this.scroll=true;
                     }
                 });
+        },
+        updated: function () {
+        this.$nextTick(function () {
+            if(this.scroll==true){
+                this.scroll=false;
+                document.getElementsByClassName("chat-wrapper")[0].scrollTop = document.getElementsByClassName("chat-wrapper")[0].scrollHeight;
+            }
+
+        })
         },
         methods: {
             fetchMessages() {

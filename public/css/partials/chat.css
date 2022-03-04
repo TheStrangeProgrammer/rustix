@@ -50,6 +50,8 @@
 }
 
 .sidebar{
+    display: flex;
+    justify-content: space-evenly;
     margin: 0 auto;
     width: 74.75%;
 }
@@ -161,4 +163,26 @@ p.message-text::first-line {
     justify-content: center;
     width: 87.5%;
     min-width: 195.3px;
+}
+.chat-button{
+    display: none;
+    position: fixed;
+    left:0;
+    bottom:24px;
+    width:40px;
+    height:40px;
+}
+.chat{
+    align-items: center;
+    flex-direction: column;
+    flex: 1 1 auto;
+    display: flex;
+}
+@media screen and (max-width: 991px) {
+    .chat-button{
+        display: block;
+    }
+    .chat-top{
+        display:none;
+    }
 }
