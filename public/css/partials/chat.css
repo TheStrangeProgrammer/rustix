@@ -84,6 +84,7 @@
     background-color: rgba(255,255,255,.2);
     border-radius: 100%;
     padding: 0 4px;
+    background-size: cover;
 }
 .message-level{
     word-break: break-word;

@@ -17,16 +17,17 @@ class NewChatMessage implements ShouldBroadcast
 
     public $message;
     public $user;
-
+    public $avatar;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($message, $user)
+    public function __construct($message, $user,$avatar)
     {
         $this->message = $message;
         $this->user = $user;
+        $this->avatar = $avatar;
     }
 
     /**

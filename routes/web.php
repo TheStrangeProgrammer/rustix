@@ -79,7 +79,9 @@ Route::prefix('x-roulette')->group(function () {
     Route::post('/bet', [XRouletteController::class, 'placeBet'])->middleware('auth');
 });
 Route::prefix('referrals')->group(function(){
-    Route::get('/getReferrals', [UserController::class, 'getReferrals'])->name('referrals');
+    Route::get('/getReferrals', [UserController::class, 'getReferrals'])->middleware('auth')->name('referrals');
+    Route::post('/set', [UserController::class, 'setReferral'])->middleware('auth');
+    Route::post('/claim', [UserController::class, 'claimReferral'])->middleware('auth');
 }
 
 

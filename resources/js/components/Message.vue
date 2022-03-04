@@ -5,7 +5,7 @@
                 <span class="message-user">
                     <div class="message-photo">
                     </div>
-                    <div class="message-avatar"></div>
+                    <div class="message-avatar" :style="{'background-image': 'url(' +avatar+ ')'}"></div>
                      <div class="message-level">43</div>
 
                     <p class="message-username">{{ user }}:</p>
@@ -21,7 +21,8 @@
     export default {
         props: [
             'message',
-            'user'
+            'user',
+            'avatar',
         ]
     }
 </script>

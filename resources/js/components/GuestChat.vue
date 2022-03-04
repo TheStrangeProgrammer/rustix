@@ -6,6 +6,7 @@
                 <message
                     :message="message.text"
                     :user="message.user"
+                    :avatar="message.avatar"
                 ></message>
             </div>
         </div>
@@ -30,7 +31,8 @@
                     if(e.user != this.user) {
                         this.messages.push({
                             text: e.message,
-                            user: e.user
+                            user: e.user,
+                            avatar:this.avatar
                         });
 
                     }
