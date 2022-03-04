@@ -1,24 +1,23 @@
 .card-game{
     display:flex;
     flex-direction: column;
-    width:25%;
-    height:25%;
+    width:17%;
+    height:70%;
     margin:10px;
-    background-color: #141620 !important;
-    box-shadow: #2f7e32 0px 5px 15px;
-    border: 0 !important;
-    border-radius: 0.40rem 0.40rem 0.25rem 0.25rem !important ;
+    background-color: #141620;
+    border: 0 ;
+    border-radius: 10px ;
     min-height: 250px;
 }
 .card-img-top-wrapper{
     position: relative;
     width: 100%;
-    height: 75%;
-    border-radius: 0.25rem 0.25rem 0 0 ;
+    height: 100%;
     background-color:#1A1D29 ;
     background-size: contain;
     background-repeat: no-repeat;
     background-position:center;
+    border-radius: 0 0 10px 10px;
   }
 .card-overlay {
     width: 100%;
@@ -27,7 +26,7 @@
     opacity: 0;
     transition: .5s ease;
     background: rgba(0, 0, 0, 0.5);
-    border-radius: 0.25rem 0.25rem 0 0 ;
+    border-radius: 0 0 10px 10px ;
 }
 .play-button {
     opacity: 0;
@@ -59,13 +58,46 @@
     opacity: 1;
     transition: 0.5s;
 }
+.games-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 3rem;
+    margin-left: 3rem;
+    margin-top: 1rem;
+    height: 100%;
+    background-color: #232633;
+
+}
 .game-text{
-    color: rgb(255, 255, 255);
+    color: #00C74D;
     align-items: center;
     text-align: center;
     margin: 0 auto;
     font-weight: bold;
 }
+.welcome-text{
+    font-size: 2.188rem;
+    font-weight: bold;
+}
+.gamemodes-text{
+    display: flex;
+    justify-content: center;
+    padding-top: 8vh;
+    font-size: 1.563rem;
+    font-weight: bold;
+}
+.head-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem;
+}
+.small-text {
+    color: #999999;
+    font-size: 1.063rem;
+}
+
 @media screen and (max-width: 991px) {
     .card-game{
 

@@ -130,7 +130,6 @@ p.message-text::first-line {
 .chat-wrapper{
     overflow-y: auto;
     height: 0px;
-    background-color:#1A1D29;
     flex-direction: column;
 }
 

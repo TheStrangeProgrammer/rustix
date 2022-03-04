@@ -119,7 +119,9 @@ a.core:hover{
     display: flex;
     flex-direction: column;
     width: 20.83333333%;
+    background-color:#232633;
 }
+
 
 .white{
 
@@ -352,69 +354,73 @@ nav.navbar{
         height: auto;
         padding-top:20px;
     }
+   div.card-overlay{
+        opacity: 1;
+        background: none;
+    }
+    a.play-button{
+        opacity: 1;
+    }
     
 
-#menu__toggle {
-  opacity: 0;
-}
-#menu__toggle:checked + .menu__btn> div {
-  transform: rotate(45deg);
-}
-#menu__toggle:checked + .menu__btn > div::before {
-  top: 0;
-  transform: rotate(0deg);
-}
-#menu__toggle:checked + .menu__btn > div::after {
-  top: 0;
-  transform: rotate(90deg);
-}
-#menu__toggle:checked ~ .menu__box {
-  left: 0 !important;
-}
-.menu__btn {
-  position: fixed;
-  width: 26px !important;
-  height: 26px;
-  cursor: pointer;
-  z-index: 1;
-  padding: 10px 0;
-  margin-left: -21px;
-  border: none !important;
-}
-.navbar-toggler:focus{
-    border: none !important;
-    box-shadow: none !important;
-}
-.menu__btn > div,
-.menu__btn > div::before,
-.menu__btn > div::after {
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: #616161;
-  transition-duration: .25s;
-}
-.menu__btn > div::before {
-  content: '';
-  top: -8px;
-}
-.menu__btn > div::after {
-  content: '';
-  top: 8px;
-}
-.navbar-dark .navbar-toggler-icon{
-    background-image: none !important;
-}
-.navbar-toggler{
-    padding: 0 !important;
-    width: 26px;
-    margin-right: 10px;
-}
-.navbar-toggler-icon{
-    padding-right: 26px !important;
-}
-
-
-    
-}
+    #menu__toggle {
+        opacity: 0;
+    }
+    #menu__toggle:checked + .menu__btn> div {
+        transform: rotate(45deg);
+    }
+    #menu__toggle:checked + .menu__btn > div::before {
+        top: 0;
+        transform: rotate(0deg);
+    }
+    #menu__toggle:checked + .menu__btn > div::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+    #menu__toggle:checked ~ .menu__box {
+        left: 0 !important;
+    }
+    .menu__btn {
+        position: relative;
+        width: 26px !important;
+        height: 26px;
+        cursor: pointer;
+        z-index: 1;
+        padding: 10px 0;
+        margin-left: -21px;
+        border: none !important;
+    }
+    .navbar-toggler:focus{
+        border: none !important;
+        box-shadow: none !important;
+    }
+    .menu__btn > div,
+    .menu__btn > div::before,
+    .menu__btn > div::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #616161;
+        transition-duration: .25s;
+    }
+    .menu__btn > div::before {
+        content: '';
+        top: -8px;
+    }
+    .menu__btn > div::after {
+        content: '';
+        top: 8px;
+    }
+    .navbar-dark .navbar-toggler-icon{
+        background-image: none !important;
+    }
+    .navbar-toggler{
+        padding: 0 !important;
+        width: 26px;
+        margin-right: 10px;
+    }
+    .navbar-toggler-icon{
+        padding-right: 26px !important;
+    }  
+    }
