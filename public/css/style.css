@@ -283,6 +283,13 @@ li #admin-button:hover{
     background-color: #0aaf4a;
 
 }
+div .tos-faq-body{
+    padding: 50px;
+    font-weight: bold;
+}
+bold{
+    font-weight: bold;
+}
 ul.second-one{
     margin-right: -1rem !important;
 }
