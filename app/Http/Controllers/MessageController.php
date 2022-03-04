@@ -20,7 +20,7 @@ class MessageController extends Controller
         $message->userId = Auth::user()->id;
         $message->message = $request->message;
         $message->save();
-        event(new NewChatMessage($request->message, $request->user));
+        event(new NewChatMessage($request->message, $request->user,Auth::user()->avatar));
 
         return response()->json([], 200);
 
@@ -30,9 +30,12 @@ class MessageController extends Controller
         $dbMessages = Message::latest()->take(100)->get();
         $messages = [];
         foreach($dbMessages as $message){
+            $user = User::where('id',$message->userId)->first();
             $messages[] = [
-                "user"=>User::where('id',$message->userId)->first()->name,
-                "text"=>$message->message];
+                "user"=>$user->name,
+                "text"=>$message->message,
+                "avatar"=>$user->avatar,
+            ];
         }
         return response()->json(array_reverse($messages) , 200);
     }

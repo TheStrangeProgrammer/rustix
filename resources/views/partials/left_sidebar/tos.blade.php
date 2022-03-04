@@ -1,5 +1,5 @@
 <div id="TOS" class="modal fade" tabindex="2">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">TOS</h5>
