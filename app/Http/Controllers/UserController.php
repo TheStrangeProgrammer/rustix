@@ -73,7 +73,12 @@ class UserController extends Controller
             if($referringUser==null) return response()->json(['success' => 0,'error' => "Code does not exist"]);
             if($referringUser->id==$user->id) return response()->json(['success' => 0,'error' => "You cannot refer yourself"]);
             $user->referredBy=$referringUser->id;
+            $user->balance+=10;
             $user->save();
+            event(new NewBalance($user->id,$user->balance));
+            $referringUser->balance+=100;
+            $referringUser->save();
+            event(new NewBalance($referringUser->id,$referringUser->balance));
             return response()->json(['success' => 1]);
         }
     }
