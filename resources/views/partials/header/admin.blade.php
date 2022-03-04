@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" type="text/css" href="{{ asset('css/layouts/admin.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/partials/admin.css') }}">
 <div id="ADMIN" class="modal fade" tabindex="-1" aria-labelledby="ADMIN-title" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
@@ -15,5 +15,5 @@
 </div>
 
 @push('js')
-    <script src="{{ asset('js/layouts/admin.js') }}"></script>
+    <script src="{{ asset('js/partials/admin.js') }}"></script>
 @endpush

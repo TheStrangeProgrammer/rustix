@@ -17,10 +17,10 @@
                             <label class="set-ref my-auto" for="fname">Your referral code:</label>
                         </div>
                         <div class="total-referral text-edit" >
-                            <input class="set-code" type="text" id="fname" name="fname" placeholder="DFH#HH">
+                            <input id="set-referral" class="set-code" type="text"  name="fname" placeholder="DFH#HH">
                         </div>
                         <div class="total-referral text-edit" style="background-color: #353B54">
-                            <input class="ref-button text-edit my-auto" type="submit" value="Update" id="claim">
+                            <button class="ref-button text-edit my-auto">Update</button>
                             <label class="ins-ref" for="lname" style="font-size: 14px">you can only change it once:</label>
                         </div>
 
@@ -29,10 +29,10 @@
                             <label class="ins-ref" for="lname">Claim a referral code:</label>
                         </div>
                         <div class="total-referral" style="background-color: #353B54">
-                            <input class="ins-code" type="text" id="lname" placeholder="DFH#HH">
+                            <input id="claim-referral" class="ins-code" type="text"  placeholder="DFH#HH">
                         </div>
                         <div class="total-referral">
-                            <input class="claim-button text-edit my-auto" type="submit" value="Claim">
+                            <button class="claim-button text-edit my-auto" >Claim</button>
                         </div>
 
                 </div>
