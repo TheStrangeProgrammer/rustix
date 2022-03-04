@@ -168,10 +168,13 @@ p.message-text::first-line {
 .chat-button{
     display: none;
     position: fixed;
-    left:0;
-    bottom:24px;
+    left: 5px;
+    bottom: 35px;
     width:40px;
     height:40px;
+    background-color: rgba(255,255,255,.08);
+    border-radius: 35px;
+    font-weight: 600;
 }
 .chat{
     align-items: center;
