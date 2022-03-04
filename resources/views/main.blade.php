@@ -12,6 +12,7 @@
         @include('partials.header.withdraw')
         @include('partials.header.profile')
         @include('partials.header.referrals')
+        @include('partials.header.admin')
     @endif
     @include('partials.left_sidebar.alt')
     @include('partials.left_sidebar.faq')

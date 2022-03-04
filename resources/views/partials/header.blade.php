@@ -16,15 +16,10 @@
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <input id="menu__toggle" type="checkbox" />
-                        <label class="menu__btn" for="menu__toggle">                   
+                        <label class="menu__btn" for="menu__toggle">
                     <div class="navbar-toggler-icon"></div>
-                    
+
                 </button>
-
-                
-
-
-
 
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -50,8 +45,8 @@
                                     data-bs-toggle="modal" data-bs-target="#REFERRALS">Referrals</button></li>
                                 <li><a class="dropdown-item text-center " href="{{ URL::route('logOut') }}">Log
                                         Out</a></li>
-                                <li><a class="dropdown-item text-center " href="http://localhost/admin">Admin
-                                        Panel</a></li>
+                                <li><button id="admin-button" class="dropdown-item text-center "
+                                    data-bs-toggle="modal" data-bs-target="#ADMIN">Admin Panel</button></li>
                             </ul>
                         </li>
                     </ul>
