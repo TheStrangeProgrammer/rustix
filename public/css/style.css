@@ -142,6 +142,7 @@ a.core:focus {
     display: flex;
     width: 80%;
     overflow-y: auto;
+    flex:1 1 auto;
 }
 .footer{
 }

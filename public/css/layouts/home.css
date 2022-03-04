@@ -133,9 +133,7 @@
     .main{
         justify-content: center;
     }
-    div #sidebar-and-content{
-        height: auto !important;
-    }
+
     .gamemodes-text{
         padding-top: 0;
     }
