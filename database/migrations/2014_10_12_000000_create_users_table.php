@@ -22,7 +22,8 @@ class CreateUsersTable extends Migration
             $table->integer('totalDeposit');
             $table->integer('totalSpent');
             $table->integer('totalWithdraw');
-            $table->string('referralCode')->unique();
+            $table->boolean('faucet')->default(false);
+            $table->string('referralCode')->unique()->nullable();
             $table->string('tradeToken')->nullable();
             $table->bigInteger('referredBy')->nullable();
             $table->rememberToken();

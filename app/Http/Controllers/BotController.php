@@ -67,6 +67,9 @@ class BotController extends Controller
         }
         return null;*/
     }
+    public static function splitTradeToken($token){
+        return explode("token=",$token)[1];
+    }
     public static function sendTakeTradeOffer($toSteamId,$token,$tradeOffers,$selectedItems){
         $trade = $tradeOffers->createTrade($toSteamId);
         foreach($selectedItems as $item){
@@ -91,16 +94,17 @@ class BotController extends Controller
             ProcessDeposit::dispatch(Auth::user()->steamid,Auth::user()->tradeToken,session('tradeId'),session('botId'),$selectedItems,$price)->onQueue('deposit');
         }
 
-        return redirect("inventory");
     }
     public static function depositItems(Request $request)
     {
-        if(Auth::user()->tradeToken=="") return view("layouts/error",['error' => "Please set trade token in profile"]);
+        $token = BotController::splitTradeToken(Auth::user()->tradeToken);
+        if($token=="") return response()->json(['success' => 0,'error' => "Please set trade token in profile"]);
 
 
 
-        $selectedItems = json_decode($request->input("itemList"));
-        if(count($selectedItems)<1) view("layouts/error",['error' => "At least 1 selected Item"]);
+        $selectedItems = json_decode(json_encode($request->json()->all()));
+
+        if(count($selectedItems)<1) response()->json(['success' => 0,'error' => "At least 1 selected Item"]);
 
         if(BotController::$deposit==null){
             BotController::loginDeposit();
@@ -115,13 +119,14 @@ class BotController extends Controller
 
         $tradeOffers = BotController::$bot[$random]->tradeOffers();
         $botToUserId=0;
-        while($botToUserId==0){
-            $botToUserId=BotController::sendTakeTradeOffer(Auth::user()->steamid,Auth::user()->tradeToken,$tradeOffers,$selectedItems);
-        }
+
+
+        $botToUserId=BotController::sendTakeTradeOffer(Auth::user()->steamid,$token,$tradeOffers,$selectedItems);
+        if($botToUserId==0) response()->json(['success' => 0,'error' => "Unexpected Error please try again"]);
         session(['selectedItems' => json_encode($selectedItems)]);
         session(['tradeId' => $botToUserId]);
         session(['botId' => $random]);
-        return view("layouts/depositAccept");
+        return response()->json(['success' => 1]);
 
 /*
 
@@ -164,18 +169,19 @@ class BotController extends Controller
 
     public static function withdrawItems(Request $request)
     {
-        if(Auth::user()->tradeToken=="") return view("layouts/error",['error' => "Please set trade token in profile"]);
+        $token = BotController::splitTradeToken(Auth::user()->tradeToken);
+        if($token=="") return response()->json(['success' => 0,'error' => "Please set trade token in profile"]);
 
-        $selectedItems = json_decode($request->input("itemList"));
+        $selectedItems = json_decode(json_encode($request->json()->all()));
 
         $price = BotController::getItemPriceFromInventory(json_decode(Storage::disk('local')->get('depositInventory.json'))->inventory->inventory,$selectedItems);
 
-        if(Auth::user()->balance<$price) return view("layouts/error",['error' => "Not Enough Money"]);
+        if(Auth::user()->balance<$price) return response()->json(['success' => 0,'error' => "Not Enough Money"]);
 
-        if(count($selectedItems)<1) return view("layouts/error",['error' => "At least 1 selected Item"]);
+        if(count($selectedItems)<1) return response()->json(['success' => 0,'error' => "At least 1 selected Item"]);
 
-        ProcessWithdraw::dispatch(Auth::user()->steamid,Auth::user()->tradeToken,$selectedItems,$price)->onQueue('withdraw');
-
+        ProcessWithdraw::dispatch(Auth::user()->steamid,$token,$selectedItems,$price)->onQueue('withdraw');
+        return response()->json(['success' => 1]);
 
     }
 }

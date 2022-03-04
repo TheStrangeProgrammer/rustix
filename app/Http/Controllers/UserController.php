@@ -8,6 +8,7 @@ use Illuminate\Http\Client\Response;
 use App\Events\NewBalance;
 use App\Models\User;
 use App\Http\Requests\InventoryRequest;
+use App\Models\BettingHistory;
 use Illuminate\Support\Facades\Storage;
 class UserController extends Controller
 {
@@ -15,6 +16,22 @@ class UserController extends Controller
     public function getUserInventory()
     {
         return view("layouts/inventory");
+    }
+    public static function resetFaucet(){
+        User::query()->update(['faucet' => false]);
+    }
+    public function getFaucet(){
+        return response()->json(['claimed'=>Auth::user()->faucet,'serverTime'=>Carbon::parse("24:0:0")->diffInSeconds(Carbon::parse(Carbon::now()->toTimeString()))]);
+    }
+    public function postFaucet(){
+        if(Auth::user()->faucet==false){
+            $user = User::where('id', Auth::user()->id)->first();
+            $user->faucet=true;
+            $user->balance+=100;
+            $user->save();
+            event(new NewBalance($user->id,$user->balance));
+        }
+
     }
     public function getItems(){
         $lastInventroyAccess=session('lastInventroyAccess');
@@ -44,12 +61,8 @@ class UserController extends Controller
     public function addbalance() {
 
     }
-    public function getProfile(){
+    public function getReferrals(){
         $user = User::where('id', Auth::user()->id)->first();
-
-        $data['totalDeposited'] = $user->totalDeposit;
-        $data['totalGambled'] = $user->totalWithdraw;
-        $data['tradeToken'] = $user->tradeToken;
 
         $data['referralCode'] = $user->referralCode;
         $referrer = User::where('id', Auth::user()->referredBy)->first();
@@ -67,6 +80,24 @@ class UserController extends Controller
 
         return $data;
     }
+    public function getProfile(){
+        $user = User::where('id', Auth::user()->id)->first();
+
+        $data['totalDeposited'] = $user->totalDeposit;
+        $data['totalGambled'] = $user->totalWithdraw;
+        $data['tradeToken'] = $user->tradeToken;
+        $histories = BettingHistory::where('user_id', Auth::user()->id)->latest()->take(100)->get();
+        $betHistory=[];
+        foreach($histories as $history){
+
+            $betHistory[$history->id]["amount"] = $history->amount;
+            $betHistory[$history->id]["game"] = $history->game;
+            $betHistory[$history->id]["time"] = $history->created_at;
+            $betHistory[$history->id]["won"] = $history->won;
+        }
+        $data['betHistory']=$betHistory;
+        return $data;
+    }
     public function setReferral(Request $request){
         $user = User::where('id', Auth::user()->id)->first();
         $referringUser = User::where('referralCode',$request->referrerCode )->first();
@@ -75,14 +106,13 @@ class UserController extends Controller
         $user->referredBy=$referringUser->id;
         $user->save();
         return redirect("profile");
-
     }
-    public function setTradeToken(Request $request){
-        $user = User::where('id', Auth::user()->id)->first();
-        $user->tradeToken=$request->tradeToken;
-        $user->save();
-        return redirect("profile");
 
+    public function setTradeToken(Request $request){
+        $tradeToken=$request->json()->all()["tradeUrl"];
+        $user = User::where('id', Auth::user()->id)->first();
+        $user->tradeToken=$tradeToken;
+        $user->save();
     }
     public function roulette(){
         return view("layouts/roulette");

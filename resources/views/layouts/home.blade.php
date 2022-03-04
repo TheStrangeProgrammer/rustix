@@ -1,29 +1,34 @@
 @extends('main')
 @section('content')
-    <div class="d-flex flex-wrap flex-fill">
-        <div class="card-game">
-            <div class="card-img-top-wrapper" style="background-image: url('../assets/roulette-game.svg'">
-                <div class="d-flex card-overlay">
-                    <a href="{{ URL::route('roulette') }}" class="play-button m-auto py-3" style="color: white;">PLAY</a>
-                </div>
-            </div>
-            <div class="card-body">
+    <div class="d-flex flex-fill flex-column">
+        @if(Auth::check())
+        <div class="head-text">
+            <span class="welcome-text">Welcome back, <span class="my-auto align-self-center">{{ Auth::user()->name }}</span>
+            </span>
+            <span class="small-text">have a great day</span>
+        </div>
+        @endif
+            <span class="gamemodes-text">GAMEMODES:</span>
+    <div class="games-div">
+        <a href="{{ URL::route('roulette') }}" class="card-game">
+            <div class="d-flex p-3">
                 <h5 class="game-text">ROULETTE</h5>
             </div>
-        </div>
+            <div class="card-img-top-wrapper" style="background-image: url('../assets/roulette-game.svg'">
 
-        <div class="card-game">
-            <div class=" card-img-top-wrapper" style="background-image: url('../assets/x-roulette2.svg'">
-                <div class="d-flex card-overlay">
-                    <a href="{{ URL::route('x-roulette') }}" class="play-button m-auto py-3"
-                        style="color: white;">PLAY</a>
-                </div>
             </div>
-            <div class="card-body">
+        </a>
+
+        <a href="{{ URL::route('roulette') }}" class="card-game">
+            <div class="d-flex p-3">
                 <h5 class="game-text">X-ROULETTE</h5>
             </div>
-        </div>
+            <div class=" card-img-top-wrapper" style="background-image: url('../assets/x-roulette2.svg'">
 
+            </div>
+
+        </a>
+    </div>
     </div>
 @endsection
 @section('title', 'Home')

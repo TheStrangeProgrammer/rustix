@@ -5261,6 +5261,18 @@ __webpack_require__.r(__webpack_exports__);
 
     this.fetchBalance();
     Echo["private"]("balance.".concat(this.user)).listen('NewBalance', function (e) {
+      if (e.balance < _this.balance) {
+        document.getElementById("balance").style.color = "red";
+        setTimeout(function () {
+          document.getElementById("balance").style.color = "white";
+        }, 2000);
+      } else if (e.balance > _this.balance) {
+        document.getElementById("balance").style.color = "green";
+        setTimeout(function () {
+          document.getElementById("balance").style.color = "white";
+        }, 2000);
+      }
+
       _this.balance = e.balance;
     });
   },
@@ -5318,11 +5330,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: {
-    user: String
-  },
+  props: ['user'],
   data: function data() {
     return {
+      scroll: true,
       messages: [],
       newMessage: ''
     };
@@ -5337,6 +5348,18 @@ __webpack_require__.r(__webpack_exports__);
           text: e.message,
           user: e.user
         });
+      }
+
+      if (document.getElementsByClassName("chat-wrapper")[0].scrollTop + document.getElementsByClassName("chat-wrapper")[0].clientHeight == document.getElementsByClassName("chat-wrapper")[0].scrollHeight) {
+        _this.scroll = true;
+      }
+    });
+  },
+  updated: function updated() {
+    this.$nextTick(function () {
+      if (this.scroll == true) {
+        this.scroll = false;
+        document.getElementsByClassName("chat-wrapper")[0].scrollTop = document.getElementsByClassName("chat-wrapper")[0].scrollHeight;
       }
     });
   },
@@ -5355,6 +5378,10 @@ __webpack_require__.r(__webpack_exports__);
         user: this.user,
         message: this.newMessage
       }).then(function (response) {
+        if (document.getElementsByClassName("chat-wrapper")[0].scrollTop + document.getElementsByClassName("chat-wrapper")[0].clientHeight == document.getElementsByClassName("chat-wrapper")[0].scrollHeight) {
+          _this3.scroll = true;
+        }
+
         _this3.messages.push({
           text: _this3.newMessage,
           user: _this3.user
@@ -5400,6 +5427,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
+      scroll: true,
       messages: [],
       newMessage: ''
     };
@@ -5414,6 +5442,18 @@ __webpack_require__.r(__webpack_exports__);
           text: e.message,
           user: e.user
         });
+      }
+
+      if (document.getElementsByClassName("chat-wrapper")[0].scrollTop + document.getElementsByClassName("chat-wrapper")[0].clientHeight == document.getElementsByClassName("chat-wrapper")[0].scrollHeight) {
+        _this.scroll = true;
+      }
+    });
+  },
+  updated: function updated() {
+    this.$nextTick(function () {
+      if (this.scroll == true) {
+        this.scroll = false;
+        document.getElementsByClassName("chat-wrapper")[0].scrollTop = document.getElementsByClassName("chat-wrapper")[0].scrollHeight;
       }
     });
   },
@@ -45384,7 +45424,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "d-flex flex-column align-items-center" }, [
+  return _c("div", { staticClass: "chat" }, [
     _c(
       "div",
       { staticClass: "d-flex flex-fill chat-wrapper" },
@@ -45449,11 +45489,11 @@ var render = function () {
               ]
             ),
             _vm._v(" "),
-            _c("div", { staticClass: "control p-2" }, [
+            _c("div", { staticClass: "chat-send-div control p-2" }, [
               _c(
                 "button",
                 {
-                  staticClass: "button is-danger",
+                  staticClass: "chat-send-button button is-danger",
                   attrs: { type: "submit", disabled: !_vm.newMessage },
                 },
                 [_vm._v("\n                    Send\n                ")]
@@ -45488,7 +45528,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "d-flex flex-column" }, [
+  return _c("div", { staticClass: "chat" }, [
     _c(
       "div",
       { staticClass: "d-flex flex-fill chat-wrapper" },

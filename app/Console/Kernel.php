@@ -4,6 +4,7 @@ namespace App\Console;
 
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\BotController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\PriceController;
 use App\Http\Controllers\RouletteController;
 use App\Http\Controllers\XRouletteController;
@@ -21,6 +22,25 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $this->bootstrap();
+        $schedule->call(function () {
+
+
+            $inventory["inventory"] = InventoryController::getInventory(config("rustix.depositId"));
+            Storage::disk('local')->put('depositInventory.json', json_encode($inventory));
+
+        })->everyMinute()->runInBackground();
+        $schedule->call(function () {
+            PriceController::updateAllItemPrices();
+        })->hourly()->runInBackground();
+        $schedule->call(function () {
+            BotController::loginDeposit();
+            BotController::loginBot(1);
+            BotController::loginBot(2);
+            BotController::loginBot(3);
+        })->hourly()->runInBackground();
+        $schedule->call(function () {
+            UserController::resetFaucet();
+        })->daily()->runInBackground();
         //main loop
         $schedule->call(function () {
             sleep(29);
@@ -31,20 +51,7 @@ class Kernel extends ConsoleKernel
             XRouletteController::newOutcome();
 
         })->everyMinute()->runInBackground();
-        $schedule->call(function () {
 
-
-            $inventory["inventory"] = InventoryController::getInventory(config("rustix.depositId"));
-            Storage::disk('local')->put('depositInventory.json', json_encode($inventory));
-
-        })->everyMinute()->runInBackground();
-        $schedule->call(function () {
-            BotController::loginDeposit();
-            BotController::loginBot(1);
-            BotController::loginBot(2);
-            BotController::loginBot(3);
-            PriceController::updateAllItemPrices();
-        })->everyTwoHours()->runInBackground();
     }
 
     /**

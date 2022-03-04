@@ -13,7 +13,7 @@ initWheel(outcomes);
 
 $.getJSON("api/roulette/spin").done(function( data ) {
     let main = $('.main');
-    let overlay = $('#overlay');
+    let overlay = $('#overlay-loading');
 
     var timer=$(".roulette-timer");
     var progress=$(".round-time-bar div");
@@ -288,6 +288,13 @@ function setWheelLocation(position,randomize=-cardWidth/2){
 }
 
 var last=0;
+$(".input-bet").change(function(){
+    $(".input-bet").attr("max",parseInt($("#balance").html()));
+    $(".input-bet").attr("min","0");
+    if(parseInt($(".input-bet").val())>parseInt($("#balance").html())||parseInt($(".input-bet").val())<0){
+        $(".input-bet").val(parseInt($("#balance").html()));
+    }
+});
 
 $("#button-amount-clear").click(function(){
     last=0;
@@ -299,26 +306,44 @@ $("#button-amount-last").click(function(){
 $("#button-amount-1").click(function(){
     last=parseInt($(".input-bet").val())+1;
     $(".input-bet").val(last);
+    if(parseInt($(".input-bet").val())>parseInt($("#balance").html())||parseInt($(".input-bet").val())<0){
+        $(".input-bet").val(parseInt($("#balance").html()));
+    }
 });
 $("#button-amount-10").click(function(){
     last=parseInt($(".input-bet").val())+10;
     $(".input-bet").val(last);
+    if(parseInt($(".input-bet").val())>parseInt($("#balance").html())||parseInt($(".input-bet").val())<0){
+        $(".input-bet").val(parseInt($("#balance").html()));
+    }
 });
 $("#button-amount-100").click(function(){
     last=parseInt($(".input-bet").val())+100;
     $(".input-bet").val(last);
+    if(parseInt($(".input-bet").val())>parseInt($("#balance").html())||parseInt($(".input-bet").val())<0){
+        $(".input-bet").val(parseInt($("#balance").html()));
+    }
 });
 $("#button-amount-1000").click(function(){
     last=parseInt($(".input-bet").val())+1000;
     $(".input-bet").val(last);
+    if(parseInt($(".input-bet").val())>parseInt($("#balance").html())||parseInt($(".input-bet").val())<0){
+        $(".input-bet").val(parseInt($("#balance").html()));
+    }
 });
 $("#button-amount-2").click(function(){
     last=parseInt($(".input-bet").val())/2;
     $(".input-bet").val(last);
+    if(parseInt($(".input-bet").val())>parseInt($("#balance").html())||parseInt($(".input-bet").val())<0){
+        $(".input-bet").val(parseInt($("#balance").html()));
+    }
 });
 $("#button-amount-x2").click(function(){
     last=parseInt($(".input-bet").val())*2;
     $(".input-bet").val(last);
+    if(parseInt($(".input-bet").val())>parseInt($("#balance").html())||parseInt($(".input-bet").val())<0){
+        $(".input-bet").val(parseInt($("#balance").html()));
+    }
 });
 
 $("#button-amount-max").click(function(){

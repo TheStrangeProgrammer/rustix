@@ -1,5 +1,5 @@
 <template>
-    <div class="d-flex flex-column align-items-center">
+    <div class="chat">
         <div class="d-flex flex-fill chat-wrapper">
             <div v-for="message in messages">
 
@@ -15,8 +15,8 @@
                 <div class="d-flex flex-fill control is-expanded p-2">
                     <input class="input chat-input flex-fill" type="text" placeholder="Type a message" v-model="newMessage">
                 </div>
-                <div class="control p-2">
-                    <button type="submit" class="button is-danger" :disabled="!newMessage">
+                <div class="chat-send-div control p-2">
+                    <button type="submit" class="chat-send-button button is-danger" :disabled="!newMessage">
                         Send
                     </button>
                 </div>
@@ -27,11 +27,10 @@
 
 <script>
     export default {
-        props: {
-            user:String
-            },
+        props:['user'],
         data () {
             return {
+                scroll:true,
                 messages: [],
                 newMessage: ''
             }
@@ -41,18 +40,36 @@
             Echo.channel('chat')
                 .listen('NewChatMessage', (e) => {
                     if(e.user != this.user) {
+
                         this.messages.push({
                             text: e.message,
                             user: e.user
                         });
+
+
+                    }
+                    if(document.getElementsByClassName("chat-wrapper")[0].scrollTop +document.getElementsByClassName("chat-wrapper")[0].clientHeight== document.getElementsByClassName("chat-wrapper")[0].scrollHeight){
+                        this.scroll=true;
                     }
                 });
+
+        },
+        updated: function () {
+        this.$nextTick(function () {
+            if(this.scroll==true){
+                this.scroll=false;
+                document.getElementsByClassName("chat-wrapper")[0].scrollTop = document.getElementsByClassName("chat-wrapper")[0].scrollHeight;
+            }
+
+        })
         },
         methods: {
             fetchMessages() {
                 axios.get(`${process.env.MIX_WEBSOCKET_SERVER_BASE_URL}/api/messages`).then(response => {
                     this.messages = response.data;
+
                 })
+
             },
 
             submit() {
@@ -60,6 +77,9 @@
                     user: this.user,
                     message: this.newMessage
                 }).then((response) => {
+                    if(document.getElementsByClassName("chat-wrapper")[0].scrollTop +document.getElementsByClassName("chat-wrapper")[0].clientHeight== document.getElementsByClassName("chat-wrapper")[0].scrollHeight){
+                        this.scroll=true;
+                    }
                     this.messages.push({
                         text: this.newMessage,
                         user: this.user
