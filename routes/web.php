@@ -82,8 +82,19 @@ Route::prefix('referrals')->group(function(){
     Route::get('/getReferrals', [UserController::class, 'getReferrals'])->middleware('auth')->name('referrals');
     Route::post('/set', [UserController::class, 'setReferral'])->middleware('auth');
     Route::post('/claim', [UserController::class, 'claimReferral'])->middleware('auth');
-}
+});
 
-
-);
+Route::prefix('admin')->group(function(){
+    Route::get('/', [AdminController::class, 'getReferrals'])->middleware('admin')->name('referrals');
+    Route::post('/search', [AdminController::class, 'setReferral'])->middleware('admin');
+    Route::get('/profile', [AdminController::class, 'setReferral'])->middleware('admin');
+    Route::get('/referrals', [AdminController::class, 'setReferral'])->middleware('admin');
+    Route::get('/history', [AdminController::class, 'setReferral'])->middleware('admin');
+    Route::get('/mute', [AdminController::class, 'setReferral'])->middleware('admin');
+    Route::post('/chat', [AdminController::class, 'setReferral'])->middleware('admin');
+    Route::post('/x-roulette', [AdminController::class, 'setReferral'])->middleware('admin');
+    Route::post('/roulette', [AdminController::class, 'setReferral'])->middleware('admin');
+    Route::post('/crazytime', [AdminController::class, 'setReferral'])->middleware('admin');
+    Route::post('/maintenance', [AdminController::class, 'setReferral'])->middleware('admin');
+});
 Route::post('/message', [MessageController::class ,'broadcast'])->middleware('auth');

@@ -13,9 +13,9 @@
                         <span class="my-auto">Player look-up</span>
                     </div>
 
-                    <div class="small-div text-edit ">
-                        <input id="claim-referral" type="text"  placeholder="DFH#HH">
-                        <button id="update-trade-url" class="admin-button ms-auto text-edit my-auto"
+                    <div class="total-admin small-div text-edit " style="background-color: rgba(53,59,84,1)">
+                        <input id="claim-referral" class="insert-code" type="text"  placeholder="DFH#HH">
+                        <button id="search-admin" class="admin-button ms-auto text-edit my-auto"
                             style="margin: 6px 0">Search</button>
                     </div>
 
@@ -30,23 +30,23 @@
                         </div>
                     </div>
                     <div class="total-admin text-edit justify-content-around" style="background-color: rgba(53,59,84,1)">
-                        <button id="update-trade-url" class="admin-button text-edit my-auto"
+                        <button id="profile-admin" class="admin-button text-edit my-auto"
                             style="margin: 6px 0">profile</button>
-                        <button id="update-trade-url" class="admin-button text-edit my-auto"
+                        <button id="referrals-admin" class="admin-button text-edit my-auto"
                             style="margin: 6px 0">refferals</button>
-                        <button id="update-trade-url" class="admin-button text-edit my-auto"
+                        <button id="history-admin" class="admin-button text-edit my-auto"
                             style="margin: 6px 0">history</button>
                     </div>
                     <div class="total-admin text-edit justify-content-around">
-                        <button id="update-trade-url" class="admin-button text-edit my-auto"
+                        <button id="mute-admin" class="admin-button text-edit my-auto"
                             style="margin: 6px 0">mute</button>
                         <button id="update-trade-url" class="admin-button text-edit my-auto"
                             style="margin: 6px 0">restrict</button>
                         <button id="update-trade-url" class="admin-button text-edit my-auto"
                             style="margin: 6px 0">ceva</button>
                     </div>
-                    
-                    
+
+
 
                 </div>
                 <div class="text-edit flex-fill column-div" style="background-color: #0d0e14">
@@ -55,19 +55,19 @@
                         <span class="my-auto">Website actionns</span>
                     </div>
                     <div class="total-admin text-edit justify-content-around" style="background-color: rgba(53,59,84,1)">
-                        <button id="update-trade-url" class="admin-button text-edit my-auto"
+                        <button id="chat-admin" class="admin-button text-edit my-auto"
                             style="margin: 6px 0">chat</button>
-                        <button id="update-trade-url" class="admin-button text-edit my-auto"
+                        <button id="x-roulette-admin" class="admin-button text-edit my-auto"
                             style="margin: 6px 0">xroul.</button>
-                        <button id="update-trade-url" class="admin-button text-edit my-auto"
+                        <button id="roulette-admin" class="admin-button text-edit my-auto"
                             style="margin: 6px 0">roul.</button>
                     </div>
                     <div class="total-admin text-edit justify-content-around">
-                        <button id="update-trade-url" class="admin-button text-edit my-auto"
+                        <button id="crazytime-admin" class="admin-button text-edit my-auto"
                             style="margin: 6px 0">craz.</button>
-                        <button id="update-trade-url" class="admin-button text-edit my-auto"
+                        <button id="maintenance-admin" class="admin-button text-edit my-auto"
                             style="margin: 6px 0">maint.</button>
-                        <button id="update-trade-url" class="admin-button text-edit my-auto"
+                        <button id="" class="admin-button text-edit my-auto"
                             style="margin: 6px 0">ceva</button>
                     </div>
                     <div class="total-admin text-edit justify-content-around" style="background-color: rgba(53,59,84,1)">
