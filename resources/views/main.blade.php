@@ -22,6 +22,10 @@
     @include('partials.left_sidebar.alt')
     @include('partials.left_sidebar.faq')
     @include('partials.left_sidebar.tos')
+    <div class="clearfix">
+        <div class="spinner"></div> {{-- LOADER --}}
+    </div>
+    
     <div id="app" class="d-flex flex-column h-100">
 
         @include('partials.header')
@@ -44,6 +48,12 @@
 
     <script src="{{ asset('js/app.js') }}"></script>
     @stack('js')
+    {{-- LOADER --}}
+    <script>
+window.addEventListener("load", function(){
+    $('.clearfix').hide();
+});
+    </script>
 
 </body>
 
