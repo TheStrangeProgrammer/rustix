@@ -53,19 +53,11 @@ class BotController extends Controller
     }
     public static function confirmTradeOffer($tradeOfferId,$bot){
 
-
     }
     public static function acceptTradeOffer($tradeOfferId,$tradeOffers){
         $incomingOffer = $tradeOffers->getTradeOfferViaAPI($tradeOfferId);
         $tradeOffers->acceptTrade($incomingOffer);
         return $incomingOffer;
-        /*foreach ($incomingOffers as $incomingOffer) {
-            if($incomingOffer->getTradeOfferId()==$tradeOfferId){
-                $tradeOffers->acceptTrade($incomingOffer);
-                return $incomingOffer;
-            }
-        }
-        return null;*/
     }
     public static function splitTradeToken($token){
         return explode("token=",$token)[1];
@@ -128,31 +120,7 @@ class BotController extends Controller
         session(['botId' => $random]);
         return response()->json(['success' => 1]);
 
-/*
 
-        $items = $tradeOffers->getItems(intval($depositToBotId));
-
-        $botToUserId=0;
-        while($botToUserId==0){
-            $botToUserId = BotController::sendGiveTradeOffer($this->toSteamId,$this->token,$tradeOffers,$items);
-        }
-        $retry = true;
-        while($retry){
-            try{
-                $confirmations =BotController::$bot[$random]->mobileAuth()->confirmations()->fetchConfirmations();
-                foreach ($confirmations as $confirmation) {
-                    if(BotController::$bot[$random]->mobileAuth()->confirmations()->getConfirmationTradeOfferId($confirmation)==$botToUserId){
-                        if(BotController::$bot[$random]->mobileAuth()->confirmations()->acceptConfirmation($confirmation)){
-                            $retry=false;
-                        }
-                        break;
-                    }
-                }
-            } catch (WgTokenInvalidException $ex) {
-                BotController::$bot[$random]->mobileAuth()->refreshMobileSession();
-                $retry=true;
-            }
-        }*/
     }
     public static function getItemPriceFromInventory($inventory,$selectedItems){
         $price = 0;

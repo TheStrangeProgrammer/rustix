@@ -30,7 +30,6 @@ class User extends Authenticatable
         'tradeToken',
         'faucet',
         'role'
-
     ];
 
     /**
