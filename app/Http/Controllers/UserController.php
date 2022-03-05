@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Http\Requests\InventoryRequest;
 use App\Models\BettingHistory;
 use Illuminate\Support\Facades\Storage;
+
 class UserController extends Controller
 {
     const inventoryDelay=30;
@@ -61,6 +62,7 @@ class UserController extends Controller
             $exists = User::where('referralCode', $request->json()->all()["referralCode"])->first();
             if($exists==null){
                 $user->referralCode=$request->all()["referralCode"];
+                $user->save();
                 return response()->json(['success' => 1]);
             }
             return response()->json(['success' => 0,'error' => "Code exists"]);

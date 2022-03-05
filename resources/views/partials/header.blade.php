@@ -24,7 +24,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <button id="deposit-button" class="theme-bc-3 me-auto" data-bs-toggle="modal"
-                        data-bs-target="#DEPOSIT">DEPOSIT</button>
+                        data-bs-target="#TRANSFER">DEPOSIT</button>
 
                     <ul class="navbar-nav mb-2 mb-lg-0 navbar-dark ">
                         <li class="nav-item dropdown">

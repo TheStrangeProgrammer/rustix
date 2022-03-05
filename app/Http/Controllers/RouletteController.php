@@ -48,7 +48,7 @@ class RouletteController extends Controller
             $response["error"]="At least 1 coin";
             return response()->json($response);
         }
-        $user = User::where('id', Auth::user()->id)->first();
+        $user = User::where('id', Auth::user()->id)->lockForUpdate()->first();
         if($betAmount>$user->balance){
             $response["success"]=false;
             $response["error"]="Not enough coins";
@@ -61,8 +61,9 @@ class RouletteController extends Controller
         }
 
         $user->balance-=$betAmount;
-        event(new NewBalance(Auth::user()->id,$user->balance));
         $user->save();
+
+        event(new NewBalance(Auth::user()->id,$user->balance));
 
         RouletteController::addBet(Auth::user()->id,Auth::user()->name,Auth::user()->avatar,$data["bet"],$betAmount);
 

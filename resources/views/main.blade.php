@@ -8,7 +8,10 @@
 
 <body class="h-100 body  theme-tc-1 theme-bc-1 theme-fw-1">
     @if (Auth::check())
+    @include('partials.header.crypto')
         @include('partials.header.deposit')
+    @include('partials.header.transfer')
+
         @include('partials.header.withdraw')
         @include('partials.header.profile')
         @include('partials.header.referrals')
