@@ -31,15 +31,15 @@
   }
 
 
-.roulette-card{
+div .roulette-card{
     height:70px;
     width:70px;
     margin:3px;
     border-radius:8px;
     border-bottom:3px solid rgba(0,0,0,0.2);
     display:flex;
-    align-items: center !important;
-    justify-content: end !important;
+    align-items: center;
+    justify-content: end;
     padding-bottom: 5px;
     color:white;
     font-size:1em;
@@ -95,7 +95,7 @@
 .roulette-black{
     background-color:#2D3035;
     background-repeat: no-repeat;
-    box-shadow: 0 10px 27px #010a1d1f,inset 0 2px #3b3f47,inset 0 -2px #272b33 !important;
+    box-shadow: 0 10px 27px #010a1d1f,inset 0 2px #3b3f47,inset 0 -2px #272b33;
 }
 
 .timer-custom{
@@ -103,13 +103,13 @@
     font-weight: bold;
     margin-top: 20px;
 }
-.round-time-bar  {
+div.round-time-bar  {
     display: flex;
     flex-shrink: 0;
     border-radius: 50rem;
     height: 15px;
     border-radius: 10px;
-    background-color: #2D3035 !important;
+    background-color: #2D3035 ;
 
   }
 .round-time-bar div{
@@ -207,13 +207,13 @@
      background-color: #F95146;
      box-shadow: 0 10px 27px #fa010133,inset 0 2px #e5564b,inset 0 -2px #ad362d;
  }
- #bet-green{
+ div #bet-green{
      background-color: #00C74D;
-     box-shadow: 0 10px 27px #00ff0c1a,0 -3px #00913c inset,0 2px #35d87b inset !important;
+     box-shadow: 0 10px 27px #00ff0c1a,0 -3px #00913c inset,0 2px #35d87b inset;
  }
- #bet-black{
+div #bet-black{
     background-color: #2D3035;
-    box-shadow: 0 10px 27px #010a1d1f,inset 0 2px #3b3f47,inset 0 -2px #272b33 !important;
+    box-shadow: 0 10px 27px #010a1d1f,inset 0 2px #3b3f47,inset 0 -2px #272b33;
     }
 
  .image-circle{
@@ -241,7 +241,7 @@
 }
 #bet-bait{
     background-color: #7c99b4;
-    box-shadow: inset 0 2px #8fa8c0,inset 0 -3px #637d95 !important;
+    box-shadow: inset 0 2px #8fa8c0,inset 0 -3px #637d95;
 }
 
 .button-bet:hover {
@@ -322,7 +322,7 @@
 .users-section{
      position: relative;
      opacity: .3;
-     margin-right: 0 !important;
+     margin-right: 0;
      width: calc(25%-1.875em);
      background-color: chartreuse;
 }
@@ -356,7 +356,7 @@
         padding: 0 10px;
     }
     .last-100 div:last-child{
-        padding: 0 !important;
+        padding: 0 ;
     }
 }
   .main{

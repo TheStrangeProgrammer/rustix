@@ -96,7 +96,7 @@
     padding: 3px 7px;
 }
 
-div input{
+.small-div input{
     display: flex;
     margin-top: 2%;
     margin-bottom: 2%;

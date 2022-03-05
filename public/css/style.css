@@ -106,7 +106,7 @@ body{
 
 div ul.dropdown-menu li:last-child{
     background-color: #00C74D;
-    color: #F2F2F2 !important;
+    color: #F2F2F2;
     margin-top: 10px;
 }
 a.core{
@@ -122,11 +122,6 @@ a.core:hover{
     color: #F2F2F2;
     background-color: #0aaf4a;
     transition: .25s;
-}
-
-.modal-header .btn-close {
-    margin: 0 !important;
-
 }
 .modal-header .btn-close{
     color: #fff;
@@ -262,6 +257,7 @@ img.overflow-visible{
     height: 32px;
     border-radius: 50%;
 }
+
 ul.dropdown-menu {
     margin-top: 29.3px !important;
     min-width: 13.7rem;
@@ -298,9 +294,7 @@ div .tos-faq-body{
 bold{
     font-weight: bold;
 }
-ul.second-one{
-    margin-right: -1rem !important;
-}
+
 .navbar-collapse{
     align-items: center;
     height: 100%;
@@ -359,22 +353,22 @@ li .edit-admin{
 }
 
 @media screen and (max-width: 991px) {
-    .navbar-nav {
+    div ul.navbar-nav {
       background-color: #ffffff;
-      width: 100% !important;
+      width: 100%;
       margin-top: 15px;
 
     }
-    .navbar-toggler{
-        border: none !important ;
+    div button.navbar-toggler{
+        border: none ;
     }
     .balance-div{
         height: 5.7vh;
         min-width: 100px;
         width: calc(6.5625vw);
     }
-    .header{
-        min-height: auto !important;
+    div .header{
+        min-height: auto;
         padding: 20px 0;
     }
     .nav-link{
@@ -385,20 +379,20 @@ li .edit-admin{
     .nav-item{
         background-color: #1A1D29;
     }
-    ul.dropdown-menu{
+    div ul.dropdown-menu{
         border: none;
         background-color: #1A1D29;
         width: 100%;
-        margin-top: 0 !important;
+        margin-top: 0;
     }
     li .dropdown-item{
         color: #F2F2F2;
     }
 
-    li.nav-item{
-        font-size: 18px !important;
-        margin-left: 0px !important;
-        margin-right: 0px !important;
+    ul li.nav-item{
+        font-size: 18px;
+        margin-left: 0px;
+        margin-right: 0px;
     }
     a.nav-link{
         padding: .35rem .6rem;
@@ -458,21 +452,20 @@ li .edit-admin{
         transform: rotate(90deg);
     }
     #menu__toggle:checked ~ .menu__box {
-        left: 0 !important;
+        left: 0;
     }
-    .menu__btn {
+    button label.menu__btn {
         position: relative;
-        width: 26px !important;
+        width: 26px;
         height: 26px;
         cursor: pointer;
         z-index: 1;
-        padding: 10px 0;
-        margin-left: -21px;
-        border: none !important;
+        padding: 5px 0;
+        border: none;
     }
-    .navbar-toggler:focus{
-        border: none !important;
-        box-shadow: none !important;
+    div button.navbar-toggler:focus{
+        border: none;
+        box-shadow: none;
     }
     .menu__btn > div,
     .menu__btn > div::before,
@@ -492,15 +485,15 @@ li .edit-admin{
         content: '';
         top: 8px;
     }
-    .navbar-dark .navbar-toggler-icon{
-        background-image: none !important;
+    div .navbar-dark .navbar-toggler-icon{
+        background-image:none ;
     }
-    .navbar-toggler{
-        padding: 0 !important;
+    div button.navbar-toggler{
+        padding: 0;
         width: 26px;
         margin-right: 10px;
     }
-    .navbar-toggler-icon{
-        padding-right: 26px !important;
+    div .navbar-toggler-icon{
+        padding-right: 26px;
     }
     }

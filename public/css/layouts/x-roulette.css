@@ -67,7 +67,11 @@
     font-weight: 400;
     margin-left: 5px;
     margin: .5rem;
+    color: #F2F2F2;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 30px;
+    width: 7vw;
+    
 
  }
  .btn-clear {
@@ -82,7 +86,8 @@
      background-color:rgb(45, 48, 53) ;
      font-weight: bold;
      font-size: 12px;
-     padding: 8px 16px;
+     min-width: 83px;
+     height: 33;
      border-radius: .5rem;
      margin-right: 5px ;
 
@@ -383,9 +388,13 @@
     }
     .bet-amount{
         flex-direction: column;
+
     }
     .x-roulette{
         width: 100% !important;
+    }
+    .btn-bet{
+       height: 40px;
     }
 }
 
