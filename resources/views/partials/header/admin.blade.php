@@ -7,19 +7,19 @@
                 <h5 id="ADMIN-title" class="modal-title">Admin Panel.</h5>
                 <button type="button" class="btn-close color-btn" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body box-columns theme-bc-2">
-                <div class="text-edit flex-fill col-div">
-                    <div class="first-span-edit mx-auto">
+            <div class="modal-body box-col theme-bc-2">
+                <div class="text-edit flex-fill column-div">
+                    <div class="top-span-edit mx-auto">
                         <span class="my-auto">Player look-up</span>
                     </div>
 
-                    <div class="total-admin small-div text-edit " style="background-color: rgba(53,59,84,1)">
-                        <input id="claim-referral" class="insert-code" type="text"  placeholder="DFH#HH">
+                    <div class="small-div text-edit ">
+                        <input id="claim-referral" type="text"  placeholder="DFH#HH">
                         <button id="update-trade-url" class="admin-button ms-auto text-edit my-auto"
                             style="margin: 6px 0">Search</button>
                     </div>
 
-                    <div class="d-flex flex-fill avatar-edit">
+                    <div class="d-flex flex-fill avatar-edit-admin">
                         <img src="{{ Auth::user()->avatar }}">
                         <div class="d-flex text-edit justify-content-center align-items-center">
                             <span>MOD</span>
@@ -49,9 +49,9 @@
                     
 
                 </div>
-                <div class="text-edit flex-fill col-div" style="background-color: #0d0e14">
+                <div class="text-edit flex-fill column-div" style="background-color: #0d0e14">
 
-                    <div class="first-span-edit dif-hight mx-auto">
+                    <div class="top-span-edit dif-hight mx-auto">
                         <span class="my-auto">Website actionns</span>
                     </div>
                     <div class="total-admin text-edit justify-content-around" style="background-color: rgba(53,59,84,1)">

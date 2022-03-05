@@ -28,19 +28,19 @@
     color: rgba(242,242,242,1);
     text-decoration: none;
 }
-.box-columns{
+.box-col{
     display: flex;
     flex-direction: row;
 
 }
-.col-div{
+.column-div{
     display: flex;
     flex-direction: column;
     text-align: center;
     width: 100%;
 
 }
-.first-span-edit{
+.top-span-edit{
     display: flex;
     font-size: 25px;
     height: calc(4.63vh * 2);
@@ -50,13 +50,6 @@
     display: flex;
     font-size: 25px;
     margin: 0 auto;
-}
-.total-deposited-settings{
-    display: flex;
-    font-size: 18px;
-    height: 9.26vh;
-    align-items: center;
-    min-height: 80px;
 }
 
 .total-admin{
@@ -68,9 +61,12 @@
 
 }
 .small-div{
-    height: calc(4.63vh) !important;
-    min-height: 40px !important; 
-    padding: 0 20px !important;
+    display: flex;
+    font-size: 18px;
+    height: calc(4.63vh);
+    min-height: 40px; 
+    padding: 0 20px;
+    background-color: rgba(53,59,84,1);
 }
 .dif-hight{
     height: calc(4.63vh * 3) !important;
@@ -131,13 +127,13 @@ outline: none;
     padding: .5% 3%;
     min-width: 95px;
 }
-.avatar-edit img{
+.avatar-edit-admin img{
     border-radius: 50%;
 
 
 
 }
-.avatar-edit{
+.avatar-edit-admin{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -145,7 +141,7 @@ outline: none;
     min-height: 80px;
     max-height: calc(4.63vh * 2);
 }
-.avatar-edit .text-edit{
+.avatar-edit-admin .text-edit{
     font-size: 1.188rem ;
     background-color: #7F00C7;
     border-radius: 8px;
@@ -188,7 +184,7 @@ div.scroll
     height: 4.63vh
 
 }
-.insert-code{
+div input{
     display: flex;
     margin-top: 2%;
     margin-bottom: 2%;
@@ -202,7 +198,7 @@ div.scroll
     font-weight: bold;
 }
 @media screen and (max-width: 991px) {
-    .box-columns{
+    .box-col{
         flex-wrap: wrap;
     }
     .small-div{
