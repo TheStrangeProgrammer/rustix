@@ -16,6 +16,7 @@
                     <div class="d-flex ">
                         <span class="first-text">You have selected<span id="deposit-count">13</span></span>
                         <span class="first-text">items worth<span id="deposit-total"> $143.66</span></span>
+
                     </div>
                     <div class="submit-btn">
                         <button id="submit-deposit-item-list" class="text-white" id="submit-item-list"

@@ -34,18 +34,18 @@
                                 <img class="overflow-visible mx-2" src="{{ Auth::user()->avatar }}">
                                 <span class="theme-tc-1" id="user-name">{{ Auth::user()->name }}</span>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-end py-0 rounded-0" aria-labelledby="navbarDropdown">
-                                <li><button id="profile-button" class="dropdown-item text-center "
+                            <ul class="dropdown-menu dropdown-menu-end header-dropdown py-0 rounded-0" aria-labelledby="navbarDropdown">
+                                <li><button id="profile-button" class="dropdown-item header-dropdown-item text-center last-div"
                                         data-bs-toggle="modal" data-bs-target="#PROFILE">Profile</button></li>
 
-                                <li><button id="withdraw-button" class="dropdown-item text-center "
+                                <li><button id="withdraw-button" class="dropdown-item header-dropdown-item text-center "
                                         data-bs-toggle="modal" data-bs-target="#WITHDRAW">Withdraw</button></li>
-                                <li><button id="referrals-button" class="dropdown-item text-center "
+                                <li><button id="referrals-button" class="dropdown-item header-dropdown-item text-center "
                                         data-bs-toggle="modal" data-bs-target="#REFERRALS">Referrals</button></li>
-                                <li><a class="dropdown-item text-center " href="{{ URL::route('logOut') }}">Log
+                                <li><a class="dropdown-item header-dropdown-item text-center " href="{{ URL::route('logOut') }}">Log
                                         Out</a></li>
                                 @if (Auth::user()->role == 1 || Auth::user()->role == 2)
-                                    <li><button id="admin-button" class="dropdown-item text-center edit-admin"
+                                    <li><button id="admin-button" class="dropdown-item header-dropdown-item text-center edit-admin"
                                             style="color: #E6E6E6" data-bs-toggle="modal" data-bs-target="#ADMIN">Admin
                                             Panel</button></li>
                                 @endif
