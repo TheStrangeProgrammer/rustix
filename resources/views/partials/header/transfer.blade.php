@@ -8,16 +8,17 @@
             </div>
             <div class="modal-body justify-content-center d-flex flex-row">
                 <div class="div-card">
-                    
-                    <div class=" transfer-card ">
+
+                    <button data-bs-toggle="modal" data-bs-target="#DEPOSIT"><div class=" transfer-card ">
                         <img class="image-transfer" src="assets/2.svg">
                     </div>
+                </button>
                     <span  class="transfer-text" >Steam</span>
                 </div>
                 <div class="div-card">
-                    <div class=" transfer-card ">
+                    <button data-bs-toggle="modal" data-bs-target="#CRYPTO"><div class=" transfer-card ">
                         <img class="image-transfer" src="assets/1.svg">
-                    </div>
+                    </div></button>
                     <span class="transfer-text" >Crypto</span>
                 </div>
             </div>

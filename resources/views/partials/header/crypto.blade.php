@@ -10,18 +10,18 @@
 
                 <div class="btn-group div-crypto">
                     <button class="btn btn-secondary btn-sm dropdown-toggle crypto-btn" data-bs-display="static" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        
+
                       BTC
                     </button>
                     <ul class="dropdown-menu ul-crypto">
                         <li class="item-li li-first">
                             <img class="input-prefix " src="assets/bitcoin.svg" width="70px" height="70px">
                             <a class="dropdown-item item-crypto" href="#">BTC</a>
-                            
+
                         </li>
                         <li class="item-li">
                             <img class="input-prefix " src="assets/ETH.svg" width="70px" height="70px">
-                            <a class="dropdown-item item-crypto" href="#">ETH</a>                           
+                            <a class="dropdown-item item-crypto" href="#">ETH</a>
                         </li>
                         <li class="item-li li-last">
                             <img class="input-prefix " src="assets/LTC.svg" width="70px" height="70px">
@@ -35,8 +35,8 @@
                     <button onclick="myFunction()">Copy text</button>
                     <div class="div-crypto-img">
                         <img src="../assets/QR.svg" alt="">
-                    </div> 
-                    <span class="crypto-text">Only send BTC to this address, 1 confirmation(s) required. We do not accept BEP20 from Binance.y</span>        
+                    </div>
+                    <span class="crypto-text">Only send BTC to this address, 1 confirmation(s) required. We do not accept BEP20 from Binance.y</span>
                 </div>
                 <!--
                     <div class="btn-group btn-div" >
