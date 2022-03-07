@@ -177,6 +177,7 @@
 
 @push('css')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/layouts/roulette.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/layouts/home.css') }}">
 @endpush
 @push('js')
     <script src="{{ asset('js/layouts/roulette.js') }}"></script>
