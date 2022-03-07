@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Client\Response;
 use App\Events\NewBalance;
+use App\Events\NewBetRoulette;
 use App\Models\User;
 use App\Models\BettingHistory;
 use App\Http\Requests\InventoryRequest;
@@ -48,30 +49,33 @@ class RouletteController extends Controller
             $response["error"]="At least 1 coin";
             return response()->json($response);
         }
+
         $user = User::where('id', Auth::user()->id)->first();
+
         if($betAmount>$user->balance){
             $response["success"]=false;
             $response["error"]="Not enough coins";
             return response()->json($response);
         }
+
         if($data["bet"]!=0&&$data["bet"]!=1&&$data["bet"]!=2&&$data["bet"]!=3){
             $response["success"]=false;
             $response["error"]="Unknown Bet";
             return response()->json($response);
         }
 
-        $user->balance-=$betAmount;
-        event(new NewBalance(Auth::user()->id,$user->balance));
-        $user->save();
 
-        RouletteController::addBet(Auth::user()->id,Auth::user()->name,Auth::user()->avatar,$data["bet"],$betAmount);
+
+        event(new NewBetRoulette(Auth::user()->id,$data["bet"],$betAmount));
+
+
 
         $response["success"]=true;
         $response["error"]="";
         return response()->json($response);
     }
 
-    private static function addBet($userId,$userName,$userAvatar,$bet,$betAmount){
+    public static function addBet($userId,$userName,$userAvatar,$bet,$betAmount){
         $roulette = json_decode(Storage::disk('local')->get('rouletteData.json'),true);
         $toPlace=[
             "name" =>$userName,

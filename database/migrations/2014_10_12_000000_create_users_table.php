@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('referralCode')->unique()->nullable();
             $table->string('tradeToken')->nullable();
             $table->bigInteger('referredBy')->nullable();
+            $table->integer('role')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

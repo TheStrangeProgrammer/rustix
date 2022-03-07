@@ -8,15 +8,24 @@
 
 <body class="h-100 body  theme-tc-1 theme-bc-1 theme-fw-1">
     @if (Auth::check())
+    @include('partials.header.crypto')
         @include('partials.header.deposit')
+    @include('partials.header.transfer')
+
         @include('partials.header.withdraw')
         @include('partials.header.profile')
         @include('partials.header.referrals')
+        @if (Auth::user()->role == 1 || Auth::user()->role == 2)
         @include('partials.header.admin')
+        @endif
     @endif
     @include('partials.left_sidebar.alt')
     @include('partials.left_sidebar.faq')
     @include('partials.left_sidebar.tos')
+    <div class="clearfix">
+        <div class="spinner"></div> {{-- LOADER --}}
+    </div>
+    
     <div id="app" class="d-flex flex-column h-100">
 
         @include('partials.header')
@@ -39,6 +48,12 @@
 
     <script src="{{ asset('js/app.js') }}"></script>
     @stack('js')
+    {{-- LOADER --}}
+    <script>
+window.addEventListener("load", function(){
+    $('.clearfix').hide();
+});
+    </script>
 
 </body>
 

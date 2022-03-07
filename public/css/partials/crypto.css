@@ -1,0 +1,126 @@
+.btn-div{
+    display: flex;
+    justify-content: center;
+}
+div ul li.item-li .item-crypto{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color: #4d5682;
+    flex-direction: row;
+    width: auto;
+    padding: 0;
+}
+div ul li.item-li:hover, .item-crypto:hover{
+    background-color: #d8d4d4;
+
+}
+
+div ul li.li-first:hover{
+    border-radius: 9px 9px 0 0;
+}
+div ul li.li-last:hover{
+    border-radius: 0 0 9px 9px;
+}
+
+button.crypto-btn{
+    width: 80px;
+    font-weight: bold;
+    background-color: #141620;
+}
+button.crypto-btn:hover{
+    background-color: rgba(255,255,255,.08) ;
+}
+button.crypto-btn:active{
+    border: none;
+}
+div button.crypto-btn:focus{
+    border: none ;
+    transition: .5s;
+    box-shadow: none ;
+}
+div.div-crypto{
+    align-self: center;
+    width: 80px;
+    margin-top: 20px;
+    
+}
+div.div-crypto ul.ul-crypto{
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100% ;
+    margin-top: 20px;
+    width: 120px;
+    background-color: #F2F2F2;
+    padding: 0;
+    border-radius: 10px;
+}
+.crypto-input{
+    display: flex;
+    flex-direction: column;
+    padding: 0 5%;
+    font-size: 18px;
+    min-height: 40px;
+    justify-content: center;
+    margin: 25px auto;
+
+}
+li a.item-crypto:hover{
+    background-color: none;
+}
+.set-crypto{
+    display: flex;
+    width: 50%;
+    margin: 2%;
+    background-color:  #232633;
+    color: rgba(242,242,242,1);
+    border: none;
+    outline: none;
+    box-sizing:unset;
+    font-size: 16px;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    min-width: 400px;
+    align-self: center;
+
+}
+.set-crypto:focus{
+    background-color:  #232633;
+}
+.div-crypto-img{
+    display: flex;
+    width: 10vh;
+    height: 10vh;
+    min-width: 150px;
+    min-height: 150px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    align-self: center;
+    margin-top: 25px;
+}
+.crypto-input img{
+    display: flex;
+    align-self: center;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+}
+.crypto-text{
+    font-size: 14px;
+    color: #999999;
+    margin-top: 25px;
+}
+li.item-li img{
+    display: flex;
+    width: 11%;
+    height: 11%;
+    align-self: center;
+    margin-right: 5px;
+    padding-top: 3px;
+}
+div ul li.item-li{
+    display: flex;
+    justify-content: center;
+    padding: 5px 0;
+}

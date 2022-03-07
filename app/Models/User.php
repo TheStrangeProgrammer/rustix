@@ -28,8 +28,8 @@ class User extends Authenticatable
         'totalWithdraw',
         'totalSpent',
         'tradeToken',
-        'faucet'
-
+        'faucet',
+        'role'
     ];
 
     /**
