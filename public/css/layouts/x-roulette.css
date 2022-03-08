@@ -248,6 +248,12 @@
     background-color:#ff5100;
     color: #ff51002f;
 }
+.color-20{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:#fff700;
+    color: #fff7002c;
+}
 .x-roulette-rainbow{
     background: -webkit-linear-gradient(left, red,orange,yellow,green,blue,indigo,violet,red);
     background: -moz-linear-gradient(left, red,orange,yellow,green,blue,indigo,violet,red);
