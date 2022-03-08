@@ -59,6 +59,7 @@
 
 @push('css')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/layouts/x-roulette.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/layouts/home.css') }}">
 @endpush
 @push('js')
     <script src="{{ asset('js/layouts/x-roulette.js') }}"></script>

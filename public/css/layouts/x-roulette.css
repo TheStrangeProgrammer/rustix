@@ -22,11 +22,10 @@
 
   }
 .roulette-selector{
-    width: 15px;
-    background-image: url("../../assets/select.svg");
-    background-repeat: no-repeat;
+    width:3px;
+    background:grey;
     left:50%;
-    height:120%;
+    height:100%;
     transform:translate(-50%,0%);
     position:absolute;
     z-index:2;
@@ -371,6 +370,7 @@
     border-radius: 10px;
     width: 25%;
 }
+
 
 @media screen and (max-width: 991px) {
 

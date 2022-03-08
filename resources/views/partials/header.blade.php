@@ -18,7 +18,7 @@
                         <ul class="navbar-nav dropdown-menu-right">
                             
                             <li class="nav-item dropdown dropdown-game d-flex flex-row">
-                                <img class=" image-circle img-games" src='../assets/roulette/house.svg' height="15px" width="15px">
+                                <img class=" img-games" src='../assets/roulette/house.svg' height="15px" width="15px">
                                 <a class="nav-link link-games dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="padding-left: .25rem">
                                 Games
                                 </a>
