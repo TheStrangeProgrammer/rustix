@@ -13,13 +13,13 @@
                         <span class="my-auto">Settings</span>
                     </div>
 
-                        <div class="total-referral text-edit" style="background-color: #353B54">
+                        <div class="total-referral text-edit" style="background-color: #2a2f43">
                             <label class="set-ref my-auto" for="fname">Your referral code:</label>
                         </div>
                         <div class="total-referral text-edit" >
                             <input id="set-referral" class="set-code" type="text"  name="fname" placeholder="DFH#HH">
                         </div>
-                        <div class="total-referral text-edit" style="background-color: #353B54">
+                        <div class="total-referral text-edit" style="background-color: #2a2f43">
                             <button class="ref-button text-edit my-auto">Update</button>
                             <label class="ins-ref" for="lname" style="font-size: 14px">you can only change it once:</label>
                         </div>
@@ -28,7 +28,7 @@
                         <div class="total-referral">
                             <label class="ins-ref" for="lname">Claim a referral code:</label>
                         </div>
-                        <div class="total-referral" style="background-color: #353B54">
+                        <div class="total-referral" style="background-color: #2a2f43">
                             <input id="claim-referral" class="ins-code" type="text"  placeholder="DFH#HH">
                         </div>
                         <div class="total-referral">

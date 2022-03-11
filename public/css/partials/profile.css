@@ -14,9 +14,10 @@
     background-color: #0d0e14;
 }
 
-
-
-
+.span-profile{
+    display: flex;
+    align-self: center;
+}
 .text-edit{
     color: rgba(242,242,242,1);
     text-decoration: none;
@@ -87,10 +88,19 @@ outline: none;
   box-shadow: none;
   color: rgba(242,242,242,1);
 }
-
+.dollar-bet{
+    display: flex;
+    font: normal 16px "Roboto", sans-serif;
+    margin-top: 3.4px;
+    background: transparent;
+    border: none;
+    color: currentColor;
+    font-weight: bold;
+    margin-left: auto;
+}
 .scroll .total-deposited{
     display: flex;
-    padding: 0 1%;
+    padding: 0 3%;
     font-size: 18px;
 
 }

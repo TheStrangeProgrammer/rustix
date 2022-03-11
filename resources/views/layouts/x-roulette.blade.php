@@ -24,8 +24,7 @@
             <div class="flex-fill bet-amount">
                 <div style="opacity: 50%">Bet amount</div>
                 <div class="d-flex">
-                    <img class="input-prefix" src="assets/dollar_coin.svg" width="16" height="16">
-
+                    <span class="dollar-bet">$</span>
                     <input type="number" class="input-bet" value="0">
                 </div>
             </div>
@@ -45,7 +44,7 @@
                 <span class="fw-bold">Bets</span>
             </div>
             <div class="user-bets">
-                <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
+                <span class="dollar-bet-bet">$</span>
                 <span class="score-bet bet-total-amount">0</span>
             </div>
 

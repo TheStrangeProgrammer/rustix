@@ -29,6 +29,23 @@
     z-index:2;
 
   }
+  .dollar-bet{
+    font: normal 16px "Roboto", sans-serif;
+    margin-top: 3.4px;
+    background: transparent;
+    border: none;
+    color: currentColor;
+    font-weight: bold;
+ }
+ .dollar-bet-bet{
+     display: flex;
+    font: normal 12px "Roboto", sans-serif;
+    align-self: center;
+    opacity: .5;
+    background: transparent;
+    border: none;
+    color: currentColor;
+ }
 
 
 div .roulette-card{

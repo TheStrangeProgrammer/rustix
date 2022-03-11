@@ -19,6 +19,7 @@
 <!--SHEETS-->
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/reset.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/crazytime.css') }}">
 
 @stack('css')
 <!-- BOOTSTRAP -->

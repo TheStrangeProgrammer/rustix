@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\BotController;
 use App\Http\Controllers\RouletteController;
 use App\Http\Controllers\XRouletteController;
+use App\Http\Controllers\CrazytimeController;
 use App\Http\Controllers\MessageController;
 use Laravel\Socialite\Facades\Socialite;
 /*
@@ -35,6 +36,11 @@ Route::get('/register', function () {
 });
 Route::get('/wheel', function () {
     return view('layouts.christmaswheel');
+
+
+});
+Route::get('/crazytime', function () {
+    return view('crazytime');
 
 
 });
@@ -77,6 +83,10 @@ Route::prefix('roulette')->group(function () {
 Route::prefix('x-roulette')->group(function () {
     Route::get('/', [XRouletteController::class, 'roulette'])->name('x-roulette');
     Route::post('/bet', [XRouletteController::class, 'placeBet'])->middleware('auth');
+});
+Route::prefix('crazytime')->group(function () {
+    Route::get('/', [CrazytimeController::class, 'crazytime'])->name('crazytime');
+    Route::post('/bet', [CrazytimeController::class, 'placeBet'])->middleware('auth');
 });
 Route::prefix('referrals')->group(function(){
     Route::get('/getReferrals', [UserController::class, 'getReferrals'])->middleware('auth')->name('referrals');

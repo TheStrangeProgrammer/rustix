@@ -54,7 +54,7 @@ div .modal-header{
     height: 80px;
 }
 div .modal-body{
-    background-color: #1A1D29;
+    background-color: #202433;
     padding: 0;
 }
 div .modal-header .modal-title{
@@ -96,7 +96,7 @@ body{
     border-radius: 10px;
     border: 3px solid #F2F2F2;
     font-size: 11px;
-    padding: 1% 8%;
+    padding: .7% 7%;
 }
 .button-sidebar:hover{
     background-color: #14161f;
@@ -110,6 +110,7 @@ div ul.dropdown-menu li.last-div{
     margin-top: 10px;
 }
 a.core{
+    display: flex;
     color: #F2F2F2;
     padding: .5rem 1.8rem;
     background-color: #00C74D;
@@ -117,6 +118,7 @@ a.core{
     border-radius: 10px;
     border: 3px solid #261d1d36;
     text-decoration: none;
+    margin-left: auto;
 }
 a.core:hover{
     color: #F2F2F2;
@@ -171,6 +173,7 @@ a.core:focus {
     flex-direction: column;
     width: 20.83333333%;
     background-color:#232633;
+    max-width: 320px;
 }
 
 
@@ -218,14 +221,19 @@ a.core:focus {
     border-radius: 10px;
     min-height: 40px;
     height: 5.7vh;
+    max-height: 50px;
+    max-width: 120px;
     min-width: 100px;
     width: 6.5625vw;
     border: 3px solid #261d1d36;
-    font-weight: 800;
+    font-weight: 600;
 
 }
 .balance{
-    font-weight: 800;
+    font: normal 12px "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding-top: 2px;
 }
 #user-name{
     font-weight: 600;
@@ -245,6 +253,8 @@ a.core:focus {
     font-size: 14px;
     height: 5.7vh;
     min-height: 40px;
+    max-height: 50px;
+    max-width: 120px;
     width: 6.5625vw;
     min-width: 100px;
     vertical-align: middle;
@@ -262,7 +272,7 @@ ul.header-dropdown {
     margin-top: 29.3px !important;
     margin-right: -6.95%;
     min-width: 13.7rem;
-    font-size: 1.66666667vh;
+    font-size: 0.938rem;
     background-color: #141620;
     border: none;
     border-radius: 8px;
@@ -428,7 +438,14 @@ li ul.dropdown-game-menu .card-game{
 li ul.dropdown-game-menu .card-game:hover{
     transform: translate(0, -5px);
 }
-
+.dollar-bet{
+    display: flex;
+    font: normal 12px "Roboto", sans-serif;
+    align-self: center;
+    background: transparent;
+    border: none;
+    color: currentColor;
+ }
 
 @keyframes bounce {
 	0%, 20%, 60%, 100% {
@@ -446,6 +463,7 @@ li ul.dropdown-game-menu .card-game:hover{
 		transform: translateY(-10px);
 	}
 }
+
 @media screen and (max-width: 991px) {
     div ul.navbar-nav {
       background-color: #ffffff;
@@ -455,9 +473,14 @@ li ul.dropdown-game-menu .card-game:hover{
     }
     ul li ul.header-dropdown{
         margin-top: 0 !important;
+        font-size: 1rem;
+    }
+    div.container-fluid a:first-child{
+        margin-left: 0 !important;
     }
     ul li.free-coins-mobile{
         margin-top: 10px;
+        color: #F2F2F2;
     }
     div .modal-header .modal-title{
         font-size: 20px;
@@ -481,6 +504,9 @@ li ul.dropdown-game-menu .card-game:hover{
         min-height: 40px;
         height: 5.7vh;
 
+    }
+    div .group-bet-list{
+        min-width: 262px;
     }
     .nav-item{
         background-color: #1A1D29;
@@ -523,6 +549,7 @@ li ul.dropdown-game-menu .card-game:hover{
         width: 100%;
         margin-left: auto;
         margin-right: auto;
+        max-width: none;
 
 
     }
@@ -530,6 +557,7 @@ li ul.dropdown-game-menu .card-game:hover{
         width:100%;
         height: 100%;
         display: none;
+        max-width: none;
     }
     .header{
         display: block;

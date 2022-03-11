@@ -124,3 +124,13 @@ div ul li.item-li{
     justify-content: center;
     padding: 5px 0;
 }
+@media screen and (max-width: 991px) {
+    div .crypto-input{
+        margin: 0;
+    }
+    div input.set-crypto{
+        max-width: 340px;
+        min-width: 300px;
+    }
+
+    }

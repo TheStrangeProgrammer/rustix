@@ -48,7 +48,7 @@
         <div class="d-flex flex-column flex-fill bet-amount-section">
             <div style="opacity: 50%">Bet amount</div>
             <div class="d-flex">
-                <img class="input-prefix " src="assets/dollar_coin.svg" width="16" height="16">
+                <span class="dollar-bet-bet">$</span>
                 <input type="number" class="input-bet" value="0">
             </div>
         </div>
@@ -81,7 +81,7 @@
                         <span class="fw-bold">Bets</span>
                     </div>
                     <div class="btn-coin">
-                        <img src="assets/dollar_coin.svg">
+                        <span class="dollar-bet">$</span>
                         <span class="score-bet bet-total-amount">0</span>
                     </div>
                 </div>
@@ -104,7 +104,7 @@
                         <span class="fw-bold">Bets</span>
                     </div>
                     <div class="btn-coin">
-                        <img src="assets/dollar_coin.svg">
+                        <span class="dollar-bet">$</span>
                         <span class="score-bet bet-total-amount">0</span>
                     </div>
                 </div>
@@ -132,7 +132,7 @@
                         <span class="fw-bold">Bets</span>
                     </div>
                     <div class="btn-coin">
-                        <img src="assets/dollar_coin.svg">
+                        <span class="dollar-bet">$</span>
                         <span class="score-bet bet-total-amount">0</span>
                     </div>
                 </div>
@@ -156,7 +156,7 @@
                         <span class="fw-bold">Bets</span>
                     </div>
                     <div class="btn-coin">
-                        <img src="assets/dollar_coin.svg">
+                        <span class="dollar-bet">$</span>
                         <span class="score-bet bet-total-amount">0</span>
                     </div>
 
