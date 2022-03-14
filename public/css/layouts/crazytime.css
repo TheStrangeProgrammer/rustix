@@ -1,7 +1,7 @@
 .multiplier-div{
     display: flex;
     flex-direction: column;
-    width: 25.7%;
+    width: 25%;
     background-color: #232633;
     border-radius: 50px;
     margin-left: 3%;
@@ -13,7 +13,7 @@
     display: flex;
     width: 100%;
     justify-content: center;
-    font-size: 2rem;
+    font-size:calc(15px + 1vw);
 }
 .input-mult{
     display: flex;
@@ -43,6 +43,12 @@
     height: 50vh;
     background-repeat: no-repeat;
     margin-top: 2%;
+    justify-content: center;
+}
+.img-roll img{
+    display: flex;
+    width: 90%;
+    height: 90%;
 }
 .div-text-won{
     display: flex;
@@ -51,6 +57,7 @@
     margin-top: 4%;
     margin-right: 3%;
     padding: 15px 0;
+    width: 25%;
 }
 div.div-text-won span:first-child{
     font-size: 1.188rem;
@@ -66,58 +73,63 @@ div.div-text-won span:last-child{
     
 }
 .div-cards{
+    width: 45%;
+    margin: 15px auto;
+    min-width: 640px;
     justify-content: center;
-    margin: 20px auto;
 }
+
+
 .card-crazy{
     display: flex;
     justify-content: center;
     align-items: center;
-    width:calc(9vw - 10px);
-    height:calc(5vw - 10px);
-    margin-right: 40px;
-    min-width: 128px;
-    min-height: 66px;
+    width:calc(7vw - 10px);
+    height:calc(4vw - 10px);
+    margin-left: 20px;
+    min-width: 110px;
+    min-height: 50px;
+    margin-right: 20px;
   }
 .color-crazy1{
     background-color: #638C89;
-    color: #A0D8D8;
-    box-shadow: 0px 0px 0px 7px;
+    box-shadow: 0px 0px 0px 7px #A0D8D8;
 }
 .color-crazy2{
     background-color: #BA9F6A;
-    color: #FDDD8A;
-    box-shadow: 0px 0px 0px 7px;
+    box-shadow: 0px 0px 0px 7px #FDDD8A;
 }
 .color-crazy3{
     background-image: linear-gradient(#557D9B, #228AD8); 
-    color: #B1D6FC;
-    box-shadow: 0px 0px 0px 7px;
+    box-shadow: 0px 0px 0px 7px #B1D6FC;
+    -webkit-text-stroke-width: .8px;
+    -webkit-text-stroke-color: black;
 }
 .color-crazy4{
     background-image: linear-gradient(#A44586, #C81B91); 
-    color: #EEC0F4;
-    box-shadow: 0px 0px 0px 7px;
+    box-shadow: 0px 0px 0px 7px #EEC0F4;
+    -webkit-text-stroke-width: .8px;
+    -webkit-text-stroke-color: black;
 }
 .color-crazy5{
     background-color: #A77F88;
-    color: #DEAABB;
-    box-shadow: 0px 0px 0px 7px;
+    box-shadow: 0px 0px 0px 7px #DEAABB;
 }
 .color-crazy6{
     background-color: #9086AA;
-    color: #C2BAF1;
-    box-shadow: 0px 0px 0px 7px;
+    box-shadow: 0px 0px 0px 7px #C2BAF1;
 }
 .color-crazy7{
     background-image: linear-gradient(#648454, #64C235); 
-    color: #A8CA9A;
-    box-shadow: 0px 0px 0px 7px;
+    box-shadow: 0px 0px 0px 7px #A8CA9A;
+    -webkit-text-stroke-width: .8px;
+    -webkit-text-stroke-color: black;
 }
 .color-crazy8{
     background-image: linear-gradient(#AB4351, #DC1E38); 
-    color: #F3AEB5;
-    box-shadow: 0px 0px 0px 7px;
+    box-shadow: 0px 0px 0px 7px #F3AEB5;
+    -webkit-text-stroke-width: .8px;
+    -webkit-text-stroke-color: black;
 }
 .line-crazy{
     height: 1px;
@@ -129,8 +141,8 @@ div.div-text-won span:last-child{
     font-size: 19px;
     font-weight: 800;
     align-items: center; 
-    height: 5.95vh;
-    width: 5.95vh;  
+    height: 3.95vh;
+    width: 3.95vh;  
     box-shadow: 0px 0px 0px 4px;
     border-radius: 50%;
     text-align: center;
@@ -169,8 +181,186 @@ div.div-text-won span:last-child{
     width: 3vw;
     height: 3vw;
     background-color: #828282;
-    margin-left: 20px;
+    margin-left: 7px;
     border-radius: 50%;
     font-size: 18px;
     font-weight: 800;
+    -webkit-text-stroke-width: .8px;
+    -webkit-text-stroke-color: black;
+}
+.circle-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5vw;
+    height: 2.5vw;
+    background-color: #A0D8D8;
+    color: #425D5C;
+    margin-left: 7px;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: 800;
+}
+.btn-clear {
+    display: flex;
+    font-weight: 800;
+    font-size: 15px;
+    border-radius: .5rem;
+    border: 2px solid #FFFFFF;
+    background-color: #828282;
+    justify-content: center;
+    -webkit-text-stroke-width: .8px;
+    -webkit-text-stroke-color: black;
+    width: 80px;
+    height: 40px;
+    align-self: center;
+}
+.color-circle{
+    color: #796B41;
+    background-color: #FDDD8A;
+}
+.right-circle{
+    display: flex;
+    width: 25%;
+    flex-direction: column;
+    
+}
+.bot-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-top: 0;
+
+}
+.div-bets{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+.hidden-div{
+    display: none;
+}
+.left-crazy-circles{
+    min-width: 560px;
+    justify-content: space-between;
+    
+}
+.right-circle{
+    width: 25%;
+}
+.second-div-circles{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1270px) {
+    .bot-div {
+      flex-direction: column;
+      justify-content: center;
+
+    }
+    div .div-bets{
+        width: 100%;
+    }
+    div.right-circle{
+        width: 50%;
+        justify-content: start;
+        min-width: 560px;
+        margin: auto;
+        margin-top: 20px;
+        margin-right: auto;
+
+    }
+    div.div-text-won{
+       margin-left: 2%;
+       width: 50%;
+    }
+    div.multiplier-div{
+        width: 50%;
+        min-height: 90px;
+    }
+    div.hidden-div{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        min-width: 560px;
+        margin: auto;
+        font-weight: 800;
+        font-family: "Neometric";
+    }
+    div div.hidden-mobile{
+        display: none;
+    }
+    div .input-mult{
+        font-size: 1.5rem;
+    }
+    div.img-roll{
+        width: 100%;
+        margin: auto;
+    }
+    div span.circle-crazy{
+        min-width: 33px;
+        min-height: 33px;
+    }
+    div.right-circle{
+        justify-content: center;
+        margin: auto;
+    }
+    div.right-circle div:last-child{
+        margin-top: 0 !important;
+    }
+    div span.circle-right{
+        min-width: 33px;
+        min-height: 33px;
+    }
+    
+}
+@media screen and (max-width: 630px) {
+    div.div-cards{
+        flex-wrap: wrap;
+        min-width: auto;
+    }
+    div.last-cards{
+        margin-top: 30px;
+    }
+    div.hidden-div{
+        flex-wrap: wrap;
+        min-width: 90%;
+    }
+    div.multiplier-div{
+        width: 100%;
+
+    }
+    div.div-text-won{
+        width: 100%;
+    }
+    div .input-mult{
+        font-size: 1rem;
+    }
+    div.left-crazy-circles{
+        min-width: auto;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        font-size: 12px;
+        justify-content: center;
+    }
+    div div.btn-clear{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    div span.text-button{
+        font-size: 13px;
+        justify-content: center;
+    }
+    div.second-div-circles{
+        display: flex;
+        margin: auto;
+        flex-direction: row;
+        margin-bottom: 10px;
+        min-width: none !important;
+    }
+    div.right-circle{
+        min-width: 100%;
+    }
 }
