@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\RouletteController;
 use App\Http\Controllers\XRouletteController;
+use App\Http\Controllers\CrazytimeController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -32,4 +33,8 @@ Route::prefix('roulette')->group(function () {
 Route::prefix('x-roulette')->group(function () {
     Route::get('/spin', [XRouletteController::class, 'getSpin']);
     Route::get('/bets', [XRouletteController::class, 'getBets']);
+});
+Route::prefix('crazytime')->group(function () {
+    Route::get('/spin', [CrazytimeController::class, 'getSpin']);
+    Route::get('/bets', [CrazytimeController::class, 'getBets']);
 });

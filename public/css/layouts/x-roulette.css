@@ -22,11 +22,10 @@
 
   }
 .roulette-selector{
-    width: 15px;
-    background-image: url("../../assets/select.svg");
-    background-repeat: no-repeat;
+    width:3px;
+    background:grey;
     left:50%;
-    height:120%;
+    height:100%;
     transform:translate(-50%,0%);
     position:absolute;
     z-index:2;
@@ -71,7 +70,7 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     height: 30px;
     width: 7vw;
-    
+
 
  }
  .btn-clear {
@@ -82,6 +81,12 @@
     margin-right: 5px ;
 
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .btn-bet {
      background-color:rgb(45, 48, 53) ;
      font-weight: bold;
@@ -249,6 +254,12 @@
     background-color:#ff5100;
     color: #ff51002f;
 }
+.color-20{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:#fff700;
+    color: #fff7002c;
+}
 .x-roulette-rainbow{
     background: -webkit-linear-gradient(left, red,orange,yellow,green,blue,indigo,violet,red);
     background: -moz-linear-gradient(left, red,orange,yellow,green,blue,indigo,violet,red);
@@ -363,6 +374,24 @@
     -moz-appearance: textfield;
 
  }
+ div span.dollar-bet{
+    font: normal 12px "Roboto", sans-serif;
+    margin-top: 1px;
+    opacity: .5;
+    background: transparent;
+    border: none;
+    color: currentColor;
+    margin-left: 0;
+ }
+
+ .dollar-bet-bet{
+    font: normal 16px "Roboto", sans-serif;
+    margin-top: 3.4px;
+    background: transparent;
+    border: none;
+    color: currentColor;
+    font-weight: bold;
+}
  .bet-list{
     display: flex;
     flex-direction: column;
@@ -371,6 +400,7 @@
     border-radius: 10px;
     width: 25%;
 }
+
 
 @media screen and (max-width: 991px) {
 
@@ -407,6 +437,7 @@
     width: 75%;
     display: flex;
     flex-direction: column;
+    height: fit-content;
 }
 #overlay-loading {
     display: flex;

@@ -2,9 +2,55 @@
     <nav class="navbar navbar-expand-lg navbar-dark w-100">
         <div class="container-fluid justify-content-evenly">
 
-            <a class="theme-tc-1 mb-0 ms-2 me-auto" href="{{ URL::route('home') }}"><span
+            <a class="theme-tc-1 mb-0 ms-2 me-2" href="{{ URL::route('home') }}"><span
                     class="site-title">RUSTIX</span>
             </a>
+            <nav class="navbar navbar-expand-lg navbar-dark" style="margin-left: 10px">
+                <div class="container">
+                   
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        
+
+                        
+                        <ul class="navbar-nav dropdown-menu-right">
+                            
+                            <li class="nav-item dropdown dropdown-game d-flex flex-row">
+                                <img class=" img-games" src='../assets/roulette/house.svg' height="15px" width="15px">
+                                <a class="nav-link link-games dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="padding-left: .25rem">
+                                Games
+                                </a>
+                                
+                                    <ul class="dropdown-menu dropdown-game-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <div class="games-div">
+                                            <a class="card-game" href="{{ URL::route('roulette') }}" style="width: 12%">
+                                                <div class="top-card">
+                                                    <h5 class="game-text">ROULETTE</h5>
+                                                </div>
+                                                <div class="card-img-top-wrapper" style="background-image: url('../assets/Capture.svg'">
+                                                    
+                                                </div>
+                                            </a>
+                                            <a class="card-game" href="{{ URL::route('x-roulette') }}" style="width: 12%">
+                                                <div class="top-card">
+                                                    <h5 class="game-text">X-ROULETTE</h5>
+                                                </div>
+                                                <div class=" card-img-top-wrapper" style="background-image: url('../assets/Capture2.svg'">
+                                                    
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </ul>
+                                
+                            </li>
+                        </ul>
+                    
+                    </div>
+                </div>
+            </nav>
+
 
             @if (Auth::check())
                 <div class="balance-div theme-bc-1 ms-auto me-3">
@@ -23,8 +69,18 @@
 
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <button id="deposit-button" class="theme-bc-3 me-auto" data-bs-toggle="modal"
+                    <button id="deposit-button" class="theme-bc-3 me-auto deposit-button" data-bs-toggle="modal"
                         data-bs-target="#TRANSFER">DEPOSIT</button>
+
+                        <div class="d-flex flex-column">
+                            <button onclick="myFunction_1()" id="btn-1">Try it</button>
+                            <div id="myDIV" class="mt-5" style="display: none;">This is my DIV element.</div>
+                        <br><br>
+                        </div>
+                        
+                       
+
+
 
                     <ul class="navbar-nav mb-2 mb-lg-0 navbar-dark ">
                         <li class="nav-item dropdown">
@@ -34,7 +90,7 @@
                                 <img class="overflow-visible mx-2" src="{{ Auth::user()->avatar }}">
                                 <span class="theme-tc-1" id="user-name">{{ Auth::user()->name }}</span>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-end header-dropdown py-0 rounded-0" aria-labelledby="navbarDropdown">
+                            <ul class="dropdown-menu dropdown-menu-end header-dropdown py-0" aria-labelledby="navbarDropdown">
                                 <li><button id="profile-button" class="dropdown-item header-dropdown-item text-center last-div"
                                         data-bs-toggle="modal" data-bs-target="#PROFILE">Profile</button></li>
 
@@ -61,6 +117,11 @@
         </div>
     </nav>
 </header>
+@push('js')
+    <script src="{{ asset('js/partials/header.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+@endpush
+
 <!--
 
 -->

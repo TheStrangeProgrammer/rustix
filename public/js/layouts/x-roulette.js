@@ -131,7 +131,7 @@ function valueToColor(value){
     color="";
     if(value<=1)
         color="color-1";
-    else if(value<=1.25)
+    else if(value<=1.2)
         color="color-2";
     else if(value<=1.5)
         color="color-3";
@@ -167,6 +167,8 @@ function valueToColor(value){
         color="color-18";
     else if(value<=75)
         color="color-19";
+    else if(value<100)
+        color="color-20";
     else
         color="x-roulette-rainbow";
     return color;
@@ -175,7 +177,7 @@ function valueToImage(value){
     image="";
     if(value<=1)
         image="1";
-    else if(value<=1.25)
+    else if(value<=1.2)
         image="2";
     else if(value<=1.50)
         image="3";
