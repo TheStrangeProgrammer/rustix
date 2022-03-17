@@ -11,7 +11,7 @@
             
         </div>
         <div class="img-roll">
-            <img src="../assets/Roll.svg" >
+            <img src="assets/Roll.svg" >
         </div>
         <div class="div-text-won hidden-mobile">
             <span>13 people won 13.883$ on this round : </span>
@@ -50,10 +50,12 @@
                 </div>
                 <div class="d-flex flex-row last-cards">
                     <div class="card-crazy color-crazy3">
-                        <span class="nr-crazy" style="box-shadow: none">COINFLIP</span>
+                        <button id="deposit-button" class="nr-crazy w-100 h-100" data-bs-toggle="modal"
+                        data-bs-target="#COINFLIP" style="box-shadow: none">COINFLIP</button>
                     </div>
                     <div class="card-crazy color-crazy4">
-                        <span class="nr-crazy" style="box-shadow: none">PACHINKO</span>
+                        <button id="deposit-button" class="nr-crazy w-100 h-100" data-bs-toggle="modal"
+                        data-bs-target="#PACHINKO" style="box-shadow: none">PACHINKO</button>
                     </div>
                 </div>
                 
@@ -90,7 +92,7 @@
                         <span class="circle-crazy">25</span>
                     </div>
                 <div class="btn-clear div-card-clear">
-                    <button id="button-amount-clear" type="button" >CLEAR</button>
+                    <button>CLEAR</button>
                 </div>
                 
         </div>

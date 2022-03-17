@@ -217,7 +217,7 @@ a.core:focus {
 
 
 
- #deposit-button{
+ .deposit-button{
     border-radius: 10px;
     min-height: 40px;
     height: 5.7vh;
@@ -298,6 +298,9 @@ li .header-dropdown-item:hover{
     color: #c0b5b5;
     background-color: #141620;
 }
+li .header-dropdown-item:focus{
+    background-color: #141620;
+}
 
 li #admin-button:hover{
     background-color: #0aaf4a;
@@ -359,7 +362,7 @@ nav.navbar{
 .modal-open #app{
     filter:blur(4px);
 }
-#deposit-button:hover, .submit-btn:hover{
+.deposit-button:hover, .submit-btn:hover{
     background-color: #0aaf4a;
     transition: .25s;
 }
@@ -446,7 +449,16 @@ li ul.dropdown-game-menu .card-game:hover{
     border: none;
     color: currentColor;
  }
-
+ #myDIV {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    background-color: lightblue;
+    margin-top: 20px;
+  }
+button:focus:focus-visible{
+    color: red;
+}
 @keyframes bounce {
 	0%, 20%, 60%, 100% {
 		-webkit-transform: translateY(0);
@@ -544,7 +556,7 @@ li ul.dropdown-game-menu .card-game:hover{
     .site-title{
         font-size: 32px;
     }
-    #deposit-button{
+    .deposit-button{
         margin-top:15px;
         width: 100%;
         margin-left: auto;

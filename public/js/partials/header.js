@@ -6,3 +6,24 @@ $(document).ready(function(){
         }
     });
 });
+
+function myFunction_1() {
+    var x = document.getElementById("myDIV");
+    var y = document.getElementById("myDIV2");
+    var z = document.getElementById("btn-1")
+    if (x.style.display === "none") {
+      x.style.display = "block";
+      z.style.display = "block"
+    } else {
+      x.style.display = "none";
+    }
+  }
+  
+  function myFunction_2() {
+    var y = document.getElementById("myDIV2");
+    if (y.style.display === "none") {
+      y.style.display = "block";
+    } else {
+      y.style.display = "none";
+    }
+  }

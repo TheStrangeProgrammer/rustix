@@ -1,0 +1,142 @@
+div.modal-dialog.modal-dialog-coinflip{
+    background-color: #232633;
+    width: 27vw;
+    height: calc(27vw * 1.1);
+    border: 5px solid #10121A;
+    font-family: 'Neometric';
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    min-width: 332px;
+    min-height: 342px;
+}
+div.modal-header.modal-header-coinflip{
+    background-color:#232633;
+}
+.div.modal-content.modal-content-coinflip{
+    height: 100% !important;
+}
+div.modal-body.modal-body-coinflip{
+    height: 100%;
+}
+.parent{
+    display: flex;
+    position: relative;
+    height: 86%;
+    margin: auto;
+  } 
+.cover{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: block;
+    z-index: 999;
+    margin-left: 21%;
+  }
+.border-grad{
+    margin: auto;
+    background-image: linear-gradient(to right, #09ADEB, #FFFFFF);
+    margin-top: 15px;
+    width: 90%;
+    height:14px;
+    background-repeat: no-repeat;
+    border-radius: 133px;
+  }
+
+.first-circle, .second-circle{
+    display: flex;
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    align-self: center;
+    margin-left: 40px;
+    border: 5px solid #000000;
+    color: #000000;
+    min-width: 124px;
+    min-height: 124px;
+}
+div.first-circle input, div.second-circle input{
+    width: 50%;
+    display: flex;
+    background-color: transparent;
+    border: none;
+    justify-content: center;
+    text-align: start;
+    -webkit-appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+div.first-circle input, div.second-circle input:focus{
+    color: #000000;
+}
+.first-circle span, .second-circle span{
+    margin: auto;
+    text-align: end;
+    display: flex;
+    justify-content: end;
+    width: 50%;
+    margin-left: 12px;
+}
+.first-circle span{
+    font-size: 50px;
+}
+.second-circle span{
+    font-size: 40px;
+}
+.first-circle{
+    font-size: 50px;
+    background-color: #DC0D0D;
+}
+.second-circle{
+    font-size: 35px;
+    background-color: #0EAFEB;
+}
+
+@media screen and (max-width: 991px) {
+    div.modal-dialog.modal-dialog-coinflip{
+    margin-left: auto;
+    margin-right:auto ;
+    min-width: 332px;
+    min-height: 342px;
+    }
+    div .modal-header .modal-title{
+        font-size: 33px;
+    }
+}
+@media screen and (max-width: 480px){
+    div.modal-dialog.modal-dialog-coinflip{
+        min-width: 252px;
+        min-height: 292px;
+    }
+    div .first-circle, .second-circle{
+        min-width: 100px;
+        min-height: 100px;
+        margin-left: 13px;
+    }
+    div.first-circle{
+        font-size: 28px;
+        
+    }
+    div.second-circle{
+        font-size: 24px;
+        
+    }
+    div.first-circle span{
+        font-size: 31px;
+        width: 35%;
+    }
+    div.first-circle input{
+        font-size: 31px;
+        width: 65%;
+    }
+    div.second-circle span{
+        font-size: 24px;
+        width: 35%;
+    }
+    div.second-circle input{
+        font-size: 20px;
+        width: 65%;
+    }
+    div .modal-header .modal-title{
+        font-size: 29px;
+    }
+}

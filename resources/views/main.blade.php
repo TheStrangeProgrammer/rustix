@@ -10,8 +10,9 @@
     @if (Auth::check())
     @include('partials.header.crypto')
         @include('partials.header.deposit')
-    @include('partials.header.transfer')
-
+        @include('partials.header.transfer')
+        @include('partials.header.coinflip')
+        @include('partials.header.pachinko')
         @include('partials.header.withdraw')
         @include('partials.header.profile')
         @include('partials.header.referrals')

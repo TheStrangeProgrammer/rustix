@@ -33,6 +33,11 @@
     font-size: 2rem;
 
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .input-mult:focus{
     background:#A0D8D8;
     color: #425D5C;
@@ -297,7 +302,7 @@ div.div-text-won span:last-child{
     }
     div.img-roll{
         width: 100%;
-        margin: auto;
+        margin: 15px auto;
     }
     div span.circle-crazy{
         min-width: 33px;
@@ -362,5 +367,9 @@ div.div-text-won span:last-child{
     }
     div.right-circle{
         min-width: 100%;
+    }
+    div.img-roll{
+        height: 25vh;
+        margin-top: 15px;
     }
 }

@@ -69,8 +69,18 @@
 
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <button id="deposit-button" class="theme-bc-3 me-auto" data-bs-toggle="modal"
+                    <button id="deposit-button" class="theme-bc-3 me-auto deposit-button" data-bs-toggle="modal"
                         data-bs-target="#TRANSFER">DEPOSIT</button>
+
+                        <div class="d-flex flex-column">
+                            <button onclick="myFunction_1()" id="btn-1">Try it</button>
+                            <div id="myDIV" class="mt-5" style="display: none;">This is my DIV element.</div>
+                        <br><br>
+                        </div>
+                        
+                       
+
+
 
                     <ul class="navbar-nav mb-2 mb-lg-0 navbar-dark ">
                         <li class="nav-item dropdown">
@@ -109,6 +119,7 @@
 </header>
 @push('js')
     <script src="{{ asset('js/partials/header.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 @endpush
 
 <!--
