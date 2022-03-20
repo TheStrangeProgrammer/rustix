@@ -51,6 +51,8 @@ $.getJSON("api/roulette/spin").done(function( data ) {
                 if(serverSecond==0) serverSecond=30;
                 endTime = new Date(new Date().getTime() + serverSecond*1000);
                 currentSecond = (endTime.getTime() - new Date().getTime()) / 1000;
+                var audio = new Audio('assets/roll.wav');
+                audio.play();
                 spinWheel(getPosition(data['outcome'],outcomes),outcomes,function () {displayLast100(data['rouletteLast100']);  });
             });
         }
@@ -124,8 +126,8 @@ function addBet(name,avatar,amount){
                     <img class="image-circle" style="background-color:#F95146"  src='`+avatar+`'width="30" height="30">
                     <span class="fw-bold">`+name+`</span>
                 </div>
-                <div>
-                    <img  src="assets/dollar_coin.svg" width="16" height="16">
+                <div class="d-flex flex-row">
+                    <span class="dollar-bet">$</span>
                     <span class="score-bet fw-bold">`+amount+`</span>
                 </div>
             </div>`

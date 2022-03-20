@@ -17,11 +17,11 @@
                 <span class="score-bet last-100-black">47</span>
             </div>
             <div class="style-top-circles">
-                <span class=" circle-score " style="background: linear-gradient(90deg,#7c99b4 50%,#de4c41 50%)"></span>
+                <img class=" circle-score roulette-red" src="../assets/roulette/hook.svg">
                 <span class="score-bet last-100-bait-red">47</span>
             </div>
             <div class="style-top-circles">
-                <span class="circle-score" style="background: linear-gradient(90deg,#7c99b4 50%,#31353d 50%"></span>
+                <img class="circle-score roulette-black" src="../assets/roulette/hook.svg">
                 <span class="score-bet last-100-bait-black">47</span>
             </div>
         </div>
