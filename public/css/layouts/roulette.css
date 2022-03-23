@@ -223,8 +223,16 @@ div.round-time-bar  {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    margin: 5px 0;
  }
-
+ .div-bet-list{
+    display: flex;
+    margin-top: .5rem;
+    padding: 0 .25rem;
+    font-weight: 700;
+    font-size: 13px;
+    color: white;
+}
 
  #bet-red{
      background-color: #F95146;
@@ -349,7 +357,7 @@ div #bet-black{
      width: calc(25%-1.875em);
      background-color: chartreuse;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1300px) {
 
     .btn-bet{
         display: none;
@@ -390,4 +398,12 @@ div #bet-black{
 #overlay-loading {
     display: flex;
 
+  }
+  @media only screen and (max-width: 1510px) and (min-width: 1230px){
+      main.main{
+          padding: 0;
+      }
+      div.last-100 div:last-child.mt-4{
+          padding: 0;
+      }
   }

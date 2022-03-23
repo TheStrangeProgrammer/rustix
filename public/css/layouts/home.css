@@ -107,21 +107,33 @@
     pointer-events: none;
     text-decoration: none;
 }
+button#btn-1{
+    display: none;
+}
 
+@media screen and (min-width: 991px) {
+    button#btn-1{
+        display: none !important;
+    }
+    div#myDIV{
+        display: none !important;
+    }
+}
 @media screen and (max-width: 991px) {
     .card-game{
         height:25%;
 
     }
     .card-img-top-wrapper{
-        height: 80%;
+        height: 166px;
         background-color: #1A1D29;
       }
     .link-games{
         pointer-events: painted;
         text-decoration: none;
     }
-    .games-div{
+    div.games-div{
+        display: flex;
         flex-wrap: wrap;
         min-height: 220px;
         max-height: 25vh;
@@ -134,5 +146,62 @@
 
     .gamemodes-text{
         padding-top: 0;
+    }
+    p.play-button{
+        display: none;
+    }
+    li.free-coins-mobile{
+        flex-direction: column;
+    }
+    div.top-card{
+        background-color: #0b0c0f87;
+    }
+    button#btn-1{
+        display: flex;
+        margin: auto;
+    }
+}
+@media screen and (max-width: 991px) {
+    button#btn-1{
+        display: flex;
+        border-radius: 10px;
+        min-height: 40px;
+        height: 5.7vh;
+        max-height: 50px;
+        min-width: 100px;
+        width: 100%;
+        border: 3px solid #261d1d36;
+        font-weight: 600;
+        background-color: #1A1D29;
+        justify-content: center;
+        padding: 10px 0;
+        margin-top: 15px;
+    }
+    div.sidebar{
+        width: 90.75%;
+    }
+    button.button-sidebar{
+        height: 80%;
+        width: 22%;
+        align-self: center;
+        border: 2px solid #F2F2F2;
+    }
+    div.sidebar span{
+        margin-left: 20px;
+        font-size: 13px;
+        text-align: center;
+        
+    }
+    button.free-coins{
+        font-weight: 400;
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 572px) {
+    a.card-game{
+        width: 58vw;
+    }
+    div.games-div{
+        max-height: 54vh;
     }
 }

@@ -49,8 +49,8 @@
             </div>
 
         </div>
-        <div class="bet-list-bets">
-
+        <div class="bet-list-bets ">
+            
         </div>
     </div>
 @endsection

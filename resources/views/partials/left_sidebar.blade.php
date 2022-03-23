@@ -17,22 +17,35 @@
         </a>
     </div>
     <div class="bar-under"></div>
+
+    
+
+    @if (Auth::check())
     <div class="d-flex " style="padding: 3%">
         <div class="d-flex flex-column m-auto">
             <span class="faucet-span">RUSTIX.COM FAUCET</span>
             <span class="claim-span">Claim your free coins</span>
         </div>
-        
-    @if (Auth::check())
-    <div class="chat-top">
-        <button id="free-coins" class="free-coins">Claim</button>
+        <div class="chat-top">
+            <button id="free-coins" class="free-coins">Claim</button>
+        </div>
     </div>
-</div>
+
+    
+    
+
         <chat id="chat" user="{{ Auth::user()->name }}"></chat>
     @else
-    <div class="chat-top" style="background-color:#F95146">
-        <a class="free-coins"  href="{{ URL::route('login') }}" >Please Log In to claim your free coins</a>
-    </div>
+    <div class="d-flex " style="padding: 3%">
+        <div class="d-flex flex-column m-auto">
+            <span class="faucet-span">RUSTIX.COM FAUCET</span>
+            <span class="claim-span">Claim your free coins</span>
+        </div>
+        <div class="chat-top" style="background-color:#F95146">
+            <a class="free-coins text-center"  href="{{ URL::route('login') }}" >Please Log In to claim your free coins</a>
+        </div>
+    </div> 
+    
         <guestchat id="chat"></guestchat>
     @endif
     
@@ -40,11 +53,7 @@
 
 
 
-    <div class="sidebar display-media">
-        <button class="button-sidebar" data-bs-toggle="modal" data-bs-target="#TOS">TOS</button>
-        <button class="button-sidebar" data-bs-toggle="modal" data-bs-target="#FAQ">FAQ</button>
-        <button class="button-sidebar" data-bs-toggle="modal" data-bs-target="#ALT">ALT</button>
-    </div>
+    
 </section>
 
 

@@ -51,9 +51,9 @@
 
 .sidebar{
     display: flex;
-    justify-content: space-evenly;
-    margin: 0 auto;
+    margin: 1% auto;
     width: 74.75%;
+    justify-content: center;
 }
 .message{
     display: flex;

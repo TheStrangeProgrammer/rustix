@@ -121,14 +121,14 @@ function updateBets(betlist,bets){
     betlist.find(".bet-list-bets").html(betList);
 }
 function addBet(name,avatar,amount){
-    return `<div class="bet-list-bet">
+    return `<div class="bet-list-bet div-bet-list">
                 <div>
                     <img class="image-circle" style="background-color:#F95146"  src='`+avatar+`'width="30" height="30">
                     <span class="fw-bold">`+name+`</span>
                 </div>
                 <div class="d-flex flex-row">
-                    <span class="dollar-bet">$</span>
-                    <span class="score-bet fw-bold">`+amount+`</span>
+                    <span>$</span>
+                    <span>`+amount+`</span>
                 </div>
             </div>`
 }

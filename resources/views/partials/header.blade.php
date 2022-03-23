@@ -5,7 +5,7 @@
             <a class="theme-tc-1 mb-0 ms-2 me-2" href="{{ URL::route('home') }}"><span
                     class="site-title">RUSTIX</span>
             </a>
-            <nav class="navbar navbar-expand-lg navbar-dark" style="margin-left: 10px">
+            <nav class="navbar navbar-expand-lg navbar-dark nav-games" style="margin-left: 10px">
                 <div class="container">
                    
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +29,7 @@
                                                 <div class="top-card">
                                                     <h5 class="game-text">ROULETTE</h5>
                                                 </div>
-                                                <div class="card-img-top-wrapper" style="background-image: url('../assets/Capture.svg'">
+                                                <div class="card-img-top-wrapper" style="background-image: url('../assets/Roulette.svg'">
                                                     
                                                 </div>
                                             </a>
@@ -37,7 +37,7 @@
                                                 <div class="top-card">
                                                     <h5 class="game-text">X-ROULETTE</h5>
                                                 </div>
-                                                <div class=" card-img-top-wrapper" style="background-image: url('../assets/Capture2.svg'">
+                                                <div class=" card-img-top-wrapper" style="background-image: url('../assets/x-roulette5.svg'">
                                                     
                                                 </div>
                                             </a>
@@ -72,9 +72,26 @@
                     <button id="deposit-button" class="theme-bc-3 me-auto deposit-button" data-bs-toggle="modal"
                         data-bs-target="#TRANSFER">DEPOSIT</button>
 
-                        <div class="d-flex flex-column">
-                            <button onclick="myFunction_1()" id="btn-1">Try it</button>
-                            <div id="myDIV" class="mt-5" style="display: none;">This is my DIV element.</div>
+                        <div class="div-div-games">
+                            <button onclick="myFunction_1()" id="btn-1">GAMES</button>
+                            <div id="myDIV" class="games-div" style="display: none;">
+                                <a class="card-game" href="{{ URL::route('roulette') }}">
+                                    <div class="top-card">
+                                        <h5 class="game-text">ROULETTE</h5>
+                                    </div>
+                                    <div class="card-img-top-wrapper" style="background-image: url('../assets/Roulette.svg'">
+                                        
+                                    </div>
+                                </a>
+                                <a class="card-game" href="{{ URL::route('x-roulette') }}">
+                                    <div class="top-card">
+                                        <h5 class="game-text">X-ROULETTE</h5>
+                                    </div>
+                                    <div class=" card-img-top-wrapper" style="background-image: url('../assets/x-roulette5.svg'">
+                                        
+                                    </div>
+                                </a>
+                            </div>
                         <br><br>
                         </div>
                         
@@ -105,7 +122,11 @@
                                             style="color: #E6E6E6" data-bs-toggle="modal" data-bs-target="#ADMIN">Admin
                                             Panel</button></li>
                                 @endif
-                                <li class="free-coins-mobile"><button id="free-coins" class="free-coins">Claim your
+                                <li class="free-coins-mobile">
+                                    <div class="d-flex flex-column m-auto">
+                                        <span class="faucet-span">RUSTIX.COM FAUCET</span>
+                                    </div>
+                                    <button id="free-coins" class="free-coins">Claim your
                                         free coins</button></li>
                             </ul>
                         </li>

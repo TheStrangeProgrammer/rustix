@@ -92,19 +92,19 @@ $('#bet-button').click(function() {
 
 
 function addBet(name,avatar,amount,mult){
-    return `<div class="d-flex flex-fill mt-2 ps-2 bg-list">
+    return `<div class="flex-fill bg-list div-bet-list">
                 <div class="me-auto p-2">
                     <img class="image-circle rounded-circle" style="background-color:#F95146"  src='`+avatar+`'
                         width="30" height="30">
-                    <span class="fw-bold">`+name+`</span>
+                    <span>`+name+`</span>
                 </div>
                 <div class="d-flex flex-row justify-content-end align-items-center me-2">
                     <i class="bi bi-x"></i>
-                    <span class="score-bet fw-bold">`+mult+`</span>
+                    <span class="score-bet>`+mult+`</span>
                 </div>
                 <div class="d-flex flex-row justify-content-end align-items-center me-2">
-                    <span class="dollar-bet">$</span>
-                    <span class="score-bet fw-bold">`+amount+`</span>
+                    <span>$</span>
+                    <span>`+amount+`</span>
                 </div>
             </div>`
 }
@@ -131,7 +131,7 @@ function getPosition(outcome,values){
 
 function valueToColor(value){
     color="";
-    if(value<=1)
+    if(value==1)
         color="color-1";
     else if(value<1.2)
         color="color-2";
@@ -177,7 +177,7 @@ function valueToColor(value){
 }
 function valueToImage(value){
     image="";
-    if(value<=1)
+    if(value=1)
         image="1";
     else if(value<1.2)
         image="2";
