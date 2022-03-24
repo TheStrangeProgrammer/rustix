@@ -19,7 +19,7 @@
                     </div>
                     <div class="submit-btn">
                         <button id="submit-withdraw-item-list" class="text-white" id="submit-item-list"
-                        type="submit">trade for <span id="withdraw-coins"> $143.66</span> coins</button>
+                        type="submit"><span class="d-none" id="withdraw-coins"></span>WITHDRAW</button>
                     </div>
 
 

@@ -104,9 +104,11 @@
 }
 .submit-btn{
     display: flex;
-    align-items: center;
-    padding: .3rem .8rem;
-    border-radius: 10px;
+    width: 7vw;
+    height: 4.5vh;
+    min-height: 40px;
+    min-width: 125px;
+    justify-content: center;
     background-color: #00C74D;
 }
 
@@ -141,6 +143,10 @@
     stroke-linecap: butt;
     stroke-miterlimit: 4;
     shape-rendering: auto;
+}
+#submit-withdraw-item-list{
+    font-weight: 700;
+    font-size: 15px;
 }
 
 .modal-header .btn-close {

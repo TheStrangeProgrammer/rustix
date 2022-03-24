@@ -20,7 +20,7 @@
                     </div>
                     <div class="submit-btn">
                         <button id="submit-deposit-item-list" class="text-white" id="submit-item-list"
-                        type="submit">trade for <span id="deposit-coins"> $143.66</span> coins</button>
+                        type="submit"><span class="d-none" id="deposit-coins"></span>DEPOSIT</button>
                     </div>
 
 
