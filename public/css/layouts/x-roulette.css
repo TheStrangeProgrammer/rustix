@@ -135,15 +135,15 @@ input::-webkit-inner-spin-button {
 .color-2{
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:#657769  ;
-    color: #65776941;
+    background-color:#bfbfbf  ;
+    color: #bfbfbf28;
 
 
 }
 .color-3{
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:#7b9371 ;
+    background-color:#657769 ;
     color: #7b93713b;
 
 
@@ -159,106 +159,112 @@ input::-webkit-inner-spin-button {
 .color-5{
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:#79ad62 ;
-    color: #78ad623d;
+    background-color:#7b9371 ;
+    color: #7b937141;
 
 }
 .color-6{
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:#77be56 ;
-    color: #77be563b;
+    background-color:#79ad62;
+    color: #78ad6221;
 
 
 }
 .color-7{
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:#46c957 ;
-    color: #46c9573b ;
+    background-color: #77be56;
+    color:  #77be5623 ;
 
 }
 .color-8{
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:#32da47;
-    color: #32da4834;
+    background-color:#46c957;
+    color: #46c95728;
 
 }
 
 .color-9{
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:#18d231;
-    color: #18d23136;
+    background-color:#32da47;
+    color: #32da4827;
 
 }
 .color-10{
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:#25dc32;
-    color: #25dc313a;
+    background-color:#18d231;
+    color: #18d23127;
 
 }
 .color-11{
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:#30ff01;
-    color: #30ff0134;
+    background-color:#25dc32;
+    color: #25dc311f;
 }
 .color-12{
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:#6c43ff;
-    color: #6c43ff34;
+    background-color:#30ff01;
+    color: #30ff0123;
 }
 .color-13{
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:#8923ff;
-    color: #8a23ff33;
+    background-color:#6c43ff;
+    color: #6c43ff23;
 }
 .color-14{
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:#cc00ff;
-    color: #cc00ff3a;
+    background-color:#8923ff;
+    color: #8a23ff2d;
 }
 .color-15{
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:#ff00e0;
-    color: #ff00e134;
+    background-color:#cc00ff;
+    color: #cc00ff27;
 }
 .color-16{
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:#fe00ae;
-    color: #fe00ae36;
+    background-color:#ff00e0;
+    color: #ff00e128;
 }
 .color-17{
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:#fe007a;
-    color: #fe007b34;
+    background-color:#fe00ae;
+    color: #fe00ae2a;
 }
 .color-18{
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:#fe2200;
-    color: #fe220038;
+    background-color:#fe007a;
+    color: #fe007b28;
 }
 .color-19{
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:#ff5100;
-    color: #ff51002f;
+    background-color:#fe2200;
+    color: #fe220025;
 }
 .color-20{
     background-repeat: no-repeat;
     background-size: cover;
+    background-color:#ff5100;
+    color: #ff510025;
+}
+.color-21{
+    background-repeat: no-repeat;
+    background-size: cover;
     background-color:#fff700;
-    color: #fff7002c;
+    color: #fff70023;
 }
 .x-roulette-rainbow{
     background: -webkit-linear-gradient(left, red,orange,yellow,green,blue,indigo,violet,red);
@@ -400,9 +406,16 @@ input::-webkit-inner-spin-button {
     border-radius: 10px;
     width: 25%;
 }
+.div-bet-list{
+    display: flex;
+    margin-top: .5rem;
+    padding: 0 .25rem;
+    font-weight: 700;
+    font-size: 13px;
+    color: white;
+}
 
-
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1200px) {
 
     .bet-section{
         flex-direction: column;
@@ -449,4 +462,13 @@ input::-webkit-inner-spin-button {
     justify-content: end;
     align-items: center;
     margin-right: .5rem;
+}
+@media only screen and (max-width: 1510px) and (min-width: 1200px){
+
+    div.x-roulette{
+        width: 65%;
+    }
+    div.bet-list{
+        width: 35%;
+    }
 }

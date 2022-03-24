@@ -16,7 +16,7 @@
                 <div class="top-card">
                     <h5 class="game-text">ROULETTE</h5>
                 </div>
-                <div class="card-img-top-wrapper" style="background-image: url('../assets/Capture.svg'">
+                <div class="card-img-top-wrapper" style="background-image: url('../assets/Roulette.svg'">
                     <div class="d-flex card-overlay">
                         <p class="play-button m-auto" style="color: white;">PLAY</p>
                     </div>
@@ -26,7 +26,7 @@
                 <div class="top-card">
                     <h5 class="game-text">X-ROULETTE</h5>
                 </div>
-                <div class=" card-img-top-wrapper" style="background-image: url('../assets/Capture2.svg'">
+                <div class=" card-img-top-wrapper" style="background-image: url('../assets/x-roulette5.svg'">
                     <div class="d-flex card-overlay">
                         <p class="play-button m-auto" style="color: white;">PLAY</p>
                     </div>

@@ -105,8 +105,6 @@
 .submit-btn{
     display: flex;
     align-items: center;
-    padding: .3rem .8rem;
-    border-radius: 10px;
     background-color: #00C74D;
 }
 

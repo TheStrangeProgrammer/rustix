@@ -56,6 +56,8 @@ $.getJSON("api/x-roulette/spin").done(function( data ) {
                 if(serverSecond==0) serverSecond=30;
                 endTime = new Date(new Date().getTime() + serverSecond*1000);
                 currentSecond = (endTime.getTime() - new Date().getTime()) / 1000;
+                var audio = new Audio('assets/x-roll.mp3');
+                audio.play();
                 spinWheel(getPosition(data['outcome'],outcomes),outcomes,function () {displayLast10(data['rouletteLast10']);  });
             });
         }
@@ -90,19 +92,19 @@ $('#bet-button').click(function() {
 
 
 function addBet(name,avatar,amount,mult){
-    return `<div class="d-flex flex-fill mt-2 ps-2 bg-list">
+    return `<div class="flex-fill bg-list div-bet-list">
                 <div class="me-auto p-2">
                     <img class="image-circle rounded-circle" style="background-color:#F95146"  src='`+avatar+`'
                         width="30" height="30">
-                    <span class="fw-bold">`+name+`</span>
+                    <span>`+name+`</span>
                 </div>
                 <div class="d-flex flex-row justify-content-end align-items-center me-2">
                     <i class="bi bi-x"></i>
-                    <span class="score-bet fw-bold">`+mult+`</span>
+                    <span class="score-bet>`+mult+`</span>
                 </div>
                 <div class="d-flex flex-row justify-content-end align-items-center me-2">
-                    <img class="me-1" src="assets/dollar_coin.svg" width="16" height="16">
-                    <span class="score-bet fw-bold">`+amount+`</span>
+                    <span>$</span>
+                    <span>`+amount+`</span>
                 </div>
             </div>`
 }
@@ -129,94 +131,94 @@ function getPosition(outcome,values){
 
 function valueToColor(value){
     color="";
-    if(value<=1)
+    if(value==1)
         color="color-1";
-    else if(value<=1.2)
+    else if(value<1.2)
         color="color-2";
-    else if(value<=1.5)
+    else if(value<1.5)
         color="color-3";
-    else if(value<=1.8)
+    else if(value<1.8)
         color="color-4";
-    else if(value<=2)
+    else if(value<2)
         color="color-5";
-    else if(value<=2.25)
+    else if(value<2.25)
         color="color-6";
-    else if(value<=2.5)
+    else if(value<2.5)
         color="color-7";
-    else if(value<=3)
+    else if(value<3)
         color="color-8";
-    else if(value<=3.5)
+    else if(value<3.5)
         color="color-9";
-    else if(value<=4)
+    else if(value<4)
         color="color-10";
-    else if(value<=5)
+    else if(value<5)
         color="color-11";
-    else if(value<=6.5)
+    else if(value<6.5)
         color="color-12";
-    else if(value<=8)
+    else if(value<8)
         color="color-13";
-    else if(value<=10)
+    else if(value<10)
         color="color-14";
-    else if(value<=15)
+    else if(value<15)
         color="color-15";
-    else if(value<=20)
+    else if(value<20)
         color="color-16";
-    else if(value<=30)
+    else if(value<30)
         color="color-17";
-    else if(value<=50)
+    else if(value<50)
         color="color-18";
-    else if(value<=75)
+    else if(value<75)
         color="color-19";
     else if(value<100)
         color="color-20";
-    else
-        color="x-roulette-rainbow";
+    else 
+        color="color-21";
     return color;
 }
 function valueToImage(value){
     image="";
-    if(value<=1)
+    if(value=1)
         image="1";
-    else if(value<=1.2)
+    else if(value<1.2)
         image="2";
-    else if(value<=1.50)
+    else if(value<1.50)
         image="3";
-    else if(value<=1.8)
+    else if(value<1.8)
         image="4";
-    else if(value<=2)
+    else if(value<2)
         image="5";
-    else if(value<=2.25)
+    else if(value<2.25)
         image="6";
-    else if(value<=2.5)
+    else if(value<2.5)
         image="7";
-    else if(value<=3)
+    else if(value<3)
         image="8";
-    else if(value<=3.5)
+    else if(value<3.5)
         image="9";
-    else if(value<=4)
+    else if(value<4)
         image="10";
-    else if(value<=5)
+    else if(value<5)
         image="11";
-    else if(value<=6.5)
+    else if(value<6.5)
         image="12";
-    else if(value<=8)
+    else if(value<8)
         image="13";
-    else if(value<=10)
+    else if(value<10)
         image="14";
-    else if(value<=15)
+    else if(value<15)
         image="15";
-    else if(value<=20)
+    else if(value<20)
         image="16";
-    else if(value<=30)
+    else if(value<30)
         image="17";
-    else if(value<=50)
+    else if(value<50)
         image="18";
-    else if(value<=75)
+    else if(value<75)
         image="19";
-    else if(value<=100)
+    else if(value<100)
         image="20";
     else
-        image="20";
+        image="21";
     return image;
 }
 

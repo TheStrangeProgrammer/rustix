@@ -51,9 +51,9 @@
 
 .sidebar{
     display: flex;
-    justify-content: space-evenly;
-    margin: 0 auto;
+    margin: 1% auto;
     width: 74.75%;
+    justify-content: center;
 }
 .message{
     display: flex;
@@ -129,6 +129,16 @@ p.message-text::first-line {
     margin: 0 auto;
     justify-content: center;
 }
+.faucet-span{
+    font-size: 17px;
+    font-weight: 700;
+}
+.claim-span{
+    font-weight: 400;
+    color: #999999;
+    width: 77.5%;
+    font-size: 14px;
+}
 
 .chat-wrapper{
     overflow-y: auto;
@@ -140,9 +150,14 @@ p.message-text::first-line {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.031rem 0;
+    padding: 0.031rem 0;
     background-color: #00C74D;
     font-size: 14px;
+    width: 32%;
+    margin-left: auto;
+    min-width: 83px;
+    min-height: 63px;
+    line-height: 114%;
 }
 .chat-top a{
     text-decoration: none;
@@ -185,6 +200,38 @@ p.message-text::first-line {
 .chat-send-button:hover{
     background-color: #0aaf4a;
     transition: .25s;
+}
+.social-img{
+    width: 20px;
+    height: 20px;
+}
+.online-point{
+    display: flex;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #00C74D;
+    margin-right: auto;
+    align-self: center;
+    margin-left: 10px;
+}
+.online-bar{
+    display: flex;
+    justify-content: space-between;
+    width: 94.5%;
+    margin: auto;
+    padding: 3% 0;
+}
+div.online-bar a{
+    margin-left: 10px;
+    display: flex;
+    align-self: center;
+}
+.bar-under{
+    width: 94.5%;
+    height: 2px;
+    background-color: #141620;
+    margin: auto;
 }
 @media screen and (max-width: 991px) {
     .chat-button{

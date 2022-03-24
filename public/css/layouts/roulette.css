@@ -181,8 +181,9 @@ div.round-time-bar  {
 .circle-score{
     border-radius: 50%;
     margin-left: .25rem;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
+    padding: 0 4px;
 }
 .last-7{
     margin-left: .25rem;
@@ -222,8 +223,16 @@ div.round-time-bar  {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    margin: 5px 0;
  }
-
+ .div-bet-list{
+    display: flex;
+    margin-top: .5rem;
+    padding: 0 .25rem;
+    font-weight: 700;
+    font-size: 13px;
+    color: white;
+}
 
  #bet-red{
      background-color: #F95146;
@@ -247,10 +256,10 @@ div #bet-black{
  }
  .last-circle{
     border-radius: 50%;
-    padding: 2px;
+    padding: 3px;
     margin: 0 3px;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
 }
 #bet-list-red .image-circle{
      background-color: #F95146 ;
@@ -348,7 +357,7 @@ div #bet-black{
      width: calc(25%-1.875em);
      background-color: chartreuse;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1300px) {
 
     .btn-bet{
         display: none;
@@ -384,9 +393,17 @@ div #bet-black{
   .main{
       display: none;
     flex-direction: column;
-    padding: 0 30px;
+    padding: 0 5%;
 }
 #overlay-loading {
     display: flex;
 
+  }
+  @media only screen and (max-width: 1510px) and (min-width: 1230px){
+      main.main{
+          padding: 0;
+      }
+      div.last-100 div:last-child.mt-4{
+          padding: 0;
+      }
   }
