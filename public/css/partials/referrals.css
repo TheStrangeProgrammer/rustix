@@ -270,8 +270,13 @@ div.form-outline .form-control:focus{
 .form-outline input::placeholder{
     color: #d4dadf;
 }
+.first-div-btn-ref{
+    display: flex;
+    flex-direction: row;
+    margin: 1.5% 3% 0% 3%;
+}
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 880px) {
     div.row-col-list{
         flex-wrap: wrap;
     }
@@ -279,10 +284,92 @@ div.form-outline .form-control:focus{
         width: 100% ;
         height:  100% ;
         flex-basis: auto ;
+        margin-top: 3%;
     }
     div.ref-list{
         min-height: auto;
         font-size: 16px;
     }
-
+    div button.referrals-button{
+        font-size: 11px;
     }
+    div.first-div-btn-ref{
+        margin-top: 15px;
+    }
+    div span.first-span-list{
+        width: 21%;
+        font-size: 11px;
+        display: flex;
+        align-self: center;
+    }
+    div span.second-span-list {
+        width: 62%;
+        font-size: 11px;
+    }
+    div span.third-span-list {
+        width: 17%;
+        font-size: 11px;
+        align-self: center;
+        justify-content: end;
+      }
+    div.first-referral-store{
+          flex-direction: column;
+      }
+    div.second-referral-store{
+        justify-content: space-around;
+        width: 100%;
+        margin-left: 0px;
+        flex-direction: row;
+    }
+    div span.ref-store-text{
+        color: #F2F2F2;
+        font-size: 14px;
+    }
+    div span.selected-items-ref{
+        font-size: 11px;
+    }
+    div span.value-ref{
+        font-size: 13px;
+    }
+    div.right-price{
+        width: 100%;
+        justify-content: center;
+        margin-top: 3%;
+    }
+    div.total-referral{
+        font-size: 11px;
+        font-weight: 800;
+    }
+    div button.claim-button{
+        font-size: 12px;
+        font-weight: 600;
+    }
+    div.first-div-btn-ref{
+        margin-top: 6%;
+        
+    }
+    div.div-line{
+        padding: 3% 2%;
+        min-height: 53.46px;
+    }
+    div.referral-store{
+        margin-top: 3%;
+    }
+    div.form-outline{
+        margin-top: 3%;
+    }
+    div.div-info-top{
+        margin-top: 11%;
+        height: 171px;
+        align-items: baseline;
+    }
+    div.div-second-top{
+        padding: 0 2%;
+    }
+    div.div-second-top span:first-child{
+        font-size: 16px !important;
+    }
+    div span.second-span-top{
+        font-size: 13px;
+    }
+}

@@ -39,7 +39,7 @@
                         </div>
                         <div class="total-referral" style="padding-bottom: 2%">
                             <input id="claim-referral" class="set-code" type="text">
-                            <div class="d-flex style="min-width: 85px">
+                            <div class="d-flex" style="min-width: 85px">
                                 <button class="claim-button text-edit my-auto" style="background-color: #505157">Copy</button>
                             </div>
                         </div>
@@ -87,7 +87,7 @@
                 </div>  -->          
             </div>
             <div class="d-flex flex-column" style="color: #999">
-                <div class="d-flex flex-row" style="margin: 1.5% 3% 0% 3%">
+                <div class="first-div-btn-ref">
                     <div class="div-btn-ref">
                         <button class="referrals-button my-auto" style="border-right: 1px solid #181B26">1+REFERRALS</button>
                     </div>
@@ -116,8 +116,8 @@
                     </div>
                 </div>
                 <div class="referral-store flex-column">
-                    <div class="d-flex ">
-                        <div class="d-flex w-50 second-referral-store">
+                    <div class="d-flex first-referral-store">
+                        <div class="d-flex second-referral-store">
                             <span class="ref-store-text">Referral Store</span>
                             <span class=" selected-items-ref" style="margin-left: 3%">SELECTED: </span>
                             <span class="value-ref" style="margin-left: 1%">$0.00</span>
