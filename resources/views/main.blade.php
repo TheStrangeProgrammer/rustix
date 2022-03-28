@@ -31,7 +31,7 @@
 
         @include('partials.header')
 
-        <div id="sidebar-and-content" class="d-flex h-100">
+        <div id="sidebar-and-content" class="full-content">
 
             @include('partials.left_sidebar')
             <button id="chat-button" class="chat-button">></button>
@@ -42,9 +42,13 @@
 
             <main class="main">
                 @yield('content')
+                
+                
             </main>
+            
         </div>
         @include('partials.footer')
+       
     </div>
 
     <script src="{{ asset('js/app.js') }}"></script>

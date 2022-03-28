@@ -136,7 +136,7 @@ button#btn-1{
         display: flex;
         flex-wrap: wrap;
         min-height: 220px;
-        max-height: 25vh;
+        max-height: 500px;
         min-width: 260px;
         background-color: transparent;
     }
@@ -202,6 +202,6 @@ button#btn-1{
         width: 58vw;
     }
     div.games-div{
-        max-height: 54vh;
+        max-height: 500px;
     }
 }

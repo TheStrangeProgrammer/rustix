@@ -86,6 +86,7 @@
 
                 </div>  -->          
             </div>
+            <!--
             <div class="d-flex flex-column" style="color: #999">
                 <div class="first-div-btn-ref">
                     <div class="div-btn-ref">
@@ -115,6 +116,7 @@
                         <span class="third-span-list">3.00%</span>
                     </div>
                 </div>
+                
                 <div class="referral-store flex-column">
                     <div class="d-flex first-referral-store">
                         <div class="d-flex second-referral-store">
@@ -140,9 +142,9 @@
                         <input type="search" id="form1" class="form-control" placeholder="Search items..." aria-label="Search" />
                     </div>
                 </div>
-                
+            
             </div>
-
+            -->
         </div>
     </div>
 </div>
