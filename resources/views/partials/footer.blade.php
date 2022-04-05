@@ -1,4 +1,4 @@
-<footer class="mt-auto footer theme-bc-2">
+<footer class="mt-auto footer theme-bc-2" style="height: 90px">
     <div class="sidebar display-media">
         <button class="button-sidebar" data-bs-toggle="modal" data-bs-target="#TOS">TOS</button>
         <button class="button-sidebar" data-bs-toggle="modal" data-bs-target="#FAQ">FAQ</button>

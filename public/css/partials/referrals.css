@@ -381,4 +381,7 @@ div.form-outline .form-control:focus{
     div div.modal-dialog-referrals{
         width: auto;
     }
+    div.div-info-top{
+        padding: 5.5% 0;
+    }
 }

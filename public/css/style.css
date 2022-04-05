@@ -99,6 +99,8 @@ body{
     font-size: 11px;
     padding: .2% 2%;
     margin-left: 10px;
+    max-width: 75px;
+    justify-content: center;
 }
 .button-sidebar:hover{
     background-color: #14161f;
@@ -165,12 +167,28 @@ a.core:focus {
     width: 80%;
     overflow-y: auto;
     flex:1 1 auto;
-    height: calc(100vh - 90px);
+    flex-direction: column;
+    scrollbar-color: rgb(45, 48, 53) #141620;
+    scrollbar-width: thin;
+    
 }
+main::-webkit-scrollbar {
+    width: 12px;
+    display: none;
+}
+
 .footer{
 }
+br{
+    display: none;
+}
 
-
+.div-child-main{
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-height: calc(100vh - 90px);
+}
 .left-sidebar{
     display: flex;
     flex-direction: column;
@@ -479,15 +497,21 @@ button:focus:focus-visible{
 
 .full-content{
     display: flex;
-    
+    max-height: calc( 100vh - 90px);
 
 }
 @media screen and (max-width: 991px) {
+    li .dropdown-item:active{
+        background-color: #141620;
+    }
     div#myDIV {
         width: 100%;
         height: 100%;
         
       }
+     div.div-child-main{
+         min-height: auto;
+     }
       nav.nav-games{
           display: none;
       }

@@ -18,7 +18,22 @@
 .bet-list-bets{
  display: flex;
  flex-direction: column;
+ max-height: 300px;
+ min-height: 300px;
+overflow-y: auto;
+scrollbar-color: rgb(45, 48, 53) #141620;
+scrollbar-width: none;
 }
+.bet-list-bets::-webkit-scrollbar-track{
+    background-color: #141620;
+}
+.bet-list-bets::-webkit-scrollbar-thumb{
+    background-color: rgb(45, 48, 53);
+}
+.bet-list-bets::-webkit-scrollbar{
+    display: none;
+}
+
 .roulette-selector{
     width:3px;
     background:grey;
@@ -29,9 +44,9 @@
     z-index:2;
 
   }
-  .dollar-bet{
-    font: normal 16px "Roboto", sans-serif;
-    margin-top: 3.4px;
+  .dollar-bet-roll{
+    font: normal 15px "Roboto", sans-serif;
+    margin-top: 0.4px;
     background: transparent;
     border: none;
     color: currentColor;
@@ -146,6 +161,8 @@ div.round-time-bar  {
     opacity: .5rem;
     margin-top: 30px;
     margin-bottom: 20px;
+    padding: 0 5%;
+    height: auto;
 }
 .style-top-circles{
     display: flex;
@@ -159,7 +176,7 @@ div.round-time-bar  {
 }
 
 .score-bet{
-    font-size: 16px;
+    font-size: 15px;
     color: #fff;
     font-family: var(--font-family-base);
     margin-left: .25rem;
@@ -219,7 +236,7 @@ div.round-time-bar  {
  }
  .bet-list-bet{
     display: flex;
-    flex:1 1;
+    height: 30px;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
@@ -357,6 +374,19 @@ div #bet-black{
      width: calc(25%-1.875em);
      background-color: chartreuse;
 }
+.div-win-bets{
+    padding: 1rem;
+
+}
+@media screen and (max-width: 1400px) {
+
+    .last-100{
+        padding: 0 3%;
+    }
+    div.div-win-bets{
+        padding: 0;
+    }
+}
 @media screen and (max-width: 1300px) {
 
     .btn-bet{
@@ -393,7 +423,7 @@ div #bet-black{
   .main{
       display: none;
     flex-direction: column;
-    padding: 0 5%;
+    height: auto;
 }
 #overlay-loading {
     display: flex;

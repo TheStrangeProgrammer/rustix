@@ -337,6 +337,9 @@ input::-webkit-inner-spin-button {
     scrollbar-width: none;
 
 }
+.last-10::-webkit-scrollbar{
+    display: none;
+}
 
 .score-bet{
     font-weight: bold;
@@ -405,6 +408,7 @@ input::-webkit-inner-spin-button {
     background-color: #0d0e14;
     border-radius: 10px;
     width: 25%;
+    max-height: calc(100vh - 90px);
 }
 .div-bet-list{
     display: flex;
@@ -413,6 +417,21 @@ input::-webkit-inner-spin-button {
     font-weight: 700;
     font-size: 13px;
     color: white;
+}
+div.bet-list-bets{
+    max-height: calc(100vh - 90px);
+    overflow-y: auto;
+}
+div.bet-list-bets::-webkit-scrollbar{
+    display: none;
+}
+.div-main-x-roulette{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0 30px;
+    padding-top: 30px;;
+    height: calc(100vh - 90px);
 }
 
 @media screen and (max-width: 1200px) {
@@ -439,12 +458,15 @@ input::-webkit-inner-spin-button {
     .btn-bet{
        height: 40px;
     }
+    .div-main-x-roulette{
+        flex-direction: column;
+        height: auto;
+    }
 }
 
 .main{
     display: none;
-    flex-direction: row;
-    padding: 0 30px;
+    flex-direction: column;
 }
 .x-roulette{
     width: 75%;

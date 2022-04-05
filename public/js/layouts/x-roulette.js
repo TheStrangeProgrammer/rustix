@@ -96,7 +96,7 @@ function addBet(name,avatar,amount,mult){
                 <div class="me-auto p-2">
                     <img class="image-circle rounded-circle" style="background-color:#F95146"  src='`+avatar+`'
                         width="30" height="30">
-                    <span>`+name+`</span>
+                    <span style="color:rgba(255,255,255,0.5)">`+name+`</span>
                 </div>
                 <div class="d-flex flex-row justify-content-end align-items-center me-2">
                     <i class="bi bi-x"></i>

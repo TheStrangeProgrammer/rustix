@@ -124,7 +124,7 @@ function addBet(name,avatar,amount){
     return `<div class="bet-list-bet div-bet-list">
                 <div>
                     <img class="image-circle" style="background-color:#F95146"  src='`+avatar+`'width="30" height="30">
-                    <span class="fw-bold">`+name+`</span>
+                    <span class="fw-bold" style="color:rgba(255,255,255,0.5)" >`+name+`</span>
                 </div>
                 <div class="d-flex flex-row">
                     <span>$</span>
