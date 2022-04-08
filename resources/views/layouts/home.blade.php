@@ -33,6 +33,7 @@
                 </div>
             </a>
         </div>
+        
     </div>
 @endsection
 @section('title', 'Home')

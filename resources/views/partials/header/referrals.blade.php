@@ -86,65 +86,271 @@
 
                 </div>  -->          
             </div>
-            <!--
-            <div class="d-flex flex-column" style="color: #999">
-                <div class="first-div-btn-ref">
-                    <div class="div-btn-ref">
-                        <button class="referrals-button my-auto" style="border-right: 1px solid #181B26">1+REFERRALS</button>
-                    </div>
-                    <div class="div-btn-ref">
-                        <button class="referrals-button my-auto" style="border-right: 1px solid #181B26">25+REFERRALS</button>
-                    </div>
-                    <div class="div-btn-ref" style="min-width: 85px">
-                        <button class="referrals-button my-auto">100+REFERRALS</button>
-                    </div>
-                </div>
-                <div class="d-flex flex-column text-center" style="margin: 0 3%">
-                    <div class="d-flex flex-row div-line" style="margin-top: 0">
-                        <span class="first-span-list">JACKPOT</span>
-                        <span class="second-span-list">% of the commision we take when a referred user wins</span>
-                        <span class="third-span-list">5.00%</span>
-                    </div>
-                    <div class="d-flex flex-row div-line" style="background-color: #202433">
-                        <span class="first-span-list">COINFLIP </span>
-                        <span class="second-span-list">% of the commision we take when your referred user wins</span>
-                        <span class="third-span-list">5.00%</span>
-                    </div>
-                    <div class="d-flex flex-row div-line">
-                        <span class="first-span-list">UPGRADE </span>
-                        <span class="second-span-list">% of the total bet by a referred user</span>
-                        <span class="third-span-list">3.00%</span>
-                    </div>
+            <div class="row-col-list modal-body theme-bc-2 flex-column" style="margin: 0 3%">
+                <div class="col-list-1">
+
+                        <div class="total-referral-users div-text-ref column-users" style="padding-bottom: 2%">
+                            <label class="set-ref top-users " for="fname">USER</label>
+                            <label class="set-ref top-users " for="fname">DEPOSITED</label>
+                            <label class="set-ref top-users " for="fname">COMMISSION</label>         
+                        </div>
+                        <ul class="list-group flex-column ul-scroll-referrals">
+                            <li class="d-flex flex-row li-line">
+                                <div class="d-flex flex-row col-list-2 line-users ">
+                                    <img src="{{ Auth::user()->avatar }}" class="img-referrals">
+                                    <div class="d-flex justify-content-center" style="color: #999">
+                                        <span class="my-auto align-self-center"
+                                            style="font-size: 14px">{{ Auth::user()->name }}</span>
+                                    </div>
+                                </div>
+                                <div class="col-list-2 text-edit line-users " style="color: #999">
+                                    <div class="column-users ">
+                                        <div class="flex-fill deposited-div">
+                                            <span class="dollar-referral">$</span>
+                                            <span class="bet-total-amount ms-1">200</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-list-2 text-edit line-users " style="color: #999">
+                                    <div class=" column-users ">
+                                                <div class="flex-fill deposited-div">
+                                                        <span class="dollar-referral">$</span>
+                                                        <span class="bet-total-amount ms-1">200</span>
+                                                </div>
+                                    </div>
+                                </div> 
+                            </li>
+                            <li class="d-flex flex-row li-line">
+                                <div class="d-flex flex-row col-list-2 line-users ">
+                                    <img src="{{ Auth::user()->avatar }}" class="img-referrals">
+                                    <div class="d-flex justify-content-center" style="color: #999">
+                                        <span class="my-auto align-self-center"
+                                            style="font-size: 14px">{{ Auth::user()->name }}</span>
+                                    </div>
+                                </div>
+                                <div class="col-list-2 text-edit line-users " style="color: #999">
+                                    <div class="column-users ">
+                                        <div class="flex-fill deposited-div">
+                                            <span class="dollar-referral">$</span>
+                                            <span class="bet-total-amount ms-1">200</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-list-2 text-edit line-users " style="color: #999">
+                                    <div class=" column-users ">
+                                                <div class="flex-fill deposited-div">
+                                                        <span class="dollar-referral">$</span>
+                                                        <span class="bet-total-amount ms-1">200</span>
+                                                </div>
+                                    </div>
+                                </div> 
+                            </li>
+                            <li class="d-flex flex-row li-line">
+                                <div class="d-flex flex-row col-list-2 line-users ">
+                                    <img src="{{ Auth::user()->avatar }}" class="img-referrals">
+                                    <div class="d-flex justify-content-center" style="color: #999">
+                                        <span class="my-auto align-self-center"
+                                            style="font-size: 14px">{{ Auth::user()->name }}</span>
+                                    </div>
+                                </div>
+                                <div class="col-list-2 text-edit line-users " style="color: #999">
+                                    <div class="column-users ">
+                                        <div class="flex-fill deposited-div">
+                                            <span class="dollar-referral">$</span>
+                                            <span class="bet-total-amount ms-1">200</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-list-2 text-edit line-users " style="color: #999">
+                                    <div class="column-users ">
+                                                <div class="flex-fill deposited-div">
+                                                        <span class="dollar-referral">$</span>
+                                                        <span class="bet-total-amount ms-1">200</span>
+                                                </div>
+                                    </div>
+                                </div> 
+                            </li>
+                            <li class="d-flex flex-row li-line">
+                                <div class="d-flex flex-row col-list-2 line-users ">
+                                    <img src="{{ Auth::user()->avatar }}" class="img-referrals">
+                                    <div class="d-flex justify-content-center" style="color: #999">
+                                        <span class="my-auto align-self-center"
+                                            style="font-size: 14px">{{ Auth::user()->name }}</span>
+                                    </div>
+                                </div>
+                                <div class="col-list-2 text-edit line-users " style="color: #999">
+                                    <div class="column-users ">
+                                        <div class="flex-fill deposited-div">
+                                            <span class="dollar-referral">$</span>
+                                            <span class="bet-total-amount ms-1">200</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-list-2 text-edit line-users " style="color: #999">
+                                    <div class=" column-users ">
+                                                <div class="flex-fill deposited-div">
+                                                        <span class="dollar-referral">$</span>
+                                                        <span class="bet-total-amount ms-1">200</span>
+                                                </div>
+                                    </div>
+                                </div> 
+                            </li>
+                            <li class="d-flex flex-row li-line">
+                                <div class="d-flex flex-row col-list-2 line-users ">
+                                    <img src="{{ Auth::user()->avatar }}" class="img-referrals">
+                                    <div class="d-flex justify-content-center" style="color: #999">
+                                        <span class="my-auto align-self-center"
+                                            style="font-size: 14px">{{ Auth::user()->name }}</span>
+                                    </div>
+                                </div>
+                                <div class="col-list-2 text-edit line-users " style="color: #999">
+                                    <div class="column-users ">
+                                        <div class="flex-fill deposited-div">
+                                            <span class="dollar-referral">$</span>
+                                            <span class="bet-total-amount ms-1">200</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-list-2 text-edit line-users " style="color: #999">
+                                    <div class=" column-users ">
+                                                <div class="flex-fill deposited-div">
+                                                        <span class="dollar-referral">$</span>
+                                                        <span class="bet-total-amount ms-1">200</span>
+                                                </div>
+                                    </div>
+                                </div> 
+                            </li>
+                            <li class="d-flex flex-row li-line">
+                                <div class="d-flex flex-row col-list-2 line-users ">
+                                    <img src="{{ Auth::user()->avatar }}" class="img-referrals">
+                                    <div class="d-flex justify-content-center" style="color: #999">
+                                        <span class="my-auto align-self-center"
+                                            style="font-size: 14px">{{ Auth::user()->name }}</span>
+                                    </div>
+                                </div>
+                                <div class="col-list-2 text-edit line-users " style="color: #999">
+                                    <div class="column-users ">
+                                        <div class="flex-fill deposited-div">
+                                            <span class="dollar-referral">$</span>
+                                            <span class="bet-total-amount ms-1">200</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-list-2 text-edit line-users " style="color: #999">
+                                    <div class="column-users ">
+                                                <div class="flex-fill deposited-div">
+                                                        <span class="dollar-referral">$</span>
+                                                        <span class="bet-total-amount ms-1">200</span>
+                                                </div>
+                                    </div>
+                                </div> 
+                            </li>
+                            <li class="d-flex flex-row li-line">
+                                <div class="d-flex flex-row col-list-2 line-users ">
+                                    <img src="{{ Auth::user()->avatar }}" class="img-referrals">
+                                    <div class="d-flex justify-content-center" style="color: #999">
+                                        <span class="my-auto align-self-center"
+                                            style="font-size: 14px">{{ Auth::user()->name }}</span>
+                                    </div>
+                                </div>
+                                <div class="col-list-2 text-edit line-users " style="color: #999">
+                                    <div class="column-users ">
+                                        <div class="flex-fill deposited-div">
+                                            <span class="dollar-referral">$</span>
+                                            <span class="bet-total-amount ms-1">200</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-list-2 text-edit line-users " style="color: #999">
+                                    <div class="column-users ">
+                                                <div class="flex-fill deposited-div">
+                                                        <span class="dollar-referral">$</span>
+                                                        <span class="bet-total-amount ms-1">200</span>
+                                                </div>
+                                    </div>
+                                </div> 
+                            </li>
+                            <li class="d-flex flex-row li-line">
+                                <div class="d-flex flex-row col-list-2 line-users ">
+                                    <img src="{{ Auth::user()->avatar }}" class="img-referrals">
+                                    <div class="d-flex justify-content-center" style="color: #999">
+                                        <span class="my-auto align-self-center"
+                                            style="font-size: 14px">{{ Auth::user()->name }}</span>
+                                    </div>
+                                </div>
+                                <div class="col-list-2 text-edit line-users " style="color: #999">
+                                    <div class="column-users ">
+                                        <div class="flex-fill deposited-div">
+                                            <span class="dollar-referral">$</span>
+                                            <span class="bet-total-amount ms-1">200</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-list-2 text-edit line-users " style="color: #999">
+                                    <div class=" column-users ">
+                                                <div class="flex-fill deposited-div">
+                                                        <span class="dollar-referral">$</span>
+                                                        <span class="bet-total-amount ms-1">200</span>
+                                                </div>
+                                    </div>
+                                </div> 
+                            </li>
+                            <li class="d-flex flex-row li-line">
+                                <div class="d-flex flex-row col-list-2 line-users ">
+                                    <img src="{{ Auth::user()->avatar }}" class="img-referrals">
+                                    <div class="d-flex justify-content-center" style="color: #999">
+                                        <span class="my-auto align-self-center"
+                                            style="font-size: 14px">{{ Auth::user()->name }}</span>
+                                    </div>
+                                </div>
+                                <div class="col-list-2 text-edit line-users " style="color: #999">
+                                    <div class="column-users ">
+                                        <div class="flex-fill deposited-div">
+                                            <span class="dollar-referral">$</span>
+                                            <span class="bet-total-amount ms-1">200</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-list-2 text-edit line-users " style="color: #999">
+                                    <div class="column-users ">
+                                                <div class="flex-fill deposited-div">
+                                                        <span class="dollar-referral">$</span>
+                                                        <span class="bet-total-amount ms-1">200</span>
+                                                </div>
+                                    </div>
+                                </div> 
+                            </li>
+                            <li class="d-flex flex-row li-line">
+                                <div class="d-flex flex-row col-list-2 line-users ">
+                                    <img src="{{ Auth::user()->avatar }}" class="img-referrals">
+                                    <div class="d-flex justify-content-center" style="color: #999">
+                                        <span class="my-auto align-self-center"
+                                            style="font-size: 14px">{{ Auth::user()->name }}</span>
+                                    </div>
+                                </div>
+                                <div class="col-list-2 text-edit line-users " style="color: #999">
+                                    <div class="column-users ">
+                                        <div class="flex-fill deposited-div">
+                                            <span class="dollar-referral">$</span>
+                                            <span class="bet-total-amount ms-1">200</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-list-2 text-edit line-users " style="color: #999">
+                                    <div class="column-users ">
+                                                <div class="flex-fill deposited-div">
+                                                        <span class="dollar-referral">$</span>
+                                                        <span class="bet-total-amount ms-1">200</span>
+                                                </div>
+                                    </div>
+                                </div> 
+                            </li>
+        
+                        </ul>  
                 </div>
                 
-                <div class="referral-store flex-column">
-                    <div class="d-flex first-referral-store">
-                        <div class="d-flex second-referral-store">
-                            <span class="ref-store-text">Referral Store</span>
-                            <span class=" selected-items-ref" style="margin-left: 3%">SELECTED: </span>
-                            <span class="value-ref" style="margin-left: 1%">$0.00</span>
-                            <span class="selected-items-ref" style="margin-left: 2%">0 items</span>
-                        </div>
-                            <div class="right-price" >
-                                <div class="div-btn-price">
-                                    <button class="referrals-button my-auto" style="border-right: 1px solid #181B26">Purchase</button>
-                                </div>
-                                <div class="div-btn-price">
-                                    <button class="referrals-button my-auto" style="border-right: 1px solid #181B26">$>0</button>
-                                </div>
-                                <div class="div-btn-price" style="min-width: 85px">
-                                    <button class="referrals-button my-auto">Price</button>
-                                </div>
-                            </div>
-                            
-                    </div>
-                    <div class="form-outline">
-                        <input type="search" id="form1" class="form-control" placeholder="Search items..." aria-label="Search" />
-                    </div>
-                </div>
-            
+   
             </div>
-            -->
         </div>
     </div>
 </div>
