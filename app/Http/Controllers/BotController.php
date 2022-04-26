@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Jobs\ProcessDeposit;
 use App\Jobs\ProcessWithdraw;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Http;
@@ -30,12 +31,10 @@ class BotController extends Controller
         $steam = new SteamCommunity($settings,Storage::disk('local')->path('/'));
         $loginResult = $steam->doLogin();
 
-        while($loginResult != LoginResult::LoginOkay){
-            $authCode = $steam->mobileAuth()->steamGuard()->generateSteamGuardCode();
+        $authCode = $steam->mobileAuth()->steamGuard()->generateSteamGuardCode();
             $steam->setTwoFactorCode($authCode);
             $loginResult = $steam->doLogin();
             Log::info($loginResult);
-        }
         BotController::$deposit=$steam;
     }
     public static function loginBot($botNumber){
@@ -43,12 +42,10 @@ class BotController extends Controller
         $steam = new SteamCommunity($settings,Storage::disk('local')->path('/'));
         $loginResult = $steam->doLogin();
 
-        while($loginResult != LoginResult::LoginOkay){
-            $authCode = $steam->mobileAuth()->steamGuard()->generateSteamGuardCode();
+        $authCode = $steam->mobileAuth()->steamGuard()->generateSteamGuardCode();
             $steam->setTwoFactorCode($authCode);
             $loginResult = $steam->doLogin();
             Log::info($loginResult);
-        }
         BotController::$bot[$botNumber]=$steam;
     }
     public static function confirmTradeOffer($tradeOfferId,$bot){
@@ -89,10 +86,10 @@ class BotController extends Controller
     }
     public static function depositItems(Request $request)
     {
+        $random = 1;
+
         $token = BotController::splitTradeToken(Auth::user()->tradeToken);
         if($token=="") return response()->json(['success' => 0,'error' => "Please set trade token in profile"]);
-
-
 
         $selectedItems = json_decode(json_encode($request->json()->all()));
 
@@ -102,7 +99,7 @@ class BotController extends Controller
             BotController::loginDeposit();
         }
         $depositTradeOffers=BotController::$deposit->tradeOffers();
-        $random = 1;
+
         if(count( BotController::$bot)!=3){
             BotController::loginBot($random);
         } else if(BotController::$bot[$random]==null){
@@ -110,14 +107,19 @@ class BotController extends Controller
         }
 
         $tradeOffers = BotController::$bot[$random]->tradeOffers();
-        $botToUserId=0;
 
+        $transactionId=0;
+        $transactionId=BotController::sendTakeTradeOffer(Auth::user()->steamid,$token,$tradeOffers,$selectedItems);
+        if($transactionId==0) response()->json(['success' => 0,'error' => "Unexpected Error please try again"]);
 
-        $botToUserId=BotController::sendTakeTradeOffer(Auth::user()->steamid,$token,$tradeOffers,$selectedItems);
-        if($botToUserId==0) response()->json(['success' => 0,'error' => "Unexpected Error please try again"]);
-        session(['selectedItems' => json_encode($selectedItems)]);
-        session(['tradeId' => $botToUserId]);
-        session(['botId' => $random]);
+        $transaction = new Transaction;
+        $transaction->items = $selectedItems;
+        $transaction->price = $price;
+        $transaction->type="userToBot";
+        $transaction->bot=$random;
+        $transaction->account=Auth::user()->steamid;
+        $transaction->transactionId=$transactionId;
+        $transaction->save();
         return response()->json(['success' => 1]);
 
 
@@ -137,6 +139,8 @@ class BotController extends Controller
 
     public static function withdrawItems(Request $request)
     {
+        $random = 1;
+
         $token = BotController::splitTradeToken(Auth::user()->tradeToken);
         if($token=="") return response()->json(['success' => 0,'error' => "Please set trade token in profile"]);
 
@@ -148,8 +152,121 @@ class BotController extends Controller
 
         if(count($selectedItems)<1) return response()->json(['success' => 0,'error' => "At least 1 selected Item"]);
 
-        ProcessWithdraw::dispatch(Auth::user()->steamid,$token,$selectedItems,$price)->onQueue('withdraw');
+        $tradeOffers = BotController::$bot[$random]->tradeOffers();
+
+        $transactionId=0;
+        $transactionId = BotController::sendTakeTradeOffer(config("rustix.depositId"),config("rustix.depositToken"),$tradeOffers,$selectedItems);
+        if($transactionId==0) response()->json(['success' => 0,'error' => "Unexpected Error please try again"]);
+
+        $transaction = new Transaction;
+        $transaction->items = $selectedItems;
+        $transaction->price = $price;
+        $transaction->type="depositToBot";
+        $transaction->bot=$random;
+        $transaction->account=Auth::user()->steamid;
+        $transaction->transactionId=$transactionId;
+        $transaction->save();
+
         return response()->json(['success' => 1]);
 
+    }
+    public static function mobileAccept($account,$transactions){
+        $accepted = [];
+        $retry=true;
+        while($retry){
+            try{
+                $confirmations =$account->mobileAuth()->confirmations()->fetchConfirmations();
+                foreach ($confirmations as $confirmation) {
+                    foreach ($transactions as $transaction) {
+                        if($account->mobileAuth()->confirmations()->getConfirmationTradeOfferId($confirmation)==$transaction->transactionId){
+                            if($account->mobileAuth()->confirmations()->acceptConfirmation($confirmation)){
+                                array_push($accepted,$transaction);
+                            }
+
+                        }
+                    }
+                }
+                $retry=false;
+            } catch (WgTokenInvalidException $ex) {
+                $account->mobileAuth()->refreshMobileSession();
+                $retry=true;
+            }
+        }
+        return $accepted;
+    }
+
+    public static function transactionDone($transactions){
+        foreach ($transactions as $transaction) {
+            $transaction->done=true;
+            $transaction->save();
+        }
+    }
+    public static function transactionStepToBotToUser($transactions){
+        foreach ($transactions as $transaction) {
+            $newTransactionId=0;
+            $newTransactionId = BotController::sendGiveTradeOffer($transaction->account,$transaction->token,BotController::$bot[$transaction->bot],$transaction->items);
+            if($newTransactionId=0){
+                $transaction->error=true;
+            }
+            $newTransaction = new Transaction;
+            $newTransaction->transactionId=$newTransactionId;
+            $newTransaction->type="botToUser";
+            $newTransaction->items=$transaction->items;
+            $newTransaction->price=$transaction->price;
+            $newTransaction->account=$transaction->account;
+            $newTransaction->bot=$transaction->bot;
+            $newTransaction->save();
+            $transaction->done=true;
+            $transaction->save();
+        }
+    }
+    public static function transactionStepToBotToDeposit($transactions){
+        foreach ($transactions as $transaction) {
+            $newTransactionId=0;
+            $newTransactionId = BotController::sendGiveTradeOffer(config("rustix.depositId"),config("rustix.depositToken"),BotController::$bot[$transaction->bot],$transaction->items);
+            if($newTransactionId=0){
+                $transaction->error=true;
+            }
+            $newTransaction = new Transaction;
+            $newTransaction->transactionId=$newTransactionId;
+            $newTransaction->type="botToDeposit";
+            $newTransaction->items=$transaction->items;
+            $newTransaction->price=$transaction->price;
+            $newTransaction->account=$transaction->account;
+            $newTransaction->bot=$transaction->bot;
+            $newTransaction->save();
+            $transaction->done=true;
+            $transaction->save();
+        }
+    }
+    public static function processTransactions(){
+        $depositToBotTransactions = Transaction::where("done",false)->where("error",false)->where("type","depositToBot")->get();
+        $userToBotTransactions = Transaction::where("done",false)->where("error",false)->where("type","userToBot")->get();
+
+        $botToDepositTransactions = Transaction::where("done",false)->where("error",false)->where("type","botToDeposit")->get();
+        $botToUserTransactions = Transaction::where("done",false)->where("error",false)->where("type","botToUser")->get();
+
+        $userToBotAccepted = BotController::mobileAccept(BotController::$bot[1],$userToBotTransactions::where("bot",1));
+        BotController::transactionStepToBotToDeposit($userToBotAccepted);
+        $userToBotAccepted = BotController::mobileAccept(BotController::$bot[2],$userToBotTransactions::where("bot",2));
+        BotController::transactionStepToBotToDeposit($userToBotAccepted);
+        $userToBotAccepted = BotController::mobileAccept(BotController::$bot[3],$userToBotTransactions::where("bot",3));
+        BotController::transactionStepToBotToDeposit($userToBotAccepted);
+
+        $depositToBotAccepted = BotController::mobileAccept(BotController::$bot[1],$depositToBotTransactions::where("bot",1));
+        BotController::transactionStepToBotToUser($depositToBotAccepted);
+        $depositToBotAccepted = BotController::mobileAccept(BotController::$bot[2],$depositToBotTransactions::where("bot",2));
+        BotController::transactionStepToBotToUser($depositToBotAccepted);
+        $depositToBotAccepted = BotController::mobileAccept(BotController::$bot[3],$depositToBotTransactions::where("bot",3));
+        BotController::transactionStepToBotToUser($depositToBotAccepted);
+
+        $botToDepositAccepted = BotController::mobileAccept(BotController::$deposit,$botToDepositTransactions);
+        BotController::transactionDone($botToDepositAccepted);
+        $botToUserAccepted = BotController::mobileAccept(BotController::$bot[1],$botToUserTransactions::where("bot",1));
+        BotController::transactionDone($botToUserAccepted);
+        $botToUserAccepted = BotController::mobileAccept(BotController::$bot[2],$botToUserTransactions::where("bot",2));
+        BotController::transactionDone($botToUserAccepted);
+        $botToUserAccepted = BotController::mobileAccept(BotController::$bot[3],$botToUserTransactions::where("bot",3));
+        BotController::transactionDone($botToUserAccepted);
     }
 }

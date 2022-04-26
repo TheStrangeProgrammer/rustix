@@ -30,6 +30,20 @@ class Kernel extends ConsoleKernel
 
         })->everyMinute()->runInBackground();
         $schedule->call(function () {
+            BotController::processTransactions();
+            sleep(10);
+            BotController::processTransactions();
+            sleep(10);
+            BotController::processTransactions();
+            sleep(10);
+            BotController::processTransactions();
+            sleep(10);
+            BotController::processTransactions();
+            sleep(10);
+            BotController::processTransactions();
+
+        })->everyMinute()->runInBackground();
+        $schedule->call(function () {
             PriceController::updateAllItemPrices();
         })->hourly()->runInBackground();
         $schedule->call(function () {
