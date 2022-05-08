@@ -29,7 +29,9 @@ class Kernel extends ConsoleKernel
             Storage::disk('local')->put('depositInventory.json', json_encode($inventory));
 
         })->everyMinute()->runInBackground();
+
         $schedule->call(function () {
+            BotController::loginBots();
             BotController::processTransactions();
             sleep(10);
             BotController::processTransactions();

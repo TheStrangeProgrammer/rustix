@@ -23,6 +23,7 @@ class Transaction extends Model
         "type",
         "price",
         "bot",
+        "token",
         "error"
     ];
 

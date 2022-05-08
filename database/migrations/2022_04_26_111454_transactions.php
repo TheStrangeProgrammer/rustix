@@ -19,6 +19,7 @@ class Transactions extends Migration
             $table->string("transactionId");
             $table->string("items");
             $table->string("type");
+            $table->string("token");
             $table->integer("price");
             $table->integer("bot");
             $table->boolean("error")->default(false);
