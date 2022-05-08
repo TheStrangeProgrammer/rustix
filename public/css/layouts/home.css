@@ -136,14 +136,10 @@ button#btn-1{
         display: flex;
         flex-wrap: wrap;
         min-height: 220px;
-        max-height: 25vh;
+        max-height: 500px;
         min-width: 260px;
         background-color: transparent;
     }
-    .main{
-        justify-content: center;
-    }
-
     .gamemodes-text{
         padding-top: 0;
     }
@@ -174,7 +170,7 @@ button#btn-1{
         font-weight: 600;
         background-color: #1A1D29;
         justify-content: center;
-        padding: 10px 0;
+        align-items: center;
         margin-top: 15px;
     }
     div.sidebar{
@@ -202,6 +198,6 @@ button#btn-1{
         width: 58vw;
     }
     div.games-div{
-        max-height: 54vh;
+        max-height: 500px;
     }
 }

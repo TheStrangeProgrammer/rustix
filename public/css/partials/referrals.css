@@ -1,9 +1,11 @@
 div div.modal-dialog-referrals{
     font-weight: bold;
-    width: 95vw;
+    width: 80vw;
     height: auto;
-    max-width: 95vw;
-    margin-top: 17px;
+    max-width: 1070px;
+    margin: 4% auto;
+    display: flex;
+
 }
 div div.modal-content-referrals{
     background-color:#202433;
@@ -14,10 +16,11 @@ div div.modal-content-referrals{
     width: 100%;
     justify-content: space-between;
     margin: 1.5% auto;
-    height: 15vh;
+    height: 171px;
     align-items: center;
     background-color: #181B26;
     padding: 4% 0;
+    align-items: baseline;
 }
 .div-second-top{
     display: flex;
@@ -27,7 +30,7 @@ div div.modal-content-referrals{
 }
 .second-span-top{
     font-weight: 600;
-    font-size: 0.9375rem;
+    font-size: 0.83rem;
     color: #999;
 }
 .col-cont{
@@ -38,9 +41,10 @@ div div.modal-content-referrals{
     display: flex;
     background-color: #261d1d36;
 }
-.row-col-list{
+div div.row-col-list{
     display: flex;
     flex-direction: row;
+    padding-bottom: 2.5%;
 }
 .col-list-1{
     display: flex;
@@ -275,6 +279,55 @@ div.form-outline .form-control:focus{
     flex-direction: row;
     margin: 1.5% 3% 0% 3%;
 }
+.img-referrals{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    
+}
+.deposited-div{
+    height: 30px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.column-users{
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 2%;
+    align-items: center;
+    font-size: 14px;
+}
+.ul-scroll-referrals{
+    overflow-y: auto;
+    max-height: 275px;
+    scrollbar-width: none;
+}
+.top-users{
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.line-users{
+    display: flex;
+    margin-top: 8px;
+    align-items: center;
+    justify-content: center;
+    background-color: #181B26;
+    width: 100%;
+    height: 47px;
+}
+.total-referral-users{
+    display: flex;
+    font-size: 14px;
+    background-color: #181B26;
+}
+li.li-line{
+    min-height: 50px;
+}
 
 @media screen and (max-width: 880px) {
     div.row-col-list{
@@ -282,7 +335,6 @@ div.form-outline .form-control:focus{
     }
     div.col-list-1, .col-list-2{
         width: 100% ;
-        height:  100% ;
         flex-basis: auto ;
         margin-top: 3%;
     }
@@ -362,6 +414,7 @@ div.form-outline .form-control:focus{
         margin-top: 11%;
         height: 171px;
         align-items: baseline;
+        padding: 7.5% 0;
     }
     div.div-second-top{
         padding: 0 2%;
@@ -371,5 +424,16 @@ div.form-outline .form-control:focus{
     }
     div span.second-span-top{
         font-size: 13px;
+    }
+    li.li-line{
+        min-height: 50px;
+    }
+}
+@media screen and (max-width: 500px) {
+    div div.modal-dialog-referrals{
+        width: auto;
+    }
+    div.div-info-top{
+        padding: 5.5% 0;
     }
 }

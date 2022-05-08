@@ -106,6 +106,12 @@
     display: flex;
     align-items: center;
     background-color: #00C74D;
+    box-shadow: 0 10px 27px #00ff0c1a,0 -3px #00913c inset,0 2px #35d87b inset !important;
+    border-radius: 10px;
+}
+#submit-deposit-item-list{
+    font-weight: 700;
+    font-size: 13px;
 }
 
 

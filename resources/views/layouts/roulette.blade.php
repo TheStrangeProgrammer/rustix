@@ -63,7 +63,7 @@
         <button id="button-amount-max" type="button" class="btn-bet">MAX</button>
     </div>
 
-    <div class="p-3 mt-4">
+    <div class="mt-4 div-win-bets">
         <div class="bet-roulette">
             <div class="group-bet-list" >
             <div id="bet-list-red" class="dif w-100">
@@ -81,7 +81,7 @@
                         <span class="fw-bold">Bets</span>
                     </div>
                     <div class="btn-coin">
-                        <span class="dollar-bet">$</span>
+                        <span class="dollar-bet-roll">$</span>
                         <span class="score-bet bet-total-amount">0</span>
                     </div>
                 </div>
@@ -101,10 +101,10 @@
                 <div class="d-flex mt-2">
                     <div class="me-auto p-2 ">
                         <span class="score-bet bet-total-number">0</span>
-                        <span class="fw-bold">Bets</span>
+                        <span class="fw-bold" style="font-size: 15px">Bets</span>
                     </div>
                     <div class="btn-coin">
-                        <span class="dollar-bet">$</span>
+                        <span class="dollar-bet-roll">$</span>
                         <span class="score-bet bet-total-amount">0</span>
                     </div>
                 </div>
@@ -132,7 +132,7 @@
                         <span class="fw-bold">Bets</span>
                     </div>
                     <div class="btn-coin">
-                        <span class="dollar-bet">$</span>
+                        <span class="dollar-bet-roll">$</span>
                         <span class="score-bet bet-total-amount">0</span>
                     </div>
                 </div>
@@ -156,7 +156,7 @@
                         <span class="fw-bold">Bets</span>
                     </div>
                     <div class="btn-coin">
-                        <span class="dollar-bet">$</span>
+                        <span class="dollar-bet-roll">$</span>
                         <span class="score-bet bet-total-amount">0</span>
                     </div>
 
@@ -171,7 +171,7 @@
 
     </div>
 
-
+    </div>
 @endsection
 @section('title', 'Roulette')
 

@@ -1,6 +1,6 @@
 @extends('main')
 @section('content')
-    <div class="d-flex flex-fill flex-column">
+    <div class="div-child-main">
         @if (Auth::check())
             <div class="head-text">
                 <span class="welcome-text">Welcome back, <span
@@ -33,6 +33,7 @@
                 </div>
             </a>
         </div>
+        
     </div>
 @endsection
 @section('title', 'Home')

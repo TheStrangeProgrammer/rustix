@@ -1,6 +1,8 @@
 @extends('main')
 @section('content')
 
+<div class="d-flex w-100 div-main-x-roulette">
+
     <div class="x-roulette">
         <div class="last-10"></div>
         <div class="roulette-wrapper flex-fill">
@@ -53,6 +55,8 @@
             
         </div>
     </div>
+    
+</div>
 @endsection
 @section('title', 'X-Roulette')
 
