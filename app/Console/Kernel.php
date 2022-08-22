@@ -31,28 +31,7 @@ class Kernel extends ConsoleKernel
         })->everyMinute()->runInBackground();
 
         $schedule->call(function () {
-            BotController::loginBots();
-            BotController::processTransactions();
-            sleep(10);
-            BotController::processTransactions();
-            sleep(10);
-            BotController::processTransactions();
-            sleep(10);
-            BotController::processTransactions();
-            sleep(10);
-            BotController::processTransactions();
-            sleep(10);
-            BotController::processTransactions();
-
-        })->everyMinute()->runInBackground();
-        $schedule->call(function () {
             PriceController::updateAllItemPrices();
-        })->hourly()->runInBackground();
-        $schedule->call(function () {
-            BotController::loginDeposit();
-            BotController::loginBot(1);
-            BotController::loginBot(2);
-            BotController::loginBot(3);
         })->hourly()->runInBackground();
         $schedule->call(function () {
             UserController::resetFaucet();
@@ -68,6 +47,21 @@ class Kernel extends ConsoleKernel
 
         })->everyMinute()->runInBackground();
 
+        $schedule->call(function () {
+            BotController::loginBots();
+            BotController::processTransactions();
+            sleep(10);
+            BotController::processTransactions();
+            sleep(10);
+            BotController::processTransactions();
+            sleep(10);
+            BotController::processTransactions();
+            sleep(10);
+            BotController::processTransactions();
+            sleep(10);
+            BotController::processTransactions();
+
+        })->everyMinute()->runInBackground();
     }
 
     /**
